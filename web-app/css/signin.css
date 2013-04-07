@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#wrapper{
+width: 100%;
+height: 1600px;
+background-color: #fcf8e3;
+}
+
+#signin{
+	margin: auto;
+	width: 300px;
+	padding-top: 50px;
+}
+
+form a { color: white;}	
+form img{ padding-bottom: 20px; width:300px;}
+

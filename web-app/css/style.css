@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* gold #9a8a3d */
+/* maroon, #630215, #381212 OR active #f22626 */
+/* silver */
+/* light brown */
+/* dark brown */
+/* light blue #CFF   */
+/* cream OR Grey #eee #fffefe #e7e7e7 #FFFAF7 */
+/* Gold OR Light Grey #d2d4dc */
+/*@EmoteBorderC: #d41111;
+@TopicBorderC: #d41111;*/
+.gradient {
+  background-image: rgba(112, 181, 242, 0);
+  background-image: -webkit-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+}
+/*
+.curvedbox{
+border-radius: 3px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+}
+
+.inset{
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+*/
+a:active,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+#global-nav {
+  height: 55px;
+  width: 100%;
+  border-radius: 8px;
+  background-image: rgba(112, 181, 242, 0);
+  background-image: -webkit-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+}
+#global-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#global-nav ul li {
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+}
+#global-nav ul li a:active,
+#global-nav ul li a:link,
+#global-nav ul li a:visited {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 15px;
+  color: inherit;
+  background-color: inherit;
+}
+.navbaro a:active,
+.navbaro a:link,
+.navbaro a:visited {
+  padding: 0px 0px;
+}
+.navbaro a:active img,
+.navbaro a:link img,
+.navbaro a:visited img {
+  height: 2em;
+  border-radius: 5px;
+}
+.feed {
+  background-color: #fcf8e3;
+  /*border: solid;
+border-color: #ddd;
+border-width: thin;*/
+
+  color: #d41111;
+}
+.emote-howto,
+.settings {
+  margin-left: 10px;
+  text-align: center;
+}
+.item-section {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #c5aa6a;
+}
+.item-section .user {
+  float: right;
+}
+.user {
+  height: 2em;
+  position: relative;
+}
+.user .avatar {
+  position: absolute;
+  right: 0;
+  margin: 2px;
+  height: 100%;
+  border-radius: 0.25em;
+}
+.user .username {
+  position: absolute;
+  top: 90%;
+  right: 0;
+  font-family: Arial, sans-serif;
+  color: gray;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 0.75em;
+}
+.item-section .item-title {
+  font-family: "Georgia", sans-serif;
+  margin-left: 5px;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  color: #9a8a3d;
+}
+.emote-section,
+.topic-section {
+  margin: 5px 5px 5px 15px ;
+}
+.emote-section .avatar {
+  float: left;
+  height: 1.5em;
+  /*height:18px;
+width:18px; */
+
+  border-radius: 1em;
+}
+.emote-section .emote {
+  display: inline-block;
+  font-family: Sorts Mill Goudy, comic, sans-serif;
+  font-size: 0.90em;
+  /*line-height: 16px;*/
+
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  font-style: normal;
+  background-color: #ccffff;
+  /* rgba(0,0,0,1) */
+
+  margin: 2px 2px;
+  padding: 1px 1px;
+  color: #454545;
+  /*border: 1px solid @EmoteTC;*/
+
+  vertical-align: baseline;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);*/
+
+  /*.curvedbox;
+.inset;*/
+
+}
+.topic-section .topic {
+  display: inline-block;
+  font-family: Sorts Mill Goudy, comic, sans-serif;
+  font-size: 0.90em;
+  /*line-height: 16px;*/
+
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  font-style: normal;
+  background-color: #dddddd;
+  /* rgba(0,0,0,1) */
+
+  margin: 2px 2px;
+  padding: 1px 1px;
+  color: #454545;
+  /*border: 1px solid @EmoteTC;*/
+
+  vertical-align: baseline;
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);*/
+
+  /*.curvedbox;
+.inset;*/
+
+}
+.friends form,
+.settings form {
+  width: 350px;
+  margin: auto;
+}
+.friends legend,
+.settings legend {
+  text-align: left;
+  padding-top: 10px;
+  margin-left: 10px;
+  width: 350px;
+}
+.friends legend a,
+.settings legend a {
+  display: inline-block;
+  float: right;
+}
+.copywright {
+  color: gray;
+  font-family: arial;
+  font-size: 0.8em;
+  text-decoration: underline;
+  /* border-top-style: solid; border-top-color: #ddd;*/
+}

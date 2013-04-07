@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/emote.iml" filepath="$PROJECT_DIR$/emote.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="libraryTable">
+    <library name="Grails 2.2.1">
+      <CLASSES>
+        <root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-bootstrap-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-core-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-crud-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-docs-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-hibernate-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-logging-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-async-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-codecs-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-controllers-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-converters-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-datasource-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-domain-class-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-filters-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-gsp-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-i18n-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-log4j-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-mimetypes-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-scaffolding-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-services-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-servlets-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-testing-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-tomcat-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-url-mappings-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-plugin-validation-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-resources-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-scripts-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-spring-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-test-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-test-suite-base-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-web-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-webflow-2.2.1.jar!/" />
+
+<root url="jar://C:\Users\Nitin\development\grails-2.2.1/dist/grails-wrapper-support-2.2.1.jar!/" />
+
+
+      </CLASSES>
+    </library>
+  </component>
+</project>
