@@ -1,0 +1,18 @@
+#!/bin/sh
+if test "z$GIT_DIR" = z; then
+  export GIT_DIR='/Users/Sanks/Dropbox/1] Key themes 1/emote/Developer/mobile web app/emote-lol GIThub/emote/.git'
+fi &&
+if test "z$GIT_WORK_TREE" = z; then
+  export GIT_WORK_TREE='/Users/Sanks/Dropbox/1] Key themes 1/emote/Developer/mobile web app/emote-lol GIThub/emote'
+fi &&
+if test "z$SSH_ASKPASS" = z; then
+  export SSH_ASKPASS='/opt/sm/pkg/versions/git/1.7.9.6/libexec/git-core/git-gui--askpass'
+fi &&
+if test "z$SSH_AUTH_SOCK" = z; then
+  export SSH_AUTH_SOCK='/tmp/launch-g2P6dS/Listeners'
+fi &&
+export PATH='/opt/sm/pkg/versions/git/1.7.9.6/libexec/git-core':$PATH &&
+cd '/Users/Sanks/Dropbox/1] Key themes 1/emote/Developer/mobile web app/emote-lol GIThub/emote' &&
+exec \
+ '/Applications/Git Gui.app/Contents/MacOS/Wish' \
+ '/opt/sm/pkg/versions/git/1.7.9.6/libexec/git-core/git-gui'
