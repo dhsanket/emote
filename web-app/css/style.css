@@ -38,7 +38,8 @@ a:visited {
 #global-nav {
   height: 55px;
   width: 100%;
-  border-radius: 8px;
+  /*border-radius: 8px;*/
+
   background-image: rgba(112, 181, 242, 0);
   background-image: -webkit-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
   background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
