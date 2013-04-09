@@ -12,3 +12,28 @@ legend a {
   display: inline-block;
   float: right;
 }
+/* media queries */
+/*  iPhone5, iPhone 4S, S3 --------------------------------  */
+@media screen and (max-width: 768px) {
+  form {
+    width: 700px;
+    margin: auto;
+  }
+  legend {
+    text-align: left;
+    padding-top: 10px;
+    width: 700px;
+  }
+}
+/*  iPad 3 1538x2048 --------------------------------  */
+@media screen and (min-width: 1536px) {
+  form {
+    width: 700px;
+    margin: auto;
+  }
+  legend {
+    text-align: left;
+    padding-top: 10px;
+    width: 700px;
+  }
+}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* gold #9a8a3d */
-/* maroon, #630215, #381212 OR active #f22626 */
+/* maroon, #454545, #630215, #381212 OR active #f22626 */
 /* silver */
 /* light brown */
 /* dark brown */
@@ -74,14 +74,9 @@ a:visited {
 .navbaro a:link img,
 .navbaro a:visited img {
   height: 30px;
-  border-radius: 5px;
 }
 .feed {
   background-color: #fcf8e3;
-  /*border: solid;
-border-color: #ddd;
-border-width: thin;*/
-
   color: #d41111;
 }
 .emote-howto,
@@ -93,35 +88,36 @@ border-width: thin;*/
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #c5aa6a;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 .item-section .user {
   float: right;
 }
-.user {
-  height: 2em;
+.item-section .user {
+  height: 40px;
   position: relative;
 }
-.user .avatar {
-  position: absolute;
-  right: 0;
+.item-section .user .avatar {
+  display: inline-block;
+  max-height: 100%;
+  float: right;
   margin: 2px;
-  height: 100%;
   border-radius: 0.25em;
 }
-.user .username {
-  position: absolute;
-  top: 90%;
-  right: 0;
+.item-section .user .username {
+  display: inline-block;
+  float: right;
   font-family: Arial, sans-serif;
   color: gray;
   font-weight: lighter;
   font-style: italic;
-  font-size: 0.75em;
+  font-size: 1.25em;
 }
 .item-section .item-title {
   font-family: "Georgia", sans-serif;
   margin-left: 5px;
-  font-size: 1em;
+  font-size: 2em;
   font-style: normal;
   font-weight: bold;
   font-variant: normal;
@@ -133,16 +129,14 @@ border-width: thin;*/
 }
 .emote-section .avatar {
   float: left;
-  height: 1.5em;
-  /*height:18px;
-width:18px; */
-
+  height: 2em;
   border-radius: 1em;
+  margin-top: 5px;
 }
 .emote-section .emote {
   display: inline-block;
   font-family: Sorts Mill Goudy, comic, sans-serif;
-  font-size: 0.90em;
+  font-size: 1.5em;
   /*line-height: 16px;*/
 
   font-weight: bold;
@@ -152,21 +146,28 @@ width:18px; */
   /* rgba(0,0,0,1) */
 
   margin: 2px 2px;
-  padding: 1px 1px;
-  color: #454545;
+  padding: 10px 1px 0 1px;
+  color: #d41111;
   /*border: 1px solid @EmoteTC;*/
 
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);*/
 
   /*.curvedbox;
 .inset;*/
 
 }
+.topic-section {
+  font-family: Sorts Mill Goudy, comic, sans-serif;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: #d41111;
+  vertical-align: middle;
+}
 .topic-section .topic {
   display: inline-block;
   font-family: Sorts Mill Goudy, comic, sans-serif;
-  font-size: 0.90em;
+  font-size: inherit;
   /*line-height: 16px;*/
 
   font-weight: bold;
@@ -176,11 +177,10 @@ width:18px; */
   /* rgba(0,0,0,1) */
 
   margin: 2px 2px;
-  padding: 1px 1px;
+  padding: 10px 1px 0 1px;
   color: #454545;
   /*border: 1px solid @EmoteTC;*/
 
-  vertical-align: baseline;
   /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);*/
 
   /*.curvedbox;
@@ -210,4 +210,135 @@ width:18px; */
   font-size: 0.8em;
   text-decoration: underline;
   /* border-top-style: solid; border-top-color: #ddd;*/
+}
+/* media queries */
+/*  iPhone5, iPhone 4S, S3 --------------------------------  */
+@media screen and (max-width: 768px) {
+  #container {
+    width: 100%;
+    padding-top: 100px;
+    /*max-width: 768px;*/
+  
+    margin: 0 auto;
+    height: 100%;
+    text-align: left;
+  }
+  #global-nav {
+    height: 100px;
+    width: 100%;
+    /*border-radius: 8px;*/
+  
+    background-image: rgba(112, 181, 242, 0);
+    background-image: -webkit-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  }
+  #global-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+  }
+  #global-nav ul li {
+    display: inline-block;
+    width: 19%;
+    text-align: center;
+  }
+  #global-nav ul li a:active,
+  #global-nav ul li a:link,
+  #global-nav ul li a:visited {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 15px;
+    color: inherit;
+    background-color: inherit;
+  }
+  #global-nav .friends form,
+  #global-nav .settings form {
+    width: 700px;
+    margin: auto;
+  }
+  #global-nav .friends legend,
+  #global-nav .settings legend {
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 700px;
+  }
+  .navbaro a:active,
+  .navbaro a:link,
+  .navbaro a:visited {
+    padding: 0px 0px;
+  }
+  .navbaro a:active img,
+  .navbaro a:link img,
+  .navbaro a:visited img {
+    height: 40px;
+  }
+}
+/*  iPad 3 1538x2048 --------------------------------  */
+@media screen and (min-width: 1536px) {
+  #container {
+    width: 100%;
+    padding-top: 100px;
+    /*max-width: 768px;*/
+  
+    margin: 0 auto;
+    height: 100%;
+    text-align: left;
+  }
+  #global-nav {
+    height: 100px;
+    width: 100%;
+    /*border-radius: 8px;*/
+  
+    background-image: rgba(112, 181, 242, 0);
+    background-image: -webkit-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+    background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  }
+  #global-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+  }
+  #global-nav ul li {
+    display: inline-block;
+    width: 19%;
+    text-align: center;
+  }
+  #global-nav ul li a:active,
+  #global-nav ul li a:link,
+  #global-nav ul li a:visited {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 15px;
+    color: inherit;
+    background-color: inherit;
+  }
+  .friends form,
+  .settings form {
+    width: 700px;
+    margin: auto;
+  }
+  .friends legend,
+  .settings legend {
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 700px;
+  }
+  .navbaro a:active,
+  .navbaro a:link,
+  .navbaro a:visited {
+    padding: 0px 0px;
+  }
+  .navbaro a:active img,
+  .navbaro a:link img,
+  .navbaro a:visited img {
+    height: 40px;
+  }
 }
