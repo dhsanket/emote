@@ -50,16 +50,15 @@ text-decoration: none;
 color: inherit;
 }
 
-
 #global-nav {
-  height: 55px;
+  height: 150px;
   width: 100%;
   /*border-radius: 8px;*/
   .gradient;
 
-  ul {list-style: none; padding: 0; margin:0;
+  ul {list-style: none; padding: 0; margin:0; margin-top: 40px;
   li {display: inline-block; width: 19%;
-  text-align: center;
+  text-align: center; 
     a:active,a:link,a:visited
         {
         text-decoration: none;
@@ -77,7 +76,7 @@ color: inherit;
     {
         padding: 0px 0px;
     img{
-    height: 30px;
+    height: 50px;
         }
     }
 }
@@ -85,6 +84,7 @@ color: inherit;
 .feed	 {
 background-color: @FeedBgC;
 color: @EmoteTC;
+font-size: 18px;
 }
 
 
@@ -98,8 +98,8 @@ text-align: center;
 border-bottom-style: solid;
 border-width: 1px;
 border-color: @ItemsectionBorderC;
-padding-top: 15px;
-padding-bottom: 20px;
+padding-top: 30px;
+padding-bottom: 30px;
 }
 
 
@@ -108,7 +108,7 @@ float: right;
 }
 
 .item-section .user{ 
-height: 40px;
+height: 60px;
 position: relative;
 }
 
@@ -134,6 +134,7 @@ font-size: 1.25em;
 font-family: @ItemF;
 margin-left: 5px; 
 font-size: 2em;
+line-height: 1em;
 font-style: normal;
 font-weight: bold;
 font-variant: normal;
@@ -142,14 +143,14 @@ color: @ItemTC;
 
 .emote-section, .topic-section 
 {
-	margin: 5px 5px 5px 15px ;
+margin: 5px 5px 5px 15px ;
+padding-top: 15px;
 }
 
 .emote-section .avatar{
 float: left;
 height: 2em;
 border-radius: 1em;
-margin-top: 5px;
 }
 
 .emote-section .emote{
@@ -165,7 +166,6 @@ margin: 2px 2px;
 padding: 10px 1px 0 1px;
 color: @EmoteTC;
 /*border: 1px solid @EmoteTC;*/
-vertical-align: text-bottom;
 /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);*/
 /*.curvedbox;
 .inset;*/
@@ -197,23 +197,6 @@ color: @TopicTC;
 .inset;*/
 }
 
-
-.friends, .settings {
-  form {
-  width: 350px;
-  margin: auto;
-}
-}
-
-.friends, .settings {
-  legend {
-  text-align: left;
-  padding-top: 10px;
-  margin-left: 10px;
-  width: 350px;
-}
-}
-
 .friends, .settings {
   legend a {
   display: inline-block;
@@ -228,41 +211,10 @@ color: @TopicTC;
 
 /* media queries */
 /*  iPhone5, iPhone 4S, S3 --------------------------------  */
-@media screen and (max-width: 900px){ /* 768px */
-
-
-#container {
-width: 100%; 
-padding-top: 100px;
-/*max-width: 768px;*/
-margin: 0 auto;
-height: 100%;
-text-align: left;
-}
- 
-#global-nav {
-  height: 100px;
-  width: 100%;
-  /*border-radius: 8px;*/
-  .gradient;
-
-  ul {list-style: none; padding: 0; margin:0; margin-top: 20px;
-  li {display: inline-block; width: 19%;
-  text-align: center; 
-    a:active,a:link,a:visited
-        {
-        text-decoration: none;
-        display: inline-block;
-        padding: 15px 15px;
-        color: inherit;
-        background-color: inherit;
-        }
-      }
-      }
-
+@media screen and (max-width: 890px){ /* 768px */
 .friends, .settings {
   form {
-  width: 700px;
+  width: 450px;
   margin: auto;
 }
 }
@@ -272,61 +224,18 @@ text-align: left;
   text-align: left;
   padding-top: 10px;
   margin-left: 10px;
-  width: 700px;
+  width: 450px;
 }
-}
-
-}
-
-.navbaro {
-    a:active,a:link,a:visited
-    {
-        padding: 0px 0px;
-    img{
-    height: 40px;
-        }
-    }
 }
 
 }
 
 /*  iPad 3 1538x2048 --------------------------------  */
-@media screen and (min-width: 1536px){
-
-
-#container {
-width: 100%; 
-padding-top: 100px;
-/*max-width: 768px;*/
-margin: 0 auto;
-height: 100%;
-text-align: left;
-}
- 
-#global-nav {
-  height: 100px;
-  width: 100%;
-  /*border-radius: 8px;*/
-  .gradient;
-
-  ul {list-style: none; padding: 0; margin:0; margin-top: 20px;
-  li {display: inline-block; width: 19%;
-  text-align: center; 
-    a:active,a:link,a:visited
-        {
-        text-decoration: none;
-        display: inline-block;
-        padding: 15px 15px;
-        color: inherit;
-        background-color: inherit;
-        }
-      }
-      }
-}
+@media screen and (min-width: 900px){
 
 .friends, .settings {
   form {
-  width: 700px;
+  width: 1200px;
   margin: auto;
 }
 }
@@ -336,19 +245,8 @@ text-align: left;
   text-align: left;
   padding-top: 10px;
   margin-left: 10px;
-  width: 700px;
+  width: 1200px;
 }
-}
-
-
-.navbaro {
-    a:active,a:link,a:visited
-    {
-        padding: 0px 0px;
-    img{
-    height: 40px;
-        }
-    }
 }
 
 }
