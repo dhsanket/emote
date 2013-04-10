@@ -41,7 +41,7 @@ a:visited {
   color: inherit;
 }
 #global-nav {
-  height: 50px;
+  height: 60px;
   width: 100%;
   position: fixed;
   right: 0;
@@ -62,8 +62,9 @@ a:visited {
 #global-nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 0px;
+  margin: auto;
+  position: absolute;
+  top: 5px;
 }
 #global-nav ul li {
   display: inline-block;
@@ -75,7 +76,7 @@ a:visited {
 #global-nav ul li a:visited {
   text-decoration: none;
   display: inline-block;
-  padding: 12px 20px;
+  padding: 15px 20px;
   color: inherit;
   background-color: inherit;
 }
@@ -92,12 +93,7 @@ a:visited {
 .feed {
   color: #d41111;
   font-size: 16px;
-  padding-top: 50px;
-}
-.emote-howto,
-.settings {
-  margin-left: 10px;
-  text-align: center;
+  padding-top: 60px;
 }
 .item-section {
   border-bottom-style: solid;
@@ -107,17 +103,17 @@ a:visited {
   padding-bottom: 15px;
 }
 .item-section .user {
-  float: right;
-}
-.item-section .user {
-  height: 40px;
+  height: 30px;
   position: relative;
+  float: right;
+  margin: 2px;
+  display: inline-block;
 }
 .item-section .user .avatar {
   display: inline-block;
   max-height: 100%;
   float: right;
-  margin: 2px;
+  margin-right: 2px;
   border-radius: 0.25em;
 }
 .item-section .user .username {
@@ -128,6 +124,7 @@ a:visited {
   font-weight: lighter;
   font-style: italic;
   font-size: 0.75em;
+  margin: 2px;
 }
 .item-section .item-title {
   font-family: "Georgia", sans-serif;
@@ -148,7 +145,7 @@ a:visited {
 }
 .emote-section .avatar {
   float: left;
-  height: 3em;
+  height: 30px;
   border-radius: 2em;
   display: inline-block;
 }
@@ -211,6 +208,11 @@ a:visited {
 .settings legend a {
   display: inline-block;
   float: right;
+}
+.emote-howto,
+.settings {
+  margin-left: 10px;
+  text-align: center;
 }
 .copywright {
   color: gray;

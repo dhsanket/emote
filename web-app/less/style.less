@@ -57,7 +57,7 @@ color: inherit;
 }
 
 #global-nav {
-  height: 50px;
+  height: 60px;
   width: 100%;
   position: fixed;
   right: 0;
@@ -68,14 +68,14 @@ color: inherit;
   .gradient;
   .bottom_shadow;
 
-  ul {list-style: none; padding: 0; margin:0; margin-top: 0px;
+  ul {list-style: none; padding: 0; margin: auto; position: absolute; top:5px;
   li {display: inline-block; width: 19%;
   text-align: center; 
     a:active,a:link,a:visited
         {
         text-decoration: none;
         display: inline-block;
-        padding: 12px 20px;
+        padding: 15px 20px;
         color: inherit;
         background-color: inherit;
         }
@@ -94,17 +94,11 @@ color: inherit;
 }
 
 .feed	 {
-
 color: @EmoteTC;
 font-size: 16px;
-padding-top: 50px;
+padding-top: 60px;
 }
 
-
-.emote-howto, .settings{
-margin-left: 10px;
-text-align: center;
-}
 
 
 .item-section{
@@ -115,21 +109,19 @@ padding-top: 15px;
 padding-bottom: 15px;
 }
 
-
-.item-section .user{
-float: right;
-}
-
 .item-section .user{ 
-height: 40px;
+height: 30px;
 position: relative;
+float: right;
+margin: 2px;
+display: inline-block;
 }
 
 .item-section .user .avatar{
 display: inline-block;
 max-height: 100%;  
 float: right;
-margin: 2px;
+margin-right: 2px;
 border-radius: 0.25em; 
 }
 
@@ -141,6 +133,7 @@ color: gray;
 font-weight: lighter;
 font-style: italic; 
 font-size: 0.75em;
+margin: 2px;
 }
 
 .item-section .item-title{
@@ -164,7 +157,7 @@ position: relative;
 
 .emote-section .avatar{
 float: left;
-height: 3em;
+height: 30px;
 border-radius: 2em;
 display: inline-block;
 }
@@ -218,6 +211,12 @@ color: @TopicTC;
   float: right;
 }
 }
+}
+
+
+.emote-howto, .settings{
+margin-left: 10px;
+text-align: center;
 }
 
 
