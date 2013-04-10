@@ -86,11 +86,9 @@ gutter = 2px;
 }
 #container {
   width: 100%;
-  padding-top: 150px;
   /*max-width: 768px;*/
 
   margin: 0 auto;
-  height: 100%;
   text-align: left;
 }
 .clear {

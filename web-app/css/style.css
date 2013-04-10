@@ -5,7 +5,7 @@
 /* light brown */
 /* dark brown */
 /* light blue #CFF   */
-/* cream OR Grey #eee #fffefe #e7e7e7 #FFFAF7 */
+/*@FeedBgC: ;*//* cream #fcf8e3, OR Grey #eee #fffefe #e7e7e7 #FFFAF7 */
 /* Gold OR Light Grey #d2d4dc */
 /*@EmoteBorderC: #d41111;
 @TopicBorderC: #d41111;*/
@@ -15,6 +15,11 @@
   background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
   background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
   background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+}
+.bottom_shadow {
+  -webkit-box-shadow: 0 1px 3px #221919;
+  -ms-box-shadow: 0 1px 3px #221919;
+  box-shadow: 0 1px 3px #221919;
 }
 /*
 .curvedbox{
@@ -36,8 +41,13 @@ a:visited {
   color: inherit;
 }
 #global-nav {
-  height: 150px;
+  height: 70px;
   width: 100%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
   /*border-radius: 8px;*/
 
   background-image: #d41111;
@@ -45,12 +55,15 @@ a:visited {
   background-image: -moz-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
   background-image: -o-linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
   background-image: linear-gradient(top, #520000 0%, #740000 2%, #a40000 100%);
+  -webkit-box-shadow: 0 1px 3px #221919;
+  -ms-box-shadow: 0 1px 3px #221919;
+  box-shadow: 0 1px 3px #221919;
 }
 #global-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 #global-nav ul li {
   display: inline-block;
@@ -62,7 +75,7 @@ a:visited {
 #global-nav ul li a:visited {
   text-decoration: none;
   display: inline-block;
-  padding: 15px 15px;
+  padding: 20px 20px;
   color: inherit;
   background-color: inherit;
 }
@@ -74,12 +87,12 @@ a:visited {
 .navbaro a:active img,
 .navbaro a:link img,
 .navbaro a:visited img {
-  height: 50px;
+  height: 30px;
 }
 .feed {
-  background-color: #fcf8e3;
   color: #d41111;
-  font-size: 18px;
+  font-size: 16px;
+  padding-top: 70px;
 }
 .emote-howto,
 .settings {
@@ -90,14 +103,14 @@ a:visited {
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #c5aa6a;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .item-section .user {
   float: right;
 }
 .item-section .user {
-  height: 60px;
+  height: 40px;
   position: relative;
 }
 .item-section .user .avatar {
@@ -114,32 +127,35 @@ a:visited {
   color: gray;
   font-weight: lighter;
   font-style: italic;
-  font-size: 1.25em;
+  font-size: 0.75em;
 }
 .item-section .item-title {
   font-family: "Georgia", sans-serif;
   margin-left: 5px;
-  font-size: 2em;
+  font-size: 1.25em;
   line-height: 1em;
   font-style: normal;
   font-weight: bold;
   font-variant: normal;
   color: #9a8a3d;
+  padding-bottom: 5px;
 }
 .emote-section,
 .topic-section {
   margin: 5px 5px 5px 15px ;
-  padding-top: 15px;
+  padding-top: 5px;
+  position: relative;
 }
 .emote-section .avatar {
   float: left;
-  height: 2em;
-  border-radius: 1em;
+  height: 3em;
+  border-radius: 2em;
+  display: inline-block;
 }
 .emote-section .emote {
   display: inline-block;
   font-family: Sorts Mill Goudy, comic, sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   /*line-height: 16px;*/
 
   font-weight: bold;
@@ -161,14 +177,12 @@ a:visited {
 }
 .topic-section {
   font-family: Sorts Mill Goudy, comic, sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bolder;
   color: #d41111;
-  vertical-align: middle;
 }
 .topic-section .topic {
   display: inline-block;
-  font-family: Sorts Mill Goudy, comic, sans-serif;
   font-size: inherit;
   /*line-height: 16px;*/
 
@@ -189,6 +203,10 @@ a:visited {
 .inset;*/
 
 }
+.friends legend,
+.settings legend {
+  padding-bottom: 1.5em;
+}
 .friends legend a,
 .settings legend a {
   display: inline-block;
@@ -207,7 +225,7 @@ a:visited {
   /* 768px */
   .friends form,
   .settings form {
-    width: 400px;
+    width: 350px;
     margin: auto;
   }
   .friends legend,
@@ -215,7 +233,7 @@ a:visited {
     text-align: left;
     padding-top: 10px;
     margin-left: 10px;
-    width: 400px;
+    width: 350px;
   }
 }
 /*  iPad 3 1538x2048 --------------------------------  */

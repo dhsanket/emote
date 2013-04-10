@@ -9,7 +9,7 @@
 @NavBgCActive: #4c3c3c; /* dark brown */
 @EmoteBgC: #CFF; /* light blue #CFF   */
 @TopicBgC: #ddd;
-@FeedBgC: #fcf8e3; /* cream OR Grey #eee #fffefe #e7e7e7 #FFFAF7 */
+/*@FeedBgC: ;*/ /* cream #fcf8e3, OR Grey #eee #fffefe #e7e7e7 #FFFAF7 */
 
 @FeedBorderC: #c5aa6a; /* Gold OR Light Grey #d2d4dc */
 @ItemsectionBorderC: #c5aa6a;
@@ -28,6 +28,12 @@
     background-image: -moz-linear-gradient(top, #520000 0%,rgb(116,0,0) 2%,#a40000 100%);
     background-image: -o-linear-gradient(top, #520000 0%,rgb(116,0,0) 2%,#a40000 100%);
     background-image: linear-gradient(top, #520000 0%,rgb(116,0,0) 2%,#a40000 100%);
+}
+
+.bottom_shadow{
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 1);
+-ms-box-shadow: 0 1px 3px rgba(34,25,25,1);
+box-shadow: 0 1px 3px rgba(34, 25, 25, 1);
 }
 
 /*
@@ -51,19 +57,25 @@ color: inherit;
 }
 
 #global-nav {
-  height: 150px;
+  height: 70px;
   width: 100%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
   /*border-radius: 8px;*/
   .gradient;
+  .bottom_shadow;
 
-  ul {list-style: none; padding: 0; margin:0; margin-top: 40px;
+  ul {list-style: none; padding: 0; margin:0; margin-top: 0px;
   li {display: inline-block; width: 19%;
   text-align: center; 
     a:active,a:link,a:visited
         {
         text-decoration: none;
         display: inline-block;
-        padding: 15px 15px;
+        padding: 20px 20px;
         color: inherit;
         background-color: inherit;
         }
@@ -76,15 +88,16 @@ color: inherit;
     {
         padding: 0px 0px;
     img{
-    height: 50px;
+    height: 30px;
         }
     }
 }
 
 .feed	 {
-background-color: @FeedBgC;
+
 color: @EmoteTC;
-font-size: 18px;
+font-size: 16px;
+padding-top: 70px;
 }
 
 
@@ -98,8 +111,8 @@ text-align: center;
 border-bottom-style: solid;
 border-width: 1px;
 border-color: @ItemsectionBorderC;
-padding-top: 30px;
-padding-bottom: 30px;
+padding-top: 15px;
+padding-bottom: 15px;
 }
 
 
@@ -108,7 +121,7 @@ float: right;
 }
 
 .item-section .user{ 
-height: 60px;
+height: 40px;
 position: relative;
 }
 
@@ -127,36 +140,39 @@ font-family: @UserF;
 color: gray; 
 font-weight: lighter;
 font-style: italic; 
-font-size: 1.25em;
+font-size: 0.75em;
 }
 
 .item-section .item-title{
 font-family: @ItemF;
 margin-left: 5px; 
-font-size: 2em;
+font-size: 1.25em;
 line-height: 1em;
 font-style: normal;
 font-weight: bold;
 font-variant: normal;
 color: @ItemTC;
+padding-bottom: 5px;
 }
 
 .emote-section, .topic-section 
 {
 margin: 5px 5px 5px 15px ;
-padding-top: 15px;
+padding-top: 5px;
+position: relative;
 }
 
 .emote-section .avatar{
 float: left;
-height: 2em;
-border-radius: 1em;
+height: 3em;
+border-radius: 2em;
+display: inline-block;
 }
 
 .emote-section .emote{
 display: inline-block;
 font-family: @EmoteF;
-font-size: 1.5em;
+font-size: 1em;
 /*line-height: 16px;*/
 font-weight: bold;
 letter-spacing: -0.5px;
@@ -173,15 +189,13 @@ color: @EmoteTC;
 
 .topic-section {
  font-family: @EmoteF; 
- font-size: 1.5em;
+ font-size: 1em;
  font-weight: bolder;
  color: @EmoteTC;
- vertical-align: middle;
 }
 
 .topic-section .topic{
 display: inline-block;
-font-family: @EmoteF;
 font-size: inherit;
 /*line-height: 16px;*/
 font-weight: bold;
@@ -198,9 +212,11 @@ color: @TopicTC;
 }
 
 .friends, .settings {
-  legend a {
+  legend {padding-bottom: 1.5em;
+  a {
   display: inline-block;
   float: right;
+}
 }
 }
 
@@ -214,7 +230,7 @@ color: @TopicTC;
 @media screen and (max-width: 890px){ /* 768px */
 .friends, .settings {
   form {
-  width: 400px;
+  width: 350px;
   margin: auto;
 }
 }
@@ -224,7 +240,7 @@ color: @TopicTC;
   text-align: left;
   padding-top: 10px;
   margin-left: 10px;
-  width: 400px;
+  width: 350px;
 }
 }
 

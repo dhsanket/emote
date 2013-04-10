@@ -1,0 +1,14 @@
+@charset "UTF-8";
+form {
+  width: 300px;
+  margin: auto;
+}
+legend {
+  text-align: left;
+  padding-top: 10px;
+  width: 300px;
+}
+legend a {
+  display: inline-block;
+  float: right;
+}
