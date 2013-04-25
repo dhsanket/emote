@@ -1,4 +1,4 @@
-package emote
+package com.emote
 
 
 
@@ -8,8 +8,8 @@ import org.junit.*
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(UserController)
-class UserControllerTests {
+@TestFor(EmoteController)
+class EmoteControllerTests {
 
     void testSomething() {
        fail "Implement me"
