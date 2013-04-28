@@ -22,6 +22,9 @@ environments {
 	production {
 		mongo {
 			dbCreate = "update"
+			databaseName = "app14660500"
+			host = "linus.mongohq.com"
+			port = 10081
 		}
 	}
 }
