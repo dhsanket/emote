@@ -20,3 +20,8 @@
   padding-bottom: 20px;
   width: 300px;
 }
+#signin btn {
+ height: 10px;
+ width: auto;
+ vertical-align: middle;
+}

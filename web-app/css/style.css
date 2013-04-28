@@ -214,6 +214,9 @@ a:visited {
   margin-left: 10px;
   text-align: center;
 }
+.item-timestamp{
+font-size: 0.4em;	
+}
 .copywright {
   color: gray;
   font-family: arial;
