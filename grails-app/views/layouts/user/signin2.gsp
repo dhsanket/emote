@@ -7,10 +7,10 @@
 		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		
-		<link href="../css/normalize.css" rel="stylesheet" type="text/css">
-		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="../css/grid.css" rel="stylesheet" type="text/css" />
-		<link href="../css/signin.css" rel="stylesheet" type="text/css" />
+		<link href="css/normalize.css" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/grid.css" rel="stylesheet" type="text/css" />
+		<link href="css/signin.css" rel="stylesheet" type="text/css" />
 
 		<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
         

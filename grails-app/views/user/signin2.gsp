@@ -7,6 +7,7 @@
 	       <g:if test="${flash.message!= null} ">
 	       		${flash.message} 
 	       </g:if>
+	       <img src="img/signin-logo.png" >
 	    	<g:form action="doSignin">
 	    		Email: <g:textField name="email" /><br/>
 	    		passcode: <g:passwordField name="passcode" /><br/>
