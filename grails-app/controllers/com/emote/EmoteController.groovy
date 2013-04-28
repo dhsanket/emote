@@ -23,7 +23,10 @@ class EmoteController {
 		redirect(action:'search')
 	}
 	
-	def feed(){}
+	def feed(){
+		def emotes = Emote.list(max:10, sort:"creationTime", order:"desc")
+		flash.emotes = emotes
+	}
 	
 	def search(){
 	}

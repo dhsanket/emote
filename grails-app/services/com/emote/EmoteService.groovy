@@ -14,7 +14,7 @@ class EmoteService {
 		def query = Emote.where{
 			topics == keyword
 		}
-		def qresults = query.findAll()
+		def qresults = Emote.findAllByTopicsIlike("%"+keyword+"%")
 		log.info "found emotes by topic ${qresults}"
 		
 		if(qresults != null)
@@ -23,7 +23,7 @@ class EmoteService {
 		query = Emote.where{
 			title == keyword
 		}
-		qresults = query.findAll()
+		qresults = Emote.findAllByTitleIlike("%"+keyword+"%")
 		
 		log.info "found emotes by title ${qresults}"
 		if(qresults != null)

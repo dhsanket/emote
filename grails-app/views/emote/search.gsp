@@ -3,10 +3,9 @@
 
     </head>
     <body>
-        <div class="grid_22 emote-howto">
-		    <div class="item-section grid_23 omega">
-		    
-	          <g:form class="form-search" action="doSearch" controller="emote" >
+		    <br>
+		    <br>
+	          <g:form align="center" class="form-search" action="doSearch" controller="emote" >
 		          <div class="input-append">
 		          <g:textField name="keyword" class="span2 search-query"/>
 		          <g:submitButton name="submit" class="btn" />
@@ -15,6 +14,7 @@
 			
 			<g:if test="${flash.emotes != null}">
 				<g:each in="${flash.emotes}" var="emote">
+		    <div class="item-section grid_23 omega">
 			          <div class="user grid_5 omega">
 			            <img class= "avatar" src="../img/e5.png" href="http://www.emote-lol.com"> 
 			            <a class="username"> ${emote.username}</a>
@@ -38,13 +38,13 @@
           			</div>
 		          <div class="item-gps">
 		          </div>
-		          <div class="item-timestamp">${emote.creationTime}
+		          <div class="item-timestamp pull-right">${emote.creationTime}
           			</div>
-					
+				</div>	
 				</g:each>
 			</g:if>	
-       	</div>
-       </div>
+       
+
     </body>
     
 </html>
