@@ -5,15 +5,32 @@ class EmoteController {
 	EmoteService emoteService
 
     def create() {
-//		User user = session.user
-//		println "logged user is ${user.id}"
-//		topics = params.topic.split("\\")
-//		expressions = params.expression.split("/")
-//		Emote emote = new Emote(userId:user.id, )
 		
+	}
+	
+	def save(){
+		User user = session.user
+		if(user == null){
+			redirect(controller:'user' , action:'signin2')
+		}
+		println "logged user is ${user.id}"
+		def topics = params.topic.split("/")
+		def expressions = params.expression.split("\\\\")
+		def username = user.firstName+" "+user.lastName
+		Emote emote = new Emote(userId:user.id, username:username, topics:topics, expressions:expressions, title:params.title )
+		emoteService.create(emote)
+		redirect(action:'search')
 	}
 	
 	def feed(){}
 	
-	def search(){}
+	def search(){
+	}
+	
+	def doSearch(){
+		def emotes = emoteService.search(params.keyword)
+		flash.emotes = emotes
+		redirect(action:'search')
+
+	}
 }

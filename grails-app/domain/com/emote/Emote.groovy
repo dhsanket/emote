@@ -2,6 +2,7 @@ package com.emote
 
 import java.util.Set;
 
+
 class Emote {
 
     static constraints = {
@@ -12,12 +13,16 @@ class Emote {
 	
 	String id
 	String userId
+	String username;
 	Set<String> topics = []
 	Set<String> expressions = []
 	String title
 	Set<String> photos = []
 	// geo-location
 	String locationName = ""
+	
+	//todo use joda time
+	Date creationTime = new Date()
 
 
 }

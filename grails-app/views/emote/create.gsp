@@ -4,7 +4,7 @@
     </head>
     <body>
         <div class="grid_22 emote-howto">
-          <g:form action="create" controller="emote">
+          <g:form action="save" controller="emote">
             <fieldset>
               <legend>Create your emote\o/ below...</legend>
 
