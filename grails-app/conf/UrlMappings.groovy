@@ -7,7 +7,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/signin")
+		"/"(controller:"user", action:"signin2")
 		"500"(view:'/error')
 	}
 }

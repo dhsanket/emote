@@ -12,8 +12,9 @@ class EmoteController {
 		User user = session.user
 		if(user == null){
 			redirect(controller:'user' , action:'signin2')
+			return;
 		}
-		println "logged user is ${user.id}"
+		log.info "logged user is ${user.id}"
 		def topics = params.topic.split("/")
 		def expressions = params.expression.split("\\\\")
 		def username = user.firstName+" "+user.lastName

@@ -7,6 +7,7 @@ class UserService {
     }
 	
 	def findByEmail(String emailId) {
+		log.info "Finding user using email ${emailId}"
 		return User.findByEmail(emailId)
 	}
 

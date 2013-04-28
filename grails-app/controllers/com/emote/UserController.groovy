@@ -17,6 +17,7 @@ class UserController {
 	}
 	
 	def doSignin(){
+		
 		User user = userService.findByEmail(params.email)
 		
 		if(user == null){
@@ -25,6 +26,7 @@ class UserController {
 			return
 		}
 		if(user.passcode.equals(params.passcode)){
+			session.user = user
 			redirect(controller:'emote',action:'feed')
 			return
 		}
