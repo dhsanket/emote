@@ -4,6 +4,9 @@ grails {
 		dbCreate = "update"
 		host = "linus.mongohq.com"
 		port = 10081
+		username = "emote-app"
+		password = "Emote-101"
+
 
 	}
   }
@@ -13,8 +16,6 @@ environments {
 	development {
 		mongo {
 			dbCreate = "update"
-			host = "linus.mongohq.com"
-			port = 10081
 
 		}
 	}
