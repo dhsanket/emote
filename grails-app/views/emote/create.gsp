@@ -17,13 +17,8 @@
               <span class="help-block">(emotes are adjectives which highlight qualities of the things you experience \o/) </span>
 
               <label> "/" each topic key word goes after a forward slash </label>
-              <g:textField name="topic" placeholder="/movie /thriller /big budget..." />
+              <g:textField name="topic" placeholder="/movie /cricket" />
               <span class="help-block"></span>
-              <br>
-              <label class="checkbox pull-left">
-                <input type="checkbox"> Append location
-              </label>
-              <br>
               <br>
               <g:submitButton class="btn btn-large grid_15" name="Shout your emote!"/>
             </fieldset>
