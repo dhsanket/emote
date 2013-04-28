@@ -1,6 +1,10 @@
 grails {
 	mongo {
 		databaseName = "app14660500"
+		dbCreate = "update"
+		host = "linus.mongohq.com"
+		port = 10081
+
 	}
   }
 
