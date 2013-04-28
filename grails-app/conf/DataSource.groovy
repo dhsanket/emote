@@ -1,6 +1,6 @@
 grails {
 	mongo {
-	  databaseName = "emote"
+		databaseName = "app14660500"
 	}
   }
 
@@ -8,9 +8,10 @@ grails {
 environments {
 	development {
 		mongo {
-			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			host = "localhost"
-			port = 27017
+			dbCreate = "update"
+			host = "linus.mongohq.com"
+			port = 10081
+
 		}
 	}
 	test {
@@ -21,10 +22,6 @@ environments {
 	}
 	production {
 		mongo {
-			dbCreate = "update"
-			databaseName = "app14660500"
-			host = "linus.mongohq.com"
-			port = 10081
 		}
 	}
 }
