@@ -16,6 +16,23 @@ class UserController {
 		
 	}
 	
+	def doSignin(){
+		User user = userService.findByEmail(params.email)
+		
+		if(user == null){
+			flash.message = "Oops! seems we havn't set you up yet. Pls email us on sanketd367@gmail.com"
+			redirect (action:'signin2')
+			return
+		}
+		if(user.passcode.equals(params.passcode)){
+			redirect(controller:'emote',action:'feed')
+			return
+		}
+		flash.message = "Error! pls check your passcode again."
+		redirect (action:'signin2')
+
+	}
+	
 	def invite(){
 		User user = userService.findByFBId(session.facebook.uid)
 		if(user == null){
@@ -45,6 +62,14 @@ class UserController {
 			[fbFriends:result.data]
 		}
 		
-}
+	}
 	
+	def settings(){
+		
+	}
+	
+	def profile(){
+		
+		
+	}
 }

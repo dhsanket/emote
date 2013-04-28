@@ -12,5 +12,6 @@ class User {
 	String [] followingTopics = [];
 	String profilePhotoId = ""
 	boolean publishToFBWall = false
+	String passcode
 
 }

@@ -24,8 +24,8 @@
 				              <li><g:link controller="emote" action="feed"><i class="icon-home"></i></g:link></li>
 				              <li><a href="search.html"><g:link controller="emote" action="search"><i class="icon-search"></i></g:link></li>
 				              <li class="navbaro"><g:link controller="emote" action="create"><img src="../img/emote.png"></g:link></li>
-				              <li><a href="profile.html"><i class="icon-user"></i></a></li>
-				              <li><a href="settings.html"><i class="icon-cog"></i></a></li>
+				              <li><g:link controller="user" action="profile"><i class="icon-user"></i></g:link></li>
+				              <li><g:link controller="user" action="settings"><i class="icon-cog"></i></g:link></li>
 				      </ul>
 				  </div>
 	             <div class="feed grid_23 omega">

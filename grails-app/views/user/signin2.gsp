@@ -4,11 +4,12 @@
     </head>
     <body>
 	    <div id="signin">
-	    	<g:form action="invite">
-	    		First Name: <g:textField name="name" /><br/>
-	    		Last Name: <g:textField name="surname" /><br/>
-				Facebook id: <g:textField name="fbId" /><br/>    		
-	    		Email: <g:textField name="emailId"/><br/>
+	       <g:if test="${flash.message!= null} ">
+	       		${flash.message} 
+	       </g:if>
+	    	<g:form action="doSignin">
+	    		Email: <g:textField name="email" /><br/>
+	    		passcode: <g:passwordField name="passcode" /><br/>
 	    		<g:submitButton name="signin" value="Signin"/>
 	    	</g:form>
 	    <div id="signin">
