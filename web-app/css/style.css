@@ -120,6 +120,7 @@ a:visited {
   display: inline-block;
   float: right;
   font-family: Arial, sans-serif;
+  text-align: right;
   color: gray;
   font-weight: lighter;
   font-style: italic;
@@ -215,13 +216,13 @@ a:visited {
   text-align: center;
 }
 .item-timestamp{
-font-size: 0.4em;	
+font-size: 0.6em;	
 }
 .copywright {
   color: gray;
   font-family: arial;
   font-size: 0.8em;
-  text-decoration: underline;
+  text-decoration: none;
   /* border-top-style: solid; border-top-color: #ddd;*/
 }
 /* media queries */

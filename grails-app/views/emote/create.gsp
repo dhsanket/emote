@@ -3,28 +3,29 @@
 
     </head>
     <body>
+    <div class="item-section grid_23 omega">
         <div class="grid_22 emote-howto">
           <g:form action="save" controller="emote">
             <fieldset>
               <legend>Create your emote\o/ below...</legend>
 
-              <label>Item title needs to be in between quotes</label>
-              <g:textField name="title" placeholder=" 'Title' "/>
+              <label>Item-title is the specific subject/item you want share an emote about</label>
+              <g:textField name="title" placeholder="Item-title "/>
               <span class="help-block"></span>
 
-              <label>  "\" each emote goes after a back slash <br> </label>
+              <label>  emotes are adjectives which highlight qualities of the things you experience <br> </label>
               <g:textField name="expression" placeholder="\\amazing \\unpredictable..." />
-              <span class="help-block">(emotes are adjectives which highlight qualities of the things you experience \o/) </span>
+              <%--<span class="help-block">("\" each emote goes after a back slash) </span>--%>
 
-              <label> "/" each topic key word goes after a forward slash </label>
+              <label> Topic('s) </label>
               <g:textField name="topic" placeholder="/movie /cricket" />
-              <span class="help-block"></span>
+              <%--<span class="help-block"> ("/" each topic key word goes after a forward slash)</span>--%>
               <br>
-              <g:submitButton class="btn btn-large grid_15" name="Shout your emote!"/>
+              <g:submitButton class="btn btn-large grid_15" name="emote\\o/"/>
             </fieldset>
           </g:form>
        </div>
-
+	</div>
     </body>
     
 </html>

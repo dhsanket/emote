@@ -182,3 +182,13 @@ web-app/WEB-INF/tld/fmt.tld
 .class
 target/*
 target-eclipse/classes/*.class
+
+*.class
+
+*.class
+
+*.class
+
+*.class
+
+*.class

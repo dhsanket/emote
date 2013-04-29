@@ -31,7 +31,7 @@
 	             <div class="feed grid_23 omega">
 	                <g:layoutBody />
 	             </div>
-	             <div class="copywright grid_23">All rights reserved - emote\o/&copy 2013</div>
+	             <div class="copywright grid_23"> Designed on the Thames-link; Built with care in Bedfordshire, England; Yours to use everywhere! <br> emote\o/&copy 2013</div>
               
             </div>
         <fbg:resources/>
