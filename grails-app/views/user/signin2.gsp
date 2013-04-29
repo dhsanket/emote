@@ -10,10 +10,11 @@
 	       </g:if>
 	    	<g:form action="doSignin">
 	    		Email: <g:textField name="email" placeholder="lowercase"/><br/>
-	    		passcode: <g:passwordField name="passcode" placeholder="lowercase"/><br/>
-	    		<g:submitButton class="btn btn-block btn-primary" name="signin" value="Signin"/>
+	    		Passcode: <g:passwordField name="passcode" placeholder="lowercase"/><br/>
+	    		Please do not discuss or share information about emote\o/ with others as we are still in early development and not ready for public release. We appreciate your feedback and cooperation. Press button below to agree and signin.
+	    		<g:submitButton class="btn btn-primary btn-block" name="signin" value="Signin"/>
 	    	</g:form>
-	    <div id="signin">
+	    </div>
     </body>
     
 </html>

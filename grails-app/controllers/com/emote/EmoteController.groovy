@@ -20,7 +20,8 @@ class EmoteController {
 		def username = user.firstName+" "+user.lastName
 		Emote emote = new Emote(userId:user.id, username:username, topics:topics, expressions:expressions, title:params.title )
 		emoteService.create(emote)
-		redirect(action:'search')
+		
+		redirect(action:'feed')
 	}
 	
 	def feed(){
