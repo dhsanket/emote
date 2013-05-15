@@ -8,18 +8,20 @@ class EmoteController {
 		
 	}
 	
-	def save(){
+	def save(EmoteCommand emote){
 		User user = session.user
 		if(user == null){
 			redirect(controller:'user' , action:'signin2')
 			return;
 		}
 		log.info "logged user is ${user.id}"
-		def topics = params.topic.split("/")
-		def expressions = params.expression.split("\\\\")
-		def username = user.firstName+" "+user.lastName
-		Emote emote = new Emote(userId:user.id, username:username, topics:topics, expressions:expressions, title:params.title )
-		emoteService.create(emote)
+		
+		if(emote.hasErrors()){
+			render view:'create', model:[emote:emote]
+			return
+		}
+		
+		emoteService.create(emote, user)
 		
 		redirect(action:'feed')
 	}

@@ -6,6 +6,7 @@ import java.util.Set;
 class Emote {
 
 	static constraints = {
+		title blank:false
 	}
 	static mapping = {
 		topics index:true

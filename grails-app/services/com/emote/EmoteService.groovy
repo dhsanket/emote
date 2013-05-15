@@ -2,7 +2,13 @@ package com.emote
 
 class EmoteService {
 
-	def create(Emote emote) {
+	def create(EmoteCommand emoteCmd, User user) {
+		def username = user.firstName+" "+user.lastName
+		Emote emote = new Emote(
+			userId:user.id, username:username, topics:emoteCmd.topics, 
+			expressions:emoteCmd.expressions, title:emoteCmd.title 
+			)
+		
 		
 		def nonEmptyTopics = []
 		emote.topics.each{ topic ->
@@ -21,7 +27,7 @@ class EmoteService {
 
 		emote.topics = nonEmptyTopics
 		
-		emote.save(true)
+		emote.save(validate: true)
 	}
 	
 	Set<Emote> search(String keyword){
