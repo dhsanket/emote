@@ -8,7 +8,7 @@
 	       <g:if test="${flash.message!= null} ">
 	       		${flash.message} 
 	       </g:if>
-	    	<g:form action="doSignin">
+	    	<g:form action="signinAction">
 	    		Email: <g:textField name="email" placeholder="lowercase"/><br/>
 	    		Passcode: <g:passwordField name="passcode" placeholder="lowercase"/><br/>
 	    		Please do not discuss or share information about emote\o/ with others as we are still in early development and not ready for public release. We appreciate your feedback and cooperation. Press button below to agree and signin.

@@ -5,7 +5,7 @@
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
 						// logged in and connected user, someone you know
-						window.location ="${createLink(controller:'user', action:'invite')}";
+						window.location ="${createLink(controller:'user', action:'signinAndInvite')}";
 					}else{
 						window.location ="${createLink(controller:'user', action:'error')}";			
 					}

@@ -17,5 +17,6 @@ class UserService {
 			firstName:name, lastName:lastname, email:emailId
 			)
 		user.save()
+		return user
 	}
 }
