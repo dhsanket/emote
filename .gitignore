@@ -192,3 +192,4 @@ target-eclipse/classes/*.class
 *.class
 
 *.class
+/target-eclipse
