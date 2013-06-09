@@ -14,7 +14,7 @@
 		</script>    
     </head>
     <body>
-			<div id="signin">
+			<div class="emote" style="background:#232323;">
 					<img src="../img/emote-splash.png" >
 					<div class="btn btn-primary btn-block"> 
 						<fb:login-button scope="email,publish_stream" onlogin="facebookLogin();" >

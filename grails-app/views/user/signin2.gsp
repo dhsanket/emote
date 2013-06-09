@@ -3,8 +3,7 @@
 
     </head>
     <body>
-	    <div id="signin">
-	       <img src="img/signin-logo.png" >
+	    <div class="emote" style="background:#232323;">
 	       <g:if test="${flash.message!= null} ">
 	       		${flash.message} 
 	       </g:if>
