@@ -29,8 +29,8 @@ grails.mime.types = [
     xml:           ['text/xml', 'application/xml']
 ]
 
-facebook.applicationSecret='d2200b17c9240fd98680932a9802f7a8'
-facebook.applicationId='436280976465083'
+
+
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
@@ -94,3 +94,16 @@ log4j = {
 	   }
 	   
 }
+
+//facebook.applicationSecret='d2200b17c9240fd98680932a9802f7a8'
+//facebook.applicationId='436280976465083'
+/*
+grails.plugin.facebooksdk = {
+	// For single app config
+	app = [
+			id: 407280009364725,
+			permissions: ['email'],
+			secret: '63da47e8de8c5f5516d113e2036c50a2'
+	]
+}
+*/
