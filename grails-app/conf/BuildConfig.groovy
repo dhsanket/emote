@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.1.6"
 		
 		runtime ":database-migration:1.3.2"
-		//runtime ':facebook-sdk:0.4.12'
+		runtime ':facebook-sdk:0.4.12'
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"

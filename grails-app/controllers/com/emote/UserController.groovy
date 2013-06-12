@@ -39,7 +39,7 @@ class UserController
 		flash.message = "Error! pls check your passcode again."
 		redirect (action:'signin2')
 	}
-/*
+
 	def signinAndInvite()
 	{
 		if (facebookContext.authenticated) 
@@ -60,7 +60,7 @@ class UserController
 			session.user = user
 			setLoginCookie(user.facebookId)
 			JsonSlurper slurper = new JsonSlurper()
-			def result = slurper.parseText(facebookGraphService.getFriends().toString())
+			//def result = slurper.parseText(facebookGraphService.getFriends().toString())
 			if(result != null)
 			{
 				[fbFriends:result.data]
@@ -69,7 +69,7 @@ class UserController
 		}
 	}
 		
-*/
+
 	def settings(){}
 
 	def profile(){}
