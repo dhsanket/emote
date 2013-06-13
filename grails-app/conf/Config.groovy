@@ -62,6 +62,7 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.logging.jul.usebridge = true
+
     }
     production {
         grails.logging.jul.usebridge = false

@@ -12,7 +12,10 @@ class UserController
 
 	UserService userService;
 
-	def signin(){}
+	def signin()
+	{
+
+	}
 	
 	def signinAction()
 	{
@@ -20,7 +23,7 @@ class UserController
 		
 		if(user == null)
 		{
-			flash.message = "Oops! seems we havn't set you up yet. Pls email us on sanketd367@gmail.com"
+			flash.message = "Keep Calm and Eat Cheese till we get you setup! Pls email us on sanketd367@gmail.com"
 			redirect (action:'signin')
 			return
 		}
@@ -40,10 +43,8 @@ class UserController
 
 	def storeFBUser()
 	{
-		if (facebookContext.authenticated) 
-		{
-    // User is authenticated
-			
+	
+
 			log.info "user with facebook id ${session.facebook.uid} logged in"
 			User user = userService.findByFBId(facebookContext.user.id)
 			if(user == null)
@@ -55,16 +56,25 @@ class UserController
 				user = userService.createUser(fp.id, fp.first_name, fp.last_name, fp.email)
 				log.info "user saved with id= ${user.id}"
 			}
+			user = userService.findByFBId(facebookContext.user.id)
 			session.user = user
 			setLoginCookie(user.facebookId)
-			JsonSlurper slurper = new JsonSlurper()
-			//def result = slurper.parseText(facebookGraphService.getFriends().toString())
+			String cntlr = flash.prevController == null?'emote':flash.prevController
+			String act = flash.prevAction == null?'feed':flash.prevAction
+			// redirect(controller:cntlr,action:act)
+			redirect(action:'signin')
+			
+			/* JsonSlurper slurper = new JsonSlurper()
+			def result = slurper.parseText(facebookGraphService.getFriends().toString())
 			if(result != null)
 			{
-				[fbFriends:result.data]
+				
+				 [fbFriends:result.data]
 			}
-			//TOOD add cookie
-		}
+			TOOD add cookie   */
+		
+	
+
 	}
 		
 
@@ -78,6 +88,7 @@ class UserController
 		if(user != null)
 		{
 			deleteCookie(user.facebookId)
+			
 		}
 		session.user = null
 		render 'you have successfully logged out'
