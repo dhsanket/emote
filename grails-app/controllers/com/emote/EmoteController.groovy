@@ -11,7 +11,7 @@ class EmoteController {
 	def save(EmoteCommand emote){
 		User user = session.user
 		if(user == null){
-			redirect(controller:'user' , action:'signin2')
+			redirect(controller:'user' , action:'signin')
 			return;
 		}
 		log.info "logged user is ${user.id}"

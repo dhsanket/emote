@@ -12,18 +12,14 @@ class UserController
 
 	UserService userService;
 
-	def signin(){}
-
-	def signin2(){}
-
-	def signinAction()
+	def signin()
 	{
 		User user = userService.findByEmail(params.email)
 		
 		if(user == null)
 		{
 			flash.message = "Oops! seems we havn't set you up yet. Pls email us on sanketd367@gmail.com"
-			redirect (action:'signin2')
+			redirect (action:'signin')
 			return
 		}
 		
@@ -37,10 +33,10 @@ class UserController
 			return
 		}
 		flash.message = "Error! pls check your passcode again."
-		redirect (action:'signin2')
+		redirect (action:'signin')
 	}
 
-	def signinAndInvite()
+	def storeFBUser()
 	{
 		if (facebookContext.authenticated) 
 		{
