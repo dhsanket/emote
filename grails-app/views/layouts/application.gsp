@@ -41,55 +41,11 @@
         <g:layoutHead />
     </head>
     <body onload="${pageProperty(name:'body.onload')}" >
-		<header>
-			<a href="feed.html"><h1 id="logo" class="pull-left">emote</h1></a>
-			<a href="#" id="toggleMenu" class="header-icon pull-left"><r:img uri="/img/menu-icon.png" width="100%" /></a>
-			<a href="#" id="createEmote" class="header-icon pull-right"><r:img uri="/img/plus-icon.png" width="100%" /></a>
-		</header>
-		
-		<div id="emote-creation-container">
-			<div class="data-set clearfix">
-				<div class="emote-create-content">
-					<input required type="text" id="obj-title" class="emote-topic-input" placeholder="What is the emote topic?" />
-					<input required type="text" id="tag" class="emote-tags-input" placeholder="put your emotes \o/ here" />
-				</div>
-			</div>
-		</div>
-
-		<div id="nav-menu">
-			<section id="user-section" class="clearfix">
-				<div class="user-image">
-					<a href="userfeed.html"><img src="http://lorempixel.com/48/48" /></a>
-				</div>
-				<div class="user-meta">
-				<g:if test="${session.user != null}">
-					<h1 class="user-name">${session.user.firstName}&nbsp; ${session.user.LastName}</h1>
-					<span class="user-email">${session.user.email}</span>
-				</g:if>
-				</div>
-			</section>
-			<span class="list-sub-title">Search</span>
-			<section id="search-section">
-				<form>
-					<input type="search" placeholder="Type to search..." />
-				</form>
-			</section>
-			<span class="list-sub-title">Menu</span>
-			<section id="menu-section">
-				<ul>
-					<li><a href="feed.html"><i class="icon-home icon-white"></i> Home</a></li>
-					<li><a href="#"><i class="icon-circle-arrow-up icon-white"></i> Popular</a></li>
-					<li><a href="#"><i class="icon-star icon-white"></i> Favourites</a></li>
-					<li><a href="#"><i class="icon-cog icon-white"></i> Settings</a></li>
-				</ul>
-			</section>
-		</div>
-			    
-	        <g:layoutBody />
-            		
+    
+	    <g:layoutBody />
 		<r:layoutResources/>		
-            
         <fbg:resources/>
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];

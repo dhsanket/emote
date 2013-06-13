@@ -30,13 +30,10 @@ class EmoteController {
 		flash.emotes = emoteService.feed()
 	}
 	
-	def search(){
-	}
 	
-	def doSearch(){
+	def search(){
 		def emotes = emoteService.search(params.keyword)
 		flash.emotes = emotes
-		redirect(action:'search')
-
+		render view:'feed'
 	}
 }
