@@ -16,8 +16,8 @@
     <body>
     <g:if test="${!facebookContext.app.id}">
 			<g:render template="/website/configError" />
-		</g:if>
-		<g:else>
+	</g:if>
+	<g:else>
 			<!--
 			  We use the Facebook JavaScript SDK to provide a richer user experience. For more info,
 			  look here: http://github.com/facebook/facebook-js-sdk
@@ -52,24 +52,12 @@
 						<div class="emote">
 								
 								<div class="btn"> 
-									<a href="${facebookContext.loginURL}" class="pull-right large btn">Login via Facebook</a>
+									<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'storeFBUser', absolute:true))}" class="pull-right large btn">Login via Facebook</a>
 									
 									Facebook.com server side redirect:<br />
 			                        (<i>server-side, with Facebook Grails SDK handling authorization code from url on return</i>)
-												
- 												<script type="text/javascript">
-												function facebookLogin() {
-													FB.getLoginStatus(function(response) {
-														if (response.status === 'connected') {
-															// logged in and connected user, redirect to feed
-															window.location ="${createLink(controller:'user', action:'storeFBUser')}";
-														}else{
-															window.location ="${createLink(controller:'user', action:'signin')}";			
-														}
-													});
-												}
-												</script>  
- 
+			                        <g:if test="${facebookContext.authenticated}"> User is authenticated
+			                        </g:if>
 								</div>
 								 		By tapping on "Sign in" above, you are agreeing to the Terms of Service and Privacy Policy.
 						</div>                    
@@ -79,11 +67,11 @@
 			<p>&nbsp;</p>
 
 			
-			<g:if test="${user}">
+			<g:if test="${userFB}">
 				<h2 class="tab">Your data</h2>
 				<p>
-					<facebook:picture facebookId="${user.facebookid}" linkEnabled="true" />
-					${user.firstname}<br />
+					<facebook:picture facebookId="${userFB.facebookId}" linkEnabled="true" />
+					${userFB.firstName}<br />
 				</p>
 				<h3>Your friends</h3>
 				<p>
