@@ -12,7 +12,9 @@ class UserController
 
 	UserService userService;
 
-	def signin()
+	def signin(){}
+	
+	def signinAction()
 	{
 		User user = userService.findByEmail(params.email)
 		
