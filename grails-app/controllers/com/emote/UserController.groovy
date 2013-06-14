@@ -32,8 +32,8 @@ class UserController
 		
 		if(userEmote.passcode.equals(params.passcode))
 		{
-			session.userEmote = userEmote
-			setLoginCookie(userEmote.facebookId)
+			session.user = userEmote
+			setLoginCookie(user.facebookId)
 			String cntlr = flash.prevController == null?'emote':flash.prevController
 			String act = flash.prevAction == null?'feed':flash.prevAction
 			redirect(controller:cntlr,action:act)
@@ -47,7 +47,7 @@ class UserController
 	{
 		def me
 		List userFriends = []
-		String token = facebookContext.user.token  			// For public data
+		String token = facebookContext.user.token  			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
 		
 		if (facebookContext.authenticated)
@@ -55,7 +55,7 @@ class UserController
             if (token) {
                 try {
                     me = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
-                    userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
+                    userFriends = facebookGraphClient.fetchConnection(me.id+"/friends", [limit:10])
                 } catch (FacebookOAuthException exception) {
                     facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
                     facebookContext.user.invalidate()
@@ -72,9 +72,9 @@ class UserController
 				log.info "user saved with id= ${user.id}"
 			}
 			//user = userService.findByFBId(facebookContext.user.id)
-
-			session.userFB = userFB
-			setLoginCookie(userFB.facebookId)
+			return userFriends
+			session.user = userFB
+			setLoginCookie(user.facebookId)
 			String cntlr = flash.prevController == null?'emote':flash.prevController
 			String act = flash.prevAction == null?'feed':flash.prevAction
 			// redirect(controller:cntlr,action:act)
