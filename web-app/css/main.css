@@ -646,7 +646,7 @@ color:#FFFFFF;
 		
 		#user-section .user-meta h1.user-name {
 			font-size:15px;
-			line-height:8px;
+			line-height:15px;
 			margin:0;
 			padding:0;
 			margin-top:2px;
@@ -655,6 +655,7 @@ color:#FFFFFF;
 		#user-section .user-meta .user-email {
 			color:#666666;
 			font-size:12px;
+			margin-top:2px;
 		}
 		
 		.list-sub-title {

@@ -6,7 +6,7 @@ class EmoteService {
 		def username = user.firstName+" "+user.lastName
 		
 		Emote emote = new Emote(
-			userId:user.id, username:username, topics:emoteCmd.topics, 
+			userId:user.id, creator:user, username:username, topics:emoteCmd.topics, 
 			expressions:emoteCmd.expressions, title:emoteCmd.title 
 			)
 		

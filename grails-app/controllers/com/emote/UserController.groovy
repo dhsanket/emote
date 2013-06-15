@@ -46,6 +46,8 @@ class UserController
 	def storeFBUser()
 	{
 		def me
+		User user
+		User userFB
 		List userFriends = []
 		String token = facebookContext.user.token  			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
@@ -55,14 +57,14 @@ class UserController
             if (token) {
                 try {
                     me = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
-                    userFriends = facebookGraphClient.fetchConnection(me.id+"/friends", [limit:10])
+                    //userFriends = facebookGraphClient.fetchConnection(me.id+"/friends", [limit:10])
                 } catch (FacebookOAuthException exception) {
                     facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
                     facebookContext.user.invalidate()
                 }
             }	
 			// log.info "user with facebook id ${session.facebookContext.user.id} logged in"
-			User userFB = userService.findByFBId(me.id)
+			userFB = userService.findByFBId(me.id)
 			if(userFB == null)
 			{
 				//log.info "facebook  profile object ${fp}"
@@ -72,13 +74,13 @@ class UserController
 				log.info "user saved with id= ${user.id}"
 			}
 			//user = userService.findByFBId(facebookContext.user.id)
-			return userFriends
+			//return userFriends
 			session.user = userFB
-			setLoginCookie(user.facebookId)
+			setLoginCookie(session.user.facebookId)
 			String cntlr = flash.prevController == null?'emote':flash.prevController
 			String act = flash.prevAction == null?'feed':flash.prevAction
 			// redirect(controller:cntlr,action:act)
-			redirect(action:'signin')
+			redirect(controller: 'emote', action:'feed')
 			
 			/* JsonSlurper slurper = new JsonSlurper()
 			def result = slurper.parseText(facebookGraphService.getFriends().toString())
@@ -107,7 +109,8 @@ class UserController
 			
 		}
 		session.user = null
-		render 'you have successfully logged out'
+		facebookContext.user.invalidate()
+		redirect (action: 'signin')
 	}
 
 	private void setLoginCookie(String facebookId)

@@ -15,6 +15,7 @@ class Emote {
 	
 	String id
 	String userId
+	User creator
 	String username;
 	Set<String> topics = []
 	Set<String> expressions = []

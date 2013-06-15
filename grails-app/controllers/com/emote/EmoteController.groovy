@@ -23,7 +23,7 @@ class EmoteController {
 		
 		emoteService.create(emote, user)
 		
-		redirect(action:'feed')
+		redirect(controller:'user',action:'feed')
 	}
 	
 	def feed(){
