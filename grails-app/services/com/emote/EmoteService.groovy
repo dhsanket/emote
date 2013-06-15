@@ -67,7 +67,26 @@ class EmoteService {
 	}
 	
 	def feed(){
-		return Emote.list(max:10, sort:"creationTime", order:"desc")
+		return Emote.list(max:30, sort:"creationTime", order:"desc")
 		
+	}
+	
+	def groupByTitle (def emotes){
+		def groupedByTitle =  [:] 
+		emotes.each {emote ->
+			GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
+			if(title == null){
+				title = new GroupByTitle(title:emote.title)
+				groupedByTitle.put(emote.title.toUpperCase(), title)
+			}
+			title.add(emote);
+			
+		}
+		List<GroupByTitle> sorted = new ArrayList<GroupByTitle>()
+		groupedByTitle.each{key, value -> 
+			sorted.add(value)
+		}
+		 Collections.sort(sorted);
+		 return sorted;
 	}
 }

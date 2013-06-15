@@ -26,13 +26,13 @@ class EmoteController {
 	}
 	
 	def feed(){
-		flash.emotes = emoteService.feed()
+		flash.titles = emoteService.groupByTitle(emoteService.feed())
 	}
 	
 	
 	def search(){
-		def emotes = emoteService.search(params.keyword)
-		flash.emotes = emotes
+		def emotes = emoteService.groupByTitle(emoteService.search(params.keyword))
+		flash.titles = emotes
 		render view:'feed'
 	}
 }

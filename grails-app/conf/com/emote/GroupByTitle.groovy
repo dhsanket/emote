@@ -2,9 +2,11 @@ package com.emote;
 
 public class GroupByTitle implements Comparable  {
 	
+	
+	
 	Date lastEmoteTime;
 	
-	
+	String title;
 	
 	List<Emote> emotes = []
 	
@@ -15,8 +17,14 @@ public class GroupByTitle implements Comparable  {
 		if(!(o instanceof GroupByTitle) ) return -1;
 		GroupByTitle other = (GroupByTitle) o;
 		// TODO Auto-generated method stub
-		return lastEmoteTime.compareTo(other.lastEmoteTime)
+		return other.lastEmoteTime.compareTo(lastEmoteTime)
 	}
 	
+	void add(Emote emote){
+		emotes.add(emote);
+		if(lastEmoteTime == null || lastEmoteTime.getTime()< emote.creationTime.getTime()){
+			lastEmoteTime = emote.creationTime
+		}
+	}
 
 }
