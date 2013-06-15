@@ -15,6 +15,7 @@ class Emote {
 	
 	String id
 	String userId
+	String facebookId
 	User creator
 	String username;
 	Set<String> topics = []

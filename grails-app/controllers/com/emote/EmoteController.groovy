@@ -1,8 +1,13 @@
 package com.emote
 
+import grails.plugin.facebooksdk.FacebookContext;
+
 class EmoteController {
 	
 	EmoteService emoteService
+	
+	FacebookContext facebookContext;
+	
 
     def create() {
 		

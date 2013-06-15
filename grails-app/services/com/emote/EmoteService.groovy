@@ -7,7 +7,7 @@ class EmoteService {
 		
 		Emote emote = new Emote(
 			userId:user.id, creator:user, username:username, topics:emoteCmd.topics, 
-			expressions:emoteCmd.expressions, title:emoteCmd.title 
+			expressions:emoteCmd.expressions, title:emoteCmd.title, facebookId:user.facebookId 
 			)
 		
 		
