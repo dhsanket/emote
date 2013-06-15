@@ -17,13 +17,12 @@ class EmoteController {
 		log.info "logged user is ${user.id}"
 		
 		if(emote.hasErrors()){
-			render view:'create', model:[emote:emote]
+			//render view:'create', model:[emote:emote]
 			return
 		}
 		
 		emoteService.create(emote, user)
-		
-		redirect(controller:'user',action:'feed')
+		//redirect(actio)
 	}
 	
 	def feed(){

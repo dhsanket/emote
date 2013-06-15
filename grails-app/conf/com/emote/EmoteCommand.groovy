@@ -2,12 +2,11 @@ package com.emote
 
 import java.util.Set;
 
-@grails.validation.Validateable	
+@grails.validation.Validateable
 class EmoteCommand {
 	
 	static constraints = {
 		title blank:false
-		topic blank:false 
 		expression blank:false
 	}
 	
@@ -16,11 +15,14 @@ class EmoteCommand {
 	String title;
   
 	def getTopics(){
+		if(topic == null){
+			return []
+		}
 		return topic.split("/")
 	}
 	
 	def getExpressions(){
-		return expression.split("\\\\")
+		return expression.split(",")
 	}
 
 }
