@@ -99,7 +99,7 @@ log4j = {
 //facebook.applicationSecret='d2200b17c9240fd98680932a9802f7a8'
 //facebook.applicationId='436280976465083'
 
-grails.plugin.facebooksdk.app.id = 407280009364725
+grails.plugin.facebooksdk.app.id = 182362751927817
 grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
+grails.plugin.facebooksdk.app.secret = '1b7e0e9e7708f746c0cce9b394ba9196'
 
