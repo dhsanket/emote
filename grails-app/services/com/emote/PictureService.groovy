@@ -7,9 +7,8 @@ class PictureService {
     }
 	
 	def store(Picture image){
-		log.info "saved image of type $image.contentType"
 		image.save()
-		log.info "saved image of size $image.content.length and id = $image.id"
+		log.info "saved image of size $image.content.length and id = $image.id type= $image.type"
 		return image.id
 	}
 }

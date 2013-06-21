@@ -2,11 +2,13 @@ package com.emote
 
 class PictureController {
 	
+	static layout = 'upload'
+	
 	PictureService pictureService
     def index() { 
 		Picture pic = pictureService.getImage(params.id)
 		response.setContentLength(pic.content.length)
-		response.setContentType(pic.contetType)
+		response.setContentType(pic.type)
 		response.outputStream << pic.content
 		response.outputStream.flush()
 	}
@@ -17,13 +19,13 @@ class PictureController {
 	}
 	
 	def save(){
-//		params.entrySet().each {p ->
-//			log.info " param -  $p"
-//		}
-		log.info params.content.contentType
-		
+		String type = params.content.contentType
+		String filename = params.content.originalFilename
 		def img = new Picture(params)
-		img.contetType = params.content.contentType
+		img.type = type
+		img.filename = filename
+		
+		log.info "image content type is $img.type"
 		def id = pictureService.store(img)
 		render(model:[pic:id], view:'show')
 	}

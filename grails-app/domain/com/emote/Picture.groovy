@@ -3,7 +3,8 @@ package com.emote
 class Picture {
 	
 	String id
-	String contetType
+	String type
+	String filename
 	byte[] content;
      
     static constraints = {
