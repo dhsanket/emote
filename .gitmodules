@@ -1,3 +1,6 @@
 [submodule "grails-app/views"]
 	path = emote/grails-app/views
 	url = git@github.com:dhsanket/views.git
+[submodule "/Users/Sanks/Dropbox/1KeyThemes1/emote/Developer/AppDev/emote/grails-app/views"]
+	path = /Users/Sanks/Dropbox/1KeyThemes1/emote/Developer/AppDev/emote/grails-app/views
+	url = git@github.com:dhsanket/views.git
