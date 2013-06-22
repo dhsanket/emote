@@ -100,3 +100,56 @@ $(function(){
 		
 	});
 });
+
+
+
+$(function(){
+	 
+	 // Listen for submit event on form
+	 $('#submit-button').click(function(){
+	  
+	  // grab values of form
+	  var tags = $('#tag').val();
+	  var emoteTitle = $('#obj-title').val();
+	  
+	  // create an object
+	  var data = {};
+	  
+	  data.tags = tags;
+	  data.emoteTitle = emoteTitle;
+	  
+	  // check to see if object is outputting correctly and data is captured
+	  // console.log(data['emoteTitle']);
+	  // console.log(data['tags']);
+	  
+	  // perform the request
+	  var feedContents = $.ajax({
+	   type: 'POST',
+	   url: '/emote/emote/save',
+	   data: {
+		     title: data.emoteTitle,
+		     expression: data.tags
+		    },
+	   success: function(){
+	   },
+	   error: function(){
+	   }
+	  }).done(function(){
+		  $('#createEmote').click(); 
+		    // Fade out the feed container
+		    $('#feed-container div.emote-v2').fadeOut(125);
+		    
+		    // change content
+		    $('#feed-container').html(feedContents.responseText);
+		    
+		    // Fade in
+		    $('#feed-container').delay(125).fadeIn(125);
+		    alert( $('#emoteSave'));
+		    $('#emoteSave').reset();
+		   });;
+	  
+	  // Stop default behaviour of the button
+	  return false;
+	 });
+	 
+	});

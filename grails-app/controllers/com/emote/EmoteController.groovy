@@ -22,12 +22,15 @@ class EmoteController {
 		log.info "logged user is ${user.id}"
 		
 		if(emote.hasErrors()){
+			log.info "emote has errors"
 			//render view:'create', model:[emote:emote]
+			render ""
 			return
 		}
 		
 		emoteService.create(emote, user)
-		//redirect(actio)
+		def titles = emoteService.groupByTitle(emoteService.feed())
+		render(template:"emotesTemplate" , model:[titles: titles])
 	}
 	
 	def feed(){

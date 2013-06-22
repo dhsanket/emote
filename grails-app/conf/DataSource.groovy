@@ -1,13 +1,5 @@
 grails {
 	mongo {
-		//databaseName = "app14660500"
-		dbCreate = "update"
-		//host = "linus.mongohq.com"
-		//port = 10081
-		username = "emote-app"
-		password = "Emote-101"
-
-
 	}
   }
 
@@ -31,6 +23,13 @@ environments {
 	}
 	production {
 		mongo {
+			databaseName = "app14660500"
+			dbCreate = "update"
+			host = "linus.mongohq.com"
+			port = 10081
+			username = "emote-app"
+			password = "Emote-101"
+	
 		}
 	}
 }
