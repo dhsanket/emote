@@ -1,0 +1,1039 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html,
+body {
+	overflow-x: hidden !important;
+	height:100%;
+	background:#DDDDDD;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+    /*background:url('../img/bg.jpg');*/
+   
+}
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* Header Styles */
+header {
+	width:100%;
+	height:60px;
+	background:#9b061c;
+	position:fixed;
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.25);
+	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.25);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.25);
+	z-index:999;
+	left:0;
+	
+	background: rgb(161,6,30); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(161,6,30,1) 0%, rgba(133,4,24,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,6,30,1)), color-stop(100%,rgba(133,4,24,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1061e', endColorstr='#850418',GradientType=0 ); /* IE6-9 */
+	
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+	/* Header Icon Styles */
+	header .header-icon {
+		width:44px;
+		height:44px;
+		border: none;
+		margin:8px;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.125);
+		-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.125);
+		box-shadow: 0px 0px 10px rgba(0,0,0,0.125);
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding:10px;
+		display:inline-block;
+
+		background: rgb(190,16,45); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(190,16,45,0.5) 0%, rgba(153,0,21,0.5) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190,16,45,0.5)), color-stop(100%,rgba(153,0,21,0.5))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be102d', endColorstr='#990015',GradientType=0 ); /* IE6-9 */
+	}
+	
+	header .header-icon img {
+		opacity:0.9;
+		-webkit-transition: all 0.25s linear;
+		-moz-transition: all 0.25s linear;
+		-ms-transition: all 0.25s linear;
+		-o-transition: all 0.25s linear;
+		transition: all 0.25s linear;
+	}
+	
+	header .header-icon:active,
+	header .header-icon:hover,
+	header .header-icon:focus,
+	header .header-icon.active {
+		background: rgb(219,19,62); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(219,19,62,1) 0%, rgba(165,0,46,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(219,19,62,1)), color-stop(100%,rgba(165,0,46,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(219,19,62,1) 0%,rgba(165,0,46,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(219,19,62,1) 0%,rgba(165,0,46,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(219,19,62,1) 0%,rgba(165,0,46,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(219,19,62,1) 0%,rgba(165,0,46,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db133e', endColorstr='#a5002e',GradientType=0 ); /* IE6-9 */
+	}
+	
+	header .header-icon:active img,
+	header .header-icon:hover img,
+	header .header-icon:focus img {
+		opacity:1;
+	}
+	
+	header #createEmote.active img {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		opacity:1;
+	}
+	
+	
+	header h1#logo {
+		padding:0;
+		margin:0;
+		overflow:hidden;
+		background:url(../img/logo.png) no-repeat center center;
+		-webkit-background-size: cover;
+		background-size: cover;
+		text-indent:-999px;
+		position:absolute;
+		
+		height:40px;
+		width:90px;
+		top:50%;
+		left:50%;
+		margin-left:-45px;
+		margin-top:-20px;
+	}
+	
+	header.active {
+		left:83%;
+	}
+	
+	/* Feed Styles */
+	#feed-container {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding:8px;
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-ms-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+		opacity:1;
+		position:absolute;
+		top:60px;
+		left:0%;
+		width:100%;
+	}
+	
+	#feed-container.navactive,
+	#user-header.navactive {
+		left:83%;
+		opacity:0.2;
+	}
+	
+	#photo-feed.navactive {
+		left:83%;
+	}
+	
+		#feed-container .emote {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding:8px;
+			background:#FFFFFF;
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+			margin-bottom:8px;
+			position: relative;
+			overflow:hidden;
+		}
+		
+		#feed-container .emote.image,
+		#feed-container .emote.map {
+			-webkit-background-size: cover;
+			background-size: cover;
+			padding:0;
+			background-repeat:no-repeat;
+			background-position: center center;
+			height:300px;
+		}
+		
+		#feed-container .emote h3 {
+			padding:16px;
+/*color:#9f1e32;*/
+color:#FFFFFF;
+			line-height:32px;
+			-webkit-border-top-left-radius: 8px;
+			-webkit-border-top-right-radius: 8px;
+			-moz-border-radius-topleft: 8px;
+			-moz-border-radius-topright: 8px;
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+			margin:0;
+/*height:0px;*/
+			font-size:28px;
+			background:rgba(0,0,0,0.6);
+/*background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+/*background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+/*background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+/*background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+/*background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		}
+		
+		#feed-container .emote h4.emote-geo {
+			margin:0;
+			padding:0;
+			position:absolute;
+			top:58px;
+			left:25px;
+			font-size:17px;
+			color:#FFFFFF;
+		}
+		
+		/* Emote Sharing Options */
+		.emote .share-tags {
+			width:94%;
+			z-index: 5;
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			bottom:-50%;
+			left:3%;
+			height:70px;
+			position:absolute;
+			box-shadow: 0px 10px 12px -7px rgba(0,0,0,0.25);
+			
+			-webkit-transition: 0.25s ease-in-out;
+			-moz-transition: 0.25s ease-in-out;
+			-ms-transition: 0.25s ease-in-out;
+			-o-transition: 0.25s ease-in-out;
+			transition: 0.25s ease-in-out;
+			
+			overflow:hidden;
+			opacity:0;
+		}
+		
+		.emote .share-tags ul {
+			list-style:none;
+			padding:0;
+			margin:0;
+			text-align:center;
+			vertical-align:top;
+		}
+		
+		.emote .share-tags ul li {
+			display:inline-block;
+			width:27%;
+			text-align:center;
+			font-size:12px;
+			font-weight:bold;
+			line-height:14px;
+			border-right:1px solid rgba(0,0,0,0.2);
+			border-left:1px solid rgba(0,0,0,0.2);
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		
+		.emote .share-tags ul li:nth-child(even) {
+			border-right:1px solid rgba(255,255,255,0.5);
+			border-left:1px solid rgba(255,255,255,0.5);
+		}
+		
+		.emote .share-tags ul li i {
+			padding-bottom:5px;
+		}
+		
+		.emote .share-tags ul li a {
+			color:#999999;
+			text-decoration:none;
+			padding:10px 0 15px 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			display:block;
+			height:100%;
+		}
+		
+		.emote .share-tags ul li a:hover {
+			color:#BD362F;
+			background:rgba(255,255,255,0.1);
+			-webkit-box-shadow: inset 0px 0px 30px rgba(0,0,0,0.2);
+			-moz-box-shadow: inset 0px 0px 30px rgba(0,0,0,0.2);
+			box-shadow: inset 0px 0px 30px rgba(0,0,0,0.2);
+		}
+		
+		
+		.emote.active .share-tags {
+			bottom:4%;
+			opacity:1;
+		}
+		
+		/* Emote Creation */
+		#emote-creation-container {
+			padding:68px 8px 0px 8px;
+			height:0;
+			overflow-y:hidden;
+			position:relative;
+			top:-50px;
+			-webkit-transition: all 0.25s ease-in-out;
+			-moz-transition: all 0.25s ease-in-out;
+			-ms-transition: all 0.25s ease-in-out;
+			-o-transition: all 0.25s ease-in-out;
+			transition: all 0.25s ease-in-out;
+			opacity:0;
+		}
+		
+		/* Emote Creation Slideout classes */
+		
+		#emote-creation-container.active {
+			height:auto;
+			overflow:auto;
+			top:0;
+			opacity:1;
+			z-index:13;
+		}
+		
+		#feed-container.active {
+			opacity:0.2;
+			top:170px;
+		}
+		
+		#emote-creation-container .user-picture {
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+		}
+		
+		#emote-creation-container .emote-create-content {
+			background:#FFFFFF;
+			width:100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+			overflow:hidden;
+		}
+		
+		#emote-creation-container .emote-create-content input {
+			display:block;
+			margin:0;
+			width:100%;
+			-webkit-box-sizing: border-box
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			height:50px;
+			border:none;
+			outline:none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+			font-size:16px;
+			padding:20px;
+			font-weight:normal;
+		}
+		
+		#emote-creation-container .emote-create-content input.emote-topic-input {
+			border-bottom:1px solid #EEEEEE;
+			font-weight:bold;
+		}
+		
+		#emote-creation-container .emote-create-content input:first-child::-webkit-input-placeholder {
+			color:#333333;
+		}
+		
+		/* Tagging CSS */
+		div.tagsinput { background: #FFF;  width:350px; height:80px; overflow-y: auto;}
+		div.tagsinput span.tag {margin-top:7px;margin-left:7px; font-weight:bold; -moz-border-radius:6px; -webkit-border-radius:6px; display: block; float: left; padding: 7px; text-decoration:none; background: #e8c500; color: #FFFFFF;font-family: helvetica;  font-size:15px;}
+		div.tagsinput span.tag a { font-weight: bold; color: #FFFFFF; text-decoration:none; font-size: 16px;  } 
+		div.tagsinput input { width:100px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; background: transparent; color: #CCC; outline:0px; font-weight:normal;border-left:1px solid #CCCCCC }
+		div.tagsinput div { display:block; float: left; } 
+		.tags_clear { clear: both; width: 100%; height: 0px; }
+		.not_valid {  } 
+
+	/* User Profile Formatting */
+	
+	
+		/* User Header */
+		#user-header {
+			width:100%;
+			background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+			margin-top:-10px;
+			padding:11px 8px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			color:#FFFFFF;
+			position:fixed;
+			top:70px;
+			z-index:30;
+			left:0;
+			
+			-webkit-transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-ms-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+		}
+		
+		#user-header.create-emote {
+			opacity:0;
+			top:0;
+		}
+		
+		#user-header #user-profile-picture {
+			float:left;
+		}
+		
+		#user-header #user-profile-picture img {
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+		}
+		
+		#user-header #user-profile-info {
+			float:left;
+			padding:0 12px;
+		}
+		
+		#user-header #user-profile-info .user-profile-name {
+			font-size:16px;
+			margin:0;
+			padding:0;
+			margin-top:13px;
+			line-height:12px;
+		}
+		
+		#user-header #user-profile-info .user-profile-location {
+			font-size:12px;
+			line-height:6px;
+			display:block;
+			margin-top:8px;
+		}
+		
+		#user-header #user-profile-switcher {
+			float:right;
+		}
+		
+		#user-header #user-profile-switcher ul {
+			list-style:none;
+			padding-top:8px;
+		}
+		
+		#user-header #user-profile-switcher ul li {
+			float:left;
+
+			background: rgb(169,3,41); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+
+			margin-left:6px;
+
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+		
+		#user-header #user-profile-switcher ul li a {
+			padding:8px 12px;
+			display:block;
+		}
+		
+			/* Photo Layer */
+			#photo-feed {
+				width:100%;
+				position:absolute;
+				top:70px;
+				left:0%;
+				background:#121212;
+				
+				-webkit-transition: all 0.5s ease-in-out;
+				-moz-transition: all 0.5s ease-in-out;
+				-ms-transition: all 0.5s ease-in-out;
+				-o-transition: all 0.5s ease-in-out;
+				transition: all 0.5s ease-in-out;
+			}
+			
+			#photo-feed .photo-feed-photo {
+				float:left;
+				width:33.3%;
+				opacity:0.2;
+				-webkit-transition: all 0.5s linear;
+				-moz-transition: all 0.5s linear;
+				-ms-transition: all 0.5s linear;
+				-o-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+			}
+			
+			#photo-feed .photo-feed-photo img {
+				width:100%;
+				display:block;
+			}
+			
+				/* Active States */
+			
+				#photo-feed.active {
+					z-index:9;
+				}
+				
+				#photo-feed.active .photo-feed-photo {
+					opacity:0.6;
+				}
+				
+				#photo-feed.active .photo-feed-photo:hover {
+					opacity:1;
+				}
+				
+				#photo-feed.create-emote .photo-feed-photo {
+					opacity:0;
+				}
+	
+	/* Nav Menu */
+	#nav-menu {
+		width:83%;
+		height:100%;
+		position:absolute;
+		left:-100%;
+		top:0;
+		z-index:20;
+		background:#272727;
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		-ms-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
+	}
+	
+	#nav-menu.active {
+		left:0%;
+	}
+	
+		/* User Section */
+		#user-section {
+			color:#FFFFFF;
+			padding:12px 12px 6px 12px;
+			border-bottom:1px solid rgba(0,0,0,0.25);
+			height:51px;
+		}
+		
+		#user-section .user-image {
+			float:left;
+		}
+		
+		#user-section .user-image img {
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+		}
+		
+		#user-section .user-meta {
+			float:left;
+			padding:10px 10px;
+		}
+		
+		#user-section .user-meta h1.user-name {
+			font-size:15px;
+			line-height:8px;
+			margin:0;
+			padding:0;
+			margin-top:2px;
+		}
+		
+		#user-section .user-meta .user-email {
+			color:#666666;
+			font-size:12px;
+		}
+		
+		.list-sub-title {
+			width:100%;
+			display:block;
+			color:#656565;
+			font-weight: bold;
+			font-size:14px;
+			text-transform: uppercase;
+			border-top:1px solid rgba(255,255,255,0.1);
+			border-bottom:1px solid rgba(0,0,0,0.25);
+			padding:5px 12px 3px 12px;
+			line-height:20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		
+		#search-section {
+			padding:12px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			width:100%;
+			height:64px;
+			border-top:1px solid rgba(255,255,255,0.1);
+			border-bottom:1px solid rgba(0,0,0,0.25);
+		}
+		
+		#search-section form {
+			width:100%;
+		}
+		
+		#search-section form input {
+			width:100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding:18px 6px;
+		}
+		
+		/* Menu Formatting */
+		#menu-section {
+			
+		}
+		
+		#menu-section ul {
+			list-style:none;
+			margin:0;
+			padding:0;
+			border-bottom:1px solid rgba(255,255,255,0.1);
+		}
+		
+		#menu-section ul li {
+			border-top:1px solid rgba(255,255,255,0.1);
+			border-bottom:1px solid rgba(0,0,0,0.25);
+		}
+		
+		#menu-section ul li a {
+			padding:12px;
+			display:block;
+			color:#FFFFFF;
+			text-decoration:none;
+			font-size:16px;
+		}
+		
+		#menu-section ul li a i {
+			margin-right:12px;
+		}
+		
+		#menu-section ul li a:hover,
+		#menu-section ul li a:focus,
+		#menu-section ul li a:active {
+			background:#333333;
+		}
+		
+		
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+    position: absolute;
+    left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+
+.ir br {
+    display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+/* Swiper Styles */
+/*
+ * Swiper - Mobile Touch Slider CSS
+ * http://www.idangero.us/sliders/swiper
+ *
+ * Vladimir Kharlampidi, The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Copyright 2012, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us
+ *
+ * Licensed under GPL & MIT
+ *
+*/
+
+/* Swiper Styles */
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+	
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+	
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+	
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+	
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+	
+}
+.swiper-slide {
+	float: left;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+/* Specify Swiper's Size: */
+.swiper-container, .swiper-slide {
+	width: 100%;
+	height: 200px;
+	text-align:center;
+}
+
+.swiper-slide {
+	position:relative;
+}
+
+/* NOT STATEMENTS REVISE AND REPHRASE */
+
+/*.emote:not(.image) .swiper-container,
+.emote:not(.image) .swiper-slide,
+.emote:not(.map) .swiper-container,
+.emote:not(.map) .swiper-slide {
+	height:120px;
+}*/
+
+/* Hack to fix Search input */
+.ui-btn-inner {
+	display:none;
+}
+
+/* Emote Formatting */
+.swiper-slide h1 {
+	background:rgba(255,255,255,0.5);
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	display:inline-block;
+	font-size:24px;
+	padding:3px;
+	min-width:60%;
+	bottom:30px;
+	position:absolute;
+	left:50%;
+	margin-left:-30%;
+	color:#121212;
+}
+
+
+/* NOT STATEMENTS... REVISE AND REPHRASE LATER! */
+
+/*.emote:not(.image) .swiper-slide h1,
+.emote:not(.map) .swiper-slide h1 {
+	bottom:18px;
+}*/
+
+.swiper-slide h1:before {
+	content:"\"";
+}
+
+.swiper-slide h1:after {
+	content:"\"";
+}
+
+	/* Emote User Formatting */
+	.emote-specific-profiles-container {
+		position:absolute;
+		bottom:0;
+		left:0;
+		z-index:30;
+		width:100%;
+	}
+	
+	.emote-specific-profiles-container ul {
+		list-style:none;
+		width:100%;
+		display:block;
+		text-align:center;
+		padding:0;
+		margin:0;
+		padding:7px 0 2px 0;
+		background:rgba(0,0,0,0.7);
+		-webkit-border-bottom-right-radius: 8px;
+		-webkit-border-bottom-left-radius: 8px;
+		-moz-border-radius-bottomright: 8px;
+		-moz-border-radius-bottomleft: 8px;
+		border-bottom-right-radius: 8px;
+		border-bottom-left-radius: 8px;
+		height:39px;
+	}
+	
+	.emote-specific-profiles-container ul li.emote-specific-user-image {
+		display:inline-block;
+		margin:0 1px;
+	}
+	
+	.emote-specific-profiles-container ul li img {
+		display:block;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		opacity:0.8;
+		-webkit-box-shadow: 0px 10px 12px -7px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0px 10px 12px -7px rgba(0,0,0,0.5);
+		box-shadow: 0px 10px 12px -7px rgba(0,0,0,0.5);
+	}
+
+/* Empty Data Set */
+
+
+/*
+ * COME BACK TO ME LATER!!!!!
+ */
+
+
