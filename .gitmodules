@@ -1,0 +1,3 @@
+[submodule "grails-apps/views"]
+	path = grails-apps/views
+	url = git@github.com:dhsanket/views.git
