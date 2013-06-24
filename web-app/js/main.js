@@ -144,8 +144,6 @@ $(function(){
 		    
 		    // Fade in
 		    $('#feed-container').delay(125).fadeIn(125);
-		    alert( $('#emoteSave'));
-		    $('#emoteSave').reset();
 		   });;
 	  
 	  // Stop default behaviour of the button
