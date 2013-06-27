@@ -1,21 +1,11 @@
 grails {
-	mongo {
-		/*		
+	mongo {		
 		databaseName = "app14658629"
 		dbCreate = "update"
 		host = "dharma.mongohq.com"
 		port = 10046
 		username = "emote-app"
 		password = "Emote-101"
-		*/
-		
-		databaseName = "app14556041"
-		dbCreate = "update"
-		host = "dharma.mongohq.com"
-		port = 10064
-		username = "emote-app"
-		password = "Emote-101"
-		
 	}
   }
 
