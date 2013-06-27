@@ -15,7 +15,7 @@ $(function(){
 		$('#tag').tagsInput({
 			'width' : 'auto',
 			'height': 'auto',
-			'defaultText':'Put your emotes \\o/ here'
+			'defaultText':'A few short words (an emote) to tell us what you thought...'
 		});
 		
 		$('#obj-title').typeahead({
@@ -25,6 +25,12 @@ $(function(){
 			'Camden Town, London',
 			'Milton Keynes'
 			]
+		});
+		
+		// Resizing feed element when image loads
+		$('.emote-v2-media').each(function(){
+			var mediaHeight = $('img', this).outerHeight();
+			$(this, '.emote-v2-content').parent().height(mediaHeight);
 		});
 		
 		// Create emote
@@ -90,38 +96,83 @@ $(function(){
 				//Your options here:
 				mode:'horizontal',
 				loop: true,
-				autoPlay: 3000,
 				speed: 300,
 				resistance: true,
 			});
 		});
 		
+		// Friend emote sets
+		// automagically hide all friend emotes
+		$('.friend-emotes-container li.friend-emotes').hide();
+		// display only first set of friend emotes
+		$('.friend-emotes-container li.friend-emotes:first-child').show();
+		$('.friend-container .user-thumb:first-child').addClass('active');
+		
+		
+			$('.emote-friends').each(function(){
+				var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
+				$('.current-user', this).text(firstUser);
+			});
+		
+		
+		
+		// set up click event-handler for each user
+		$('.friend-container .user-thumb').click(function(){
+			
+			// add username
+			$('.friend-container .user-thumb').removeClass('active');
+			$(this).addClass('active');
+			
+				// grab which position in list
+			var whichFriend = $(this).index();
+			var parentPostID = $(this).attr('data-post-id');
+			
+			
+			// add User's name to top bar
+			var currentUserTextString = $('.emote-user-name', this).html();
+			$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').text(currentUserTextString);
+			
+			
+		
+			// hide all
+			$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
+			// show correct friend emotes
+			$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes:eq('+ whichFriend +')').show();
+			
+		});
+		
+		// resize images when user resizes browser
+		$(window).resize(function(){
+			$('.emote-v2-media').each(function(){
+			var mediaHeight = $('img', this).outerHeight();
+			$(this, '.emote-v2-content').parent().height(mediaHeight);
+			});
+		});
 		
 		
 	});
 });
 
 
-
 $(function(){
-	 
+
 	 // Listen for submit event on form
 	 $('#submit-button').click(function(){
-	  
+
 	  // grab values of form
 	  var tags = $('#tag').val();
 	  var emoteTitle = $('#obj-title').val();
-	  
+
 	  // create an object
 	  var data = {};
-	  
+
 	  data.tags = tags;
 	  data.emoteTitle = emoteTitle;
-	  
+
 	  // check to see if object is outputting correctly and data is captured
 	  // console.log(data['emoteTitle']);
 	  // console.log(data['tags']);
-	  
+
 	  // perform the request
 	  var feedContents = $.ajax({
 	   type: 'POST',
@@ -138,16 +189,24 @@ $(function(){
 		  $('#createEmote').click(); 
 		    // Fade out the feed container
 		    $('#feed-container div.emote-v2').fadeOut(125);
-		    
+
 		    // change content
 		    $('#feed-container').html(feedContents.responseText);
-		    
+
 		    // Fade in
 		    $('#feed-container').delay(125).fadeIn(125);
+			// Resizing feed element when image loads
+			$('.emote-v2-media').each(function(){
+				var mediaHeight = $('img', this).outerHeight();
+				$(this, '.emote-v2-content').parent().height(mediaHeight);
+			});
+		    //alert( $('#emoteSave'));
+		    //$('#emoteSave').reset();
 		   });;
-	  
+
 	  // Stop default behaviour of the button
 	  return false;
 	 });
-	 
+
 	});
+

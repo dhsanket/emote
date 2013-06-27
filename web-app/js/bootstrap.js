@@ -2268,6 +2268,7 @@
 
   , focus: function (e) {
       this.focused = true
+      value = this.$element.val(' ');
     }
     
   , blur: function (e) {
