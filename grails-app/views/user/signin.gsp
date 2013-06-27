@@ -5,7 +5,7 @@
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
 						// logged in and connected user, redirect to feed
-						window.location ="${createLink(controller:'emote', action:'feed')}";
+						window.location ="${createLink(controller:'Emote', action:'feed')}";
 					}else{
 						window.location ="${createLink(controller:'user', action:'signin')}";			
 					}
@@ -29,20 +29,39 @@
 			<h2 class="tab">Authentication</h2>
 			<g:if test="${facebookContext.authenticated}">
 				<div class="authentication">
-                        <g:link  controller="user" action="storeFBUser" class="pull-right large btn"> Go to emote\o/ feed</g:link>
+                 	<%-- <g:if test="${session.user}">
                         
+	                        <g:link  controller="emote" action="feed" class="large btn-block"> Go to emote\o/ feed </g:link>  
+	                       OR
+	                        <p><a href="${createLink(controller:'emote', action:'feed')}" class="btn-block"> Go to emote\o/ feed </a> </p>
+	                       Give Error: JS does not load with above method
+	                     
+	                        
+	                        <p><a href="emote/feed" class="btn-block"> Go to emote\o/ feed </a> </p>
+	                        <p><a href="${facebookContext.getLogoutURL(next:createLink(action:'signout', absolute:true))}" class="btn-block">
+	                        Logout of facebook & emote </a> </p>
+	                         <p>FBToken: ${facebookContext.user.token}</p>
+	                            
+                        </g:if>
+                        <g:else>
+							<g:link  controller="user" action="storeFBUser" class="large btn-block"> Signin to emote-app </g:link>
+                        </g:else> --%>
                 </div>
 			</g:if>
 			<g:else>
 				<div class="authentication">
 						<div class="emote">								
 								<div class="btn"> 
-									<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'storeFBUser', absolute:true))}" class="pull-right large btn">
+									<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'storeFBUser', absolute:true))}" class="large btn">
 									Login via Facebook</a>
+									
+										<%--
+									   <facebook:loginLink appPermissions="${facebookContext.app.permissions}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
+				                        Log in via Facebook JavaScript SDK:<br />
+				                        (<i>client-side, with Facebook Grails SDK handling authorization code from cookie on reload</i>)
+										--%>
+								
 								</div>
-								<g:if test="${facebookContext.authenticated}"> 
-			                    User is authenticated
-			                    </g:if>
 								By tapping on "Login via Facebook" above, you are agreeing to the Terms of Service and Privacy Policy.
 						</div>
 				</div>                    
@@ -50,28 +69,11 @@
 			<br />	
 			<br />
 			<br />	
-			<g:if test="${session.user}">
-				<h2 class="tab">Your data</h2>
-				<p>
-					<facebook:picture facebookId="${session.user.facebookId}" linkEnabled="true" />
-					${session.user.firstName} ${session.user.lastName}<br />
-				</p>
-				<%--
-				<h3>Your friends</h3>
-				<p>
-					<g:each in="${userFriends}" var="friend">
-						<img src="https://graph.facebook.com/${friend.id}/picture">
-					</g:each>
-				</p>
-				--%>
-			</g:if>
-			<g:else>
-				<strong><em>You are not Connected.</em></strong>
-			</g:else>
+			
 		<br />
 		<br />
 		<br />
-		</g:else>
+	</g:else>
 		<p>&nbsp;</p>
     	    <%--<div class="emote">
 	       		<g:if test="${flash.message!= null} ">

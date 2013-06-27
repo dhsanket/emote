@@ -10,13 +10,17 @@ class UserController
 {
 	FacebookContext facebookContext;
 	FacebookGraphClient facebookGraphClient;
-//	def facebookGraphService;
 
 	UserService userService;
 
 	def signin()
 	{
-
+		if (facebookContext.authenticated)
+		{
+			redirect (action: 'storeFBUser')
+		}
+		else
+		render (view: 'signin')
 	}
 	
 	def signinAction()
@@ -48,21 +52,23 @@ class UserController
 		def me
 		User user
 		User userFB
-		List userFriends = []
+		
 		String token = facebookContext.user.token  			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
 		
 		if (facebookContext.authenticated)
 		{
-            if (token) {
-                try {
-                    me = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
-                    //userFriends = facebookGraphClient.fetchConnection(me.id+"/friends", [limit:10])
-                } catch (FacebookOAuthException exception) {
-                    facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
-                    facebookContext.user.invalidate()
-                }
-            }	
+			if (token) {
+				try {
+					me = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
+					
+					
+					
+				} catch (FacebookOAuthException exception) {
+					facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
+					facebookContext.user.invalidate()
+				}
+			}
 			// log.info "user with facebook id ${session.facebookContext.user.id} logged in"
 			userFB = userService.findByFBId(me.id)
 			if(userFB == null)
@@ -77,9 +83,11 @@ class UserController
 			//return userFriends
 			session.user = userFB
 			setLoginCookie(session.user.facebookId)
+			
+			
 			String cntlr = flash.prevController == null?'emote':flash.prevController
 			String act = flash.prevAction == null?'feed':flash.prevAction
-			// redirect(controller:cntlr,action:act)
+			//redirect(controller:cntlr,action:act)
 			redirect(controller: 'emote', action:'feed')
 			
 			/* JsonSlurper slurper = new JsonSlurper()
@@ -90,11 +98,25 @@ class UserController
 				 [fbFriends:result.data]
 			}
 			TOOD add cookie   */
-		
+			
+			
 	
 		}
 	}
 		
+	def fbfriends(){
+		List emoteUsersList = []
+		List userFriends = []
+		if (facebookContext.authenticated)
+		{
+			emoteUsersList = User.list()
+			userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
+			// log.info "user friends in ${userFriends[1]},${userFriends[2] }"
+			render (template: "/common/menu_bar", model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
+		}
+		else
+			redirect (action: 'signin')
+	}
 
 	def settings(){}
 
@@ -134,4 +156,5 @@ class UserController
 			}
 		}
 	}
+
 }
