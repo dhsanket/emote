@@ -103,20 +103,7 @@ class UserController
 	
 		}
 	}
-		
-	def fbfriends(){
-		List emoteUsersList = []
-		List userFriends = []
-		if (facebookContext.authenticated)
-		{
-			emoteUsersList = User.list()
-			userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
-			// log.info "user friends in ${userFriends[1]},${userFriends[2] }"
-			render (template: "/common/menu_bar", model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
-		}
-		else
-			redirect (action: 'signin')
-	}
+	
 
 	def settings(){}
 
