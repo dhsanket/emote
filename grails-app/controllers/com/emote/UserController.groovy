@@ -15,12 +15,6 @@ class UserController
 
 	def signin()
 	{
-		if (facebookContext.authenticated)
-		{
-			redirect (action: 'storeFBUser')
-		}
-		else
-		render (view: 'signin')
 	}
 	
 	def signinAction()
@@ -61,9 +55,7 @@ class UserController
 			if (token) {
 				try {
 					me = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
-					
-					
-					
+
 				} catch (FacebookOAuthException exception) {
 					facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
 					facebookContext.user.invalidate()

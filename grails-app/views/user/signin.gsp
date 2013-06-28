@@ -29,6 +29,9 @@
 			<h2 class="tab">Authentication</h2>
 			<g:if test="${facebookContext.authenticated}">
 				<div class="authentication">
+					<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'storeFBUser', absolute:true))}" class="large btn">
+									Login via Facebook</a>
+					<p>By tapping on "Login via Facebook" above, you are agreeing to the Terms of Service and Privacy Policy.</p>				
                  	<%-- <g:if test="${session.user}">
                         
 	                        <g:link  controller="emote" action="feed" class="large btn-block"> Go to emote\o/ feed </g:link>  
