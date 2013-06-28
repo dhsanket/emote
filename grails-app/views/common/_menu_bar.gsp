@@ -22,7 +22,8 @@
 			<li><g:link controller="emote" action="feed"><i class="icon-home icon-white"></i> Home</g:link></li>
 			<li><a href="#"><i class="icon-pencil icon-white"></i> Add a review</a></li>
 			<li><a href="#"><i class="icon-circle-arrow-up icon-white"></i> Popular</a></li>
-			<li><a href="#"><i class="icon-star icon-white"></i> Favourites</a></li>
+			<%--<li><a href="${createLink(controller:'emote', action:'userFeed(session.user.userId)')}"><i class="icon-star icon-white"></i> My emotes and favorites</a></li>--%>
+			<li><g:link  controller="emote" action="userFeed" params: "[userId: session.user.userId]" class="large btn-block"> <i class="icon-star icon-white"></i> My emotes and favorites </g:link> </li>
 			<li><a href="#"><i class="icon-list icon-white"></i> To-do</a></li>
 			<li><a href="#"><i class="icon-cog icon-white"></i> Settings</a></li>
 			<li><a href="${facebookContext.getLogoutURL(next:createLink(controller:'user',action:'signout', absolute:true))}"><i class="icon-cog icon-white"></i> Signout (facebook & emote)</a></li>

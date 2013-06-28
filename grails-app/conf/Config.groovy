@@ -112,8 +112,8 @@ grails.plugin.facebooksdk.app.permissions = ['email']
 grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
 */
 
-grails.plugin.facebooksdk.app.id = 407280009364725
+grails.plugin.facebooksdk.app.id = 498699006889199
 grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
+grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
 
 
