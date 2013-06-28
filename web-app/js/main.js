@@ -176,7 +176,7 @@ $(function(){
 	  // perform the request
 	  var feedContents = $.ajax({
 	   type: 'POST',
-	   url: '/emote/emote/save',
+	   url: '/emote/save',
 	   data: {
 		     title: data.emoteTitle,
 		     expression: data.tags
