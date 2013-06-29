@@ -31,9 +31,9 @@ class EmoteService {
 		emote.save(validate: true)
 		
 		// save title if does not exist
-		Title title = Title.findByText(emote.title.toLowerCase())
+		Title title = Title.findByTextIlike(emote.title)
 		if(title == null){
-			title = new Title(text:emote.title.toLowerCase())
+			title = new Title(text:emote.title)
 			log.info "Saving title ${title}"
 			title.save(validate:true)
 		}
@@ -92,5 +92,10 @@ class EmoteService {
 		}
 		 Collections.sort(sorted);
 		 return sorted;
+	}
+	
+	def findTitles(String text){
+		log.info("searching title by $text")
+		return Title.findAllByTextIlike(text+"%")
 	}
 }

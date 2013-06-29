@@ -194,4 +194,4 @@ target-eclipse/classes/*.class
 
 *.class
 /target-eclipse
-target/classes/*.class
+/target/classes/*

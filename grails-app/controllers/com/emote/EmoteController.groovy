@@ -17,6 +17,8 @@ class EmoteController {
 	def save(EmoteCommand emote){
 		User user = session.user
 		if(user == null){
+			//temp changes remove later
+//			user = User.findByEmail('nkarmuse@gmail.com')
 			redirect(controller:'user' , action:'signin')
 			return;
 		}
@@ -25,7 +27,6 @@ class EmoteController {
 		if(emote.hasErrors()){
 			log.info "emote has errors"
 			//render view:'create', model:[emote:emote]
-			render ""
 			return
 		}
 		

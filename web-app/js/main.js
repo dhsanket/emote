@@ -18,14 +18,15 @@ $(function(){
 			'defaultText':'A few short words (an emote) to tell us what you thought...'
 		});
 		
-		$('#obj-title').typeahead({
-			source: [
-			'Iron Man 3',
-			'Venice Beach',
-			'Camden Town, London',
-			'Milton Keynes'
-			]
-		});
+		
+		$('#obj-title').autocomplete({
+			appendTo : '#obj-title-suggestion',
+			minLength : 3,
+			source: '/emote/title/autocomplete',
+			messages : {noResults: '',
+				 results: function(){}
+				}
+		});		
 		
 		// Resizing feed element when image loads
 		$('.emote-v2-media').each(function(){
