@@ -22,7 +22,7 @@ $(function(){
 		$('#obj-title').autocomplete({
 			appendTo : '#obj-title-suggestion',
 			minLength : 3,
-			source: '/emote/title/autocomplete',
+			source: '/title/autocomplete',
 			messages : {noResults: '',
 				 results: function(){}
 				}
