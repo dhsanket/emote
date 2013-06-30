@@ -77,22 +77,8 @@ class UserController
 			setLoginCookie(session.user.facebookId)
 			
 			
-			String cntlr = flash.prevController == null?'emote':flash.prevController
-			String act = flash.prevAction == null?'feed':flash.prevAction
-			//redirect(controller:cntlr,action:act)
 			redirect(controller: 'emote', action:'feed')
 			
-			/* JsonSlurper slurper = new JsonSlurper()
-			def result = slurper.parseText(facebookGraphService.getFriends().toString())
-			if(result != null)
-			{
-				
-				 [fbFriends:result.data]
-			}
-			TOOD add cookie   */
-			
-			
-	
 		}
 	}
 	

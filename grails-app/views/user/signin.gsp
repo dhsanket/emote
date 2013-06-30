@@ -55,7 +55,7 @@
 				<div class="authentication">
 						<div class="emote">								
 								<div class="btn"> 
-									<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'storeFBUser', absolute:true))}" class="large btn">
+									<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'emote', action:'feed', absolute:true))}" class="large btn">
 									Login via Facebook</a>
 									
 										<%--
