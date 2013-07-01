@@ -163,7 +163,7 @@ $(function(){
 
 	 // Listen for submit event on form
 	 $('#submit-button').click(function(){
-
+	  $('#createEmote').click(); 
 	  // grab values of form
 	  var tags = $('#tag').val();
 	  var emoteTitle = $('#obj-title').val();
@@ -191,7 +191,7 @@ $(function(){
 	   error: function(){
 	   }
 	  }).done(function(){
-		  $('#createEmote').click(); 
+
 		  $().refreshFeed(feedContents);
 
 	  });;
