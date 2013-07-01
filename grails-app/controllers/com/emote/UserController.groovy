@@ -95,7 +95,7 @@ class UserController
 			userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
 			// log.info "user friends in ${userFriends[1]},${userFriends[2] }"
 			flash.titles = emoteService.groupByTitle(emoteService.feed())
-			render (view:'fbfriends', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
+			render (view:'followUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
 		}
 		else
 			redirect (controller:'emote', action: 'feed')

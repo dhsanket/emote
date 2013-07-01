@@ -25,7 +25,7 @@
 			<%--<li><a href="${createLink(controller:'emote', action:'userFeed(session.user.userId)')}"><i class="icon-star icon-white"></i> My emotes and favorites</a></li>--%>
 			<li><g:link  controller="emote" action="userFeed" params: "${userId: session.user.userId}" ABSOLUTE="TRUE" class="large btn-block"> <i class="icon-star icon-white"></i> My emotes and favorites </g:link> </li>
 			<li><a href="#"><i class="icon-list icon-white"></i> To-do</a></li>
-			<li><g:link controller="user" action="followUsers" ><i class="icon-cog icon-white"></i> follow people </g:link></li>
+			<li><g:link controller="User" action="followUsers"><i class="icon-cog icon-white"></i> follow people </g:link></li>
 			<li><a href="${facebookContext.getLogoutURL(next:createLink(controller:'user',action:'signout', absolute:true))}"><i class="icon-cog icon-white"></i> Signout (facebook & emote)</a></li>
 		</ul>
 	</section>
