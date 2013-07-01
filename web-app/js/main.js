@@ -12,12 +12,15 @@ $(function(){
 	});
 	
 	$(window).load(function(){
+		
+		$().prepareEmoteCreate();
+	    
 		$('#tag').tagsInput({
 			'width' : 'auto',
 			'height': 'auto',
-			'defaultText':'A few short words (an emote) to tell us what you thought...'
+			'defaultText':'A few short words (an emote) to tell us what you thought...',
+			'placeholderColor' : '#999999'	
 		});
-		
 		
 		$('#obj-title').autocomplete({
 			appendTo : '#obj-title-suggestion',
@@ -28,11 +31,6 @@ $(function(){
 				}
 		});		
 		
-		// Resizing feed element when image loads
-		$('.emote-v2-media').each(function(){
-			var mediaHeight = $('img', this).outerHeight();
-			$(this, '.emote-v2-content').parent().height(mediaHeight);
-		});
 		
 		// Create emote
 		$('#createEmote').click(function(){
@@ -41,6 +39,12 @@ $(function(){
 			$('#createEmote').toggleClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
+		});
+		
+		// Resizing feed element when image loads
+		$('.emote-v2-media').each(function(){
+			var mediaHeight = $('img', this).outerHeight();
+			$(this, '.emote-v2-content').parent().height(mediaHeight);
 		});
 		
 		// Menu Toggle
@@ -177,7 +181,7 @@ $(function(){
 	  // perform the request
 	  var feedContents = $.ajax({
 	   type: 'POST',
-	   url: '/emote/save',
+	   url: '/emote/emote/save',
 	   data: {
 		     title: data.emoteTitle,
 		     expression: data.tags
@@ -188,22 +192,9 @@ $(function(){
 	   }
 	  }).done(function(){
 		  $('#createEmote').click(); 
-		    // Fade out the feed container
-		    $('#feed-container div.emote-v2').fadeOut(125);
+		  $().refreshFeed(feedContents);
 
-		    // change content
-		    $('#feed-container').html(feedContents.responseText);
-
-		    // Fade in
-		    $('#feed-container').delay(125).fadeIn(125);
-			// Resizing feed element when image loads
-			$('.emote-v2-media').each(function(){
-				var mediaHeight = $('img', this).outerHeight();
-				$(this, '.emote-v2-content').parent().height(mediaHeight);
-			});
-		    //alert( $('#emoteSave'));
-		    //$('#emoteSave').reset();
-		   });;
+	  });;
 
 	  // Stop default behaviour of the button
 	  return false;

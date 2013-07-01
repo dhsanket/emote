@@ -464,11 +464,12 @@ color:#FFFFFF;
 		
 		#emote-creation-container .emote-create-content input.emote-topic-input {
 			border-bottom:1px solid #EEEEEE;
-			font-weight:bold;
+			font-weight:normal;
+			color: #333333;
 		}
 		
 		#emote-creation-container .emote-create-content input:first-child::-webkit-input-placeholder {
-			color:#333333;
+			color:#999999;
 		}
 		
 		/* Tagging CSS */

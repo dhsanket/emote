@@ -20,6 +20,7 @@ modules ={
 		resource url: '/js/helper.js'
 		resource url: '/js/bootstrap.js'
 		resource url: '/js/tags.js'
+		resource url: '/js/emote.js'
 		resource url: '/js/jquery.masonry.min.js'
 		resource url: '/js/swiper.min.js'
 		resource url: '/js/main.js'
