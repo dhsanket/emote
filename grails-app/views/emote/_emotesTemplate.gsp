@@ -15,7 +15,7 @@
 			<div class="emote-v2-body clearfix">
 					<%-- If media is present --%>
 					<div class="emote-v2-media" data-media-type="image">
-						<img src="http://lorempixel.com/500/500" />
+						<img src="/img/positive-thinking.jpg" />
 					</div>
 					<%--// If media is present --%>					
 					<div class="emote-v2-content">
