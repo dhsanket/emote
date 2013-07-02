@@ -22,6 +22,13 @@ $(function(){
 			'placeholderColor' : '#999999'	
 		});
 		
+		$('#quick-tag').tagsInput({
+			'width' : 'auto',
+			'height': 'auto',
+			'defaultText':'put your emotes \o/ here',
+			'placeholderColor' : '#999999'	
+		});		
+		
 		$('#obj-title').autocomplete({
 			appendTo : '#obj-title-suggestion',
 			minLength : 3,
@@ -46,7 +53,6 @@ $(function(){
 			var mediaHeight = $('img', this).outerHeight();
 			$(this, '.emote-v2-content').parent().height(mediaHeight);
 		});
-		
 		// Menu Toggle
 		$('#toggleMenu').click(function(){
 			
@@ -202,3 +208,60 @@ $(function(){
 
 	});
 
+$(function(){
+
+	 // Listen for submit event on form
+	 $('#quick-submit-button').click(function(){
+	 hide_quick_emote();
+	  // grab values of form
+	  var tags = $('#quick-tag').val();
+	  var emoteTitle = $('#quick-obj-title').val();
+
+	  // create an object
+	  var data = {};
+
+	  data.tags = tags;
+	  data.emoteTitle = emoteTitle;
+
+	  // check to see if object ist putting correctly and data is captured
+//	  console.log(data['emoteTitle']);
+//	  console.log(data['tags']);
+
+	  // perform the request
+	  var feedContents = $.ajax({
+	   type: 'POST',
+	   url: '/emote/save',
+	   data: {
+		     title: data.emoteTitle,
+		     expression: data.tags
+		    },
+	   success: function(){
+		   //console.log('data saved');
+	   },
+	   error: function(){
+		  // console.log('save failed');
+	   }
+	  }).done(function(){
+		  $().refreshFeed(feedContents);
+		   });;
+
+	  // Stop default behaviour of the button
+	  return false;
+	 });
+
+	});
+
+
+function quick_emote(title, id){
+		var p = $(id).position().top + 25;
+		$('#quick-emote-creation-container').toggleClass('active');
+		$('#quick-emote-creation-container').css("top", p);
+		$('#quick-obj-title').val(title);
+		
+	
+}
+
+function hide_quick_emote(){
+	$('#quick-emote-creation-container').toggleClass('active');
+
+}

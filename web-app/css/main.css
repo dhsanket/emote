@@ -399,7 +399,7 @@ color:#FFFFFF;
 			top:200px;
 		}
 		
-		#emote-creation-container .emote-create-content {
+		.emote-create-content {
 			background:#FFFFFF;
 			width:100%;
 			-webkit-box-sizing: border-box;
@@ -412,7 +412,7 @@ color:#FFFFFF;
 		}
 		
 
-		#emote-creation-container .emote-create-content input {
+		.emote-create-content input {
 			display:block;
 			margin:0;
 			width:100%;
@@ -462,13 +462,13 @@ color:#FFFFFF;
 		  
 
 		
-		#emote-creation-container .emote-create-content input.emote-topic-input {
+		.emote-create-content input.emote-topic-input {
 			border-bottom:1px solid #EEEEEE;
 			font-weight:normal;
 			color: #333333;
 		}
 		
-		#emote-creation-container .emote-create-content input:first-child::-webkit-input-placeholder {
+		.emote-create-content input:first-child::-webkit-input-placeholder {
 			color:#999999;
 		}
 		
@@ -481,6 +481,36 @@ color:#FFFFFF;
 		.tags_clear { clear: both; width: 100%; height: 0px; }
 		.not_valid {  } 
 		#tag_tag { width:600px !important; }
+		
+		
+		/* Emote Creation */
+		#quick-emote-creation-container {
+			padding:48px 4px 0 4px;
+			height:0;
+			overflow-y:hidden;
+			position:absolute;
+			top:-50px;
+			-webkit-transition: all 0.25s ease-in-out;
+			-moz-transition: all 0.25s ease-in-out;
+			-ms-transition: all 0.25s ease-in-out;
+			-o-transition: all 0.25s ease-in-out;
+			transition: all 0.25s ease-in-out;
+			opacity:0;
+		}
+		
+		/* Emote Creation Slideout classes */
+		
+		#quick-emote-creation-container.active {
+			height:auto;
+			overflow:auto;
+			top:0;
+			opacity:1;
+			z-index:13;
+			position:absolute;
+			width:70%;
+			
+		}
+
 
 	/* User Profile Formatting */
 	
