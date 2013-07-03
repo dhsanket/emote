@@ -24,6 +24,14 @@ class SecurityFilters {
 			}
 		}
 		
+		signinSession(controller:'user', action:'signin'){
+			before = {
+				if(session.user || loginCookieExist(request, session)){
+					redirect(controller:'emote', action: 'feed')
+				}
+			}
+		}
+		
 		
 	}
 	

@@ -12,6 +12,7 @@ modules ={
 		resource url: 'img/touch/apple-touch-icon-57x57-precomposed.png'
 		resource url: 'img/touch/apple-touch-icon.png'
 		resource url: 'img/touch/apple-touch-icon-144x144-precomposed.png'
+		resource url: '/img/positive-thinking.jpg'
 
 		
 		resource url: '/js/vendor/modernizr-2.6.2.min.js'
