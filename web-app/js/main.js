@@ -13,13 +13,17 @@ $(function(){
 	
 	$(window).load(function(){
 		
+		
 		$().prepareEmoteCreate();
-	    
+		
+		
+		//.tagsInput initialises tag creation js
 		$('#tag').tagsInput({
 			'width' : 'auto',
-			'height': 'auto'
+			'height': 'auto',
+			'defaultText': 'A few short words (an emote) to tell us what you thought...'
 		});
-		
+
 		$('#quick-tag').tagsInput({
 			'width' : 'auto',
 			'height': 'auto',

@@ -35,11 +35,6 @@
 		document.getElementById("emoteSave").reset();	
 		$('#obj-title').attr('placeholder', titlePlaceHolder);
 		
-		//Tag input area not reset by emoteSave reset; so manual code to try reset below
-		$('#tag').importTags('');
-		$('#tag_tag').attr('placeholder',tagPlaceHolder);
-
-		
 		//clear title placeholder when input in use
 		$('#obj-title').focus(function(){
     		$(this).attr('placeholder', "");
@@ -49,5 +44,21 @@
 		$('#obj-title').blur(function(){
 			$(this).attr('placeholder', titlePlaceHolder);
 		});
+		
+		//Tag input area not reset by emoteSave reset; so manual code to try reset below
+		$('#tag').importTags('');
+
+		$('#tag').attr('placeholder',tagPlaceHolder);
+		
+		//clear tag placeholder when input in use
+		$('#tag').focus(function(){
+    		$(this).attr('placeholder', "");
+    	});
+		
+		//bring tag placeholder back if input not in use 
+		$('#tag').blur(function(){
+			$(this).attr('placeholder', tagPlaceHolder);
+		});
+
 	};	
 })(jQuery);			
