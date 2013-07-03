@@ -17,9 +17,7 @@ $(function(){
 	    
 		$('#tag').tagsInput({
 			'width' : 'auto',
-			'height': 'auto',
-			'defaultText':'A few short words (an emote) to tell us what you thought...',
-			'placeholderColor' : '#999999'	
+			'height': 'auto'
 		});
 		
 		$('#quick-tag').tagsInput({
