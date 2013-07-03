@@ -46,6 +46,11 @@ $(function(){
 			$('#createEmote').toggleClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
+			
+			// Scroll to top functionality
+			$('body,html').animate({
+				scrollTop: 0
+			},800);
 		});
 		
 		// Resizing feed element when image loads
@@ -205,8 +210,8 @@ $(function(){
 	  // Stop default behaviour of the button
 	  return false;
 	 });
+});
 
-	});
 
 $(function(){
 
@@ -258,7 +263,6 @@ function quick_emote(title, id){
 		$('#quick-emote-creation-container').css("top", p);
 		$('#quick-obj-title').val(title);
 		
-	
 }
 
 function hide_quick_emote(){

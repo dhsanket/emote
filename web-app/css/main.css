@@ -379,6 +379,9 @@ color:#FFFFFF;
 			-o-transition: all 0.25s ease-in-out;
 			transition: all 0.25s ease-in-out;
 			opacity:0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
 		}
 		
 		/* Emote Creation Slideout classes */
@@ -399,7 +402,7 @@ color:#FFFFFF;
 			top:200px;
 		}
 		
-		.emote-create-content {
+		#emote-creation-container .emote-create-content {
 			background:#FFFFFF;
 			width:100%;
 			-webkit-box-sizing: border-box;
@@ -411,8 +414,7 @@ color:#FFFFFF;
 			overflow:hidden;
 		}
 		
-
-		.emote-create-content input {
+		#emote-creation-container .emote-create-content input {
 			display:block;
 			margin:0;
 			width:100%;
@@ -430,9 +432,10 @@ color:#FFFFFF;
 			border-radius: 0;
 			font-size:16px;
 			padding:20px;
-			font-weight:normal;
+			font-weight:bold;
 		}
 		
+
 		#emote-creation-container .ui-autocomplete {
 			  padding: 4px 0 0 20px;
 			  margin: 2px 0 0 0;
@@ -462,13 +465,12 @@ color:#FFFFFF;
 		  
 
 		
-		.emote-create-content input.emote-topic-input {
+		#emote-creation-container .emote-create-content input.emote-topic-input {
 			border-bottom:1px solid #EEEEEE;
-			font-weight:normal;
-			color: #333333;
+			font-weight:bold;
 		}
 		
-		.emote-create-content input:first-child::-webkit-input-placeholder {
+		#emote-creation-container .emote-create-content input::-webkit-input-placeholder {
 			color:#999999;
 		}
 		
@@ -480,8 +482,9 @@ color:#FFFFFF;
 		div.tagsinput div { display:block; float: left; } 
 		.tags_clear { clear: both; width: 100%; height: 0px; }
 		.not_valid {  } 
-		#tag_tag { width:600px !important; }
-		
+
+		#tag_tag { width:600px !important; color:#666666 !important; }
+
 		
 		/* Emote Creation */
 		#quick-emote-creation-container {
@@ -1304,4 +1307,3 @@ border-bottom-left-radius: 8px;
  */
 
 
- 
