@@ -24,27 +24,29 @@
 								<div class="emote-friends swiper-slide">
 									<h4>Friend's emotes: <span class="current-user"></span></h4>
 									<ul class="friend-container clearfix">
-									<g:each in="${title.emotes}" var="emote">
-										<li class="user-thumb clearfix">
+									<g:each in="${title.users}" var="user">
+										<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.facebookId}">
 											
-											<img style="height: 30px;" src="http://graph.facebook.com/${emote.facebookId}/picture?">
-											<span class="emote-user-name">${emote.username}</span>
+											<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
+											<span class="emote-user-name">${user.username}</span>
 										</li>
 									</g:each>	
 									</ul>
-									<ul class="friend-emotes-container">
-									<g:each in="${title.emotes}" var="emote">
-										<li class="friend-emotes clearfix">
-												
-														<ul>
-															<g:each in="${emote.expressions}" var="exp">
-															<g:if test="${(exp.trim().length()>0)}">
-															<li><a href="#">${exp}</a></li>
-															</g:if>
-															</g:each>
-														</ul>
+									<ul class="friend-emotes-container" data-post-id="${i}">
+									<g:each in="${title.users}" var="user">
+										<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
+											<li class="friend-emotes clearfix" data-user-id="${user.facebookId}">
 													
-										</li>
+															<ul>
+																<g:each in="${emote.expressions}" var="exp">
+																<g:if test="${(exp.trim().length()>0)}">
+																<li><a href="#">${exp}</a></li>
+																</g:if>
+																</g:each>
+															</ul>
+														
+											</li>
+										</g:each>
 									</g:each>					
 									</ul>
 								</div>	

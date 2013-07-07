@@ -7,8 +7,11 @@ public class GroupByTitle implements Comparable  {
 	Date lastEmoteTime;
 	
 	String title;
+	String id;
 	
-	List<Emote> emotes = []
+	Map<String, GroupByUser> emotesByUsers = [:]
+	
+	
 	
 
 	@Override
@@ -21,10 +24,25 @@ public class GroupByTitle implements Comparable  {
 	}
 	
 	void add(Emote emote){
-		emotes.add(emote);
+		GroupByUser userGrouped = emotesByUsers.get(emote.facebookId)
+		if(userGrouped == null){
+			userGrouped = new GroupByUser(username:emote.username, facebookId:emote.facebookId)
+			emotesByUsers.put(emote.facebookId, userGrouped)
+		}
+		userGrouped.add(emote)
+		
 		if(lastEmoteTime == null || lastEmoteTime.getTime()< emote.creationTime.getTime()){
 			lastEmoteTime = emote.creationTime
 		}
 	}
+	
+	GroupByUser getUserEmotes(String fbId){
+		return emotesByUsers.get(fbId)
+	}
+	
+	def getUsers(){
+		return emotesByUsers.values()
+	}
+
 
 }
