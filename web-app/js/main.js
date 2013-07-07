@@ -1,36 +1,34 @@
 $(function(){
 	
-	$('.emote.map').each(function(){
-		
-		var lt = $(this).attr('data-lat');
-		var lo = $(this).attr('data-long');
-		
-		// init mapfeed function
-		$(this).css({
-		'background-image': 'url(http://maps.googleapis.com/maps/api/staticmap?center='+lt+','+lo+'&zoom=14&size=800x800&sensor=false)'
-		});
-	});
-	
 	$(window).load(function(){
-		
-		
-		$().prepareEmoteCreate();
-		
-		
-		//.tagsInput initialises tag creation js
-		$('#tag').tagsInput({
-			'width' : 'auto',
-			'height': 'auto',
-			'defaultText': 'A few short words (an emote) to tell us what you thought...'
-		});
+	    
+		// Resizing feed element when image loads
+		resizeFeedElements();
 
-		$('#quick-tag').tagsInput({
-			'width' : 'auto',
-			'height': 'auto',
-			'defaultText':'put your emotes \o/ here',
-			'placeholderColor' : '#999999'	
-		});		
+		// resize images when user resizes browser
+		$(window).resize(function(){
+			resizeFeedElements();
+		});
 		
+		// Emote rendering
+		swipeInit();
+		
+		// Friend formatting
+		friendRender();
+		
+		// Menu Toggle
+		$('#toggleMenu').click(function(){
+			navSlider();
+		});
+		
+		loadTags();
+		
+		// Create emote button toggle
+		$('#createEmote').click(function(){
+			emoteCreateButton();
+		});
+		
+		// Autocompletion on Emote create
 		$('#obj-title').autocomplete({
 			appendTo : '#obj-title-suggestion',
 			minLength : 3,
@@ -38,236 +36,18 @@ $(function(){
 			messages : {noResults: '',
 				 results: function(){}
 				}
-		});		
+		});	
 		
-		
-		// Create emote
-		$('#createEmote').click(function(){
-			$('#feed-container').toggleClass('active');
-			$('#emote-creation-container').toggleClass('active');
-			$('#createEmote').toggleClass('active');
-			$('#user-header').toggleClass('create-emote');
-			$('#photo-feed').toggleClass('create-emote');
-			
-			// Scroll to top functionality
-			$('body,html').animate({
-				scrollTop: 0
-			},800);
-		});
-		
-		// Resizing feed element when image loads
-		$('.emote-v2-media').each(function(){
-			var mediaHeight = $('img', this).outerHeight();
-			$(this, '.emote-v2-content').parent().height(mediaHeight);
-		});
-		// Menu Toggle
-		$('#toggleMenu').click(function(){
-			
-			// Move standard content
-			$('#feed-container').toggleClass('navactive');
-			$('#user-header').toggleClass('navactive');
-			$('header').toggleClass('active'); 
-			$('#photo-feed').toggleClass('navactive');
-			
-			// Hide Emote Creation if active
-			if($('#emote-creation-container').hasClass('active')) {
-				$('#emote-creation-container').removeClass('active');
-				$('#feed-container').removeClass('active');
-				$('#createEmote').removeClass('active');
-				$('#user-header').toggleClass('create-emote');
-				$('#photo-feed').toggleClass('create-emote');
-			}
-			
-			// Move in Nav menu
-			$('#nav-menu').toggleClass('active');
-		});
-		
-		// Sharing Tags (uses jQuery Mobile taphold event)
-		$('.emote').taphold(function(){
-			$(this).toggleClass('active');
-		});
-		
-		// jQuery Masonry
-		$('#photo-feed').masonry({
-			itemSelector : '.photo-feed-photo',
-			isResizable : true,
-			containerStyle: {
-				position: 'absolute',
-				top : '60px'
-			}
-		});
-		
-			/* Profile Switching Buttons */
-			$('#profile-emotes').click(function(){
-				$('#photo-feed').removeClass('active');
-				$('#feed-container').fadeIn(125);
-			});
-			
-			$('#profile-images').click(function(){
-				$('#photo-feed').addClass('active');
-				$('#feed-container').fadeOut(250);
-			});
-			
-		// Emote rendering
-		var mySwiper = $('.swiper-container').each(function(){
-			$(this).swiper({
-				//Your options here:
-				mode:'horizontal',
-				loop: true,
-				speed: 300,
-				resistance: true,
-			});
-		});
-		
-		// Friend emote sets
-		// automagically hide all friend emotes
-		$('.friend-emotes-container li.friend-emotes').hide();
-		// display only first set of friend emotes
-		$('.friend-emotes-container li.friend-emotes:first-child').show();
-		$('.friend-container .user-thumb:first-child').addClass('active');
-		
-		
-			$('.emote-friends').each(function(){
-				var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
-				$('.current-user', this).text(firstUser);
-			});
-		
-		
-		
-		// set up click event-handler for each user
-		$('.friend-container .user-thumb').click(function(){
-			
-			// add username
-			$('.friend-container .user-thumb').removeClass('active');
-			$(this).addClass('active');
-			
-				// grab which position in list
-			var whichFriend = $(this).index();
-			var parentPostID = $(this).attr('data-post-id');
-			
-			
-			// add User's name to top bar
-			var currentUserTextString = $('.emote-user-name', this).html();
-			$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').text(currentUserTextString);
-			
-			
-		
-			// hide all
-			$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
-			// show correct friend emotes
-			$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes:eq('+ whichFriend +')').show();
-			
-		});
-		
-		// resize images when user resizes browser
-		$(window).resize(function(){
-			$('.emote-v2-media').each(function(){
-			var mediaHeight = $('img', this).outerHeight();
-			$(this, '.emote-v2-content').parent().height(mediaHeight);
-			});
-		});
-		
-		
+		// Create emote 'SAVE' button
+		$('#submit-button').click(function(){
+			emoteCreate();
+	 		// prevent default behaviour of button
+	 		return false;
+	 	});
+	 	
+	 	// Reformat emotes without Media
+	 	emoteNoMediaFormat('#660000');
+
 	});
 });
 
-
-$(function(){
-
-	 // Listen for submit event on form
-	 $('#submit-button').click(function(){
-	  $('#createEmote').click(); 
-	  // grab values of form
-	  var tags = $('#tag').val();
-	  var emoteTitle = $('#obj-title').val();
-
-	  // create an object
-	  var data = {};
-
-	  data.tags = tags;
-	  data.emoteTitle = emoteTitle;
-
-	  // check to see if object is outputting correctly and data is captured
-	  // console.log(data['emoteTitle']);
-	  // console.log(data['tags']);
-
-	  // perform the request
-	  var feedContents = $.ajax({
-	   type: 'POST',
-	   url: '/emote/save',
-	   data: {
-		     title: data.emoteTitle,
-		     expression: data.tags
-		    },
-	   success: function(){
-	   },
-	   error: function(){
-	   }
-	  }).done(function(){
-
-		  $().refreshFeed(feedContents);
-
-	  });;
-
-	  // Stop default behaviour of the button
-	  return false;
-	 });
-});
-
-
-$(function(){
-
-	 // Listen for submit event on form
-	 $('#quick-submit-button').click(function(){
-	 hide_quick_emote();
-	  // grab values of form
-	  var tags = $('#quick-tag').val();
-	  var emoteTitle = $('#quick-obj-title').val();
-
-	  // create an object
-	  var data = {};
-
-	  data.tags = tags;
-	  data.emoteTitle = emoteTitle;
-
-	  // check to see if object ist putting correctly and data is captured
-//	  console.log(data['emoteTitle']);
-//	  console.log(data['tags']);
-
-	  // perform the request
-	  var feedContents = $.ajax({
-	   type: 'POST',
-	   url: '/emote/save',
-	   data: {
-		     title: data.emoteTitle,
-		     expression: data.tags
-		    },
-	   success: function(){
-		   //console.log('data saved');
-	   },
-	   error: function(){
-		  // console.log('save failed');
-	   }
-	  }).done(function(){
-		  $().refreshFeed(feedContents);
-		   });;
-
-	  // Stop default behaviour of the button
-	  return false;
-	 });
-
-	});
-
-
-function quick_emote(title, id){
-		var p = $(id).position().top + 25;
-		$('#quick-emote-creation-container').toggleClass('active');
-		$('#quick-emote-creation-container').css("top", p);
-		$('#quick-obj-title').val(title);
-		
-}
-
-function hide_quick_emote(){
-	$('#quick-emote-creation-container').toggleClass('active');
-
-}

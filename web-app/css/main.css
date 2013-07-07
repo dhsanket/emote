@@ -214,6 +214,7 @@ header {
 	#user-header.navactive {
 		left:83%;
 		opacity:0.2;
+		position:fixed;
 	}
 	
 	#photo-feed.navactive {
@@ -432,91 +433,27 @@ color:#FFFFFF;
 			border-radius: 0;
 			font-size:16px;
 			padding:20px;
-			font-weight:bold;
+			font-weight:normal;
 		}
-		
-
-		#emote-creation-container .ui-autocomplete {
-			  padding: 4px 0 0 20px;
-			  margin: 2px 0 0 0;
-			  width: 80%;
-			  list-style: none;
-		  }
-		  
-		 #emote-creation-container .ui-autocomplete .ui-menu-item > a.ui-corner-all {
-		    display: block;
-		    clear: both;
-		    line-height: 18px;
-		    white-space: nowrap;
-		    font-weight:bold;
-		    color: #555555;
-		    font-size:16px;
-		    &.ui-state-hover, &.ui-state-active {
-		      text-decoration: none;
-		      background-color: #0088cc;
-		      border-radius: 0px;
-		      -webkit-border-radius: 0px;
-		      -moz-border-radius: 0px;
-		      background-image: none;
-		    }
-		    
-		  }
-
-		  
-
 		
 		#emote-creation-container .emote-create-content input.emote-topic-input {
 			border-bottom:1px solid #EEEEEE;
 			font-weight:bold;
 		}
 		
-		#emote-creation-container .emote-create-content input::-webkit-input-placeholder {
-			color:#666666;
+		#emote-creation-container .emote-create-content input:first-child::-webkit-input-placeholder {
+			color:#333333;
 		}
 		
 		/* Tagging CSS */
-		div.tagsinput { background: #FFF;  width:600px; height:80px; overflow-y: auto;}
+		div.tagsinput { background: #FFF;  width:350px; height:80px; overflow-y: auto;}
 		div.tagsinput span.tag {margin-top:7px;margin-left:7px; font-weight:bold; -moz-border-radius:6px; -webkit-border-radius:6px; display: block; float: left; padding: 7px; text-decoration:none; background: #e8c500; color: #FFFFFF;font-family: helvetica;  font-size:15px;}
 		div.tagsinput span.tag a { font-weight: bold; color: #FFFFFF; text-decoration:none; font-size: 16px;  } 
 		div.tagsinput input { width:150px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; background: transparent; color: #CCC; outline:0px; font-weight:normal;border-left:1px solid #CCCCCC }
 		div.tagsinput div { display:block; float: left; } 
 		.tags_clear { clear: both; width: 100%; height: 0px; }
 		.not_valid {  } 
-
-		#tag { width:600px !important; color:#666666 !important; }
-		
-		
-		#tag_tag { width:600px !important; color:#666666 !important; }
-
-		
-		/* Emote Creation */
-		#quick-emote-creation-container {
-			padding:48px 4px 0 4px;
-			height:0;
-			overflow-y:hidden;
-			position:absolute;
-			top:-50px;
-			-webkit-transition: all 0.25s ease-in-out;
-			-moz-transition: all 0.25s ease-in-out;
-			-ms-transition: all 0.25s ease-in-out;
-			-o-transition: all 0.25s ease-in-out;
-			transition: all 0.25s ease-in-out;
-			opacity:0;
-		}
-		
-		/* Emote Creation Slideout classes */
-		
-		#quick-emote-creation-container.active {
-			height:auto;
-			overflow:auto;
-			top:0;
-			opacity:1;
-			z-index:13;
-			position:absolute;
-			width:70%;
-			
-		}
-
+		#tag_tag { width:600px !important; }
 
 	/* User Profile Formatting */
 	
@@ -909,8 +846,6 @@ textarea[contenteditable] {
     clear: both;
 }
 
-
-
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.
@@ -1055,12 +990,16 @@ textarea[contenteditable] {
 	/* Emote Header */
 	.emote-v2-header {
 		background:#FFFFFF;
+		height:40px;
 	}
 	
 		.emote-v2-header h3 {
 			float:left;
-			padding-left:20px;
 			font-size:18px;
+			line-height:40px;
+			margin:0;
+			padding:0;
+			padding-left:20px;
 		}
 		
 		.emote-v2-header .emote-v2-actions {
@@ -1069,8 +1008,8 @@ textarea[contenteditable] {
 			
 			margin:0;
 			padding:0;
-			padding-top:7px;
-			padding-right:6px;
+			padding-top:4px;
+			padding-right:4px;
 		}
 		
 			.emote-v2-header .emote-v2-actions li {
@@ -1079,15 +1018,16 @@ textarea[contenteditable] {
 			}
 			
 			.emote-v2-header .emote-v2-actions li button {
-				background:#FF0000;
+				background:#FBB450;
 				border:none;
 				border-radius:6px;
-				padding:6px 10px;
+				padding:3px 6px;
 			}
 	
 	.emote-v2-body {
 		width:100%;
 		position:relative;
+		min-height:180px;
 	}
 	
 	.emote-v2-media {
@@ -1106,7 +1046,7 @@ textarea[contenteditable] {
 	/* Emote Body */
 	.emote-v2-content {
 		width:100%;
-		padding:8px;
+		padding:10px 20px;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		box-sizing: border-box;
@@ -1115,14 +1055,23 @@ textarea[contenteditable] {
 		top:0;
 		left:0;
 		z-index:3;
-		background:rgba(0,0,0,0.3);
+		background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
 	}
 	
 	.emote-v2-content h4 {
 		font-size:18px;
 		color:#FFFFFF;
 		text-align:left;
-		margin-bottom:16px;
+		margin:0;
+		padding:0;
+		margin-bottom:10px;
 	}
 		
 		
@@ -1147,9 +1096,9 @@ textarea[contenteditable] {
 			float:left;
 			list-style:none;
 			margin:0 3px 3px 0;
-			padding:5px 9px;
+			padding:1px 5px;
 			font-weight:bold;
-			font-size:18px;
+			font-size:12px;
 		}
 		
 		.related-titles li {
@@ -1185,7 +1134,7 @@ textarea[contenteditable] {
 			margin:0;
 			padding:0;
 			height:40px;
-			margin-bottom:15px;
+			margin-bottom:5px;
 			-webkit-border-bottom-right-radius: 8px;
 -webkit-border-bottom-left-radius: 8px;
 -moz-border-radius-bottomright: 8px;
@@ -1219,7 +1168,7 @@ border-bottom-left-radius: 8px;
 			
 			.user-thumb.active {
 				background:#DDDDDD;
-				padding:4px;
+				padding:2px;
 			}
 			
 			.user-thumb:first-child {
@@ -1244,6 +1193,8 @@ border-bottom-left-radius: 8px;
 				max-width:300px;
 				overflow-x:auto;
 			}
+
+
 
 
 /* NOT STATEMENTS... REVISE AND REPHRASE LATER! */
@@ -1311,7 +1262,6 @@ border-bottom-left-radius: 8px;
  * COME BACK TO ME LATER!!!!!
  */
 
-
 /* Splash Styles */
 #splash-container {
 	width:100%;
@@ -1370,6 +1320,3 @@ border-bottom-left-radius: 8px;
 	color:#FFFFFF;
 	text-decoration:underline;
 }
-
-
-
