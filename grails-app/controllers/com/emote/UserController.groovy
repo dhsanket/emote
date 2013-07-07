@@ -115,7 +115,7 @@ class UserController
 			
 		}
 		session.user = null
-		facebookContext.user.invalidate()
+		//facebookContext.user.invalidate()
 		redirect (action: 'signin')
 	}
 

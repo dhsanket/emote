@@ -6,10 +6,13 @@
 		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		
+		<r:require modules="core"/>
+		<r:layoutResources/>
         <g:layoutHead />
     </head>
     <body onload="${pageProperty(name:'body.onload')}" class="clearfix">
 	                <g:layoutBody />
+	                <r:layoutResources/>
       <fbg:resources/>  
     </body>
 </html>

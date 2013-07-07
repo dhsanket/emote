@@ -1,9 +1,9 @@
 grails {
 	mongo {
-		//databaseName = "app14658629"
+		databaseName = "app14658629"
 		dbCreate = "update"
-		//host = "dharma.mongohq.com"
-		//port = 10046
+		host = "dharma.mongohq.com"
+		port = 10046
 		username = "emote-app"
 		password = "Emote-101"
 	}

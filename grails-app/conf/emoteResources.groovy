@@ -17,6 +17,7 @@ modules ={
 		
 		resource url: '/js/vendor/modernizr-2.6.2.min.js'
 		resource url: '/js/vendor/jquery-2.0.0.min.js'
+		resource url: '/js/jquery-mobile-init.js'
 		resource url: '/js/vendor/jquery.mobile-1.3.1min.js'
 		resource url: '/js/helper.js'
 		resource url: '/js/bootstrap.js'
