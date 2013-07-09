@@ -41,7 +41,7 @@
 															<ul>
 																<g:each in="${emote.expressions}" var="exp">
 																<g:if test="${(exp.trim().length()>0)}">
-																<li><a href="#">${exp}</a></li>
+																<li><a href="#" onclick="javascript:re_emote('${title.title}', '${exp}')">${exp}</a></li>
 																</g:if>
 																</g:each>
 															</ul>

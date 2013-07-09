@@ -130,6 +130,12 @@ function quick_emote(title, id){
 	   $('#obj-title').hide();
 }
 
+function re_emote(title, tag){
+	   $('#obj-title').val(title);
+	   $('#tag').val(tag);
+	   $('#submit-button').click();
+}
+
 function emoteCreate() {
 	
 	// Grab the values of the form
