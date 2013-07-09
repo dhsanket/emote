@@ -10,8 +10,7 @@
     		<g:render template="/common/signin"></g:render>
     	</g:if>
     	<g:render template="/common/create_emote" />
-    	<g:render template="/common/quick_emote" />
-    	<g:render template="/common/menu_bar" model="[userFriends: userFriends, emoteUsersList: emoteUsersList]"/>
+    	<g:render template="/common/menu_bar" />
     	<div id="feed-container" class="feed-container">
     		<g:render template="emotesTemplate" model="[titles: flash.titles]" />
     	</div>

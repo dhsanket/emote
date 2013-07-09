@@ -1,11 +1,11 @@
 <div id="user-header">
 	<section id="user-profile-header" class="clearfix">
 		<div id="user-profile-picture">
-			<img src="http://lorempixel.com/52/52" />
+			<facebook:picture facebookId="${session.user.facebookId}" />
 		</div>
 		<div id="user-profile-info">
-			<h1 class="user-profile-name">Sheldon Cooper</h1>
-			<span class="user-profile-location">London, United Kingdom</span>
+			<h1 class="user-profile-name">${session.user.firstName} ${session.user.lastName}</h1>
+			<span class="user-profile-location">${session.user.email}</span>
 		</div>
 		<div id="user-profile-switcher">
 			<ul>
