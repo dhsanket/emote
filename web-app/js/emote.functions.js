@@ -119,6 +119,17 @@ function emoteCreateButton() {
 	scrollToTop(800);
 }
 
+function quick_emote(title, id){
+	   var p = $(id).position().top + 25;
+	   $('#emote-creation-container').addClass('active');
+	   $('#emote-creation-container').css({
+		   'top': p,
+		   'position': 'relative'
+	   });
+	   $('#obj-title').val(title);
+	   $('#obj-title').hide();
+}
+
 function emoteCreate() {
 	
 	// Grab the values of the form
@@ -152,7 +163,7 @@ function emoteCreate() {
 		emoteCreateReset();
 		
 		// Reload
-		// location.reload();
+		location.reload();
 	});
 }
 
@@ -166,7 +177,7 @@ function loadTags() {
 	$('#tag').tagsInput({
 		'width' : 'auto',
 		'height': 'auto',
-		'defaultText':'A few short words (an emote) to tell us what you thought...',
+		'defaultText':'your micro-reviews (emotes) go here...',
 		'placeholderColor' : '#999999',
 		'maxChars' : 50
 	});

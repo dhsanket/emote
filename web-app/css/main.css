@@ -169,6 +169,15 @@ header {
 		opacity:1;
 	}
 	
+	.quickEmote {
+				background:#FBB450;
+				border:none;
+				border-radius:12px;
+				display:inline-block;
+				vertical-align: middle;
+				margin-top: 12px;
+				margin-left: 4px;
+	}
 	
 	header h1#logo {
 		padding:0;
