@@ -1,7 +1,7 @@
 
 <g:if test="${titles != null}">
 	<g:each status="i" in="${titles}" var="title"> 
-		<div class="emote-v2">
+		<div data-post-id="${i}"  class="emote-v2">
 			<div class="emote-v2-header clearfix">
 				<h3>${title.title}</h3>
 				<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><a href="#"><i class="icon-plus-sign icon-white"></i></a></div>
@@ -16,7 +16,7 @@
 			<div class="emote-v2-body clearfix">
 					<%-- If media is present --%>
 					<div class="emote-v2-media" data-media-type="image">
-						<r:img uri="/img/positive-thinking.jpg"/>
+						<!--   r:img uri="/img/positive-thinking.jpg"/ -->
 					</div>
 					<%--// If media is present --%>					
 					<div class="emote-v2-content">
@@ -33,22 +33,20 @@
 										</li>
 									</g:each>	
 									</ul>
-									<ul class="friend-emotes-container" data-post-id="${i}">
-									<g:each in="${title.users}" var="user">
-										<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
-											<li class="friend-emotes clearfix" data-user-id="${user.facebookId}">
-													
-															<ul>
-																<g:each in="${emote.expressions}" var="exp">
-																<g:if test="${(exp.trim().length()>0)}">
-																<li><a href="#" onclick="javascript:re_emote('${title.title}', '${exp}')">${exp}</a></li>
-																</g:if>
-																</g:each>
-															</ul>
-														
-											</li>
-										</g:each>
-									</g:each>					
+									<ul data-post-id="${i}" class="friend-emotes-container" >
+										<g:each in="${title.users}" var="user">
+											<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
+												<li class="friend-emotes clearfix" data-user-id="${user.facebookId}">
+													<ul>
+														<g:each in="${emote.expressions}" var="exp">
+															<g:if test="${(exp.trim().length()>0)}">
+																<li><a href="#">${exp}</a></li>
+															</g:if>
+														</g:each>
+													</ul>
+												</li>
+											</g:each>
+										</g:each>					
 									</ul>
 								</div>	
 
