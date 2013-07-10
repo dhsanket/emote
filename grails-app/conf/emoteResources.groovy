@@ -25,7 +25,7 @@ modules ={
 		resource url: '/js/jquery.masonry.min.js'
 		resource url: '/js/swiper.min.js'
 		resource url: '/js/main.js'
-		resource url: '/js/emote.functions.js'
+		resource url: '/js/emote.js'
 		resource url: '/js/vendor/jquery-ui.js'
 		
 
