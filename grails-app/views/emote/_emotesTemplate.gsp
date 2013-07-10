@@ -4,13 +4,13 @@
 		<div data-post-id="${i}"  class="emote-v2">
 			<div class="emote-v2-header clearfix">
 				<h3>${title.title}</h3>
-				<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><a href="#"><i class="icon-plus-sign icon-white"></i></a></div>
+				<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')"><a href="#"><i class="icon-plus-sign icon-white"></i></a></div>
 									<ul class="emote-v2-actions">		
 						<!--<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>
 						<li><button class="emote-v2-action-button"><i class="icon-play-circle icon-white"></i></button></li>
 						<li><button class="emote-v2-action-button"><i class="icon-ok icon-white"></i></button></li>
 						<li><button class="emote-v2-action-button"><i class="icon-remove-sign icon-white"></i></button></li>-->
-						<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><i class="icon-ok-sign icon-white" id="quick-createEmote"></i></button></li>
+						<%--<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><i class="icon-ok-sign icon-white" id="quick-createEmote"></i></button></li>--%>
 					</ul>
 			</div>
 			<div class="emote-v2-body clearfix">

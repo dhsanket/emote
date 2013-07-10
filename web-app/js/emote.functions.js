@@ -119,15 +119,10 @@ function emoteCreateButton() {
 	scrollToTop(800);
 }
 
-function quick_emote(title, id){
-	   var p = $(id).position().top + 25;
-	   $('#emote-creation-container').addClass('active');
-	   $('#emote-creation-container').css({
-		   'top': p,
-		   'position': 'relative'
-	   });
+function quick_emote(title){
+
+	emoteCreateButton();
 	   $('#obj-title').val(title);
-	   $('#obj-title').hide();
 }
 
 function re_emote(title, tag){
