@@ -121,6 +121,15 @@ function emoteCreateButton() {
 	scrollToTop(800);
 }
 
+function emoteCreateFold() {
+	$('#feed-container').toggleClass('active');
+	$('#emote-creation-container').toggleClass('active');
+	$('#createEmote').toggleClass('active');
+	$('#user-header').toggleClass('create-emote');
+	$('#photo-feed').toggleClass('create-emote');
+}
+
+
 function quick_emote(title){
 
 	emoteCreateButton();
@@ -145,6 +154,7 @@ function emoteCreate() {
 	data.tags = tags;
 	data.emoteTitle = emoteTitle;
 	
+	emoteCreateFold();
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);
