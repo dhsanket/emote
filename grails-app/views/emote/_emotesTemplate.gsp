@@ -23,7 +23,7 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="emote-friends swiper-slide">
-									<h4>Friend's emotes: <span class="current-user">some user</span></h4>
+									<h4>Friend's emotes: <span class="current-user"></span></h4>
 									<ul class="friend-container clearfix">
 									<g:each in="${title.users}" var="user">
 										<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.facebookId}_${i}">

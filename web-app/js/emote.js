@@ -76,7 +76,7 @@ function friendRender() {
 	// Display text name in 'Friend's emotes: ' field
 	$('.emote-friends').each(function(){
 		var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
-		$('.currentUser', this).text(firstUser);
+		$('.current-user', this).text(firstUser);
 		
 	});
 	
@@ -89,7 +89,8 @@ function friendRender() {
 		// grab which position in list
 		var whichFriend = $(this).index();
 		var parentPostID = $(this).attr('data-post-id');
-			
+		var friendID = $(this).attr('data-user-id');
+		//console.log(parentPostID)	
 		// add User's name to top bar
 		var currentUserTextString = $('.emote-user-name', this).html();
 		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').text(currentUserTextString);
@@ -97,7 +98,8 @@ function friendRender() {
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
 		// show correct friend emotes
-		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes:eq('+ whichFriend +')').show();
+		
+		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes[data-user-id="'+friendID+'"]').show();
 	});
 }
 
