@@ -23,6 +23,9 @@ $(function(){
 		
 		loadTags();
 		
+		//prepare title placeholder for auto-display
+		emoteCreateReset();
+		
 		// Create emote button toggle
 		$('#createEmote').click(function(){
 			emoteCreateButton();

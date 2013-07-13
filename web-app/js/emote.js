@@ -39,14 +39,6 @@ function navSlider() {
 	$('header').toggleClass('active'); 
 	$('#photo-feed').toggleClass('navactive');
 	
-	// Hide Emote Creation if active
-	if($('#emote-creation-container').hasClass('active')) {
-		$('#emote-creation-container').removeClass('active');
-		$('#feed-container').removeClass('active');
-		$('#createEmote').removeClass('active');
-		$('#user-header').toggleClass('create-emote');
-		$('#photo-feed').toggleClass('create-emote');
-	}
 	
 	// Move in Nav menu
 	$('#nav-menu').toggleClass('active');
@@ -111,24 +103,30 @@ function preserveSizeWithoutMedia() {
 // Emote Creation Functions
 
 function emoteCreateButton() {
-	$('#feed-container').toggleClass('active');
-	$('#emote-creation-container').toggleClass('active');
-	$('#createEmote').toggleClass('active');
-	$('#user-header').toggleClass('create-emote');
-	$('#photo-feed').toggleClass('create-emote');
+		if($('#emote-creation-container').hasClass('active')) {
+
+			$('#emote-creation-container').removeClass('active');
+			$('#feed-container').removeClass('active');
+			$('#createEmote').removeClass('active');
+			$('#user-header').toggleClass('create-emote');
+			$('#photo-feed').toggleClass('create-emote');
 			
-	// Scroll to top functionality
-	scrollToTop(800);
+			// Reset the form
+			emoteCreateReset();
+			
+		}
+		else {		
+				$('#feed-container').addClass('active');
+				$('#emote-creation-container').addClass('active');
+				$('#createEmote').addClass('active');
+				$('#user-header').toggleClass('create-emote');
+				$('#photo-feed').toggleClass('create-emote');
+						
+				// Scroll to top functionality
+				scrollToTop(800);
+		}		
+	
 }
-
-function emoteCreateFold() {
-	$('#feed-container').toggleClass('active');
-	$('#emote-creation-container').toggleClass('active');
-	$('#createEmote').toggleClass('active');
-	$('#user-header').toggleClass('create-emote');
-	$('#photo-feed').toggleClass('create-emote');
-}
-
 
 function quick_emote(title){
 
@@ -137,24 +135,33 @@ function quick_emote(title){
 }
 
 function re_emote(title, tag){
-	   $('#obj-title').val(title);
+/*	   $('#obj-title').val(title);
 	   $('#tag').val(tag);
-	   $('#submit-button').click();
+	   $('#submit-button').click();*/
+	
+	emoteSubmit(title, tag);
+	
+	
 }
 
 function emoteCreate() {
 	
 	// Grab the values of the form
 	var tags = $('#tag').val();
-	var emoteTitle = $('#obj-title').val();
-	
+	var title = $('#obj-title').val();
+	emoteCreateButton();
+	emoteSubmit(title , tags);
+
+}
+
+function emoteSubmit(title , tags) {
 	// Create an Object and store these values
 	var data = {};
 	
 	data.tags = tags;
-	data.emoteTitle = emoteTitle;
+	data.emoteTitle = title;
 	
-	emoteCreateFold();
+
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);
@@ -180,17 +187,41 @@ function emoteCreate() {
 	});
 }
 
+
 function emoteCreateReset() {
 	$('#obj-title').val('');
 	$('#tag').importTags('');
+	
+	var titlePlaceHolder = "title (what you want to emote about) goes here...";
+    
+    
+    $('#obj-title').attr('placeholder', titlePlaceHolder);
+
+	
+	//clear title placeholder when input in use
+    $('#obj-title').focus(function(){
+        $(this).attr('placeholder', "");
+      });
+    
+    //bring title placeholder back if input not in use 
+    $('#obj-title').blur(function(){
+      $(this).attr('placeholder', titlePlaceHolder);
+    });
+
+	
+
 }
 
 // Load tags
 function loadTags() {
+	
+	var tagPlaceHolder = "your micro-reviews (emotes) go here...";
+	
+	//init tag field
 	$('#tag').tagsInput({
 		'width' : 'auto',
 		'height': 'auto',
-		'defaultText':'your micro-reviews (emotes) go here...',
+		'defaultText': tagPlaceHolder,
 		'placeholderColor' : '#999999',
 		'maxChars' : 50
 	});
