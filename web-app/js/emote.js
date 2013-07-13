@@ -128,32 +128,38 @@ function emoteCreateButton() {
 	
 }
 
+//automatically adds title to the createEmote form
 function quick_emote(title){
-
-	emoteCreateButton();
-	   $('#obj-title').val(title);
+		
+		$('#obj-title').val(title);
+		emoteCreateButton();
 }
 
+// user can easily click another users emote and submit as his own 
 function re_emote(title, tag){
 /*	   $('#obj-title').val(title);
 	   $('#tag').val(tag);
 	   $('#submit-button').click();*/
 	
 	emoteSubmit(title, tag);
-	
-	
 }
 
 function emoteCreate() {
+	//submit-form has previously occured
 	
 	// Grab the values of the form
 	var tags = $('#tag').val();
 	var title = $('#obj-title').val();
+	
+	//close the createEmote form 
 	emoteCreateButton();
+	
+	//Ajax submit the form
 	emoteSubmit(title , tags);
 
 }
 
+//ajax submit createEmote form action
 function emoteSubmit(title , tags) {
 	// Create an Object and store these values
 	var data = {};
@@ -187,11 +193,12 @@ function emoteSubmit(title , tags) {
 	});
 }
 
-
+//prepare title placeholder for auto-display; resets tag field
 function emoteCreateReset() {
 	$('#obj-title').val('');
 	$('#tag').importTags('');
 	
+	//unique easy to find location for title placeholder
 	var titlePlaceHolder = "title (what you want to emote about) goes here...";
     
     
@@ -208,13 +215,12 @@ function emoteCreateReset() {
       $(this).attr('placeholder', titlePlaceHolder);
     });
 
-	
-
 }
 
 // Load tags
 function loadTags() {
 	
+	//unique easy to find location for tag placeholder
 	var tagPlaceHolder = "your micro-reviews (emotes) go here...";
 	
 	//init tag field
