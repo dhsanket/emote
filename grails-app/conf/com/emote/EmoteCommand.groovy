@@ -13,7 +13,8 @@ class EmoteCommand {
 	String topic;
 	String expression;
 	String title;
-  
+ 
+/* TODO *****DO WE NEED?? start *****/	 
 	def getTopics(){
 		if(topic == null){
 			return []
@@ -24,5 +25,7 @@ class EmoteCommand {
 	def getExpressions(){
 		return expression.split(",")
 	}
+	
+/******DO WE NEED?? end *****/
 
 }
