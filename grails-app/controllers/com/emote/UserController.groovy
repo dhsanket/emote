@@ -53,14 +53,6 @@ class UserController
 		redirect (action: 'signin')
 	}
 
-	private void setLoginCookie(String facebookId)
-	{
-		Cookie cookie = new Cookie("id", facebookId)
-		cookie.setMaxAge(365*24*60*60)
-		cookie.setPath("/")
-		response.addCookie(cookie)
-	}
-
 	private void deleteCookie(String facebookId)
 	{
 		request.getCookies().each

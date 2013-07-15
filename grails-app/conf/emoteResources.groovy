@@ -2,6 +2,7 @@ modules ={
 	core {
 		resource url:'/css/normalize.css'
 		resource url:'/css/bootstrap.css'
+		// resource url:'/css/bootstrap-override.css'
 		resource url:'/css/main.css'
 		
 		resource url: '/img/menu-icon.png'
@@ -13,8 +14,15 @@ modules ={
 		resource url: 'img/touch/apple-touch-icon.png'
 		resource url: 'img/touch/apple-touch-icon-144x144-precomposed.png'
 		resource url: '/img/positive-thinking.jpg'
-
 		
+		resource url: 'img/startup/startup-retina-4in.png'
+		resource url: 'img/startup/startup-retina.png'
+		resource url: 'img/startup/startup-tablet-landscape-retina.png'
+		resource url: 'img/startup/startup-tablet-landscape.png'
+		resource url: 'img/startup/startup-tablet-portrait-retina.png'
+		resource url: 'img/startup/startup-tablet-portrait.png'
+		resource url: 'img/startup/startup.png'
+
 		resource url: '/js/vendor/modernizr-2.6.2.min.js'
 		resource url: '/js/vendor/jquery-2.0.0.min.js'
 		resource url: '/js/jquery-mobile-init.js'
@@ -27,7 +35,7 @@ modules ={
 		resource url: '/js/main.js'
 		resource url: '/js/emote.js'
 		resource url: '/js/vendor/jquery-ui.js'
-		
+
 
 	}
 	
