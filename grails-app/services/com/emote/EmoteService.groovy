@@ -10,7 +10,7 @@ class EmoteService {
 			expressions:emoteCmd.expressions, title:emoteCmd.title, facebookId:user.facebookId 
 			)
 		
-		
+		//TODO with new approch there is no null topics so we may not need this check
 		def nonEmptyTopics = []
 		emote.topics.each{ topic ->
 			if(topic.trim().length()> 0){
@@ -30,11 +30,14 @@ class EmoteService {
 		
 		emote.save(validate: true)
 		
-		// save title if does not exist
+		// save title if does not exist else update time
 		Title title = Title.findByTextIlike(emote.title)
 		if(title == null){
 			title = new Title(text:emote.title)
 			log.info "Saving title ${title}"
+			title.save(validate:true)
+		}else{
+			title.refreshUpdateTime()
 			title.save(validate:true)
 		}
 		
@@ -67,8 +70,13 @@ class EmoteService {
 	}
 	
 	def feed(){
-		return Emote.list(max:30, sort:"creationTime", order:"desc")
-		
+		def titles = Title.list(max:30, sort:"lastUpdateTime", order:"desc")
+		def titleTexts  = []
+		titles.each{t ->
+			titleTexts.add(t.text)
+		}
+		def emotes = Emote.findAllByTitleInList(titleTexts, [sort:"creationTime", order:"desc"])
+		return emotes;
 	}
 	
 	def userFeed(String userId){
