@@ -23,6 +23,26 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="emote-friends swiper-slide">
+								<h4>Popular emotes: </h4>
+								<ul data-post-id="${i}" class="friend-emotes-container" >
+										<g:each in="${title.users}" var="user">
+										<li class="friend-emotes clearfix" style="display : list-item;">
+											<ul>
+											<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
+													
+														<g:each in="${emote.expressions}" var="exp">
+															<g:if test="${(exp.trim().length()>0)}">
+																<li><a href="#" onclick="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+															</g:if>
+														</g:each>
+													
+											</g:each>
+											</ul>
+										</li>
+										</g:each>					
+									</ul>
+								</div>
+								<div class="emote-friends swiper-slide">
 									<h4>Friend's emotes: <span class="current-user"></span></h4>
 									<ul class="friend-container clearfix">
 									<g:each in="${title.users}" var="user">
@@ -51,8 +71,10 @@
 										</g:each>					
 									</ul>
 								</div>	
-
-					
+								<div class="emote-friends swiper-slide">
+								<h4>Related Titles: </h4>
+								
+								</div>
 							</div>
 						</div>
 					</div>			

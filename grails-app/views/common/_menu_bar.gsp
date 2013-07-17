@@ -2,10 +2,10 @@
 	<section id="user-section" class="clearfix">
 		<g:if test="${session.user != null}">
 		<div class="user-image">
-			<a href="emote/emote/feed.html"><facebook:picture facebookId="${session.user.facebookId}" /></a>
+			<a href="${createLink(controller:'Emote',action:'userFeed', absolute:true)}"><facebook:picture facebookId="${session.user.facebookId}" /></a>
 		</div>
 		<div class="user-meta">
-			<h1 class="user-name">${session.user.firstName} ${session.user.lastName}</h1>
+			<h1 class="user-name"><a href="${createLink(controller:'Emote',action:'userFeed', absolute:true)}">${session.user.firstName} ${session.user.lastName}</a></h1>
 			<span class="user-email">${session.user.email}</span>
 		</div>
 		</g:if>

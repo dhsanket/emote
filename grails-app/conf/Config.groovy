@@ -62,11 +62,33 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.logging.jul.usebridge = true
-
+		//FACEBOOK http://localhost:8080  Database Heroku emote-test
+		grails.plugin.facebooksdk.app.id = 498699006889199
+		grails.plugin.facebooksdk.app.permissions = ['email']
+		grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
     }
+	
+	test {
+		grails.logging.jul.usebridge = false
+		// TODO: grails.serverURL = "http://www.changeme.com"
+		
+		//FACEBOOK http://emote-test.herokuapp.com  Database:Heroku emote-test
+		grails.plugin.facebooksdk.app.id = 145688522291575
+		grails.plugin.facebooksdk.app.permissions = ['email']
+		grails.plugin.facebooksdk.app.secret = '5f07c996c6d822970b98ee25f9a5d687'
+		//***git@heroku.com:emote-test.git
+		//***git remote add heroku-test git@heroku.com:emote-test.git
+		
+		
+	}
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
+		
+		//FACEBOOK http://emote-app.herokuapp.com  Database:Heroku emote-app
+		grails.plugin.facebooksdk.app.id = 407280009364725
+		grails.plugin.facebooksdk.app.permissions = ['email']
+		grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
     }
 }
 
@@ -95,28 +117,3 @@ log4j = {
 	   }
 	   
 }
-
-/*
- * Facebook app setup
- * 
- * **emote TEST-APP for heroku emote-test.herokuapp.com**
-grails.plugin.facebooksdk.app.id = 145688522291575
-grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '5f07c996c6d822970b98ee25f9a5d687'
-***git@heroku.com:emote-test.git
-***git remote add heroku-test git@heroku.com:emote-test.git
-
-**emote\o/-app PRODUCTION-APP for heroku emote-app.herokuapp.com**
-grails.plugin.facebooksdk.app.id = 407280009364725
-grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
-
-**emote-localhost*  LOCAL-APP
-grails.plugin.facebooksdk.app.id = 498699006889199
-grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
-*/
-
-grails.plugin.facebooksdk.app.id = 145688522291575
-grails.plugin.facebooksdk.app.permissions = ['email']
-grails.plugin.facebooksdk.app.secret = '5f07c996c6d822970b98ee25f9a5d687'
