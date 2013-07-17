@@ -53,19 +53,12 @@ class EmoteService {
 	}
 	
 	Set<Emote> search(String keyword){
-		
 		log.info "searching for $keyword"
 		Set<Emote> results = []
-		def qresults = Emote.findAllByTopicsIlike(keyword +"%")
-		log.info "found emotes by topic ${qresults}"
-		if(qresults != null)
-			results.addAll(qresults)
-		
-		qresults = Emote.findAllByTitleIlike(keyword+"%")
+		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%")
 		log.info "found emotes by title ${qresults}"
 		if(qresults != null)
 			results.addAll(qresults)
-		
 		return results
 	}
 	
