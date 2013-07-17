@@ -1,19 +1,16 @@
-grails {
-	mongo {
+ grails {
+   mongo {
 
-	}
-  }
-
+   }
+   }
 // environment specific settings
 environments {
 	development {
 		mongo {
-			databaseName = "app15169332"
 			dbCreate = "update"
-			host = "linus.mongohq.com"
-			port = 10001
-			username = "emote-app"
-			password = "Emote-101"
+			databaseName = "emote"
+			host = "localhost"
+			port = 27017
 		}
 	}
 	test {

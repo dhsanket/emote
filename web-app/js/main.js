@@ -50,6 +50,11 @@ $(function(){
 	 	
 	 	// Reformat emotes without Media
 	 	emoteNoMediaFormat('#660000');
+	 	
+	 	//If user-header active Push FeedContainer further down
+	 	if($('#user-header').hasClass('userActive')){
+	 		$('#feed-container').addClass('userActive');
+	 	}
 
 	});
 });

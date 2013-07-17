@@ -377,6 +377,10 @@ color:#FFFFFF;
 		}
 		
 		/* Emote Creation */
+		#emoteSave{
+		position:static;
+		}
+		
 		#emote-creation-container {
 			padding:48px 4px 0 4px;
 			height:0;
@@ -410,6 +414,10 @@ color:#FFFFFF;
 		#feed-container.active {
 			opacity:0.2;
 			top:200px;
+		}
+		
+		#feed-container.userActive {
+			top:95px;
 		}
 		
 		#emote-creation-container .emote-create-content {
@@ -1270,6 +1278,17 @@ border-bottom-left-radius: 8px;
 /*
  * COME BACK TO ME LATER!!!!!
  */
+
+/* Sign-in Styles */
+
+#signinHeader{
+		background:#272727;
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		-ms-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;	
+}
 
 /* Splash Styles */
 #splash-container {

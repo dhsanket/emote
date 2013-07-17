@@ -80,7 +80,8 @@ class EmoteService {
 	}
 	
 	def userFeed(String userId){
-		return Emote.findAllByUserId(userId, [max:30, sort:"creationTime", order:"desc"])
+		def userEmotes = Emote.findAllByUserId(userId, [max:30, sort:"creationTime", order:"desc"])
+		return userEmotes;
 	}
 	
 	def groupByTitle (def emotes){

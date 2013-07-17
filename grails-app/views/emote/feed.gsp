@@ -6,8 +6,8 @@
     </head>
     <body>
     	<g:render template="/common/header" />
-    	<g:if test="${session.user == null}">
-    		<g:render template="/common/signin"></g:render>
+    	<g:if test="${session.user == null} || ${!facebookContext.authenticated}">
+    			<g:render template="/common/signin_header"></g:render>
     	</g:if>
     	<g:render template="/common/create_emote" />
     	<g:render template="/common/menu_bar" />

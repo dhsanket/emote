@@ -20,19 +20,22 @@ class UserController
 	def followUsers(){
 		String token = facebookContext.user.token  			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
-		
+		log.info "FB context user ${facebookContext.user.id}"
+		log.info "user.token ${token}"
 		List emoteUsersList = []
 		List userFriends = []
 		if (facebookContext.authenticated)
-		{
+		{	
+			log.info "user is FB authenticated"
 			emoteUsersList = User.list()
 			userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
-			// log.info "user friends in ${userFriends[1]},${userFriends[2] }"
-			flash.titles = emoteService.groupByTitle(emoteService.feed())
+			log.info "user friends in ${userFriends[1]},${userFriends[2] }"
 			render (view:'followUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
 		}
-		else
+		else{
+		log.info "user is NOT FB authenticated"
 			redirect (controller:'emote', action: 'feed')
+		}	
 	}
 	
 

@@ -40,7 +40,12 @@ class EmoteController {
 	}
 	
 	def userFeed(String userId){
-		flash.titles = emoteService.groupByTitle(emoteService.userFeed(userId))
+		if(userId == null)
+		{
+			userId = session.user.id
+		}
+		def reqUserPosts = emoteService.userFeed(userId)
+		flash.titles = emoteService.groupByTitle(reqUserPosts)
 	}
 	
 	

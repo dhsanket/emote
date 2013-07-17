@@ -1,4 +1,4 @@
-<div id="user-header">
+<div id="user-header" class="userActive">
 	<section id="user-profile-header" class="clearfix">
 		<div id="user-profile-picture">
 			<facebook:picture facebookId="${session.user.facebookId}" />

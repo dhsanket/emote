@@ -20,7 +20,7 @@
 	<section id="menu-section">
 		<ul>
 			<li><a href="${createLink(controller:'emote',action:'feed', absolute:true)}"><i class="icon-home icon-white"></i> Home</a></li>
-
+			<li><a href="${createLink(controller:'user',action:'followUsers', absolute:true)}"><i class="icon-home icon-white"></i> Follow emote users</a></li>
 			<li><a href="${createLink(controller:'user',action:'signout', absolute:true)}"><i class="icon-cog icon-white"></i> Signout </a></li>
 		</ul>
 	</section>
