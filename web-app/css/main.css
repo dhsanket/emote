@@ -1298,8 +1298,10 @@ border-bottom-left-radius: 8px;
 		-ms-transition: 1s ease-in-out;
 		-o-transition: 1s ease-in-out;
 		transition: 1s ease-in-out;	
-} 
-#signinHeader{
+}
+
+#signinHeader
+{
 	display: none;
 }
 
