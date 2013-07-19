@@ -55,6 +55,31 @@ $(function(){
 	 	if($('#user-header').hasClass('userActive')){
 	 		$('#feed-container').addClass('userActive');
 	 	}
+	 	
+	 	//If user not signed into facebook, show signin header
+	 	FB.getLoginStatus(function(response) {
+	 		  if (response.status === 'connected') {
+	 		    // the user is logged in and has authenticated your
+	 		    // app, and response.authResponse supplies
+	 		    // the user's ID, a valid access token, a signed
+	 		    // request, and the time the access token 
+	 		    // and signed request each expire
+	 		    var uid = response.authResponse.userID;
+	 		    var accessToken = response.authResponse.accessToken;
+	 		   $('#signinHeader').removeClass('active');
+	 		  } else if (response.status === 'not_authorized') {
+	 		    // the user is logged in to Facebook, 
+	 		    // but has not authenticated your app
+		 			 $('#signinHeader').removeClass('active');
+	 		  } else {
+	 		    // the user isn't logged in to Facebook.
+	 			 $('#signinHeader').addClass('active');
+	 		  }
+	 		 });
+	 		
+	 	if($('#signinHeader').hasClass('Active')){
+	 		$('#feed-container').addClass('userActive');
+	 	}
 
 	});
 });
