@@ -1090,7 +1090,10 @@ textarea[contenteditable] {
 		padding:0;
 		margin-bottom:10px;
 	}
-		
+.emote-v2-content h4 a {
+		color:#FFFFFF;
+		text-decoration:underline;
+	}
 		
 		.friend-emotes-container {
 			list-style:none;
@@ -1362,4 +1365,15 @@ border-bottom-left-radius: 8px;
 .splash-disclaimer a {
 	color:#FFFFFF;
 	text-decoration:underline;
+}
+
+
+/* Geo Styling */
+#geoLocation, #cameraInit {
+	background:#EEEEEE;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding:7px 10px;
+	margin-right:3px;
 }

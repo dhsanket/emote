@@ -2,6 +2,12 @@ $(function(){
 	
 	$(window).load(function(){
 	    
+		// Geolocation
+	    $('#geoLocation').click(function(){
+	    	getLocation();
+	    });
+		
+		
 		// Resizing feed element when image loads
 		resizeFeedElements();
 

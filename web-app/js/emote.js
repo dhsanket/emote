@@ -85,7 +85,7 @@ function friendRender() {
 		//console.log(parentPostID)	
 		// add User's name to top bar
 		var currentUserTextString = $('.emote-user-name', this).html();
-		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').text(currentUserTextString);
+		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').html(currentUserTextString);
 		
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
@@ -231,4 +231,20 @@ function loadTags() {
 		'placeholderColor' : '#999999',
 		'maxChars' : 50
 	});
+}
+
+//Geolocation stuff
+function getLocation() {
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+}
+
+function showPosition(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	
+	console.log("Latitude: " + latitude);
+	console.log("Longitude: " + longitude);
 }
