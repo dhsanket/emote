@@ -85,6 +85,13 @@ $(function(){
 	 	if($('#signinHeader').hasClass('active')){
 	 		$('#feed-container').addClass('userActive');
 	 	}
+	 	
+	 	FB.Event.subscribe('auth.authResponseChange', function(response) {
+	 		  if (response.status === 'connected') {
+		 		   $('#signinHeader').removeClass('active');
+	 		    window.top.location = '#';
+	 		  }
+	 		});
 
 	});
 });

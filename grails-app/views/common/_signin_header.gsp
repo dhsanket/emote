@@ -61,7 +61,7 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
   Learn more about options for the login button plugin:
   /docs/reference/plugins/login/ -->
 <p> Surprisingly enough, you seem to be logged out of facebook. How weird? </p>
-<fb:login-button show-faces="false" width="200" max-rows="1"></fb:login-button> OR <a href="" onclick="javascript:$('#signinHeader').addClass('ignored')"> Ignore </a>
+<fb:login-button show-faces="false" width="200" max-rows="1" ></fb:login-button> <p><a href="" onclick="javascript:$('#signinHeader').addClass('ignored')"> (ignore) </a></p>
 </div>
 </body>
 
