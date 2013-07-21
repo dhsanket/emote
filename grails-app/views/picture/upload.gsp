@@ -23,7 +23,7 @@ $(document).ready(function()
 </script> 
 </head>
 <body>
-<form id='uploadForm' action="/emote/picture/save" method="post" enctype="multipart/form-data">
+<form id='uploadForm' action="save" method="post" enctype="multipart/form-data">
 <input type="file" name="content">
 <input type="submit" value="load">
 </form>

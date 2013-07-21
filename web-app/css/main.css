@@ -471,6 +471,17 @@ color:#FFFFFF;
 		.tags_clear { clear: both; width: 100%; height: 0px; }
 		.not_valid {  } 
 		#tag_tag { width:600px !important; }
+		
+		#obj-title-suggestion .ui-autocomplete {
+			padding:0 20px; 
+			list-style:none;
+		}
+
+		#obj-title-suggestion .ui-autocomplete li.ui-menu-item a {
+			font-size:16px;
+			color:#555555;		 
+		} 
+		 
 
 	/* User Profile Formatting */
 	
