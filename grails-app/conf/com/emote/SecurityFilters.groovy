@@ -65,6 +65,10 @@ class SecurityFilters {
 			FacebookGraphClient facebookGraphClient = new FacebookGraphClient(token)
 			if (token) {
 				try {
+					// Exchange token to get an extended expiration time (60 days)
+					log.info "Current token expiration time: " + new Date(facebookContextProxy.user.tokenExpirationTime)
+					facebookContextProxy.user.exchangeToken()
+					log.info "Exchanged token expiration time:  " + new Date(facebookContextProxy.user.tokenExpirationTime)
 					me = facebookGraphClient.fetchObject(facebookContextProxy.user.id.toString())
 
 				} catch (Throwable e) {
@@ -86,7 +90,7 @@ class SecurityFilters {
 			//user = userService.findByFBId(facebookContext.user.id)
 			//return userFriends
 			session.user = userFB
-			setLoginCookie(session.user.facebookId, response)
+			setLoginCookie(session.user.facebookId, token,  response)
 			fblogin = true
 		}
 
@@ -94,12 +98,18 @@ class SecurityFilters {
 	}
 	
 	
-	private void setLoginCookie(String facebookId, def response)
+	private void setLoginCookie(String facebookId, String token, def response)
 	{
 		Cookie cookie = new Cookie("id", facebookId)
-		cookie.setMaxAge(365*24*60*60)
+		cookie.setMaxAge(60*24*60*60)
 		cookie.setPath("/")
 		response.addCookie(cookie)
+		
+		Cookie fbtcookie = new Cookie("fbt", token)
+		fbtcookie.setMaxAge(60*24*60*60)
+		fbtcookie.setPath("/")
+		response.addCookie(fbtcookie)
+
 	}
 
 	
