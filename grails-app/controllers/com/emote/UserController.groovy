@@ -9,7 +9,8 @@ import com.restfb.exception.FacebookOAuthException
 class UserController 
 {
 	FacebookGraphClient facebookGraphClient;
-
+	// this is required in sign in gsp to get URL after facebook login
+	FacebookContext facebookContext;
 	UserService userService;
 
 	def signin()
