@@ -1090,7 +1090,10 @@ textarea[contenteditable] {
 		padding:0;
 		margin-bottom:10px;
 	}
-		
+.emote-v2-content h4 a {
+		color:#FFFFFF;
+		text-decoration:underline;
+	}
 		
 		.friend-emotes-container {
 			list-style:none;
@@ -1281,13 +1284,28 @@ border-bottom-left-radius: 8px;
 
 /* Sign-in Styles */
 
-#signinHeader{
+#signinHeader.active{
+		position: fixed;
+		z-index: 10;
+		top: 44px;
+		height: 100px;
+		width:100%;
+		display:block;
+		padding-top: 20px;
+		text-align:center;
+		font-size:14px;
+		color:#FFFFFF;
 		background:#272727;
-		-webkit-transition: 0.3s ease-in-out;
-		-moz-transition: 0.3s ease-in-out;
-		-ms-transition: 0.3s ease-in-out;
-		-o-transition: 0.3s ease-in-out;
-		transition: 0.3s ease-in-out;	
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+		-ms-transition: 1s ease-in-out;
+		-o-transition: 1s ease-in-out;
+		transition: 1s ease-in-out;	
+}
+
+#signinHeader
+{
+	display: none;
 }
 
 /* Splash Styles */
@@ -1347,4 +1365,15 @@ border-bottom-left-radius: 8px;
 .splash-disclaimer a {
 	color:#FFFFFF;
 	text-decoration:underline;
+}
+
+
+/* Geo Styling */
+#geoLocation, #cameraInit {
+	background:#EEEEEE;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding:7px 10px;
+	margin-right:3px;
 }

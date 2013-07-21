@@ -20,6 +20,8 @@ class UserController
 	def followUsers(){
 		String token = facebookContext.user.token  			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
+		log.info "user.token expired? ${facebookContext.user.tokenExpired}"
+		log.info "user authenticated ? ${facebookContext.authenticated}"
 		log.info "FB context user ${facebookContext.user.id}"
 		log.info "user.token ${token}"
 		List emoteUsersList = []

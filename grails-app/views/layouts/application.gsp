@@ -40,7 +40,50 @@
         
         <g:layoutHead />
     </head>
-    <body onload="${pageProperty(name:'body.onload')}" >
+	<body onload="${pageProperty(name:'body.onload')}" >
+    	<div id="fb-root"></div>
+				<script> 
+				window.fbAsyncInit = function() {
+					//Facebook JS SDK - http://developers.facebook.com/docs/reference/javascript/
+					//https://developers.facebook.com/docs/facebook-login/getting-started-web/
+					  // init the FB JS SDK
+				  FB.init({
+				    appId      : '498699006889199',                        // App ID from the app dashboard
+				    channelUrl : '*.herokuapp.COM/channel.html', // Channel file for x-domain comms
+				    status     : true,                                 // Check Facebook Login status
+				    xfbml      : true                                  // Look for social plugins on the page
+				  });
+				
+				  // Additional initialization code such as adding Event Listeners goes here
+				  
+
+				  
+				};
+
+				// Load the SDK asynchronously
+				(function(d, s, id){
+				   var js, fjs = d.getElementsByTagName(s)[0];
+				   if (d.getElementById(id)) {return;}
+				   js = d.createElement(s); js.id = id;
+				   js.src = "//connect.facebook.net/en_US/all.js";
+				   fjs.parentNode.insertBefore(js, fjs);
+				 }(document, 'script', 'facebook-jssdk'));
+
+
+				  // Here we run a very simple test of the Graph API after login is successful. 
+				  // This testAPI() function is only called in those cases. 
+				  function testAPI() {
+				    console.log('Welcome!  Fetching your information.... ');
+				    FB.api('/me', function(response) {
+				      console.log('Good to see you, ' + response.name + '.');
+				    });
+				  }
+
+				  
+
+
+				 
+				</script>
     
 	    <g:layoutBody />
 		<r:layoutResources/>		
