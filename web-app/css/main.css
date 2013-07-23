@@ -1388,3 +1388,121 @@ border-bottom-left-radius: 8px;
 	padding:7px 10px;
 	margin-right:3px;
 }
+
+
+/* Follow users */
+#followUsers{ 
+margin-left:25px;
+margin-right:25px;
+position: relative;
+}
+
+#followUsers .user-section{
+	display: block;
+	height: 75px;
+}
+#followUsers .user-section .user-image {
+			float:left;
+			display:inline-block;
+			height: auto;
+		}
+		
+#followUsers .user-section .user-image img {
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+		}
+		
+#followUsers .user-section .user-meta {
+			float:left;
+			display:inline-block;
+			width: auto;
+			padding-top:10px;
+			padding-left:10px;
+		}
+
+
+#followUsers .user-section .user-meta h3{
+font-size: 14px;
+font-weight: bold;
+color: #999;
+}
+
+#followUsers .user-section .user-meta h1.user-name {
+			font-size:15px;
+			line-height:8px;
+			margin:0;
+			padding:0;
+			margin-top:2px;
+		}
+		
+#followUsers .user-section .user-meta .user-email {
+			color:#666666;
+			font-size:12px;
+		}
+
+#followUsers .user-section .followButton{
+			padding-top:10px;
+			float:right;
+			display:inline-block;
+}
+#followUsers .user-section .followButton a{
+			color:#999999;
+			text-align:center;
+			text-decoration:none;
+			height:40px;
+			width: 100px;
+			padding-top:10px;
+			display:inline-block;
+			verticle-align: middle;
+			
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+			
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+}
+
+
+
+/* Documentation */
+
+#privacy, #terms{
+	margin: 25px;
+}
+
+
+#privacy h1, #terms h1 {
+	color:#FFFFFF;
+	text-decoration:underline;
+		display:block;
+	text-align:center;
+	font-size:18px;
+}
+
+#terms h2 {
+	color:#FFFFFF;
+	text-decoration:underline;
+		display:block;
+	text-align:center;
+	font-size:15px;
+}
+
+#privacy p , #terms p{
+		color:#FFFFFF;
+
+		display:block;
+	text-align:left;
+	font-size:13px;
+}

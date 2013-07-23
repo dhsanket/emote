@@ -21,45 +21,11 @@
 		<ul>
 			<li><a href="${createLink(controller:'emote',action:'feed', absolute:true)}"><i class="icon-home icon-white"></i> Home</a></li>
 			<li><a href="${createLink(controller:'user',action:'followUsers', absolute:true)}"><i class="icon-home icon-white"></i> Follow emote users</a></li>
+			<li><a href="/help.html"><i class="icon-home icon-white"></i> Help </a></li>
 			<li><a href="${createLink(controller:'user',action:'signout', absolute:true)}"><i class="icon-cog icon-white"></i> Signout </a></li>
 		</ul>
 	</section>
 	<span class="list-sub-title">Notifications</span>
-	<section id="menu-section">	
-	<%--
-			<g:if test="${session.user}">
-				<h3>Follow/Invite fb friends</h3>
-				<p>
-				<g:render template="/common/fbfriends" model="[userFriends: userFriends]" />
-				<g:render template="/common/fbfriends" model="[userFriends: userFriends]"/>
-				</p>
-			</g:if>
-			<g:else>
-				<strong><em>You are not Connected.</em></strong>
-			</g:else>
-	--%>
-		
-			<g:each in="${emoteUsersList}" var="emoteUser">
-			<p>
-			<div class="user-image">
-			<facebook:picture facebookId="${emoteUser.facebookId}" linkEnabled="true" /> </div>
-			<div class="user-meta">
-			<a href="${createLink(controller:'emote', action:'feed')}" class="btn-block"> Invite </a> </div>	
-			</p>
-			</g:each>
-			
-			
-			<g:each in="${userFriends}" var="friend">
-			<p>
-			<facebook:picture facebookId="${friend.id}" linkEnabled="true" />
-				<%--<img src="https://graph.facebook.com/${friend.id}/picture">--%>
-			<a href="${createLink(controller:'emote', action:'feed')}" class="btn-block"> Invite </a>	
-			</p>
-			</g:each>
-	
-	
-	
-	
-	</section>
+
 </div>
 

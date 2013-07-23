@@ -1,19 +1,43 @@
 
+<div id="followUsers">
+
+
+
 <g:each in="${emoteUsersList}" var="emoteUser">
-<p>
-<div class="user-image">
-<facebook:picture facebookId="${emoteUser.facebookId}" linkEnabled="true" /> </div>
-<div class="user-meta">
-<a href="${createLink(controller:'emote', action:'feed')}" class="btn-block"> Invite </a> </div>	
-</p>
+
+<div class="user-section">
+	<div class="user-image">
+	<facebook:picture facebookId="${emoteUser.facebookId}" linkEnabled="true" /> 
+	</div>
+	
+	<div class="user-meta">
+	<h3 class="user-name">${emoteUser.firstName} ${emoteUser.lastName}</h3>
+	</div>
+	
+	<div class="followButton">
+		<a href="${createLink(controller:'emote', action:'feed')}" > follow </a>
+	</div>	 	
+</div>
+
 </g:each>
 
 
 <g:each in="${userFriends}" var="friend">
-<p>
-<facebook:picture facebookId="${friend.id}" linkEnabled="true" />
-	<%--<img src="https://graph.facebook.com/${friend.id}/picture">--%>
-<a href="${createLink(controller:'emote', action:'feed')}" class="btn-block"> Invite </a>	
-</p>
-</g:each>
+<div class="user-section">
+	<div class="user-image">
+	<facebook:picture facebookId="${friend.id}" linkEnabled="true" />
+	</div>
 	
+	<div class="user-meta">
+	<h3 class="user-name">${friend.name}</h3>
+	</div>		
+<%--	<img src="https://graph.facebook.com/${friend.id}/picture">--%>
+	
+	<div class="followButton">
+		<a href="${createLink(controller:'emote', action:'feed')}" > follow </a>
+	</div>	 
+	
+
+</div>	
+</g:each>
+
