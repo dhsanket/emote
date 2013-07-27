@@ -13,6 +13,6 @@ class User {
 	String profilePhotoId = ""
 	boolean publishToFBWall = false
 	String passcode = ""
-	static hasMany = [followed:User]
+	static hasMany = [followed:User] 
 
 }

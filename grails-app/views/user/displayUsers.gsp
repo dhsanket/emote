@@ -10,7 +10,7 @@
     	<g:render template="/common/create_emote" />
 		<g:render template="/common/menu_bar" />
     	<div id="feed-container" class="feed-container">
-    	<g:render template="followUsers" model="[userFriends: userFriends, emoteUsersList: emoteUsersList]"/>
+    	<g:render template="displayUsers" model="[userFriends: userFriends, emoteUsersList: emoteUsersList]"/>
     	</div>
     	
     	

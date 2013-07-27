@@ -33,15 +33,16 @@ body {
 }
 
 a {
-    color: #00e;
+    color: inherit; /* #00e */ 
 }
 
 a:visited {
-    color: #551a8b;
+    color: inherit; /* #551a8b */
 }
 
 a:hover {
-    color: #06e;
+    color: inherit; /* #06e */
+    text-decoration:none;
 }
 
 /*
@@ -461,6 +462,54 @@ color:#FFFFFF;
 		#emote-creation-container .emote-create-content input::-webkit-input-placeholder {
 			color:#999999;
 		}
+		
+		#emote-bar{
+			background: #999999 ;
+			height: 45px;
+		}
+		
+		#emote-bar-container{
+			padding-top: 0px;	
+		}
+		
+		select{
+		  display: inline-block;
+		  width: 150px;
+		  height: 40px;
+		  padding: 4px 1px;
+		  margin-top: 2px;
+		  margin-bottom: 5px;
+		  font-size: 14px;
+		  line-height: 20px;
+		  color: #555555;
+		  vertical-align: middle;
+		  -webkit-border-radius: 4px;
+		     -moz-border-radius: 4px;
+		          border-radius: 4px;
+		}
+		
+		button{
+			width: 120px;
+			height: 42px;
+			border-radius: 6px;
+			margin-bottom:2px;
+			background: #333333;
+			border-color: #111111;
+			color: #999999;
+		}
+		
+		/* Geo Styling */
+		#geoLocation, #cameraInit {
+			background:#EEEEEE;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			padding:11px 12px;
+			margin-right:3px;
+		}
+				
+		
+		
 		
 		/* Tagging CSS */
 		div.tagsinput { background: #FFF;  width:350px; height:80px; overflow-y: auto;}
@@ -1379,15 +1428,7 @@ border-bottom-left-radius: 8px;
 }
 
 
-/* Geo Styling */
-#geoLocation, #cameraInit {
-	background:#EEEEEE;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	padding:7px 10px;
-	margin-right:3px;
-}
+
 
 
 /* Follow users */
@@ -1399,7 +1440,10 @@ position: relative;
 
 #followUsers .user-section{
 	display: block;
-	height: 75px;
+	height: 60px;
+	border-bottom: solid;
+	padding-top: 10px;
+	padding-bottom: 0px;
 }
 #followUsers .user-section .user-image {
 			float:left;
@@ -1417,7 +1461,7 @@ position: relative;
 			float:left;
 			display:inline-block;
 			width: auto;
-			padding-top:10px;
+			height: 50px;
 			padding-left:10px;
 		}
 
@@ -1428,12 +1472,12 @@ font-weight: bold;
 color: #999;
 }
 
-#followUsers .user-section .user-meta h1.user-name {
+#followUsers .user-section .user-meta h3.user-name {
 			font-size:15px;
 			line-height:8px;
 			margin:0;
 			padding:0;
-			margin-top:2px;
+			margin-top: 38px;
 		}
 		
 #followUsers .user-section .user-meta .user-email {
@@ -1442,7 +1486,7 @@ color: #999;
 		}
 
 #followUsers .user-section .followButton{
-			padding-top:10px;
+			padding-top:5px;
 			float:right;
 			display:inline-block;
 }
@@ -1467,11 +1511,28 @@ color: #999;
 			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
 			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
 			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+ 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */ 
 			
 			-webkit-border-radius: 6px;
 			-moz-border-radius: 6px;
 			border-radius: 6px;
+}
+
+
+#followUsers .user-section .followButton a:visited {
+			background: rgb(255,255,255); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+#followUsers .user-section .followButton a:hover {
+    color: inherit; /* #06e */
+    text-decoration:none;
 }
 
 

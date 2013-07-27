@@ -150,23 +150,24 @@ function emoteCreate() {
 	// Grab the values of the form
 	var tags = $('#tag').val();
 	var title = $('#obj-title').val();
-	
+	var e = document.getElementById("category");
+	var category = e.options[e.selectedIndex].value;
 	//close the createEmote form 
 	emoteCreateButton();
 	
 	//Ajax submit the form
-	emoteSubmit(title , tags);
+	emoteSubmit(title , tags, category);
 
 }
 
 //ajax submit createEmote form action
-function emoteSubmit(title , tags) {
+function emoteSubmit(title , tags, category) {
 	// Create an Object and store these values
 	var data = {};
 	
 	data.tags = tags;
 	data.emoteTitle = title;
-	
+	data.category = category; 
 
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
@@ -178,7 +179,8 @@ function emoteSubmit(title , tags) {
 		url: '/emote/save',
 		data: {
 			title: data.emoteTitle,
-			expression: data.tags
+			expression: data.tags,
+			topic: data.category
 		},
 		error: function(){
 			// Error function goes here

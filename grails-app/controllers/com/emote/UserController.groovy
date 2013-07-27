@@ -17,7 +17,7 @@ class UserController
 	{
 	}
 	
-	def followUsers(){
+	def displayUsers(){
 		User user = session.user
 		String token = getFbToken() 			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
@@ -27,9 +27,22 @@ class UserController
 		emoteUsersList = User.list()
 		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:10])
 		log.info "user friends in ${userFriends[1]},${userFriends[2] }"
-		render (view:'followUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
+		render (view:'displayUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
 	}
 	
+	def follow(){
+	def per = User.get(params.id)
+	log.info "params ${params.id}"
+	log.info "per ${per}"
+	if(per != null) {
+		def currentUser = session.user
+		log.info "found current user ${currentUser}"
+		currentUser.addToFollowed(per)
+		log.info "followed ${session.user.firstName}"
+		currentUser.save()		
+		}
+	redirect action: 'displayUsers'
+	}
 
 	def settings(){}
 

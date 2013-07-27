@@ -15,7 +15,7 @@
 	</div>
 	
 	<div class="followButton">
-		<a href="${createLink(controller:'emote', action:'feed')}" > follow </a>
+		<g:link controller="User" action="follow" id="${emoteUser.id}" > follow </g:link>
 	</div>	 	
 </div>
 
@@ -34,7 +34,7 @@
 <%--	<img src="https://graph.facebook.com/${friend.id}/picture">--%>
 	
 	<div class="followButton">
-		<a href="${createLink(controller:'emote', action:'feed')}" > follow </a>
+		<a href="${createLink(controller:'emote', action:'feed')}" > invite </a>
 	</div>	 
 	
 
