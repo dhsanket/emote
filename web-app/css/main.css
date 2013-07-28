@@ -1570,12 +1570,11 @@ color: #999;
 }
 /* prev next feed pagination */
 .feedPagination {
-	background: #FFFFFF;
+	background: yellowgreen;
 	font-size: 18px;
 	box-sizing: border-box;
 	margin: auto;
-	height:30px;
-	margin-bottom: 10px;
+	height:45px;
 	text-align: center;
 }
 

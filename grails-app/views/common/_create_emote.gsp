@@ -21,8 +21,8 @@
 			  <option value="Thing">Thing</option>
 			  <option value="Other">Other</option>
 			</select>
-			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>
-			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>
+<%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
+<%--			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>--%>
 			<button type="submit" id="submit-button" value="Save"> publish emote </button>
 			</div>
 			</div>
