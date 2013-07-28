@@ -33,7 +33,7 @@ class EmoteService {
 		// save title if does not exist else update time
 		Title title = Title.findByTextIlike(emote.title)
 		if(title == null){
-			title = new Title(text:emote.title)
+			title = new Title(text:emote.title, category: emote.topics)
 			log.info "Saving title ${title}"
 			title.save(validate:true)
 		}else{

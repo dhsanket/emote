@@ -13,9 +13,13 @@
 			<select required id="category" name="categoryList" form="emoteSave">
 			  <option value="Event">Event</option>			
 			  <option value="Movie">Movie</option>
-			  <option value="People">People</option>
 			  <option value="Restaurant">Restaurant</option>
 			  <option value="Food-item">Food item</option>
+			  <option value="People">People</option>
+			  <option value="Place">Place</option>
+			  <option value="Consumer-Product">Consumer Product</option>
+			  <option value="Thing">Thing</option>
+			  <option value="Other">Other</option>
 			</select>
 			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>
 			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>

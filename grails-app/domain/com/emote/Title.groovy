@@ -7,7 +7,7 @@ import java.util.Set;
 class Title {
 	String id
 	String text
-	Set<String> categories = []
+	Set<String> category = []
 	Date lastUpdateTime = new Date()
 	
     static constraints = {
