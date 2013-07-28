@@ -87,9 +87,9 @@ function friendRender() {
 //		console.log(friendID)
 		// add User's name to top bar
 		var currentUserTextString = $('.emote-user-name', this).html();
-		var userId = $(this).attr('data-user-id');
 		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').html(currentUserTextString);
-		$('.emote-v2[data-post-id="' + parentPostID + '"] a', this).attr('href', '/emote/userFeed?userId='+userId)
+		console.log($('.emote-v2[data-post-id="' + parentPostID + '"] a'))
+		$('.emote-v2[data-post-id="' + parentPostID + '"] a').attr('href', '/emote/userFeed?userId='+friendID)
 		
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
@@ -220,6 +220,10 @@ function emoteCreateReset() {
     $('#obj-title').blur(function(){
       $(this).attr('placeholder', titlePlaceHolder);
     });
+    
+    // select none in category
+   // console.log()
+    $("#category").prop("selectedIndex", -1)
 
 }
 

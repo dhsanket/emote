@@ -40,6 +40,7 @@ class EmoteService {
 			title.save(validate:true)
 		}else{
 			title.refreshUpdateTime()
+			title.addCategory(emote.topics)
 			title.save(validate:true)
 		}
 		

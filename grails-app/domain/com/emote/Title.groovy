@@ -22,6 +22,15 @@ class Title {
 		lastUpdateTime = new Date()
 	}
 	
+	public addCategory(def cats){
+		if(category == null)
+			category = []
+		cats.each {c ->
+			category.add(c)
+		}
+	}
+	
+
 }
 
 

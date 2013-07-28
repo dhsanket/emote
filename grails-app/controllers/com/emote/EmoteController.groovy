@@ -6,6 +6,8 @@ class EmoteController {
 	
 	EmoteService emoteService
 	
+	UserService userService
+	
 	FacebookContext facebookContext;
 	FacebookGraphClient facebookGraphClient;
 	
@@ -59,6 +61,7 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
 			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1))
 		}
+		flash.user = userService.findByFBId(userId)
 		flash.titles = posts
 	}
 	
