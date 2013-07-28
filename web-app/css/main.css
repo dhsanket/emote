@@ -1445,6 +1445,7 @@ position: relative;
 	padding-top: 10px;
 	padding-bottom: 0px;
 }
+<<<<<<< Updated upstream
 #followUsers .user-section .user-image {
 			float:left;
 			display:inline-block;
@@ -1566,4 +1567,20 @@ color: #999;
 		display:block;
 	text-align:left;
 	font-size:13px;
+}
+/* prev next feed pagination */
+.feedPagination {
+	background: #FFFFFF;
+	font-size: 18px;
+	box-sizing: border-box;
+	margin: auto;
+	height:30px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.feedPagination a {
+	font-family: inherit;
+	font-weight: bold;
+	color: #333333;	
 }

@@ -1,6 +1,8 @@
 package com.emote
 
 class EmoteService {
+	
+	private int feedPageSize = 10;
 
 	def create(EmoteCommand emoteCmd, User user) {
 		def username = user.firstName+" "+user.lastName
@@ -52,18 +54,18 @@ class EmoteService {
 		
 	}
 	
-	Set<Emote> search(String keyword){
+	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
 		Set<Emote> results = []
-		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%")
+		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		log.info "found emotes by title ${qresults}"
 		if(qresults != null)
 			results.addAll(qresults)
 		return results
 	}
 	
-	def feed(){
-		def titles = Title.list(max:30, sort:"lastUpdateTime", order:"desc")
+	def feed(int pageIndex){
+		def titles = Title.list(max:feedPageSize, sort:"lastUpdateTime", order:"desc" , offset:feedPageSize*pageIndex)
 		def titleTexts  = []
 		titles.each{t ->
 			titleTexts.add(t.text)
@@ -72,13 +74,14 @@ class EmoteService {
 		return emotes;
 	}
 	
-	def userFeed(String userId){
-		def userEmotes = Emote.findAllByUserId(userId, [max:30, sort:"creationTime", order:"desc"])
+	def userFeed(String userId, int pageIndex){
+		def userEmotes = Emote.findAllByFacebookId(userId, [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		return userEmotes;
 	}
 	
 	def groupByTitle (def emotes){
 		def groupedByTitle =  [:] 
+		
 		emotes.each {emote ->
 			GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
 			if(title == null){

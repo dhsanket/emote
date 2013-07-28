@@ -69,7 +69,8 @@ function friendRender() {
 	$('.emote-friends').each(function(){
 		var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
 		$('.current-user', this).text(firstUser);
-		
+		var userId = $('.user-thumb:first-child ', this).attr('data-user-id');
+		$('a', this).attr('href', '/emote/userFeed?userId='+userId)
 	});
 	
 	$('.friend-container .user-thumb').click(function(){
@@ -82,10 +83,13 @@ function friendRender() {
 		var whichFriend = $(this).index();
 		var parentPostID = $(this).attr('data-post-id');
 		var friendID = $(this).attr('data-user-id');
-		//console.log(parentPostID)	
+//		console.log(parentPostID)	
+//		console.log(friendID)
 		// add User's name to top bar
 		var currentUserTextString = $('.emote-user-name', this).html();
+		var userId = $(this).attr('data-user-id');
 		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').html(currentUserTextString);
+		$('.emote-v2[data-post-id="' + parentPostID + '"] a', this).attr('href', '/emote/userFeed?userId='+userId)
 		
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
