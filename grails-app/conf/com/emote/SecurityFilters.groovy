@@ -85,7 +85,7 @@ class SecurityFilters {
 				//log.info "Going to create user ${fp.first_name} for ${fp.email}"
 				// create new user and save
 				userFB = userService.createUser(me.id, me.first_name, me.last_name, me.email)
-				log.info "user saved with id= ${userFB.facebookId}"
+				log.info "user saved with id= ${userFB.facebookId}"  //
 			}
 			//user = userService.findByFBId(facebookContext.user.id)
 			//return userFriends
