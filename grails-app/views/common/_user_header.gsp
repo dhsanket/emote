@@ -9,8 +9,10 @@
 		</div>
 		<div id="user-profile-switcher">
 			<ul>
+			<%--
 				<li><a id="profile-emotes" href="#"><i class="icon-tag icon-white"></i></a></li>
 				<li><a id="profile-images" href="#"><i class="icon-camera icon-white"></i></a></li>
+			--%>
 			</ul>
 		</div>
 	</section>

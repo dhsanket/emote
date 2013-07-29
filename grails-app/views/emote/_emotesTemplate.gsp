@@ -71,10 +71,6 @@
 										</g:each>					
 									</ul>
 								</div>	
-								<div class="emote-friends swiper-slide">
-								<h4>Related Titles: </h4>
-								
-								</div>
 							</div>
 						</div>
 					</div>			

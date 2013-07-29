@@ -11,6 +11,7 @@
 			<div id="emote-bar">
 				<div id="emote-bar-container">
 			<select required id="category" name="categoryList" form="emoteSave">
+			  <option value="">--Pick Category--</option>	
 			  <option value="Event">Event</option>			
 			  <option value="Movie">Movie</option>
 			  <option value="Restaurant">Restaurant</option>

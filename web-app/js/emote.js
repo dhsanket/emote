@@ -149,8 +149,18 @@ function re_emote(title, tag){
 }
 
 function emoteCreate() {
-	//submit-form has previously occured
+	//Submit-button click event has occured
 	
+	//check if category is selected
+    var selectBox = document.getElementById('category');
+    var a = selectBox.selectedIndex;
+	if (a == 0){	
+		$("#category").css({'border': '2px solid red'});
+	}
+	else
+	{
+	//if user selects a category; remove red category border (if he made mistake in first attempt
+	$("#category").css({'border': '1px solid #ccc'});
 	// Grab the values of the form
 	var tags = $('#tag').val();
 	var title = $('#obj-title').val();
@@ -161,7 +171,7 @@ function emoteCreate() {
 	
 	//Ajax submit the form
 	emoteSubmit(title , tags, category);
-
+	}
 }
 
 //ajax submit createEmote form action
@@ -223,8 +233,10 @@ function emoteCreateReset() {
     
     // select none in category
    // console.log()
-    $("#category").prop("selectedIndex", -1)
-
+	$("#category").prop("selectedIndex", 0);
+	$("#category").css({'border': '1px solid #ccc'});
+	
+	
 }
 
 // Load tags

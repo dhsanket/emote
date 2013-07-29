@@ -7,6 +7,6 @@
 					nParams.put('page', flash.page+1) 
     			%>
 	    		<div class="feedPagination clearfix">
-					<g:link  controller="emote" action="${flash.action}" params="${nParams}">Next</g:link>
+					<g:link class="buttonNext" controller="emote" action="${flash.action}" params="${nParams}">Next</g:link>
 				</div>
 			</g:if>
