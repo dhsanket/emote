@@ -19,7 +19,6 @@
 			  <option value="People">People</option>
 			  <option value="Place">Place</option>
 			  <option value="Consumer-Product">Consumer Product</option>
-			  <option value="Thing">Thing</option>
 			  <option value="Other">Other</option>
 			</select>
 <%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
