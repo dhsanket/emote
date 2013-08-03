@@ -115,8 +115,6 @@ function emoteCreateButton() {
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
 			
-			// Reset the form
-			emoteCreateReset();
 			
 		}
 		else {		
@@ -168,34 +166,28 @@ function emoteCreate() {
 	var category = e.options[e.selectedIndex].value;
 	//close the createEmote form 
 	emoteCreateButton();
-	
-	//Ajax submit the form
-	emoteSubmit(title , tags, category);
+	emoteSubmit();
 	}
 }
 
 //ajax submit createEmote form action
-function emoteSubmit(title , tags, category) {
-	// Create an Object and store these values
-	var data = {};
-	
-	data.tags = tags;
-	data.emoteTitle = title;
-	data.category = category; 
+function emoteSubmit() {
 
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);
-	
+	var form = $('#emoteSave')
+	var formData = new FormData(form[0]);
+	//console.log(formData)
 	// Perform the request
 	var feedContents = $.ajax({
+		
 		type: 'POST',
 		url: '/emote/save',
-		data: {
-			title: data.emoteTitle,
-			expression: data.tags,
-			topic: data.category
-		},
+        cache: false,
+        contentType: false,
+        processData : false,
+		data: formData,
 		error: function(){
 			// Error function goes here
 			console.log("Error, your request was not sent");
@@ -203,7 +195,6 @@ function emoteSubmit(title , tags, category) {
 	}).done(function(){
 		// Reset the form
 		emoteCreateReset();
-		
 		// Reload
 		location.reload();
 	});

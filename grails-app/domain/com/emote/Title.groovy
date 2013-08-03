@@ -9,7 +9,7 @@ class Title {
 	String text
 	Set<String> category = []
 	Date lastUpdateTime = new Date()
-	
+	List<String> pictures = []
     static constraints = {
 		text blank:false
     }
@@ -28,6 +28,10 @@ class Title {
 		cats.each {c ->
 			category.add(c)
 		}
+	}
+	
+	public addPicture(String picId){
+		pictures.add(picId)
 	}
 	
 

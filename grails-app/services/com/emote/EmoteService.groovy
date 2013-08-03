@@ -4,21 +4,14 @@ class EmoteService {
 	
 	private int feedPageSize = 10;
 
-	def create(EmoteCommand emoteCmd, User user) {
+	def create(EmoteCommand emoteCmd, User user, Picture pic) {
 		def username = user.firstName+" "+user.lastName
 		
 		Emote emote = new Emote(
-			userId:user.id, creator:user, username:username, topics:emoteCmd.topics, 
+			userId:user.id, creator:user, username:username, topics:emoteCmd.category, 
 			expressions:emoteCmd.expressions, title:emoteCmd.title, facebookId:user.facebookId 
 			)
 		
-		//TODO with new approch there is no null topics so we may not need this check
-		def nonEmptyTopics = []
-		emote.topics.each{ topic ->
-			if(topic.trim().length()> 0){
-				nonEmptyTopics.add(topic)
-			}
-		}
 		
 		def nonEmptyExpression = []
 		emote.expressions.each{ exp ->
@@ -28,7 +21,6 @@ class EmoteService {
 		}
 		emote.expressions = nonEmptyExpression
 
-		emote.topics = nonEmptyTopics
 		
 		emote.save(validate: true)
 		
@@ -37,12 +29,18 @@ class EmoteService {
 		if(title == null){
 			title = new Title(text:emote.title, category: emote.topics)
 			log.info "Saving title ${title}"
-			title.save(validate:true)
 		}else{
 			title.refreshUpdateTime()
 			title.addCategory(emote.topics)
-			title.save(validate:true)
 		}
+		if(pic != null && pic.content.length > 0){
+			pic.save(flush:true)
+			log.info("saved picture $pic.id for title $title.text of length $pic.content.length")
+			if(pic.id != null)
+				title.addPicture(pic.id)
+		}
+		title.save(validate:true)
+		
 		
 		// save topics
 		emote.topics.each {topicText ->
@@ -86,7 +84,9 @@ class EmoteService {
 		emotes.each {emote ->
 			GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
 			if(title == null){
-				title = new GroupByTitle(title:emote.title)
+				Title titleObj = Title.findByText(emote.title)
+				String picId = titleObj.pictures != null ? titleObj.pictures[titleObj.pictures.size()-1]:null
+				title = new GroupByTitle(title:emote.title, pictureId:picId)
 				groupedByTitle.put(emote.title.toUpperCase(), title)
 			}
 			title.add(emote);

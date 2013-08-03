@@ -8,6 +8,7 @@ public class GroupByTitle implements Comparable  {
 	
 	String title;
 	String id;
+	String pictureId;
 	
 	Map<String, GroupByUser> emotesByUsers = [:]
 	

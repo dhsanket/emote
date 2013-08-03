@@ -8,7 +8,7 @@ class Picture {
 	byte[] content;
      
     static constraints = {
-		// Limit upload file size to 1MB
-		content maxSize: 1024 * 1024 
+		// Limit upload file size to 2MB
+		content maxSize: 1024 * 1024 * 2 
     }
 }

@@ -31,8 +31,8 @@ class EmoteController {
 			//render view:'create', model:[emote:emote]
 			return
 		}
-		
-		emoteService.create(emote, user)
+		Picture pic = emote.getPicture()
+		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0))
 		render(template:"emotesTemplate" , model:[titles: titles])
 	}
