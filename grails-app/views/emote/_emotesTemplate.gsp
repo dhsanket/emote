@@ -17,9 +17,11 @@
 	</div>
 	<div class="emote-v2-body clearfix">
 		<%-- If media is present --%>
-		<div class="emote-v2-media" data-media-type="image">
-			<!--   r:img uri="/img/positive-thinking.jpg"/ -->
-		</div>
+					<div class="emote-v2-media" data-media-type="image" >
+						<g:if test="${title.pictureId!= null}">
+							<r:img uri="/picture/index/${title.pictureId}" />
+						</g:if>
+					</div>
 		<%--// If media is present --%>					
 		<div class="emote-v2-content">
 		<div class="swiper-container">
