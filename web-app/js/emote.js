@@ -115,11 +115,11 @@ function emoteCreateButton(doNotResetForm) {
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
 			
-//			if(doNotResetForm){
-//				// don't do any reset business
-//			}else{
-//				 emoteCreateReset();
-//			}
+			if(doNotResetForm){
+				// don't do any reset business
+			}else{
+				 emoteCreateReset();
+			}
 		}
 		else {		
 				$('#feed-container').addClass('active');
