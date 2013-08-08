@@ -5,7 +5,8 @@ class PictureController {
 	static layout = 'upload'
 	
 	PictureService pictureService
-    def index() { 
+    def index() {
+		cache neverExpires:true 
 		Picture pic = pictureService.getImage(params.id)
 		response.setContentLength(pic.content.length)
 		response.setContentType(pic.type)

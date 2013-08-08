@@ -12,6 +12,8 @@ public class GroupByTitle implements Comparable  {
 	
 	Map<String, GroupByUser> emotesByUsers = [:]
 	
+	List<PopularEmote> popEmotes = []
+	
 	
 	
 
@@ -35,6 +37,7 @@ public class GroupByTitle implements Comparable  {
 		if(lastEmoteTime == null || lastEmoteTime.getTime()< emote.creationTime.getTime()){
 			lastEmoteTime = emote.creationTime
 		}
+		addPopularEntry(emote)
 	}
 	
 	GroupByUser getUserEmotes(String fbId){
@@ -43,6 +46,25 @@ public class GroupByTitle implements Comparable  {
 	
 	def getUsers(){
 		return emotesByUsers.values()
+	}
+	
+	def addPopularEntry(Emote emote){
+		
+		emote.expressions.each { exp ->
+			PopularEmote pe = new PopularEmote(exp)
+			if(popEmotes.contains(pe)){
+				PopularEmote e = popEmotes.get(popEmotes.indexOf(pe))
+				e.incrementCount();
+			}else{
+				popEmotes.add(pe);
+				
+			}
+		}
+	}
+	
+	def getPopularEmotes(){
+		Collections.sort(popEmotes)
+		return popEmotes.take(10);
 	}
 
 

@@ -70,7 +70,7 @@ function friendRender() {
 		var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
 		$('.current-user', this).text(firstUser);
 		var userId = $('.user-thumb:first-child ', this).attr('data-user-id');
-		$('a', this).attr('href', '/emote/userFeed?userId='+userId)
+		$('a.user-feed', this).attr('href', '/emote/userFeed?userId='+userId)
 	});
 	
 	$('.friend-container .user-thumb').click(function(){
@@ -89,7 +89,7 @@ function friendRender() {
 		var currentUserTextString = $('.emote-user-name', this).html();
 		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').html(currentUserTextString);
 		console.log($('.emote-v2[data-post-id="' + parentPostID + '"] a'))
-		$('.emote-v2[data-post-id="' + parentPostID + '"] a').attr('href', '/emote/userFeed?userId='+friendID)
+		$('.emote-v2[data-post-id="' + parentPostID + '"] a.user-feed').attr('href', '/emote/userFeed?userId='+friendID)
 		
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
@@ -106,7 +106,7 @@ function preserveSizeWithoutMedia() {
 
 // Emote Creation Functions
 
-function emoteCreateButton() {
+function emoteCreateButton(doNotResetForm) {
 		if($('#emote-creation-container').hasClass('active')) {
 
 			$('#emote-creation-container').removeClass('active');
@@ -115,7 +115,11 @@ function emoteCreateButton() {
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
 			
-			
+//			if(doNotResetForm){
+//				// don't do any reset business
+//			}else{
+//				 emoteCreateReset();
+//			}
 		}
 		else {		
 				$('#feed-container').addClass('active');
@@ -126,7 +130,7 @@ function emoteCreateButton() {
 						
 				// Scroll to top functionality
 				scrollToTop(800);
-		}		
+		}
 	
 }
 
@@ -134,16 +138,14 @@ function emoteCreateButton() {
 function quick_emote(title){
 		
 		$('#obj-title').val(title);
-		emoteCreateButton();
+		emoteCreateButton(true);
 }
 
 // user can easily click another users emote and submit as his own 
 function re_emote(title, tag){
-/*	   $('#obj-title').val(title);
-	   $('#tag').val(tag);
-	   $('#submit-button').click();*/
-	
-	emoteSubmit(title, tag);
+	$('#obj-title').val(title);
+	$('#tag').val(tag);
+	emoteSubmit();
 }
 
 function emoteCreate() {
@@ -157,16 +159,10 @@ function emoteCreate() {
 	}
 	else
 	{
-	//if user selects a category; remove red category border (if he made mistake in first attempt
-	$("#category").css({'border': '1px solid #ccc'});
-	// Grab the values of the form
-	var tags = $('#tag').val();
-	var title = $('#obj-title').val();
-	var e = document.getElementById("category");
-	var category = e.options[e.selectedIndex].value;
-	//close the createEmote form 
-	emoteCreateButton();
-	emoteSubmit();
+		//if user selects a category; remove red category border (if he made mistake in first attempt
+		$("#category").css({'border': '1px solid #ccc'});
+		emoteCreateButton(true);
+		emoteSubmit();
 	}
 }
 
@@ -180,6 +176,7 @@ function emoteSubmit() {
 	var formData = new FormData(form[0]);
 	//console.log(formData)
 	// Perform the request
+	
 	var feedContents = $.ajax({
 		
 		type: 'POST',

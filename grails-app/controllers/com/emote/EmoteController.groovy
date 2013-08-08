@@ -29,6 +29,12 @@ class EmoteController {
 		if(emote.hasErrors()){
 			log.info "emote has errors"
 			//render view:'create', model:[emote:emote]
+			StringBuilder errors = new StringBuilder()
+			emote.errors.allErrors.each{
+				errors.append(it).append("\n")
+			}
+			log.warn "emote post errors $errors"
+			render(errors.toString())
 			return
 		}
 		Picture pic = emote.getPicture()
