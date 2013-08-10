@@ -21,4 +21,12 @@ class UserService {
 		user.save()
 		return user
 	}
+	
+	def addFollowingUser(User user, String userId){
+		if(user.followingUsers == null)
+			user.followingUsers = new HashSet<String>()
+		user.followingUsers.add(userId)
+		user.save()
+		
+	}
 }

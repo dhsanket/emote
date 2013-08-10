@@ -31,17 +31,11 @@ class UserController
 	}
 	
 	def follow(){
-	def per = User.get(params.id)
-	log.info "params ${params.id}"
-	log.info "per ${per}"
-	if(per != null) {
-		def currentUser = session.user
-		log.info "found current user ${currentUser}"
-		currentUser.addToFollowed(per)
-		log.info "followed ${session.user.firstName}"
-		currentUser.save()		
+		User user = session.user
+		if(user != null && params.friendId != null){
+			userService.addFollowingUser(user, params.friendId)
 		}
-	redirect action: 'displayUsers'
+		render ("success")
 	}
 
 	def settings(){}
@@ -60,6 +54,7 @@ class UserController
 		//facebookContext.user.invalidate()
 		redirect (action: 'signin')
 	}
+	
 
 	private void deleteCookie(String facebookId)
 	{

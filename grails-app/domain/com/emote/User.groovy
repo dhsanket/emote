@@ -9,10 +9,10 @@ class User {
 	String lastName
 	String email
 	String facebookId
-	String [] followingTopics = [];
+	String [] followingTopics = []
 	String profilePhotoId = ""
 	boolean publishToFBWall = false
 	String passcode = ""
-	static hasMany = [followed:User] 
+	Set<String> followingUsers = new HashSet<String>();
 
 }

@@ -258,3 +258,23 @@ function showPosition(position) {
 	console.log("Latitude: " + latitude);
 	console.log("Longitude: " + longitude);
 }
+
+
+//ajax submit follow user action
+function followUser(userId) {
+	console.log(userId);
+	$.ajax({
+		type: 'POST',
+		url: '/user/follow',
+		data: {friendId:userId},
+		error: function(){
+			// Error function goes here
+			console.log("Error, your request was not sent");
+			$('#'+userId).css({'font':'red'});
+		},
+	}).done(function(){
+		// disalbe button
+		$('#'+userId).css({'font':'green'});
+	});
+}
+
