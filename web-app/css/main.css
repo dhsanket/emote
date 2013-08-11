@@ -1626,3 +1626,22 @@ border-radius: 5px;
 color: white;
 font-weight: bold;
 }
+#picture_crop_container, .error {
+    display: none;
+}
+
+#picture_crop_container.active{
+    display: block;
+}
+
+/*
+#emote-creation-container.active {
+    height:auto;
+    overflow:auto;
+    top:0;
+    opacity:1;
+    z-index:13;
+    position:fixed;
+    width:100%;
+
+}*/

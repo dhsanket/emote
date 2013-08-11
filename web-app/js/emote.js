@@ -108,22 +108,24 @@ function preserveSizeWithoutMedia() {
 
 function emoteCreateButton() {
 		if($('#emote-creation-container').hasClass('active')) {
-
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('active');
 			$('#createEmote').removeClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
-			
-			
-		}
+
+            //ZEN to hide the image cropper popup if visible
+            if($('#picture_crop_container').hasClass('active')) {
+                $('#picture_crop_container').toggleClass('active');
+            }
+        }
 		else {		
 				$('#feed-container').addClass('active');
 				$('#emote-creation-container').addClass('active');
 				$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
 				$('#photo-feed').toggleClass('create-emote');
-						
+
 				// Scroll to top functionality
 				scrollToTop(800);
 		}		
@@ -170,72 +172,42 @@ function emoteCreate() {
 	}
 }
 
-//ajax submit createEmote form action
-function emoteSubmit() {
-
-	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
-	// console.log(data.tags);
-	// console.log(data.emoteTitle);
-	var form = $('#emoteSave')
-	var formData = new FormData(form[0]);
-	//console.log(formData)
-	// Perform the request
-	var feedContents = $.ajax({
-		
-		type: 'POST',
-		url: '/emote/save',
-        cache: false,
-        contentType: false,
-        processData : false,
-		data: formData,
-		error: function(){
-			// Error function goes here
-			console.log("Error, your request was not sent");
-		},
-	}).done(function(){
-		// Reset the form
-		emoteCreateReset();
-		// Reload
-		location.reload();
-	});
-}
-
 //prepare title placeholder for auto-display; resets tag field
 function emoteCreateReset() {
 	$('#obj-title').val('');
 	$('#tag').importTags('');
-	
+
 	//unique easy to find location for title placeholder
 	var titlePlaceHolder = "title (what you want to emote about) goes here...";
-    
-    
+
+
     $('#obj-title').attr('placeholder', titlePlaceHolder);
 
-	
+
 	//clear title placeholder when input in use
     $('#obj-title').focus(function(){
         $(this).attr('placeholder', "");
       });
-    
-    //bring title placeholder back if input not in use 
+
+    //bring title placeholder back if input not in use
     $('#obj-title').blur(function(){
       $(this).attr('placeholder', titlePlaceHolder);
     });
-    
+
     // select none in category
    // console.log()
 	$("#category").prop("selectedIndex", 0);
 	$("#category").css({'border': '1px solid #ccc'});
-	
-	
+
+
 }
 
 // Load tags
 function loadTags() {
-	
+
 	//unique easy to find location for tag placeholder
 	var tagPlaceHolder = "your micro-reviews (emotes) go here...";
-	
+
 	//init tag field
 	$('#tag').tagsInput({
 		'width' : 'auto',
@@ -244,6 +216,36 @@ function loadTags() {
 		'placeholderColor' : '#999999',
 		'maxChars' : 50
 	});
+}
+
+//ajax submit createEmote form action
+function emoteSubmit() {
+
+    // Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
+    // console.log(data.tags);
+    // console.log(data.emoteTitle);
+    var form = $('#emoteSave')
+    var formData = new FormData(form[0]);
+    //console.log(formData)
+    // Perform the request
+    var feedContents = $.ajax({
+
+        type: 'POST',
+        url: '/emote/save',
+        cache: false,
+        contentType: false,
+        processData : false,
+        data: formData,
+        error: function(){
+            // Error function goes here
+            console.log("Error, your request was not sent");
+        }
+    }).done(function(){
+            // Reset the form
+            emoteCreateReset();
+            // Reload
+            location.reload();
+        });
 }
 
 //Geolocation stuff
@@ -261,3 +263,108 @@ function showPosition(position) {
 	console.log("Latitude: " + latitude);
 	console.log("Longitude: " + longitude);
 }
+
+// convert bytes into friendly format
+function bytesToSize(bytes) {
+    var sizes = ['Bytes', 'KB', 'MB'];
+    if (bytes == 0) return 'n/a';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
+};
+
+function closePictureCropPopup(){
+    $('#picture_crop_container').toggleClass('active');
+}
+
+//this variable must be declared in global scope  so that everytime before creating new one we can destroy the existing one
+var jcrop_api;
+var jcrop_coordinates=null; // variable is used store the coordinates for the selection;
+
+function fileSelectHandler() {
+    // get selected file
+    var oFile = $('#pic')[0].files[0];
+
+    // hide all errors
+    $('.error').hide();
+
+    // check for image type (jpg and png are allowed)
+    var rFilter = /^(image\/jpeg|image\/png)$/i;
+    if (! rFilter.test(oFile.type)) {
+        $('.error').html('Please select a valid image file (jpg and png are allowed)').show();
+        return;
+    }
+
+    // check for file size
+    if (oFile.size > 2500 * 1024) {
+        $('.error').html('You have selected too big file, please select a one smaller image file').show();
+        return;
+    }
+
+    // reset the style attributes assigned by JCrop API so that newly/next selected image will get correct one
+    /*$('#upload_preview_img').removeAttr('style');
+    $('#upload_preview_img').css('height','330px');*/
+
+    // preview element
+    var oImage = document.getElementById('upload_preview_img');
+
+    // prepare HTML5 FileReader
+    var oReader = new FileReader();
+    oReader.onload = function(e) {
+
+        // e.target.result contains the DataURL which we can use as a source of the image
+
+        //oImage.src ="http://stutzen.co/emb.png";
+            oImage.src = e.target.result;
+
+        oImage.onload = function () { // onload event handler
+
+            // display step 2
+            //$('#picture_crop_container').fadeIn(500);
+            $('#picture_crop_container').toggleClass('active');
+
+            $('#upload_preview_img').removeAttr('style');
+            if(this.height>this.width){
+                $('#upload_preview_img').css('height',($(window).height()-140)+"px"); //140 is the size occupied by app header, title of cropping window, bottom buttons
+            }else{
+                $('#upload_preview_img').css('width','100%');
+            }
+            // Create variables (in this scope) to hold the Jcrop API and image size
+            var  boundx, boundy;
+
+            // destroy Jcrop if it is existed
+            if (typeof jcrop_api != 'undefined')
+                jcrop_api.destroy();
+
+            // initialize Jcrop
+            $('#upload_preview_img').Jcrop({
+                minSize: [32, 32], // min crop size
+                aspectRatio : 1.5, // keep aspect ratio 1:1
+                bgFade: true, // use fade effect
+                bgOpacity: .3, // fade opacity
+                onChange: updateJcropSelectionInfo,
+                onSelect: updateJcropSelectionInfo,
+                onRelease: clearJcropSelectionInfo
+            }, function(){
+
+                // use the Jcrop API to get the real image size
+                var bounds = this.getBounds();
+                boundx = bounds[0];
+                boundy = bounds[1];
+
+                // Store the Jcrop API in the jcrop_api variable
+                jcrop_api = this;
+            });
+
+        };
+    };
+
+    // read selected file as DataURL
+    oReader.readAsDataURL(oFile);
+}
+var updateJcropSelectionInfo=function(c){
+    jcrop_coordinates=c;
+};
+
+var clearJcropSelectionInfo=function(){
+    jcrop_coordinates=null;
+};

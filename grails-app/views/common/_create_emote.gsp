@@ -8,7 +8,9 @@
 			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
 			<div id="obj-title-suggestion"></div>
 			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
-			<input type="file" id="pic" name="photo" title="Upload photo">
+            <div class="error"></div>
+            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >
+            <div class="error"></div>
 			<div id="emote-bar">
 				<div id="emote-bar-container">
 					<select required id="category" name="category" >

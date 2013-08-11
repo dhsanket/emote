@@ -53,8 +53,25 @@ $(function(){
 	 		// prevent default behaviour of button
 	 		return false;
 	 	});
-	 	
-	 	// Reformat emotes without Media
+
+        // Cancel button handler for picture cropper popup
+        $('#picturecropper-cancel-button').click(function(){
+            $('#picture_crop_container').toggleClass('active');
+            // stop default behaviour of button
+            return false;
+        });
+
+        // Ok button handler for picture cropper popup
+        $('#picturecropper-ok-button').click(function(){
+            //$('#picture_crop_container').toggleClass('active');
+            var imgObj=$('#upload_preview_img');
+            alert("Width="+imgObj.width()+", Height"+imgObj.height()+", Jcrop info x="+jcrop_coordinates.x
+                +",y="+jcrop_coordinates.y+",x2="+jcrop_coordinates.x2+",y2="+jcrop_coordinates.y2
+                +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);
+            return false;
+        });
+
+        // Reformat emotes without Media
 	 	emoteNoMediaFormat('#660000');
 	 	
 	 	//If user-header active Push FeedContainer further down
