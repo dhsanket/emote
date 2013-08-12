@@ -1,3 +1,4 @@
+var IMAGE_CONTAINER_HEIGHT_EXCLUSION=140; //140 is the size occupied by app header, title of cropping window, bottom buttons
 function mapFunction() {
 	var lt = $(this).attr('data-lat');
 	var lg = $(this).attr('data-long');
@@ -300,9 +301,6 @@ function fileSelectHandler() {
         return;
     }
 
-    // reset the style attributes assigned by JCrop API so that newly/next selected image will get correct one
-    /*$('#upload_preview_img').removeAttr('style');
-    $('#upload_preview_img').css('height','330px');*/
 
     // preview element
     var oImage = document.getElementById('upload_preview_img');
@@ -322,12 +320,7 @@ function fileSelectHandler() {
             //$('#picture_crop_container').fadeIn(500);
             $('#picture_crop_container').toggleClass('active');
 
-            $('#upload_preview_img').removeAttr('style');
-            if(this.height>this.width){
-                $('#upload_preview_img').css('height',($(window).height()-140)+"px"); //140 is the size occupied by app header, title of cropping window, bottom buttons
-            }else{
-                $('#upload_preview_img').css('width','100%');
-            }
+            resizeUploadImgPreview(this.width, this.height);
             // Create variables (in this scope) to hold the Jcrop API and image size
             var  boundx, boundy;
 
@@ -361,10 +354,26 @@ function fileSelectHandler() {
     // read selected file as DataURL
     oReader.readAsDataURL(oFile);
 }
+
+var resizeUploadImgPreview=function(imgWidth, imgHeight){
+    // reset the style attributes assigned by JCrop API so that newly/next selected image will get correct one
+    $('#upload_preview_img').removeAttr('style');
+
+    var imgContainerRatio= $(window).width()/($(window).height()-IMAGE_CONTAINER_HEIGHT_EXCLUSION);
+    var imgRatio= imgWidth/imgHeight;
+    if(imgContainerRatio>imgRatio){
+        $('#upload_preview_img').css('height',($(window).height()-IMAGE_CONTAINER_HEIGHT_EXCLUSION)+"px");
+    }else{
+        $('#upload_preview_img').css('width','100%');
+    }
+};
+
+//Function will be called by Jcrop itself to assign the values to global variable jcrop_coordinates
 var updateJcropSelectionInfo=function(c){
     jcrop_coordinates=c;
 };
 
+//Function will be called by Jcrop itself to null/empty values to global variable jcrop_coordinates
 var clearJcropSelectionInfo=function(){
     jcrop_coordinates=null;
 };
