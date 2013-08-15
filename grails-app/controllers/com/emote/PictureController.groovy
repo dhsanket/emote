@@ -6,7 +6,7 @@ class PictureController {
 	
 	PictureService pictureService
     def index() {
-		cache neverExpires:true 
+		cache neverExpires:true, shared:true 
 		Picture pic = pictureService.getImage(params.id)
 		response.setContentLength(pic.content.length)
 		response.setContentType(pic.type)
