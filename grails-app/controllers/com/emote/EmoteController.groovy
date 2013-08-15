@@ -11,6 +11,8 @@ class EmoteController {
 	FacebookContext facebookContext;
 	FacebookGraphClient facebookGraphClient;
 	
+	PictureService pictureService;
+	
 
     def create() {
 		
@@ -37,7 +39,10 @@ class EmoteController {
 			render(errors.toString())
 			return
 		}
-		Picture pic = emote.getPicture()
+		Picture pic = null; 
+		if(emote.photo != null){
+			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy)
+		}
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0))
 		render(template:"emotesTemplate" , model:[titles: titles])
