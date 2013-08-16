@@ -40,7 +40,7 @@ class EmoteController {
 			return
 		}
 		Picture pic = null; 
-		if(emote.photo != null){
+		if(emote.photo != null && emote.photo.bytes.size() >0){
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy)
 		}
 		emoteService.create(emote,  user, pic)
@@ -63,7 +63,7 @@ class EmoteController {
 		String userId = params.userId
 		if(userId == null || userId.trim().length()== 0)
 		{
-			userId = session.user.facebookId
+			userId = session.user.id
 		}
 		int page = getPageIndex();
 		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page))
@@ -72,7 +72,7 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
 			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1))
 		}
-		flash.user = userService.findByFBId(userId)
+		flash.user = userService.findById(userId)
 		flash.titles = posts
 	}
 	

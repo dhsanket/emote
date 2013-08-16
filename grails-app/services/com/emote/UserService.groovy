@@ -8,6 +8,11 @@ class UserService {
 		return User.findByFacebookId(facebookId)
     }
 	
+	def findById(String uid) {
+		return User.findById(uid)
+	}
+
+	
 	def findByEmail(String emailId) {
 		log.info "Finding user using email ${emailId}"
 		return User.findByEmail(emailId)

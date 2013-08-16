@@ -12,6 +12,8 @@ public class GroupByTitle implements Comparable  {
 	
 	Map<String, GroupByUser> emotesByUsers = [:]
 	
+	Map<String, GroupByUser> emotesByFriends = [:]
+	
 	List<PopularEmote> popEmotes = []
 	
 	
@@ -27,10 +29,10 @@ public class GroupByTitle implements Comparable  {
 	}
 	
 	void add(Emote emote){
-		GroupByUser userGrouped = emotesByUsers.get(emote.facebookId)
+		GroupByUser userGrouped = emotesByUsers.get(emote.userId)
 		if(userGrouped == null){
-			userGrouped = new GroupByUser(username:emote.username, facebookId:emote.facebookId)
-			emotesByUsers.put(emote.facebookId, userGrouped)
+			userGrouped = new GroupByUser(username:emote.username, uid:emote.userId, facebookId:emote.facebookId)
+			emotesByUsers.put(emote.userId, userGrouped)
 		}
 		userGrouped.add(emote)
 		
@@ -40,8 +42,8 @@ public class GroupByTitle implements Comparable  {
 		addPopularEntry(emote)
 	}
 	
-	GroupByUser getUserEmotes(String fbId){
-		return emotesByUsers.get(fbId)
+	GroupByUser getUserEmotes(String uid){
+		return emotesByUsers.get(uid)
 	}
 	
 	def getUsers(){

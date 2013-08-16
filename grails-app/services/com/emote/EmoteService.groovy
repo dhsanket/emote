@@ -74,7 +74,7 @@ class EmoteService {
 	}
 	
 	def userFeed(String userId, int pageIndex){
-		def userEmotes = Emote.findAllByFacebookId(userId, [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
+		def userEmotes = Emote.findAllByUserId(userId, [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		return userEmotes;
 	}
 	
