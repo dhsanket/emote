@@ -21,6 +21,8 @@ class EmoteCommand {
 	int topy
 	int bottomx
 	int bottomy
+	int scaledImgHeight
+	int scaledImgWidth
 	
 
 	

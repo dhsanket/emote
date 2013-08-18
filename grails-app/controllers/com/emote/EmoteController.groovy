@@ -41,7 +41,8 @@ class EmoteController {
 		}
 		Picture pic = null; 
 		if(emote.photo != null && emote.photo.bytes.size() >0){
-			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy)
+			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
+				emote.scaledImgWidth, emote.scaledImgHeight)
 		}
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0))
