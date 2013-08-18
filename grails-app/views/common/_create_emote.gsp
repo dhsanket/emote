@@ -31,7 +31,7 @@
 					
 		<%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
 		<%--			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>--%>
-                    <button type="button" id="addimage-button" value="Add Image"> Add Image</button>
+                    <a href="#" id="addimage-button" ><i class="icon icon-camera"></i></a>
 					<button type="submit" id="submit-button" value="Save"> publish emote </button>
 				</div>
 			</div>

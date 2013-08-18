@@ -5,7 +5,6 @@
 		</div>
 		<div id="user-profile-info">
 			<h1 class="user-profile-name">${flash.user.firstName} ${flash.user.lastName}</h1>
-			<span class="user-profile-location">${flash.user.email}</span>
 		</div>
 		<div id="user-profile-switcher">
 			<ul>
