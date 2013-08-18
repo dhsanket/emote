@@ -9,6 +9,8 @@
 			<input type="hidden" name="topy" value="445">
 			<input type="hidden" name="bottomx" value="1080">
 			<input type="hidden" name="bottomy" value="800">
+			<input type="hidden" name="scaledImgWidth" value="800">
+			<input type="hidden" name="scaledImgHeight" value="800">
 			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
 			<div id="obj-title-suggestion"></div>
 			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
