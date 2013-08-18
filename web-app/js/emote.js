@@ -123,7 +123,8 @@ function emoteCreateButton() {
             if($('#imgchooserpopup').hasClass('active')) {
                 $('#imgchooserpopup .cancel-button').click();
             }
-
+            //this code to reset both jcrop and file element
+            emptyImageFileElement();
 
         }
 		else {		

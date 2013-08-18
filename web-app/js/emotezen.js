@@ -20,6 +20,7 @@ function initImageEventHandlers(){
             +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);
         $('#picture_crop_container').toggleClass('active');
         // stop default behaviour of button
+        $('#imgchooserpopup').toggleClass('active');
         return false;
     });
 
@@ -33,10 +34,9 @@ function initImageEventHandlers(){
         return false;
     });
 
-
+//Back button
     $('#imgchooserpopup .cancel-button').click(function(){
         $('#imgchooserpopup').toggleClass('active');
-        emptyImageFileElement();
         return false;
     });
 
