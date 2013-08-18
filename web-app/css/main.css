@@ -1626,14 +1626,6 @@ border-radius: 5px;
 color: white;
 font-weight: bold;
 }
-#picture_crop_container, .error {
-    display: none;
-}
-
-#picture_crop_container.active{
-    display: block;
-}
-
 /*
 #emote-creation-container.active {
     height:auto;

@@ -8,9 +8,7 @@
 			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
 			<div id="obj-title-suggestion"></div>
 			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
-            <div class="error"></div>
-            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >
-            <div class="error"></div>
+            %{--<input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >--}%
 			<div id="emote-bar">
 				<div id="emote-bar-container">
 					<select required id="category" name="category" >
@@ -27,6 +25,7 @@
 					
 		<%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
 		<%--			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>--%>
+                    <button type="button" id="addimage-button" value="Add Image"> Add Image</button>
 					<button type="submit" id="submit-button" value="Save"> publish emote </button>
 				</div>
 			</div>
@@ -34,6 +33,7 @@
   
   </div>
  </div>
+ <g:render template="/common/img_selection" />
  </form>
 
 

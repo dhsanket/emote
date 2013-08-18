@@ -1,0 +1,17 @@
+
+#picture_crop_container, .error {
+    display: none;
+}
+
+#picture_crop_container.active{
+    display: block;
+}
+
+.popupzen{
+    display:none;
+}
+
+.popupzen.active{
+    padding: 50px;
+    display: block;
+}
