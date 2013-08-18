@@ -31,7 +31,9 @@ $(function(){
 		
 		//prepare title placeholder for auto-display
 		emoteCreateReset();
-		
+
+        initImageEventHandlers();
+
 		// Create emote button toggle
 		$('#createEmote').click(function(){
 			emoteCreateButton();
@@ -53,8 +55,9 @@ $(function(){
 	 		// prevent default behaviour of button
 	 		return false;
 	 	});
-	 	
-	 	// Reformat emotes without Media
+
+
+        // Reformat emotes without Media
 	 	emoteNoMediaFormat('#660000');
 	 	
 	 	//If user-header active Push FeedContainer further down

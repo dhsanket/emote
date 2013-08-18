@@ -11,6 +11,7 @@
     		<g:render template="emotesTemplate" model="[titles: flash.titles]" />
 	    	<g:render template="/common/pagination_next"/>
     	</div>
+        <g:render template="/common/picture_crop" />
     </body>
     
 </html>

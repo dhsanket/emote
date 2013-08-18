@@ -1,3 +1,4 @@
+var IMAGE_CONTAINER_HEIGHT_EXCLUSION=140; //140 is the size occupied by app header, title of cropping window, bottom buttons
 function mapFunction() {
 	var lt = $(this).attr('data-lat');
 	var lg = $(this).attr('data-long');
@@ -108,26 +109,34 @@ function preserveSizeWithoutMedia() {
 
 function emoteCreateButton(doNotResetForm) {
 		if($('#emote-creation-container').hasClass('active')) {
-
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('active');
 			$('#createEmote').removeClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
-			
 			if(doNotResetForm){
 				// don't do any reset business
 			}else{
 				 emoteCreateReset();
 			}
-		}
+            //ZEN to hide the image cropper popup if visible
+            if($('#picture_crop_container').hasClass('active')) {
+                $('#picture_crop_container').toggleClass('active');
+            }
+            //ZEN to hide the image chooser popup
+            if($('#imgchooserpopup').hasClass('active')) {
+                $('#imgchooserpopup .cancel-button').click();
+            }
+
+
+        }
 		else {		
 				$('#feed-container').addClass('active');
 				$('#emote-creation-container').addClass('active');
 				$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
 				$('#photo-feed').toggleClass('create-emote');
-						
+
 				// Scroll to top functionality
 				scrollToTop(800);
 		}
@@ -201,38 +210,38 @@ function emoteSubmit() {
 function emoteCreateReset() {
 	$('#obj-title').val('');
 	$('#tag').importTags('');
-	
+
 	//unique easy to find location for title placeholder
 	var titlePlaceHolder = "title (what you want to emote about) goes here...";
-    
-    
+
+
     $('#obj-title').attr('placeholder', titlePlaceHolder);
 
-	
+
 	//clear title placeholder when input in use
     $('#obj-title').focus(function(){
         $(this).attr('placeholder', "");
       });
-    
-    //bring title placeholder back if input not in use 
+
+    //bring title placeholder back if input not in use
     $('#obj-title').blur(function(){
       $(this).attr('placeholder', titlePlaceHolder);
     });
-    
+
     // select none in category
    // console.log()
 	$("#category").prop("selectedIndex", 0);
 	$("#category").css({'border': '1px solid #ccc'});
-	
-	
+
+
 }
 
 // Load tags
 function loadTags() {
-	
+
 	//unique easy to find location for tag placeholder
 	var tagPlaceHolder = "your micro-reviews (emotes) go here...";
-	
+
 	//init tag field
 	$('#tag').tagsInput({
 		'width' : 'auto',
@@ -242,6 +251,7 @@ function loadTags() {
 		'maxChars' : 50
 	});
 }
+
 
 //Geolocation stuff
 function getLocation() {
@@ -258,8 +268,6 @@ function showPosition(position) {
 	console.log("Latitude: " + latitude);
 	console.log("Longitude: " + longitude);
 }
-
-
 //ajax submit follow user action
 function followUser(userId) {
 	console.log(userId);
@@ -277,4 +285,3 @@ function followUser(userId) {
 		$('#'+userId).css({'font':'green'});
 	});
 }
-
