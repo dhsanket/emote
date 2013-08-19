@@ -503,7 +503,7 @@ color:#FFFFFF;
 		}
 		
 		/* Geo Styling */
-		#geoLocation, #cameraInit {
+		#addGeo-button, #addimage-button {
 			background:#EEEEEE;
 			-webkit-border-radius: 6px;
 			-moz-border-radius: 6px;
