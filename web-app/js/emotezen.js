@@ -4,12 +4,9 @@ function initImageEventHandlers(){
     $('#picturecropper-cancel-button').click(function(){
         $('#picture_crop_container').toggleClass('active');
         emptyImageFileElement();
-
-
         // stop default behaviour of button
         return false;
     });
-
 
     // Ok button handler for picture cropper popup
     $('#picturecropper-ok-button').click(function(){
@@ -29,6 +26,12 @@ function initImageEventHandlers(){
     });
 
 
+    $('#img_search_button').click(function(){
+        $('#img_search_container').toggleClass('active');
+        return false;
+    });
+
+
     $('#imgchooserpopup .done-button').click(function(){
         $('#imgchooserpopup').toggleClass('active');
         return false;
@@ -40,6 +43,8 @@ function initImageEventHandlers(){
         return false;
     });
 
+    //Hook up an onclick eventhandler to the Search button.
+    $("#img_search_submit_button").click(bing_img_send_request);
 }
 
 function emptyImageFileElement(){

@@ -1,4 +1,11 @@
 
+/*
+#img_search_container{
+    display: none;
+}
+#img_search_container.active{
+    display: block;
+}*/
 #picture_crop_container, .error {
     display: none;
 }
@@ -14,4 +21,13 @@
 .popupzen.active{
     padding: 50px;
     display: block;
+}
+
+.img_search_result_div{
+    width: 30%;
+    float: left;
+}
+.img_search_result_image{
+    height: 100%;
+    width: 100%;
 }
