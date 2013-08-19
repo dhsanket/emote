@@ -28,6 +28,7 @@ function initImageEventHandlers(){
 
     $('#img_search_button').click(function(){
         $('#img_search_container').toggleClass('active');
+        $("#img_search_results").html("");
         return false;
     });
 
@@ -45,6 +46,8 @@ function initImageEventHandlers(){
 
     //Hook up an onclick eventhandler to the Search button.
     $("#img_search_submit_button").click(bing_img_send_request);
+
+
 }
 
 function emptyImageFileElement(){
@@ -129,11 +132,10 @@ function fileSelectHandler() {
                 onSelect: updateJcropSelectionInfo,
                 onRelease: clearJcropSelectionInfo
             }, function(){
-
-                // use the Jcrop API to get the real image size
-                var bounds = this.getBounds();
-                boundx = bounds[0];
-                boundy = bounds[1];
+                 // use the Jcrop API to get the real image size
+                 var bounds = this.getBounds();
+                 boundx = bounds[0];
+                 boundy = bounds[1];
 
                 // Store the Jcrop API in the jcrop_api variable
                 jcrop_api = this;
@@ -144,6 +146,56 @@ function fileSelectHandler() {
 
     // read selected file as DataURL
     oReader.readAsDataURL(oFile);
+}
+
+var jCropInit=function(me){
+    // initialize Jcrop
+    $('#upload_preview_img').Jcrop({
+        minSize: [32, 32], // min crop size
+        aspectRatio : 1.5, // keep aspect ratio 1:1
+        bgFade: true, // use fade effect
+        bgOpacity: .3, // fade opacity
+        onChange: updateJcropSelectionInfo,
+        onSelect: updateJcropSelectionInfo,
+        onRelease: clearJcropSelectionInfo
+    }, function(){
+/*
+
+        // use the Jcrop API to get the real image size
+        var bounds = me.getBounds();
+        boundx = bounds[0];
+        boundy = bounds[1];
+*/
+
+        // Store the Jcrop API in the jcrop_api variable
+        jcrop_api = this;
+    });
+}
+
+var onWebImageResultClick=function(){
+
+    $('#picture_crop_container').toggleClass('active');
+    $('#img_search_container').toggleClass('active');
+    var oImage = document.getElementById('upload_preview_img');
+    oImage.src=this.attributes['imageurl'].value;
+    //loadWebSearchImage(this.attributes['imageurl'].value);
+    oImage.onload = function () { // onload event handler
+        // display step 2
+        //$('#picture_crop_container').fadeIn(500);
+        //$('#picture_crop_container').toggleClass('active');
+
+        resizeUploadImgPreview(this.width, this.height);
+        // Create variables (in this scope) to hold the Jcrop API and image size
+        var  boundx, boundy;
+
+        // destroy Jcrop if it is existed
+        if (typeof jcrop_api != 'undefined')
+            jcrop_api.destroy();
+
+        // initialize Jcrop
+        jCropInit(this);
+
+    };
 }
 
 var resizeUploadImgPreview=function(imgWidth, imgHeight){

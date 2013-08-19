@@ -125,6 +125,10 @@ function emoteCreateButton() {
             }
             //this code to reset both jcrop and file element
             emptyImageFileElement();
+            //ZEN to hide the image chooser popup
+            if($('#img_search_container').hasClass('active')) {
+                $('#img_search_container').toggleClass('active');
+            }
 
         }
 		else {		

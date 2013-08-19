@@ -43,15 +43,23 @@ function bing_img_send_request() {
         success: function (data, status) {
             var results = data;
             var tbl="";//<table cellspacing=5 cellpadding=5 style=\"width:100%;border 1px solid black\">";
+            var imgwidth= $(document).width()/3;
             $.each(data.d.results, function (i) {
-                    tbl+="<div class='img_search_result_div'>" +
+                   /* if(i%3==0){
+                        tbl+="</tr><tr>";
+                    }
+                    tbl+="<td>" +
                         "<img class='img_search_result_image' src='" + data.d.results[i].Thumbnail.MediaUrl + "' imageurl="+data.d.results[i].MediaUrl+" />" +
+                        "</td>";
+*//**/
+                    tbl+="<div class='img_search_result_div'>" +
+                        "<img  style='width:"+imgwidth+";height:"+imgwidth+";' class='img_search_result_image' src='" + data.d.results[i].Thumbnail.MediaUrl + "' imageurl="+data.d.results[i].MediaUrl+" />" +
                         "</div>";
                 }
-
-
             );
+            tbl+="";
             $("#img_search_results").append(tbl);
+            $(".img_search_result_image").click(onWebImageResultClick);
            /* $( ".imag" ).click(function(e) {
                 $( "#popupimg" ).attr('src', this.attributes['imageurl'].value );
                 $( "#popup" ).dialog( "open" );
@@ -63,13 +71,13 @@ function bing_img_send_request() {
         }
     });
 }
-/*
+
 function recalc()
 {
     var box = $('.box').width();
     $('.box').css('height', box);
 }
-
+  /*
 
 $(window).resize(function(){
     recalc();
