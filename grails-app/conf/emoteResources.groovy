@@ -6,6 +6,7 @@ modules ={
 		resource url:'/css/main.css'
         resource url:'/css/jquery.Jcrop.min.css'
         resource url:'/css/mainzen.css'
+		resource url:'/css/other.css'
 		
 		resource url: '/img/menu-icon.png'
 		resource url: '/img/plus-icon.png'
@@ -39,6 +40,7 @@ modules ={
 		resource url: '/js/vendor/jquery-ui.js'
         resource url: '/js/vendor/jquery.Jcrop.js'
         resource url: '/js/emotezen.js'
+		resource url: '/js/other.js'
 
 
 	}

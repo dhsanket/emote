@@ -5,7 +5,7 @@
 	<div class="emote-v2-header clearfix">
 		<h3>${title.title}</h3>
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
-		<a href="#"><i class="icon-plus-sign icon-white"></i></a>
+		<a href="#"><i class="icon-edit"></i></a>
 		</div>
 		<ul class="emote-v2-actions">		
 			<!--<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>
