@@ -16,6 +16,14 @@ class EmoteCommand {
 	String title;
 	MultipartFile photo;
 	
+	// crop location
+	int topx
+	int topy
+	int bottomx
+	int bottomy
+	int scaledImgHeight
+	int scaledImgWidth
+	
 
 	
 	def getExpressions(){
@@ -30,6 +38,7 @@ class EmoteCommand {
 	}
 	
 	
+	// todo remove
 	def getPicture(){
 		if(photo == null)
 			return null

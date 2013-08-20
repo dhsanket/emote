@@ -14,8 +14,8 @@
 	<h3 class="user-name">${emoteUser.firstName} ${emoteUser.lastName}</h3>
 	</div>
 	
-	<div class="followButton">
-		<g:link controller="User" action="follow" id="${emoteUser.id}" > follow </g:link>
+	<div class="followButton" id="${emoteUser.id}">
+		<a href="javascript:followUser('${emoteUser.id}')"> follow </a>
 	</div>	 	
 </div>
 

@@ -161,23 +161,24 @@ header {
 		opacity:1;
 	}
 	
-	header #createEmote.active img {
+/* 	header #createEmote.active img {
 		-webkit-transform: rotate(45deg);
 		-moz-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
 		-o-transform: rotate(45deg);
 		transform: rotate(45deg);
 		opacity:1;
-	}
+	} */
 	
 	.quickEmote {
 				background:#FBB450;
 				border:none;
-				border-radius:12px;
+				border-radius:2px;
 				display:inline-block;
 				vertical-align: middle;
-				margin-top: 12px;
+				margin-top: 10px;
 				margin-left: 4px;
+				padding: 3px;
 	}
 	
 	header h1#logo {
@@ -493,7 +494,7 @@ color:#FFFFFF;
 		}
 		
 		button{
-			width: 120px;
+			width: 42px;
 			height: 42px;
 			border-radius: 6px;
 			margin-bottom:2px;
@@ -502,8 +503,8 @@ color:#FFFFFF;
 			color: #999999;
 		}
 		
-		/* Geo Styling */
-		#geoLocation, #cameraInit {
+		/* add image Styling */
+		#addimage-button, #addGeo-button, #submit-button {
 			background:#EEEEEE;
 			-webkit-border-radius: 6px;
 			-moz-border-radius: 6px;

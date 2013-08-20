@@ -7,6 +7,7 @@ class GroupByUser  implements Comparable {
 	
 	String username
 	String facebookId
+	String uid
 	
 	Date lastEmoteTime;
 	

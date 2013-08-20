@@ -71,7 +71,7 @@ function friendRender() {
 		var firstUser = $('.user-thumb:first-child .emote-user-name', this).html();
 		$('.current-user', this).text(firstUser);
 		var userId = $('.user-thumb:first-child ', this).attr('data-user-id');
-		$('a', this).attr('href', '/emote/userFeed?userId='+userId)
+		$('a.user-feed', this).attr('href', '/emote/userFeed?userId='+userId)
 	});
 	
 	$('.friend-container .user-thumb').click(function(){
@@ -90,7 +90,7 @@ function friendRender() {
 		var currentUserTextString = $('.emote-user-name', this).html();
 		$('.emote-v2[data-post-id="' + parentPostID + '"] .current-user').html(currentUserTextString);
 		console.log($('.emote-v2[data-post-id="' + parentPostID + '"] a'))
-		$('.emote-v2[data-post-id="' + parentPostID + '"] a').attr('href', '/emote/userFeed?userId='+friendID)
+		$('.emote-v2[data-post-id="' + parentPostID + '"] a.user-feed').attr('href', '/emote/userFeed?userId='+friendID)
 		
 		// hide all
 		$('.friend-emotes-container[data-post-id="' + parentPostID + '"] li.friend-emotes').hide();
@@ -107,14 +107,18 @@ function preserveSizeWithoutMedia() {
 
 // Emote Creation Functions
 
-function emoteCreateButton() {
+function emoteCreateButton(doNotResetForm) {
 		if($('#emote-creation-container').hasClass('active')) {
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('active');
 			$('#createEmote').removeClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
-
+			if(doNotResetForm){
+				// don't do any reset business
+			}else{
+				 emoteCreateReset();
+			}
             //ZEN to hide the image cropper popup if visible
             if($('#picture_crop_container').hasClass('active')) {
                 $('#picture_crop_container').toggleClass('active');
@@ -140,7 +144,7 @@ function emoteCreateButton() {
 
 				// Scroll to top functionality
 				scrollToTop(800);
-		}		
+		}
 	
 }
 
@@ -148,16 +152,14 @@ function emoteCreateButton() {
 function quick_emote(title){
 		
 		$('#obj-title').val(title);
-		emoteCreateButton();
+		emoteCreateButton(true);
 }
 
 // user can easily click another users emote and submit as his own 
 function re_emote(title, tag){
-/*	   $('#obj-title').val(title);
-	   $('#tag').val(tag);
-	   $('#submit-button').click();*/
-	
-	emoteSubmit(title, tag);
+	$('#obj-title').val(title);
+	$('#tag').val(tag);
+	emoteSubmit();
 }
 
 function emoteCreate() {
@@ -171,17 +173,42 @@ function emoteCreate() {
 	}
 	else
 	{
-	//if user selects a category; remove red category border (if he made mistake in first attempt
-	$("#category").css({'border': '1px solid #ccc'});
-	// Grab the values of the form
-	var tags = $('#tag').val();
-	var title = $('#obj-title').val();
-	var e = document.getElementById("category");
-	var category = e.options[e.selectedIndex].value;
-	//close the createEmote form 
-	emoteCreateButton();
-	emoteSubmit();
+		//if user selects a category; remove red category border (if he made mistake in first attempt
+		$("#category").css({'border': '1px solid #ccc'});
+		emoteCreateButton(true);
+		emoteSubmit();
 	}
+}
+
+//ajax submit createEmote form action
+function emoteSubmit() {
+
+	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
+	// console.log(data.tags);
+	// console.log(data.emoteTitle);
+	var form = $('#emoteSave')
+	var formData = new FormData(form[0]);
+	//console.log(formData)
+	// Perform the request
+	
+	var feedContents = $.ajax({
+		
+		type: 'POST',
+		url: '/emote/save',
+        cache: false,
+        contentType: false,
+        processData : false,
+		data: formData,
+		error: function(){
+			// Error function goes here
+			console.log("Error, your request was not sent");
+		},
+	}).done(function(){
+		// Reset the form
+		emoteCreateReset();
+		// Reload
+		location.reload();
+	});
 }
 
 //prepare title placeholder for auto-display; resets tag field
@@ -230,35 +257,6 @@ function loadTags() {
 	});
 }
 
-//ajax submit createEmote form action
-function emoteSubmit() {
-
-    // Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
-    // console.log(data.tags);
-    // console.log(data.emoteTitle);
-    var form = $('#emoteSave')
-    var formData = new FormData(form[0]);
-    //console.log(formData)
-    // Perform the request
-    var feedContents = $.ajax({
-
-        type: 'POST',
-        url: '/emote/save',
-        cache: false,
-        contentType: false,
-        processData : false,
-        data: formData,
-        error: function(){
-            // Error function goes here
-            console.log("Error, your request was not sent");
-        }
-    }).done(function(){
-            // Reset the form
-            emoteCreateReset();
-            // Reload
-            location.reload();
-        });
-}
 
 //Geolocation stuff
 function getLocation() {
@@ -274,4 +272,21 @@ function showPosition(position) {
 	
 	console.log("Latitude: " + latitude);
 	console.log("Longitude: " + longitude);
+}
+//ajax submit follow user action
+function followUser(userId) {
+	console.log(userId);
+	$.ajax({
+		type: 'POST',
+		url: '/user/follow',
+		data: {friendId:userId},
+		error: function(){
+			// Error function goes here
+			console.log("Error, your request was not sent");
+			$('#'+userId).css({'font':'red'});
+		},
+	}).done(function(){
+		// disalbe button
+		$('#'+userId).css({'font':'green'});
+	});
 }

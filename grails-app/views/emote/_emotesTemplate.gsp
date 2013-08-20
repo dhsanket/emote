@@ -5,7 +5,7 @@
 	<div class="emote-v2-header clearfix">
 		<h3>${title.title}</h3>
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
-		<a href="#"><i class="icon-plus-sign icon-white"></i></a>
+		<a href="#"><i class="icon-edit"></i></a>
 		</div>
 		<ul class="emote-v2-actions">		
 			<!--<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>
@@ -27,10 +27,10 @@
 		<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="emote-friends swiper-slide">
-				<h4>Friend's emotes: <a href="#"><span class="current-user"></span></a></h4>
+				<h4>Friend's emotes: <a class="user-feed" href="#"><span class="current-user"></span></a></h4>
 				<ul class="friend-container clearfix">
 				<g:each in="${title.users}" var="user">
-					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.facebookId}">	
+					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">	
 						<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
 						<span class="emote-user-name">${user.username}</span>
 					</li>
@@ -38,12 +38,12 @@
 				</ul>
 				<ul data-post-id="${i}" class="friend-emotes-container" >
 					<g:each in="${title.users}" var="user">
-					<li class="friend-emotes clearfix" data-user-id="${user.facebookId}"  style="display : list-item;">
+					<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 					<ul>
-					<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
+					<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
 					<g:each in="${emote.expressions}" var="exp">
 							<g:if test="${(exp.trim().length()>0)}">
-								<li><a href="#" onclick="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+								<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
 							</g:if>
 					</g:each>
 					</g:each>
@@ -57,14 +57,10 @@
 				<ul class="friend-emotes-container" >
 				<div class="friend-emotes clearfix">
 				<ul>
-				<g:each in="${title.users}" var="user">
-					<g:each in="${title.getUserEmotes(user.facebookId).emotes}" var="emote">
-					<g:each in="${emote.expressions}" var="exp">
-						<g:if test="${(exp.trim().length()>0)}">
-							<li><a href="#" onclick="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+				<g:each in="${title.popularEmotes}" var="emote">
+						<g:if test="${(emote.expression.trim().length()>0)}">
+							<li><a href="javascript:re_emote('${title.title}', '${emote.expression}' )">${emote.expression}</a></li>
 						</g:if>
-					</g:each>
-					</g:each>
 				</g:each>					
 				</ul>
 				</div>

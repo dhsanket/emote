@@ -12,6 +12,10 @@ public class GroupByTitle implements Comparable  {
 	
 	Map<String, GroupByUser> emotesByUsers = [:]
 	
+	Map<String, GroupByUser> emotesByFriends = [:]
+	
+	List<PopularEmote> popEmotes = []
+	
 	
 	
 
@@ -25,24 +29,44 @@ public class GroupByTitle implements Comparable  {
 	}
 	
 	void add(Emote emote){
-		GroupByUser userGrouped = emotesByUsers.get(emote.facebookId)
+		GroupByUser userGrouped = emotesByUsers.get(emote.userId)
 		if(userGrouped == null){
-			userGrouped = new GroupByUser(username:emote.username, facebookId:emote.facebookId)
-			emotesByUsers.put(emote.facebookId, userGrouped)
+			userGrouped = new GroupByUser(username:emote.username, uid:emote.userId, facebookId:emote.facebookId)
+			emotesByUsers.put(emote.userId, userGrouped)
 		}
 		userGrouped.add(emote)
 		
 		if(lastEmoteTime == null || lastEmoteTime.getTime()< emote.creationTime.getTime()){
 			lastEmoteTime = emote.creationTime
 		}
+		addPopularEntry(emote)
 	}
 	
-	GroupByUser getUserEmotes(String fbId){
-		return emotesByUsers.get(fbId)
+	GroupByUser getUserEmotes(String uid){
+		return emotesByUsers.get(uid)
 	}
 	
 	def getUsers(){
 		return emotesByUsers.values()
+	}
+	
+	def addPopularEntry(Emote emote){
+		
+		emote.expressions.each { exp ->
+			PopularEmote pe = new PopularEmote(exp)
+			if(popEmotes.contains(pe)){
+				PopularEmote e = popEmotes.get(popEmotes.indexOf(pe))
+				e.incrementCount();
+			}else{
+				popEmotes.add(pe);
+				
+			}
+		}
+	}
+	
+	def getPopularEmotes(){
+		Collections.sort(popEmotes)
+		return popEmotes.take(10);
 	}
 
 

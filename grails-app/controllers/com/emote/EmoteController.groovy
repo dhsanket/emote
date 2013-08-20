@@ -11,6 +11,8 @@ class EmoteController {
 	FacebookContext facebookContext;
 	FacebookGraphClient facebookGraphClient;
 	
+	PictureService pictureService;
+	
 
     def create() {
 		
@@ -29,9 +31,19 @@ class EmoteController {
 		if(emote.hasErrors()){
 			log.info "emote has errors"
 			//render view:'create', model:[emote:emote]
+			StringBuilder errors = new StringBuilder()
+			emote.errors.allErrors.each{
+				errors.append(it).append("\n")
+			}
+			log.warn "emote post errors $errors"
+			render(errors.toString())
 			return
 		}
-		Picture pic = emote.getPicture()
+		Picture pic = null; 
+		if(emote.photo != null && emote.photo.bytes.size() >0){
+			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
+				emote.scaledImgWidth, emote.scaledImgHeight)
+		}
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0))
 		render(template:"emotesTemplate" , model:[titles: titles])
@@ -52,7 +64,7 @@ class EmoteController {
 		String userId = params.userId
 		if(userId == null || userId.trim().length()== 0)
 		{
-			userId = session.user.facebookId
+			userId = session.user.id
 		}
 		int page = getPageIndex();
 		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page))
@@ -61,7 +73,7 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
 			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1))
 		}
-		flash.user = userService.findByFBId(userId)
+		flash.user = userService.findById(userId)
 		flash.titles = posts
 	}
 	

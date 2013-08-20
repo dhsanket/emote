@@ -8,6 +8,11 @@ class UserService {
 		return User.findByFacebookId(facebookId)
     }
 	
+	def findById(String uid) {
+		return User.findById(uid)
+	}
+
+	
 	def findByEmail(String emailId) {
 		log.info "Finding user using email ${emailId}"
 		return User.findByEmail(emailId)
@@ -20,5 +25,13 @@ class UserService {
 			)
 		user.save()
 		return user
+	}
+	
+	def addFollowingUser(User user, String userId){
+		if(user.followingUsers == null)
+			user.followingUsers = new HashSet<String>()
+		user.followingUsers.add(userId)
+		user.save()
+		
 	}
 }

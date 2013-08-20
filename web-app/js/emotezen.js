@@ -12,9 +12,15 @@ function initImageEventHandlers(){
     $('#picturecropper-ok-button').click(function(){
         //$('#picture_crop_container').toggleClass('active');
         var imgObj=$('#upload_preview_img');
-        alert("Width="+imgObj.width()+", Height"+imgObj.height()+", Jcrop info x="+jcrop_coordinates.x
+        $('input[name=topx]').val(jcrop_coordinates.x);
+        $('input[name=topy]').val(jcrop_coordinates.y);
+        $('input[name=bottomx]').val(jcrop_coordinates.x2);
+        $('input[name=bottomy]').val(jcrop_coordinates.y2);
+        $('input[name=scaledImgWidth]').val(imgObj.width());
+        $('input[name=scaledImgHeight]').val(imgObj.height());
+        /*alert("Width="+imgObj.width()+", Height"+imgObj.height()+", Jcrop info x="+jcrop_coordinates.x
             +",y="+jcrop_coordinates.y+",x2="+jcrop_coordinates.x2+",y2="+jcrop_coordinates.y2
-            +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);
+            +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);*/
         $('#picture_crop_container').toggleClass('active');
         // stop default behaviour of button
         $('#imgchooserpopup').toggleClass('active');
