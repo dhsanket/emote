@@ -22,8 +22,13 @@ function initImageEventHandlers(){
             +",y="+jcrop_coordinates.y+",x2="+jcrop_coordinates.x2+",y2="+jcrop_coordinates.y2
             +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);*/
         $('#picture_crop_container').toggleClass('active');
-        // stop default behaviour of button
         $('#imgchooserpopup').toggleClass('active');
+
+        //To show preview in create emote popup
+        $('#file-preview').attr('src',imgObj.attr('src') );
+        $('#photoBar').addClass('active');
+
+        // stop default behaviour of button
         return false;
     });
 
