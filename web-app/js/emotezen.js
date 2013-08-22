@@ -1,4 +1,11 @@
 function initImageEventHandlers(){
+    $('#flag_form').submit(function(){
+        $.get('/flag/save?' + $('#flag_form').serialize()).done(function(data) {
+            alert("Thanks for reporting. Emote team will ...... {need suitable sentence from sanket}")
+            $('#flag_container').toggleClass('active');
+        });
+        return false;
+    });
 
     // Cancel button handler for picture cropper popup
     $('#picturecropper-cancel-button').click(function(){
@@ -59,6 +66,12 @@ function initImageEventHandlers(){
     $("#img_search_submit_button").click(bing_img_send_request);
 
 
+}
+
+var flag_emote = function (title){
+    $('#flag_container').toggleClass('active');
+    $('#flag_title_display').html(title);
+    $('#flag_title_hidden').val(title);
 }
 
 function emptyImageFileElement(){
