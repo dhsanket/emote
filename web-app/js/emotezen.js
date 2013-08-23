@@ -147,6 +147,9 @@ function fileSelectHandler() {
                 jcrop_api.destroy();
 
             // initialize Jcrop
+
+            jCropInit(this, boundx, boundy);
+            /*
             $('#upload_preview_img').Jcrop({
                 minSize: [32, 32], // min crop size
                 aspectRatio : 1.5, // keep aspect ratio 1:1
@@ -163,7 +166,7 @@ function fileSelectHandler() {
 
                 // Store the Jcrop API in the jcrop_api variable
                 jcrop_api = this;
-            });
+            });*/
 
         };
     };
@@ -172,7 +175,8 @@ function fileSelectHandler() {
     oReader.readAsDataURL(oFile);
 }
 
-var jCropInit=function(me){
+var jCropInit=function(me, boundx, boundy){
+
     // initialize Jcrop
     $('#upload_preview_img').Jcrop({
         minSize: [32, 32], // min crop size
@@ -183,16 +187,16 @@ var jCropInit=function(me){
         onSelect: updateJcropSelectionInfo,
         onRelease: clearJcropSelectionInfo
     }, function(){
-/*
 
         // use the Jcrop API to get the real image size
-        var bounds = me.getBounds();
+        var bounds = this.getBounds();
         boundx = bounds[0];
         boundy = bounds[1];
-*/
 
         // Store the Jcrop API in the jcrop_api variable
         jcrop_api = this;
+        //for default selection
+        jcrop_api.setSelect([0,0,2000,2000]);
     });
 }
 
@@ -217,7 +221,7 @@ var onWebImageResultClick=function(){
             jcrop_api.destroy();
 
         // initialize Jcrop
-        jCropInit(this);
+        jCropInit(this, boundx, boundy);
 
     };
 }
