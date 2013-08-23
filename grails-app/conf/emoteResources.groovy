@@ -39,11 +39,10 @@ modules ={
 		resource url: '/js/emote.js'
 		resource url: '/js/vendor/jquery-ui.js'
         resource url: '/js/vendor/jquery.Jcrop.js'
+        resource url: '/js/zen/bing-image-search.js'
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
 
-
 	}
-	
 
 }

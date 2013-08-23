@@ -1,15 +1,19 @@
 function initImageEventHandlers(){
+    $('#flag_form').submit(function(){
+        $.get('/flag/save?' + $('#flag_form').serialize()).done(function(data) {
+            alert("Thanks for reporting. Emote team will ...... {need suitable sentence from sanket}")
+            $('#flag_container').toggleClass('active');
+        });
+        return false;
+    });
 
     // Cancel button handler for picture cropper popup
     $('#picturecropper-cancel-button').click(function(){
         $('#picture_crop_container').toggleClass('active');
         emptyImageFileElement();
-
-
         // stop default behaviour of button
         return false;
     });
-
 
     // Ok button handler for picture cropper popup
     $('#picturecropper-ok-button').click(function(){
@@ -25,13 +29,25 @@ function initImageEventHandlers(){
             +",y="+jcrop_coordinates.y+",x2="+jcrop_coordinates.x2+",y2="+jcrop_coordinates.y2
             +",w="+jcrop_coordinates.w+",h="+jcrop_coordinates.h);*/
         $('#picture_crop_container').toggleClass('active');
-        // stop default behaviour of button
         $('#imgchooserpopup').toggleClass('active');
+
+        //To show preview in create emote popup
+        $('#file-preview').attr('src',imgObj.attr('src') );
+        $('#photoBar').addClass('active');
+
+        // stop default behaviour of button
         return false;
     });
 
     $('#addimage-button').click(function(){
         $('#imgchooserpopup').toggleClass('active');
+    });
+
+
+    $('#img_search_button').click(function(){
+        $('#img_search_container').toggleClass('active');
+        $("#img_search_results").html("");
+        return false;
     });
 
 
@@ -46,6 +62,16 @@ function initImageEventHandlers(){
         return false;
     });
 
+    //Hook up an onclick eventhandler to the Search button.
+    $("#img_search_submit_button").click(bing_img_send_request);
+
+
+}
+
+var flag_emote = function (title){
+    $('#flag_container').toggleClass('active');
+    $('#flag_title_display').html(title);
+    $('#flag_title_hidden').val(title);
 }
 
 function emptyImageFileElement(){
@@ -121,6 +147,9 @@ function fileSelectHandler() {
                 jcrop_api.destroy();
 
             // initialize Jcrop
+
+            jCropInit(this, boundx, boundy);
+            /*
             $('#upload_preview_img').Jcrop({
                 minSize: [32, 32], // min crop size
                 aspectRatio : 1.5, // keep aspect ratio 1:1
@@ -130,21 +159,71 @@ function fileSelectHandler() {
                 onSelect: updateJcropSelectionInfo,
                 onRelease: clearJcropSelectionInfo
             }, function(){
-
-                // use the Jcrop API to get the real image size
-                var bounds = this.getBounds();
-                boundx = bounds[0];
-                boundy = bounds[1];
+                 // use the Jcrop API to get the real image size
+                 var bounds = this.getBounds();
+                 boundx = bounds[0];
+                 boundy = bounds[1];
 
                 // Store the Jcrop API in the jcrop_api variable
                 jcrop_api = this;
-            });
+            });*/
 
         };
     };
 
     // read selected file as DataURL
     oReader.readAsDataURL(oFile);
+}
+
+var jCropInit=function(me, boundx, boundy){
+
+    // initialize Jcrop
+    $('#upload_preview_img').Jcrop({
+        minSize: [32, 32], // min crop size
+        aspectRatio : 1.5, // keep aspect ratio 1:1
+        bgFade: true, // use fade effect
+        bgOpacity: .3, // fade opacity
+        onChange: updateJcropSelectionInfo,
+        onSelect: updateJcropSelectionInfo,
+        onRelease: clearJcropSelectionInfo
+    }, function(){
+
+        // use the Jcrop API to get the real image size
+        var bounds = this.getBounds();
+        boundx = bounds[0];
+        boundy = bounds[1];
+
+        // Store the Jcrop API in the jcrop_api variable
+        jcrop_api = this;
+        //for default selection
+        jcrop_api.setSelect([0,0,2000,2000]);
+    });
+}
+
+var onWebImageResultClick=function(){
+
+    $('#picture_crop_container').toggleClass('active');
+    $('#img_search_container').toggleClass('active');
+    var oImage = document.getElementById('upload_preview_img');
+    oImage.src=this.attributes['imageurl'].value;
+    //loadWebSearchImage(this.attributes['imageurl'].value);
+    oImage.onload = function () { // onload event handler
+        // display step 2
+        //$('#picture_crop_container').fadeIn(500);
+        //$('#picture_crop_container').toggleClass('active');
+
+        resizeUploadImgPreview(this.width, this.height);
+        // Create variables (in this scope) to hold the Jcrop API and image size
+        var  boundx, boundy;
+
+        // destroy Jcrop if it is existed
+        if (typeof jcrop_api != 'undefined')
+            jcrop_api.destroy();
+
+        // initialize Jcrop
+        jCropInit(this, boundx, boundy);
+
+    };
 }
 
 var resizeUploadImgPreview=function(imgWidth, imgHeight){
