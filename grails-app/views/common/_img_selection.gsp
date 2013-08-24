@@ -5,7 +5,7 @@
         
         <input type="file" id="pic" name="photo" title="Device" onclick="emptyImageFileElement()" onchange="fileSelectHandler()" >
         
-        <button value="Web">Image from web</button>
+        <button id="img_search_button" value="Web">Image from web</button>
         
         <button value="Cancel" class="cancel-button" >Back</button>
     </div>

@@ -121,7 +121,8 @@ function emoteCreateButton(doNotResetForm) {
 			}
             //ZEN to hide the image cropper popup if visible
             if($('#picture_crop_container').hasClass('active')) {
-                $('#picture_crop_container').toggleClass('active');
+                $('#picturecropper-cancel-button').click();
+                //$('#picture_crop_container').toggleClass('active');
             }
             //ZEN to hide the image chooser popup
             if($('#imgchooserpopup').hasClass('active')) {
@@ -129,6 +130,10 @@ function emoteCreateButton(doNotResetForm) {
             }
             //this code to reset both jcrop and file element
             emptyImageFileElement();
+            //ZEN to hide the image chooser popup
+            if($('#img_search_container').hasClass('active')) {
+                $('#img_search_container').toggleClass('active');
+            }
 
         }
 		else {		

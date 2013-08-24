@@ -68,7 +68,8 @@
 
                                 /*<a href="dialog-rightclosebtn.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c">
                                  <span class="ui-btn-inner"><span class="ui-btn-text">Right close button</span></span></a>*/
-                                tbl+="<a href='#popup' data-inline='true' data-transition='slideup'><div class='box' ><img class='imag' src='" + data.d.results[i].Thumbnail.MediaUrl + "' imageurl="+data.d.results[i].MediaUrl+" /></div></a>";
+                                tbl+="<a href='#popup' data-inline='true' data-transition='slideup'>" +
+                                       "<div class='box' ><img class='imag' src='" + data.d.results[i].Thumbnail.MediaUrl + "' imageurl="+data.d.results[i].MediaUrl+" /></div></a>";
 
                             }
 
@@ -181,8 +182,8 @@
 <BODY style="width: 100%">
 <div data-role="page" id="search" style="max-height: 420px; min-height: 420px;" data-theme="a">
     <div id="SearchContainer" align="center">
-        <input type="text" id="Query" /> <input type="button"
-                                                value="Search!" id="Search" />
+        <input type="text" id="Query" />
+        <input type="button" value="Search!" id="Search" />
     </div>
     <table id="Results" cellspacing="10" cellpadding="10"
            style="border: 1px solid black;">

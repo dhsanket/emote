@@ -12,6 +12,8 @@
 	    	<g:render template="/common/pagination_next"/>
     	</div>
         <g:render template="/common/picture_crop" />
+        <g:render template="/common/imageupload/web_search" />
+        <g:render template="/common/flag_inappropriate" />
     </body>
     
 </html>
