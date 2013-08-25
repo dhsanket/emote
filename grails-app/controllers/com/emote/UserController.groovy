@@ -24,6 +24,7 @@ class UserController
 		log.info "user.token ${token}"
 		List followFriends = []
 		List userFriends = []
+<<<<<<< Upstream, based on origin/master
 		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:200])
 		List inviteFriends = []
 		userFriends.each{friend ->
@@ -37,6 +38,13 @@ class UserController
 			}
 		}
 		render (view:'displayUsers', model: [userFriends: inviteFriends, emoteUsersList: followFriends])
+=======
+		emoteUsersList = User.list()
+		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:10])
+		//log.info "user friends in ${userFriends[1]},${userFriends[2] }"
+        log.info "user friends in ${userFriends}"
+		render (view:'displayUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
+>>>>>>> 262830f invite friends page layout bug
 	}
 	
 	def follow(){
