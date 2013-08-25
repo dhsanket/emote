@@ -1450,7 +1450,6 @@ position: relative;
 	padding-top: 10px;
 	padding-bottom: 0px;
 }
-<<<<<<< Updated upstream
 #followUsers .user-section .user-image {
 			float:left;
 			display:inline-block;
@@ -1464,7 +1463,7 @@ position: relative;
 		}
 		
 #followUsers .user-section .user-meta {
-			float:left;
+			/*float:left;*/
 			display:inline-block;
 			width: auto;
 			height: 50px;
