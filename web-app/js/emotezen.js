@@ -28,6 +28,14 @@ function initImageEventHandlers(){
 
     // Ok button handler for picture cropper popup
     $('#picturecropper-ok-button').click(function(){
+
+        //based on from where img picked we need to open the popup back
+        if(IMG_PICK_MODE==1){
+            //TODO to reset websearch data
+        }else if(IMG_PICK_MODE==2){
+            document.getElementById('pic').value=null;
+        }
+
         //$('#picture_crop_container').toggleClass('active');
         var imgObj=$('#upload_preview_img');
         $('input[name=topx]').val(jcrop_coordinates.x);
