@@ -130,6 +130,8 @@ function emoteCreateButton(doNotResetForm) {
             }
             //this code to reset both jcrop and file element
             emptyImageFileElement();
+            //remove the preview panel
+            destroyImgPreview();
             //ZEN to hide the image chooser popup
             if($('#img_search_container').hasClass('active')) {
                 $('#img_search_container').toggleClass('active');
