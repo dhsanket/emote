@@ -3,6 +3,7 @@
         <div>
             <input type="text" id="img_search_query_text" />
             <input type="button" value="Search!" id="img_search_submit_button" />
+            <input type="button" value="Back" id="img_search_back_button" />
         </div>
         <div id="img_search_results" style="border: 1px solid black;">
         </div>

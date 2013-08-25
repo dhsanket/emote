@@ -1,3 +1,4 @@
+var IMG_PICK_MODE;
 function initImageEventHandlers(){
     $('#flag_form').submit(function(){
         $.get('/flag/save?' + $('#flag_form').serialize()).done(function(data) {
@@ -11,6 +12,16 @@ function initImageEventHandlers(){
     $('#picturecropper-cancel-button').click(function(){
         $('#picture_crop_container').toggleClass('active');
         emptyImageFileElement();
+
+        //based on from where img picked we need to open the popup back
+        if(IMG_PICK_MODE==1){
+            $('#pic').click();
+        }else if(IMG_PICK_MODE==2){
+            $('#img_search_button').click()
+        }
+
+        //reset the preview panel in create emote panel
+        destroyImgPreview();
         // stop default behaviour of button
         return false;
     });
@@ -63,8 +74,22 @@ function initImageEventHandlers(){
     });
 
     //Hook up an onclick eventhandler to the Search button.
-    $("#img_search_submit_button").click(bing_img_send_request);
+    $("#img_search_submit_button").click(function(){
+        $("#img_search_results").html("");
+        bing_img_send_request();
+    });
 
+    //Hook up an onclick eventhandler to the Search button.
+    $("#img_search_back_button").click(function(){
+        $('#img_search_container').removeClass('active');
+    });
+}
+
+//reset the preview panel in create emote panel
+var destroyImgPreview= function(){
+    var filePreview= $('#file-preview');
+    filePreview.attr('src','' );
+    $('#photoBar').removeClass('active');
 
 }
 
@@ -149,6 +174,7 @@ function fileSelectHandler() {
             // initialize Jcrop
 
             jCropInit(this, boundx, boundy);
+            IMG_PICK_MODE=1;
             /*
             $('#upload_preview_img').Jcrop({
                 minSize: [32, 32], // min crop size
@@ -222,7 +248,7 @@ var onWebImageResultClick=function(){
 
         // initialize Jcrop
         jCropInit(this, boundx, boundy);
-
+        IMG_PICK_MODE=2;
     };
 }
 
