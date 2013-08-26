@@ -7,6 +7,8 @@
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
+		
+		<%--
         <div class="navigation">
             <ul class="top-level">
                 <li><a href="#">More</a>
@@ -18,7 +20,8 @@
                 </li>
             </ul>
         </div>
-        %{--<div class="quickEmote emote-v2-action-button dropdown-menu" onclick="javascript:emote_menu('${title.title}')">
+        
+        <div class="quickEmote emote-v2-action-button dropdown-menu" onclick="javascript:emote_menu('${title.title}')">
             <a class="more-menu" >more</a>
             <div class="title-submenu">
                 <ul class="root-menu">
@@ -28,14 +31,15 @@
                 </ul>
             </div>
 
-        </div>--}%
-
+        </div>
+        --%>
+        
         <ul class="emote-v2-actions">
-			<!--<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>
-			<li><button class="emote-v2-action-button"><i class="icon-play-circle icon-white"></i></button></li>
-			<li><button class="emote-v2-action-button"><i class="icon-ok icon-white"></i></button></li>
-			<li><button class="emote-v2-action-button"><i class="icon-remove-sign icon-white"></i></button></li>-->
-			<%--<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><i class="icon-ok-sign icon-white" id="quick-createEmote"></i></button></li>--%>
+<%--			<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>--%>
+<%--			<li><button class="emote-v2-action-button"><i class="icon-play-circle icon-white"></i></button></li>--%>
+<%--			<li><button class="emote-v2-action-button"><i class="icon-ok icon-white"></i></button></li>--%>
+<%--			<li><button class="emote-v2-action-button"><i class="icon-remove-sign icon-white"></i></button></li>--%>
+<%--			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><i class="icon-ok-sign icon-white" id="quick-createEmote"></i></button></li>--%>
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">
