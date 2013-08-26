@@ -17,6 +17,7 @@ modules ={
 		resource url: 'img/touch/apple-touch-icon.png'
 		resource url: 'img/touch/apple-touch-icon-144x144-precomposed.png'
 		resource url: '/img/positive-thinking.jpg'
+		resource url: '/img/emote-defaultLogo.png'
 		
 		resource url: 'img/startup/startup-retina-4in.png'
 		resource url: 'img/startup/startup-retina.png'
