@@ -3,7 +3,7 @@
         <div id="fullscreen-dialog">
         <div class="error"></div>
         
-        <input type="file" id="pic" name="photo" title="Device" onclick="emptyImageFileElement()" onchange="fileSelectHandler()" >
+        <input form="emoteSave" type="file" id="pic" name="photo" title="Device" onclick="emptyImageFileElement()" onchange="fileSelectHandler()" >
         
         <button id="img_search_button" value="Web">Image from web</button>
         

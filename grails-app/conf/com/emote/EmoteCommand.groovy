@@ -8,7 +8,8 @@ class EmoteCommand {
 	
 	static constraints = {
 		title blank:false
-		expression blank:false
+//		expression blank:false	Does NOT have front end User notification
+//		category blank:false     has front end error checking && User notification
 	}
 	
 	String category;
@@ -41,8 +42,11 @@ class EmoteCommand {
 	// todo remove
 	def getPicture(){
 		if(photo == null)
+		log.info "no pic attached in domain object"
 			return null
+			
 		def img = new Picture(type:photo.contentType, filename:photo.originalFilename, content:photo.bytes)
+		log.info "Pic is attached in domain object"
 		return img;
 
 	}
