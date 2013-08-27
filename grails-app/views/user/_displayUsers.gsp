@@ -2,6 +2,8 @@
 <div id="followUsers">
 
 
+<input type="checkbox" value="sanket.deshpande" onchange="addFriendToInvite(this)" /> Sanket
+<input type="checkbox" value="nitin.karmuse"  onchange="addFriendToInvite(this)"  /> Nitin
 
 <g:each in="${emoteUsersList}" var="emoteUser">
 
@@ -30,7 +32,7 @@
 	<h3 class="user-name">${friend.name}</h3>
 	</span>
 <%--	<img src="https://graph.facebook.com/${friend.id}/picture">--%>
-	
+	<input type="checkbox" onchange="addFriendToInvite(this)"   value="${friend.id}" />
 	<span class="followButton">
 		<a href="${createLink(controller:'emote', action:'feed')}" > invite </a>
 	</span>
