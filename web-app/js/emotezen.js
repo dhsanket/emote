@@ -282,3 +282,30 @@ var updateJcropSelectionInfo=function(c){
 var clearJcropSelectionInfo=function(){
     jcrop_coordinates=null;
 };
+
+var INVITE_FRIEND_LIST=[];
+var addFriendToInvite = function(elt){
+    alert(1);
+    var INVITE_FRIEND_LIST=[];
+    var i=0;
+    if(elt.checked){
+        INVITE_FRIEND_LIST.push(elt.value)
+    }else{
+        for(var i=0;i<INVITE_FRIEND_LIST.length;i++){
+            if(INVITE_FRIEND_LIST[i]==elt.value ){
+                INVITE_FRIEND_LIST.splice(i,1);
+            }
+        }
+    }
+    alert(INVITE_FRIEND_LIST);
+    INVITE_FRIEND_LIST=[];
+    INVITE_FRIEND_LIST.push(529633913);
+    INVITE_FRIEND_LIST.push(222401997);
+    FB.ui({
+        method: 'send',
+        link: 'http://www.emote-app.com',
+        //display:'touch',
+        to:[4,5]
+    });
+
+}
