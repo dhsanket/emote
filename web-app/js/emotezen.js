@@ -308,4 +308,8 @@ var addFriendToInvite = function(elt){
         to:[4,5]
     });
 
+<<<<<<< Upstream, based on upstream/master
 }
+=======
+}
+>>>>>>> f8ac361 incomplete code for invite facebook friends

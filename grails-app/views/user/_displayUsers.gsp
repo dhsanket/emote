@@ -36,19 +36,11 @@
 	<h3 class="user-name">${friend.name}</h3>
 	</span>
 <%--	<img src="https://graph.facebook.com/${friend.id}/picture">--%>
-<<<<<<< Upstream, based on upstream/master
 	<input type="checkbox" onchange="addFriendToInvite(this)"   value="${friend.id}" />
-=======
-	
->>>>>>> bb77ae3 invite friends page layout bug
 	<span class="followButton">
 		<a href="${createLink(controller:'emote', action:'feed')}" > invite </a>
 	</span>
 	
 
 </div>	
-<<<<<<< Upstream, based on upstream/master
 </g:each>
-=======
-</g:each>
->>>>>>> bb77ae3 invite friends page layout bug
