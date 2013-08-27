@@ -6,7 +6,7 @@
 		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		
-		<meta property="og:url"             content="http://www.emote-app.com" /> 
+<%--		<meta property="og:url"             content="http://www.emote-app.com" /> --%>
 		<meta property="og:title"           content="emote-app - find out what your friends think about..." /> 
 		<meta property="og:image"           content="http://www.emote-app.com/img/emote-defaultLogo.png" />
 		
