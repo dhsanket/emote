@@ -2,7 +2,7 @@ modules ={
 	core {
 		resource url:'/css/normalize.css'
 		resource url:'/css/bootstrap.css'
-		// resource url:'/css/bootstrap-override.css'
+// 		resource url:'/css/bootstrap-override.css'
 		resource url:'/css/main.css'
         resource url:'/css/jquery.Jcrop.min.css'
         resource url:'/css/mainzen.css'
@@ -43,6 +43,7 @@ modules ={
         resource url: '/js/zen/bing-image-search.js'
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
+
 
 	}
 

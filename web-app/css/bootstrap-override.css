@@ -27,7 +27,7 @@
   background-image: url("/packages/bootstrap.jasny/lib/bootstrap/img/glyphicons-halflings-white.png");
 }
 
-@font-face {
+/*@font-face {
   font-family: IconicStroke;
   font-weight: normal;
   src: url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_stroke.eot');
@@ -39,4 +39,4 @@
     font-weight: normal;
   src: url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.eot');
     src: local('IconicFill'), url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.eot?#iefix') format('embedded-opentype'), url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.woff') format('woff'), url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.ttf') format('truetype'), url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.svg#iconic') format('svg'), url('/packages/bootstrap.jasny/lib/bootstrap/font/iconic_fill.otf') format('opentype');
-}
+}*/
