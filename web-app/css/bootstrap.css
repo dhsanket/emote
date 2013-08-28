@@ -6738,7 +6738,7 @@ a.rowlink {
   line-height: 30px;
 }
 
-@font-face {
+/*@font-face {
   font-family: IconicStroke;
   font-weight: normal;
   src: url(../font/iconic_stroke.eot);
@@ -6750,7 +6750,7 @@ a.rowlink {
   font-weight: normal;
   src: url(../font/iconic_fill.eot);
   src: local('IconicFill'), url(../font/iconic_fill.eot?#iefix) format('embedded-opentype'), url(../font/iconic_fill.woff) format('woff'), url(../font/iconic_fill.ttf) format('truetype'), url(../font/iconic_fill.svg#iconic) format('svg'), url(../font/iconic_fill.otf) format('opentype');
-}
+}*/
 
 @media screen, print {
   [class*="iconic-"] {
