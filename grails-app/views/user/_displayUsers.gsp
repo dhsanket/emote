@@ -1,7 +1,5 @@
 
-<div id="followUsers">
-
-
+<div id="displayUsers">
 
 <g:each in="${emoteUsersList}" var="emoteUser">
 

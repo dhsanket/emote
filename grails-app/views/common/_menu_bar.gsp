@@ -1,5 +1,5 @@
 <div id="nav-menu">
-	<section id="user-section" class="clearfix">
+	<section class="user-section" class="clearfix">
 		<g:if test="${session.user != null}">
 		<div class="user-image">
 			<a href="${createLink(controller:'Emote',action:'userFeed', absolute:true)}"><facebook:picture facebookId="${session.user.facebookId}" /></a>

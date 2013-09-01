@@ -28,3 +28,106 @@
         display:block;
         margin-bottom:0.25em;
     }
+
+
+/* display users */
+#displayUsers{ 
+margin-left:25px;
+margin-right:25px;
+position: relative;
+}
+
+#displayUsers .user-section{
+display: block;
+height: 60px;
+border-bottom: solid;
+padding-top: 10px;
+padding-bottom: 0px;
+}
+<<<<<<< Updated upstream
+#displayUsers .user-section .user-image {
+float:left;
+display:inline-block;
+height: auto;
+}
+#displayUsers .user-section .user-image img {
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+#displayUsers .user-section .user-meta {
+float:left;
+display:inline-block;
+width: auto;
+height: 50px;
+padding-left:10px;
+}
+
+
+#displayUsers .user-section .user-meta h3{
+font-size: 14px;
+font-weight: bold;
+color: #999;
+}
+
+#displayUsers .user-section .user-meta h3.user-name {
+font-size:15px;
+line-height:8px;
+margin:0;
+padding:0;
+margin-top: 38px;
+}
+
+/*#displayUsers .user-section .user-meta .user-email {
+color:#666666;
+font-size:12px;
+}*/
+
+#displayUsers .user-section .followButton{
+padding-top:5px;
+float:right;
+display:inline-block;
+}
+
+#displayUsers .user-section .followButton a{
+color:#999999;
+text-align:center;
+text-decoration:none;
+height:40px;
+width: 100px;
+padding-top:10px;
+display:inline-block;
+verticle-align: middle;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */ 
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+
+#displayUsers .user-section .followButton a:visited {
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+#displayUsers .user-section .followButton a:hover {
+    color: inherit; /* #06e */
+    text-decoration:none;
+}
