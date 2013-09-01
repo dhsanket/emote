@@ -80,9 +80,12 @@ class EmoteService {
 		return userEmotes;
 	}
 	
-	def groupByTitle (def emotes, Set<String> followingUsers){
+	def groupByTitle (def emotes, Set<String> followingUsers, String currentUserId){
 		def groupedByTitle =  [:] 
-		
+		if(followingUsers != null && followingUsers.size()> 0){
+			followingUsers = followingUsers + currentUserId
+		}
+		log.info("emotes following usees $followingUsers, + $currentUserId")
 		
 		emotes.each {emote ->
 			boolean canShow = false

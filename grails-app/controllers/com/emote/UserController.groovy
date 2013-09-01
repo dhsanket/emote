@@ -22,14 +22,21 @@ class UserController
 		String token = getFbToken() 			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
 		log.info "user.token ${token}"
-		List emoteUsersList = []
+		List followFriends = []
 		List userFriends = []
-		//TODO correct this write method on user service to get users by list of facebook id
-		emoteUsersList = User.list()
-		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:10])
-		//log.info "user friends in ${userFriends[1]},${userFriends[2] }"
-        log.info "user friends in ${userFriends}"
-		render (view:'displayUsers', model: [userFriends: userFriends, emoteUsersList: emoteUsersList])
+		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:200])
+		List inviteFriends = []
+		userFriends.each{friend ->
+			User emoteUser = userService.findByFBId(friend.id)
+			if(emoteUser != null){
+				if(user.followingUsers == null ||  !user.followingUsers.contains(emoteUser.id)){
+					followFriends.add(emoteUser)
+				}
+			}else{
+				inviteFriends.add(friend)
+			}
+		}
+		render (view:'displayUsers', model: [userFriends: inviteFriends, emoteUsersList: followFriends])
 	}
 	
 	def follow(){

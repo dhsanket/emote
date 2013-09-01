@@ -8,7 +8,7 @@ modules ={
         resource url:'/css/mainzen.css'
 		resource url:'/css/other.css'
 		resource url:'/css/animate/animate.css'
-		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
+//		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
 		
 		resource url: '/img/menu-icon.png'
 		resource url: '/img/plus-icon.png'
