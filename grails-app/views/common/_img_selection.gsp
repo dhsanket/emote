@@ -1,6 +1,7 @@
 <div class="popupzen" id="imgchooserpopup" style="position:static;">
 <%--    <div id="feed-container" class="feed-container">--%>
     <div id="popup-container">
+		
         <div id="fullscreen-dialog">
         <div class="error">
         </div>
