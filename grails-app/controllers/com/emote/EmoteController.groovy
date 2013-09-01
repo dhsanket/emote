@@ -51,11 +51,14 @@ class EmoteController {
 	
 	def feed(){
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.feed(page))
+		log.info("following users are $session.user.followingUsers")
+		def posts = emoteService.groupByTitle(emoteService.feed(page), 
+												session.user.followingUsers + session.user.userId)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "feed", [:])){
-			posts = emoteService.groupByTitle(emoteService.feed(page-1))
+			posts = emoteService.groupByTitle(emoteService.feed(page-1), 
+													session.user.followingUsers + session.user.userId)
 		}
 		flash.titles = posts 
 	}
@@ -67,11 +70,11 @@ class EmoteController {
 			userId = session.user.id
 		}
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page))
+		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page), null)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
-			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1))
+			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1), null)
 		}
 		flash.user = userService.findById(userId)
 		flash.titles = posts

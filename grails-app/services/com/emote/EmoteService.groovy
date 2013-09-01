@@ -1,5 +1,7 @@
 package com.emote
 
+import java.util.Set;
+
 class EmoteService {
 	
 	private int feedPageSize = 10;
@@ -78,18 +80,27 @@ class EmoteService {
 		return userEmotes;
 	}
 	
-	def groupByTitle (def emotes){
+	def groupByTitle (def emotes, Set<String> followingUsers){
 		def groupedByTitle =  [:] 
 		
+		
 		emotes.each {emote ->
-			GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
-			if(title == null){
-				Title titleObj = Title.findByText(emote.title)
-				String picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
-				title = new GroupByTitle(title:emote.title, pictureId:picId)
-				groupedByTitle.put(emote.title.toUpperCase(), title)
+			boolean canShow = false
+			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||
+				groupedByTitle.containsKey(emote.title.toUpperCase())){
+				canShow = true
 			}
-			title.add(emote);
+	
+			if(canShow){
+				GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
+				if(title == null){
+					Title titleObj = Title.findByText(emote.title)
+					String picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
+					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers)
+					groupedByTitle.put(emote.title.toUpperCase(), title)
+				}
+				title.add(emote);
+			}
 			
 		}
 		List<GroupByTitle> sorted = new ArrayList<GroupByTitle>()
