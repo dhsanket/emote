@@ -41,21 +41,25 @@ class EmoteController {
 		}
 		Picture pic = null; 
 		if(emote.photo != null && emote.photo.bytes.size() >0){
+			log.info "got a picture of size $emote.photo.bytes.size()"
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
 		}
 		emoteService.create(emote,  user, pic)
-		def titles = emoteService.groupByTitle(emoteService.feed(0))
+		def titles = emoteService.groupByTitle(emoteService.feed(0), 
+			session.user.followingUsers + session.user.userId)
 		render(template:"emotesTemplate" , model:[titles: titles])
 	}
 	
 	def feed(){
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.feed(page))
+		def posts = emoteService.groupByTitle(emoteService.feed(page), 
+												session.user.followingUsers + session.user.userId)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "feed", [:])){
-			posts = emoteService.groupByTitle(emoteService.feed(page-1))
+			posts = emoteService.groupByTitle(emoteService.feed(page-1), 
+													session.user.followingUsers + session.user.userId)
 		}
 		flash.titles = posts 
 	}
@@ -67,11 +71,11 @@ class EmoteController {
 			userId = session.user.id
 		}
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page))
+		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page), null)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
-			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1))
+			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1), null)
 		}
 		flash.user = userService.findById(userId)
 		flash.titles = posts

@@ -24,6 +24,7 @@ class UserController
 		log.info "user.token ${token}"
 		List emoteUsersList = []
 		List userFriends = []
+		//TODO correct this write method on user service to get users by list of facebook id
 		emoteUsersList = User.list()
 		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:10])
 		log.info "user friends in ${userFriends[1]},${userFriends[2] }"
