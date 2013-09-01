@@ -56,6 +56,12 @@
 			<div class="emote-friends swiper-slide">
 				<h4>Friend's emotes: <a class="user-feed" href="#"><span class="current-user"></span></a></h4>
 				<ul class="friend-container clearfix">
+				<g:each in="${title.followingUsers}" var="user">
+					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">	
+						<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
+						<span class="emote-user-name">${user.username}</span>
+					</li>
+				</g:each>	
 				<g:each in="${title.users}" var="user">
 					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">	
 						<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
@@ -64,18 +70,33 @@
 				</g:each>	
 				</ul>
 				<ul data-post-id="${i}" class="friend-emotes-container" >
+					<g:each in="${title.followingUsers}" var="user">
+						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
+							<ul>
+								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
+									<g:each in="${emote.expressions}" var="exp">
+											<g:if test="${(exp.trim().length()>0)}">
+												<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+											</g:if>
+									</g:each>
+								</g:each>
+							</ul>
+						</li>
+					</g:each>					
+				
+				
 					<g:each in="${title.users}" var="user">
-					<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
-					<ul>
-					<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
-					<g:each in="${emote.expressions}" var="exp">
-							<g:if test="${(exp.trim().length()>0)}">
-								<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
-							</g:if>
-					</g:each>
-					</g:each>
-					</ul>
-					</li>
+						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
+							<ul>
+								<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
+									<g:each in="${emote.expressions}" var="exp">
+											<g:if test="${(exp.trim().length()>0)}">
+												<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+											</g:if>
+									</g:each>
+								</g:each>
+							</ul>
+						</li>
 					</g:each>					
 				</ul>
 			</div>	
