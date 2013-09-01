@@ -41,17 +41,18 @@ class EmoteController {
 		}
 		Picture pic = null; 
 		if(emote.photo != null && emote.photo.bytes.size() >0){
+			log.info "got a picture of size $emote.photo.bytes.size()"
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
 		}
 		emoteService.create(emote,  user, pic)
-		def titles = emoteService.groupByTitle(emoteService.feed(0))
+		def titles = emoteService.groupByTitle(emoteService.feed(0), 
+			session.user.followingUsers + session.user.userId)
 		render(template:"emotesTemplate" , model:[titles: titles])
 	}
 	
 	def feed(){
 		int page = getPageIndex();
-		log.info("following users are $session.user.followingUsers")
 		def posts = emoteService.groupByTitle(emoteService.feed(page), 
 												session.user.followingUsers + session.user.userId)
 		int postCount = posts!=null ? posts.size():0
