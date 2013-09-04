@@ -1,9 +1,13 @@
 
+<<<<<<< Upstream, based on origin/master
 <div id="followUsers">
 
 
 <input type="checkbox" value="sanket.deshpande" onchange="addFriendToInvite(this)" /> Sanket
 <input type="checkbox" value="nitin.karmuse"  onchange="addFriendToInvite(this)"  /> Nitin
+=======
+<div id="displayUsers">
+>>>>>>> 6aa762d displayUsers CSS improved.
 
 <g:each in="${emoteUsersList}" var="emoteUser">
 
