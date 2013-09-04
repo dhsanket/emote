@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29a41cec-3313-4fc3-9328-b09fcc6c440e" name="Default" comment="git ignore for intellj related files in project">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iml" afterPath="$PROJECT_DIR$/emote.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.ipr" afterPath="$PROJECT_DIR$/emote.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iws" afterPath="$PROJECT_DIR$/emote.iws" />
     </list>
     <ignored path="emote.iws" />
@@ -13,14 +12,14 @@
     <ignored path="emote.iml" />
     <ignored path="emote.ipr" />
     <ignored mask=".iml" />
-    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377596170822" ignored="false" />
+    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1378294611693" ignored="false" />
     <file path="/a.dummy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377593246751" ignored="false" />
     <file path="/emotezen.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377534354975" ignored="false" />
     <file path="/emote.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377469189055" ignored="false" />
     <file path="/_displayUsers.gsp" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377533389930" ignored="false" />
     <file path="/main.css" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377404918974" ignored="false" />
     <file path="/_web_search.gsp" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377468827465" ignored="false" />
-    <file path="/.gitignore" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377595941673" ignored="false" />
+    <file path="/.gitignore" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1378295175458" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -35,7 +39,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -72,6 +75,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -93,7 +97,7 @@
       <file leaf-file-name="_displayUsers.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-5.2040815">
+            <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,7 +115,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="21" selection-start="2405" selection-end="2405" vertical-scroll-proportion="1.0731708">
+            <state line="210" column="7" selection-start="2441" selection-end="2441" vertical-scroll-proportion="0.41463414">
               <folding />
             </state>
           </provider>
@@ -129,7 +133,7 @@
       <file leaf-file-name="signin.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="-2.6153846">
+            <state line="14" column="32" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,7 +151,7 @@
       <file leaf-file-name="application.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="24" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-7.8461537">
+            <state line="5" column="8" selection-start="316" selection-end="316" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
@@ -305,6 +309,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,8 +331,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -522,26 +526,24 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46730462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46730462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.67145133" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.71291864" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.53269535" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.67145133" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.67145133" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.71291864" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.53269535" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399841" sideWeight="0.67145133" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298887" sideWeight="0.53269535" order="0" side_tool="false" content_ui="combo" />
@@ -550,6 +552,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -627,16 +631,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.grails/2.2.1/projects/emote/plugins/facebook-sdk-0.4.12/src/groovy/grails/plugin/facebooksdk/FacebookGraphClient.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="4" selection-start="412" selection-end="412" vertical-scroll-proportion="0.33240998">
-          <folding />
-        </state>
+        <state line="14" column="4" selection-start="412" selection-end="412" vertical-scroll-proportion="0.33240998" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/displayUsers.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="33" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.grails/2.2.1/projects/emote/plugins/facebook-sdk-0.4.12/grails-app/taglib/grails/plugin/facebooksdk/FacebookJSTagLib.groovy">
@@ -648,23 +648,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1458" column="39" selection-start="34776" selection-end="34776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1458" column="39" selection-start="34776" selection-end="34776" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="84" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="49" column="84" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/_flag_inappropriate.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="58" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="58" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/_create_emote.gsp">
@@ -695,16 +689,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-5.2040815">
+        <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -725,14 +712,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="-2.6153846">
+        <state line="14" column="32" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="8" selection-start="316" selection-end="316" vertical-scroll-proportion="-0.65384614">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="21" selection-start="2405" selection-end="2405" vertical-scroll-proportion="1.0731708">
+        <state line="210" column="7" selection-start="2441" selection-end="2441" vertical-scroll-proportion="0.41463414">
           <folding />
         </state>
       </provider>
