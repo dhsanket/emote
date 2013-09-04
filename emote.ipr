@@ -11,22 +11,21 @@
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
     <wildcardResourcePatterns>
-      <entry name="?*.properties" />
-      <entry name="?*.xml" />
-      <entry name="?*.gif" />
-      <entry name="?*.png" />
-      <entry name="?*.jpeg" />
-      <entry name="?*.jpg" />
-      <entry name="?*.html" />
-      <entry name="?*.dtd" />
-      <entry name="?*.tld" />
-      <entry name="?*.ftl" />
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.7" />
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -38,24 +37,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="IdProvider" IDEtalkID="5D7CFD4EFD22676FE93F609797F95495" />
-  <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" />
-    <option name="OPTION_SCOPE" value="protected" />
-    <option name="OPTION_HIERARCHY" value="true" />
-    <option name="OPTION_NAVIGATOR" value="true" />
-    <option name="OPTION_INDEX" value="true" />
-    <option name="OPTION_SEPARATE_INDEX" value="true" />
-    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
-    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
-    <option name="OPTION_DEPRECATED_LIST" value="true" />
-    <option name="OTHER_OPTIONS" value="" />
-    <option name="HEAP_SIZE" />
-    <option name="LOCALE" />
-    <option name="OPEN_IN_BROWSER" value="true" />
-  </component>
+  <component name="IdProvider" IDEtalkID="146AA7006D3A81BD37C95D34C21CA576" />
   <component name="Palette2">
     <group name="Swing">
       <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
@@ -177,58 +159,61 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="Adz">
+      <words>
+        <w>jcrop</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/emote.iml" filepath="$PROJECT_DIR$/emote.iml" />
       <module fileurl="file://$PROJECT_DIR$/emote-grailsPlugins.iml" filepath="$PROJECT_DIR$/emote-grailsPlugins.iml" />
     </modules>
   </component>
-  <component name="ProjectResources">
-    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/.." vcs="" />
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Grails 2.2.1">
+    <library name="Grails 2.2.3">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-bootstrap-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-core-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-crud-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-docs-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-hibernate-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-logging-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-async-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-codecs-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-controllers-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-converters-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-datasource-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-domain-class-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-filters-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-gsp-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-i18n-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-log4j-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-mimetypes-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-scaffolding-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-services-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-servlets-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-testing-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-tomcat-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-url-mappings-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-plugin-validation-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-resources-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-scripts-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-spring-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-test-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-test-suite-base-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-web-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-webflow-2.2.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/../../grails-2.2.1/dist/grails-wrapper-support-2.2.1.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-bootstrap-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-core-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-crud-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-docs-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-hibernate-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-logging-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-async-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-codecs-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-controllers-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-converters-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-datasource-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-domain-class-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-filters-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-gsp-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-i18n-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-log4j-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-mimetypes-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-scaffolding-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-services-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-servlets-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-testing-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-tomcat-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-url-mappings-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-plugin-validation-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-resources-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-scripts-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-spring-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-test-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-test-suite-base-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-web-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-webflow-2.2.3.jar!/" />
+        <root url="jar://E:/exe/grails-2.2.3/dist/grails-wrapper-support-2.2.3.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

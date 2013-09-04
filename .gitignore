@@ -206,6 +206,7 @@ target-eclipse/classes/*.class
 .idea/
 *.iml
 *.iws
+*.ipr
 emote.iws
 
 # Mac
