@@ -24,6 +24,7 @@ class UserController
 		log.info "user.token ${token}"
 		List followFriends = []
 		List userFriends = []
+
 		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:200])
 		List inviteFriends = []
 		userFriends.each{friend ->
@@ -37,6 +38,7 @@ class UserController
 			}
 		}
 		render (view:'displayUsers', model: [userFriends: inviteFriends, emoteUsersList: followFriends])
+
 	}
 	
 	def follow(){

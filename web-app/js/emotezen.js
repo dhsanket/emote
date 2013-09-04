@@ -1,3 +1,4 @@
+var IMG_PICK_MODE;
 function initImageEventHandlers(){
     $('#flag_form').submit(function(){
         $.get('/flag/save?' + $('#flag_form').serialize()).done(function(data) {
@@ -11,12 +12,30 @@ function initImageEventHandlers(){
     $('#picturecropper-cancel-button').click(function(){
         $('#picture_crop_container').toggleClass('active');
         emptyImageFileElement();
+
+        //based on from where img picked we need to open the popup back
+        if(IMG_PICK_MODE==1){
+            $('#pic').click();
+        }else if(IMG_PICK_MODE==2){
+            $('#img_search_button').click()
+        }
+
+        //reset the preview panel in create emote panel
+        destroyImgPreview();
         // stop default behaviour of button
         return false;
     });
 
     // Ok button handler for picture cropper popup
     $('#picturecropper-ok-button').click(function(){
+
+        //based on from where img picked we need to open the popup back
+        if(IMG_PICK_MODE==1){
+            //TODO to reset websearch data
+        }else if(IMG_PICK_MODE==2){
+            document.getElementById('pic').value=null;
+        }
+
         //$('#picture_crop_container').toggleClass('active');
         var imgObj=$('#upload_preview_img');
         $('input[name=topx]').val(jcrop_coordinates.x);
@@ -63,8 +82,22 @@ function initImageEventHandlers(){
     });
 
     //Hook up an onclick eventhandler to the Search button.
-    $("#img_search_submit_button").click(bing_img_send_request);
+    $("#img_search_submit_button").click(function(){
+        $("#img_search_results").html("");
+        bing_img_send_request();
+    });
 
+    //Hook up an onclick eventhandler to the Search button.
+    $("#img_search_back_button").click(function(){
+        $('#img_search_container').removeClass('active');
+    });
+}
+
+//reset the preview panel in create emote panel
+var destroyImgPreview= function(){
+    var filePreview= $('#file-preview');
+    filePreview.attr('src','' );
+    $('#photoBar').removeClass('active');
 
 }
 
@@ -149,6 +182,7 @@ function fileSelectHandler() {
             // initialize Jcrop
 
             jCropInit(this, boundx, boundy);
+            IMG_PICK_MODE=1;
             /*
             $('#upload_preview_img').Jcrop({
                 minSize: [32, 32], // min crop size
@@ -222,7 +256,7 @@ var onWebImageResultClick=function(){
 
         // initialize Jcrop
         jCropInit(this, boundx, boundy);
-
+        IMG_PICK_MODE=2;
     };
 }
 
@@ -248,3 +282,30 @@ var updateJcropSelectionInfo=function(c){
 var clearJcropSelectionInfo=function(){
     jcrop_coordinates=null;
 };
+
+var INVITE_FRIEND_LIST=[];
+var addFriendToInvite = function(elt){
+    alert(1);
+    var INVITE_FRIEND_LIST=[];
+    var i=0;
+    if(elt.checked){
+        INVITE_FRIEND_LIST.push(elt.value)
+    }else{
+        for(var i=0;i<INVITE_FRIEND_LIST.length;i++){
+            if(INVITE_FRIEND_LIST[i]==elt.value ){
+                INVITE_FRIEND_LIST.splice(i,1);
+            }
+        }
+    }
+    alert(INVITE_FRIEND_LIST);
+    INVITE_FRIEND_LIST=[];
+    INVITE_FRIEND_LIST.push(529633913);
+    INVITE_FRIEND_LIST.push(222401997);
+    FB.ui({
+        method: 'send',
+        link: 'http://www.emote-app.com',
+        //display:'touch',
+        to:[4,5]
+    });
+
+}
