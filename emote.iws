@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Upstream, based on origin/master
     <list default="true" id="0e9e44ea-6e45-4c7e-8192-aa6668779532" name="Default" comment="IntelliJ project files not allowing to get new code from server, so commiting">
+=======
+    <list default="true" id="0e9e44ea-6e45-4c7e-8192-aa6668779532" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iml" afterPath="$PROJECT_DIR$/emote.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.ipr" afterPath="$PROJECT_DIR$/emote.ipr" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iws" afterPath="$PROJECT_DIR$/emote.iws" />
     </list>
     <ignored path="emote.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
+<<<<<<< Upstream, based on origin/master
     <file path="/Dummy.txt" changelist="0e9e44ea-6e45-4c7e-8192-aa6668779532" time="1378297550559" ignored="false" />
+=======
+    <file path="/Dummy.txt" changelist="0e9e44ea-6e45-4c7e-8192-aa6668779532" time="1378295331288" ignored="false" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
     <file path="/EmoteService.groovy" changelist="0e9e44ea-6e45-4c7e-8192-aa6668779532" time="1377020764076" ignored="false" />
     <file path="/a.dummy" changelist="0e9e44ea-6e45-4c7e-8192-aa6668779532" time="1377155318778" ignored="false" />
     <file path="/_create_emote.gsp" changelist="0e9e44ea-6e45-4c7e-8192-aa6668779532" time="1376823129738" ignored="false" />
@@ -115,7 +126,11 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Upstream, based on origin/master
             <state line="201" column="78" selection-start="2371" selection-end="2371" vertical-scroll-proportion="0.57179487">
+=======
+            <state line="206" column="0" selection-start="2413" selection-end="2430" vertical-scroll-proportion="0.78205127">
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
               <folding />
             </state>
           </provider>
@@ -497,11 +512,15 @@
       <created>1377160965898</created>
       <updated>1377160965898</updated>
     </task>
+<<<<<<< Upstream, based on origin/master
     <task id="LOCAL-00011" summary="IntelliJ project files not allowing to get new code from server, so commiting">
       <created>1378296215194</created>
       <updated>1378296215194</updated>
     </task>
     <option name="localTasksCounter" value="12" />
+=======
+    <option name="localTasksCounter" value="11" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -538,10 +557,16 @@
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3030303" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+<<<<<<< Upstream, based on origin/master
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31796503" sideWeight="0.6969697" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.7097289" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42264754" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31796503" sideWeight="0.6969697" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.7097289" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42264754" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -549,13 +574,22 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.7097289" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+<<<<<<< Upstream, based on origin/master
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20667727" sideWeight="0.6969697" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32057416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20667727" sideWeight="0.6969697" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3220859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19936204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< Upstream, based on origin/master
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -601,7 +635,11 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+<<<<<<< Upstream, based on origin/master
     <option name="LAST_COMMIT_MESSAGE" value="IntelliJ project files not allowing to get new code from server, so commiting" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="Emote title context menu(More) with Flag inappropriate integration in submenu. Menu is pure CSS solution for simplicity. If we need more animative we go for jquery based solutions.&#10;Flag inappropriate serverside code also available in this commit." />
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -623,7 +661,10 @@
     <MESSAGE value="Web image search 95% completion" />
     <MESSAGE value="preview for websearch  image in create emote popup" />
     <MESSAGE value="Emote title context menu(More) with Flag inappropriate integration in submenu. Menu is pure CSS solution for simplicity. If we need more animative we go for jquery based solutions.&#10;Flag inappropriate serverside code also available in this commit." />
+<<<<<<< Upstream, based on origin/master
     <MESSAGE value="IntelliJ project files not allowing to get new code from server, so commiting" />
+=======
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -743,7 +784,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Upstream, based on origin/master
         <state line="201" column="78" selection-start="2371" selection-end="2371" vertical-scroll-proportion="0.57179487">
+=======
+        <state line="206" column="0" selection-start="2413" selection-end="2430" vertical-scroll-proportion="0.78205127">
+>>>>>>> 1b3ea3e IntelliJ project files not allowing to get new code from server, so commiting
           <folding />
         </state>
       </provider>
