@@ -705,6 +705,8 @@ color:#FFFFFF;
 	#nav-menu.active {
 		left:0%;
 		position:fixed;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 	
 /* User Section */

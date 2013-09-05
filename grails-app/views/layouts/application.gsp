@@ -52,7 +52,7 @@
 					//https://developers.facebook.com/docs/facebook-login/getting-started-web/
 					  // init the FB JS SDK
 				  FB.init({
-				    appId      : '498699006889199',                        // App ID from the app dashboard
+				    appId      : '${FacebookAppId}',                        // App ID from the app dashboard
 				    channelUrl : '*.herokuapp.COM/channel.html', // Channel file for x-domain comms
 				    status     : true,                                 // Check Facebook Login status
 				    xfbml      : true                                  // Look for social plugins on the page
@@ -82,9 +82,6 @@
 				      console.log('Good to see you, ' + response.name + '.');
 				    });
 				  }
-
-				  
-
 
 				 
 				</script>

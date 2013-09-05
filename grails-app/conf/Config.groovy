@@ -66,6 +66,8 @@ environments {
 		grails.plugin.facebooksdk.app.id = 498699006889199
 		grails.plugin.facebooksdk.app.permissions = ['email']
 		grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
+		
+		def FacebookAppId = 498699006889199
     }
 	
 	test {
@@ -79,6 +81,7 @@ environments {
 		//***git@heroku.com:emote-test.git
 		//***git remote add heroku-test git@heroku.com:emote-test.git
 		
+		def FacebookAppId = 145688522291575
 		
 	}
     production {
@@ -89,6 +92,8 @@ environments {
 		grails.plugin.facebooksdk.app.id = 407280009364725
 		grails.plugin.facebooksdk.app.permissions = ['email']
 		grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
+		
+		def FacebookAppId = 407280009364725
     }
 }
 

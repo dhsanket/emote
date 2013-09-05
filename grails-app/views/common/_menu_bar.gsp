@@ -26,6 +26,7 @@
 		</ul>
 	</section>
 	<span class="list-sub-title">Notifications</span>
+	 <g:render template="/common/notifications" />
 
 </div>
 
