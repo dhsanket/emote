@@ -2,6 +2,7 @@ $(function(){
 	
 	$(window).load(function(){
 	    
+		validationMarkers();
 		// Geolocation
 	    $('#geoLocation').click(function(){
 	    	getLocation();

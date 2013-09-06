@@ -171,6 +171,27 @@ function re_emote(title, tag){
 function emoteCreate() {
 	//Submit-button click event has occured
 	
+	var isValid = true;
+	if ($('#tag').val().length <1 ){
+		$("#tag_tag").css({'border': '2px solid red'});
+		isValid = false;
+	}else{
+		$("#tag_tag").css({'border': ''});
+		isValid = true;
+	}
+	
+	if ( $('#obj-title').val().length< 1 ){
+		$("#obj-title").css({'border': '2px solid red'});
+		isValid = false;
+	}else{
+		$("#obj-title").css({'border': ''});
+		isValid = true;
+	}
+	
+	if(!isValid ){
+		return false;
+	}
+	
 	//check if category is selected
     var selectBox = document.getElementById('category');
     var a = selectBox.selectedIndex;
@@ -295,4 +316,19 @@ function followUser(userId) {
 		// disalbe button
 		$('#'+userId).css({'font':'green'});
 	});
+}
+
+function validationMarkers(){
+	$( "input[type='text']" ).keyup(function() {
+		// Check input( $( this ).val() ) for validity here
+		if($( this ).val().length==0 ){
+			$(this).css({'border': '2px solid red'});
+		}else{
+			$(this).css({'border': ''});
+		}
+			
+		
+		
+		});
+	
 }
