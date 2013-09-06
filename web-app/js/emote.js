@@ -128,10 +128,6 @@ function emoteCreateButton(doNotResetForm) {
             if($('#imgchooserpopup').hasClass('active')) {
                 $('#imgchooserpopup .cancel-button').click();
             }
-            //this code to reset both jcrop and file element
-            emptyImageFileElement();
-            //remove the preview panel
-            destroyImgPreview();
             //ZEN to hide the image chooser popup
             if($('#img_search_container').hasClass('active')) {
                 $('#img_search_container').toggleClass('active');
@@ -144,7 +140,14 @@ function emoteCreateButton(doNotResetForm) {
 				$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
 				$('#photo-feed').toggleClass('create-emote');
-
+				
+				//-- every time when create popup opens we are reseting the picture related components  
+				//this code to reset both jcrop and file element
+	            emptyImageFileElement();
+	            //remove the preview panel
+	            destroyImgPreview();
+	            //--
+	            
 				// Scroll to top functionality
 				scrollToTop(800);
 		}

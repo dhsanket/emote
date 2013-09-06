@@ -31,7 +31,7 @@ function initImageEventHandlers(){
 
         //based on from where img picked we need to open the popup back
         if(IMG_PICK_MODE==1){
-            //TODO to reset websearch data
+        	$('input[name=webSearchImageURL]').val("");
         }else if(IMG_PICK_MODE==2){
             document.getElementById('pic').value=null;
         }
@@ -240,6 +240,7 @@ var onWebImageResultClick=function(){
     $('#img_search_container').toggleClass('active');
     var oImage = document.getElementById('upload_preview_img');
     oImage.src=this.attributes['imageurl'].value;
+    $('input[name=webSearchImageURL]').val(this.attributes['imageurl'].value);
     //loadWebSearchImage(this.attributes['imageurl'].value);
     oImage.onload = function () { // onload event handler
         // display step 2
