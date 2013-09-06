@@ -2,7 +2,7 @@ var IMG_PICK_MODE;
 function initImageEventHandlers(){
     $('#flag_form').submit(function(){
         $.get('/flag/save?' + $('#flag_form').serialize()).done(function(data) {
-            alert(" Thanks for being a vigilent user and thanks for bringing our attention to this content. We shall act on it swiftly. ")
+            alert(" Thanks for being a vigilent user and for bringing our attention to this content. ")
             $('#flag_container').toggleClass('active');
         });
         return false;

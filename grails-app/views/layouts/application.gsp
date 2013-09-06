@@ -58,10 +58,7 @@
 				    xfbml      : true                                  // Look for social plugins on the page
 				  });
 				
-				  // Additional initialization code such as adding Event Listeners goes here
-				  
-
-				  
+				  // Additional initialization code such as adding Event Listeners goes here				  
 				};
 
 				// Load the SDK asynchronously

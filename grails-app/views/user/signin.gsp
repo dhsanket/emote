@@ -17,12 +17,13 @@
 		<div id="splash-container">
 		<div id="splash-logo">
 			<r:img uri="img/splash-logo.png" width="80%" style="text-align: center; margin:0 auto;" />
-			<span class="splash-description">Discover great things, and be heard.</span>
+			<span class="splash-description">Write a review in as little as one click & discover what interesting stuff your friends are doing!</span>
 		</div>
 		
 		<div id="splash-login">
 			<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'emote', action:'feed', absolute:true))}"><r:img uri= "img/fb-login.png" width="100%" /></a>
 			<span class="splash-disclaimer">
+				emote-app will not publish any content to your facebook without your explicit permission. </br> 
 				By signing in with Facebook, you are agreeing to the <a href="/Terms.html">Terms of Service</a> and <a href="/Privacy.html">Privacy Policy</a>
 			</span>
 		</div>

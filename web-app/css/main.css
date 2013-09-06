@@ -709,6 +709,12 @@ color:#FFFFFF;
 		overflow-x: hidden;
 	}
 	
+	#nav-menu #notifications-menu{
+	width: 200px;
+	margin: 5px;
+	border: 1px solid rgba(0,0,0,0.25);
+	}
+	
 /* User Section */
 		.user-section {
 			color:#FFFFFF;
@@ -1093,8 +1099,7 @@ textarea[contenteditable] {
 			
 			margin:0;
 			padding:0;
-			padding-top:4px;
-			padding-right:4px;
+
 		}
 		
 			.emote-v2-header .emote-v2-actions li {
@@ -1105,8 +1110,10 @@ textarea[contenteditable] {
 			.emote-v2-header .emote-v2-actions li button {
 				background:#FBB450;
 				border:none;
-				border-radius:6px;
-				padding:3px 6px;
+				border-radius: 1 px;
+				padding: 0px; /*3px 6px;*/
+				height: 20px;
+				width: 20px;
 			}
 	
 	.emote-v2-body {
@@ -1425,7 +1432,7 @@ border-bottom-left-radius: 8px;
 	width:100%;
 	display:block;
 	text-align:center;
-	font-size:13px;
+	font-size:8px;
 	color:#FFFFFF;
 	margin-top:10px;
 }

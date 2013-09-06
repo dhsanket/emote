@@ -5,9 +5,9 @@
             <div style="color: #f5f5f5">Reporting for : <span id="flag_title_display"></span></div>
             <input type="hidden" name="title" id="flag_title_hidden"/>
             <select id="flag_type_select" name="type">
-                <option value="1">Inappropriate type 1</option>
-                <option value="2">Inappropriate type 2</option>
-                <option value="3">Inappropriate type 3</option>
+                <option value="1"> Pictures are offensive </option>
+                <option value="2"> emotes are offensive </option>
+                <option value="3"> Other - Provide details below </option>
             </select><br>
             <textarea name="comment" id="flag_comment_text"></textarea>
             <div>

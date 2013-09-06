@@ -7,39 +7,9 @@
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
-		
-		<%--
-        <div class="navigation">
-            <ul class="top-level">
-                <li><a href="#">More</a>
-                    <ul class="sub-level">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Share</a></li>
-                        <li><a href="#" onclick="javascript:flag_emote('${title.title}')">Flag</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="quickEmote emote-v2-action-button dropdown-menu" onclick="javascript:emote_menu('${title.title}')">
-            <a class="more-menu" >more</a>
-            <div class="title-submenu">
-                <ul class="root-menu">
-                    <li ><a href="#edit" >Edit</a></li>
-                    <li ><a href="#share">Share</a></li>
-                    <li ><a href="#flag">Flag inappropriate</a></li>
-                </ul>
-            </div>
-
-        </div>
-        --%>
         
         <ul class="emote-v2-actions">
-<%--			<li><button class="emote-v2-action-button"><i class="icon-list icon-white"></i></button></li>--%>
-<%--			<li><button class="emote-v2-action-button"><i class="icon-play-circle icon-white"></i></button></li>--%>
-<%--			<li><button class="emote-v2-action-button"><i class="icon-ok icon-white"></i></button></li>--%>
-<%--			<li><button class="emote-v2-action-button"><i class="icon-remove-sign icon-white"></i></button></li>--%>
-<%--			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.title}', '#qemote_${i}')"><i class="icon-ok-sign icon-white" id="quick-createEmote"></i></button></li>--%>
+			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">
