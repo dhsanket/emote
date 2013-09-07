@@ -43,10 +43,16 @@ class EmoteController {
 		}
 		Picture pic = null; 
 		if(emote.photo != null && emote.photo.bytes.size() >0){
-			log.info "got a picture of size $emote.photo.bytes.size()"
+			//log.info "got a picture of size $emote.photo.bytes.size()"
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
+		}else if(emote.webSearchImageURL != null){
+			log.info "got a web picture  $emote.webSearchImageURL"
+			pic = pictureService.crop(emote.webSearchImageURL, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
+				emote.scaledImgWidth, emote.scaledImgHeight)
+	
 		}
+		
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 			session.user.followingUsers , session.user.id)

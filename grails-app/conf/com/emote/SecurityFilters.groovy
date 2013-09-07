@@ -15,7 +15,7 @@ class SecurityFilters {
 	def filters = {
 	
 		
-		signinCheck(action:'*', actionExclude: 'signin') {
+		signinCheck(action:'*', actionExclude: 'signin', controllerExclude : 'picture') {
 			before = {
 					if (!session.user && !loginCookieExist(request, session) && !loggedInToFB(request, session, response)) {
 						redirect(controller:'user', action: 'signin')

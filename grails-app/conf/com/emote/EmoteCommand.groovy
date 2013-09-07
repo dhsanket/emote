@@ -25,6 +25,7 @@ class EmoteCommand {
 	int scaledImgHeight
 	int scaledImgWidth
 	
+	String webSearchImageURL
 
 	
 	def getExpressions(){
