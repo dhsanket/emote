@@ -6,6 +6,8 @@ class EmoteController {
 	
 	EmoteService emoteService
 	
+	TitleService titleService
+	
 	UserService userService
 	
 	FacebookContext facebookContext;
@@ -96,6 +98,14 @@ class EmoteController {
 		render view:'feed'
 	}
 	
+	
+	def getTitle(){
+		User user = session.user
+		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
+		flash.titles = posts
+		render view:"feed"
+	}
+	
 	private int getPageIndex(){
 		int page = 0;
 		boolean morePages = true
@@ -117,5 +127,6 @@ class EmoteController {
 		flash.extraParams = extraParams
 		return !morePages
 	}
+	
 
 }
