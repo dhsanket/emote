@@ -46,7 +46,7 @@ class EmoteController {
 			//log.info "got a picture of size $emote.photo.bytes.size()"
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
-		}else if(emote.webSearchImageURL != null){
+		}else if(emote.webSearchImageURL != null && emote.webSearchImageURL.size() > 0){
 			log.info "got a web picture  $emote.webSearchImageURL"
 			pic = pictureService.crop(emote.webSearchImageURL, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
