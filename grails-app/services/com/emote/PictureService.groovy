@@ -40,14 +40,14 @@ class PictureService {
 	
 	
 	Picture crop(InputStream fileStream, String type, String fileName, int topX, int topY, int bottomX, int bottomY, int scrWidth, int scrHeight){
-		def fos= new FileOutputStream(tempDir+File.pathSeparator+fileName)
+		def fos= new FileOutputStream(tempDir+"/"+fileName)
 		fos.write(fileStream.getBytes())
 		fos.flush()
 		fos.close()
-		log.info("file saved at location"+ tempDir+File.pathSeparator+fileName )
+		log.info("file saved at location"+ tempDir+"/"+fileName )
 
 			
-		BufferedImage bi = ImageIO.read(new File(tempDir+File.pathSeparator+fileName));
+		BufferedImage bi = ImageIO.read(new File(tempDir+"/"+fileName));
 		Integer width = bi.getWidth();
 		Integer height = bi.getHeight();
 		double xScaling = width/scrWidth
@@ -60,7 +60,7 @@ class PictureService {
 	
 		log.info("crop cordinates ($topX, $topY) ($bottomX, $bottomY) scale ratio ($xScaling, $yScaling), "
 						+"screen ($scrWidth, $scrHeight) image width height ($width, $height)")
-		burningImageService.doWith(tempDir+File.pathSeparator+fileName, tempDir).execute(){
+		burningImageService.doWith(tempDir+"/"+fileName, tempDir).execute(){
 			it.crop(topX, topY, bottomX, bottomY)
 		}
 		File croppedFile = new File(tempDir+File.separator+fileName)
