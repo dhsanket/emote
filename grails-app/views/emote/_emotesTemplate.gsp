@@ -46,7 +46,7 @@
 								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
 									<g:each in="${emote.expressions}" var="exp">
 											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+												<li><a href="javascript:re_emote('${title.title}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes','Edit', 'Successful', 1, false]); ">${exp}</a></li>
 											</g:if>
 									</g:each>
 								</g:each>
