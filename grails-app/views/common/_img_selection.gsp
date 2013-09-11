@@ -8,7 +8,7 @@
         
         <input form="emoteSave" type="file" id="pic" name="photo" title="Device" onclick="emptyImageFileElement()" onchange="fileSelectHandler()" >
         
-        <button id="img_search_button" value="Web">Image from web</button>
+        <button id="img_search_button" value="Web" onClick="_gaq.push(['_trackEvent', 'Picture','Add', 'Web', 1, false]); "> Image from web</button>
         
         <button value="Cancel" class="cancel-button" >Back</button>
     	</div>
