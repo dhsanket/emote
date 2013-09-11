@@ -12,7 +12,7 @@
 	</section>
 	<span class="list-sub-title">Search</span>
 	<section id="search-section">
-		<g:form action="search" controller="emote">
+		<g:form action="search" controller="emote" onsubmit="_gaq.push(['_trackEvent', 'Search', 'Submit', $(this).attr('action')]);">
 			<input name="keyword" type="search" placeholder="Type to search..." />
 		</g:form>
 	</section>

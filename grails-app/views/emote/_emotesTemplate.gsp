@@ -4,7 +4,7 @@
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
 		<h3>${title.title}</h3>
-		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
+		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
         
@@ -46,7 +46,7 @@
 								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
 									<g:each in="${emote.expressions}" var="exp">
 											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.title}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes','Edit', 'Successful', 1, false]); ">${exp}</a></li>
+												<li><a href="javascript:re_emote('${title.title}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
 											</g:if>
 									</g:each>
 								</g:each>

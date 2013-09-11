@@ -4,7 +4,7 @@
     <h5 style="color:#f5f5f5;">Select a region to crop</h5>
     <img id="upload_preview_img"/>
     <div style="width:100%;position:absolute;bottom:30px;text-align: center;" >
-        <span ><button style="width: 45%;" type="button" id="picturecropper-ok-button" value="Ok" onClick="_gaq.push(['_trackEvent', 'Picture','Add', 'Add From Web', 1, false]); "> Ok </button></span>
+        <span ><button style="width: 45%;" type="button" id="picturecropper-ok-button" value="Ok" onClick="_gaq.push(['_trackEvent', 'Picture', 'Add', 'Successful', 1, false]);"> Ok </button></span>
         <span ><button style="width: 45%;" type="button" id="picturecropper-cancel-button" value="Cancel"> Cancel </button></span>
     </div>
 

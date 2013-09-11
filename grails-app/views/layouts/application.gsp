@@ -102,9 +102,11 @@
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		
 		  ga('create', 'UA-43715253-1', 'emote-app.com');
-		  ga('send', 'pageview');
-		
+		  ga('send', 'pageview');		
 		</script>
 		        
+		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
+		<script> $(function() { $.scrollDepth();}); </script>
+
     </body>
 </html>
