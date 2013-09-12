@@ -1,9 +1,10 @@
 package com.emote
 
 import java.awt.image.BufferedImage
+import java.awt.image.DataBufferByte
 import org.apache.http.HttpEntity
 import org.springframework.web.multipart.MultipartFile
-import pl.burningice.plugins.image.BurningImageService
+
 import javax.imageio.ImageIO
 
 import groovyx.net.http.*
@@ -12,13 +13,12 @@ import static groovyx.net.http.Method.GET
 
 
 class PictureService {
-	 BurningImageService burningImageService;
 	 
 	 def tempDir = System.properties.getAt("java.io.tmpdir")
 	
 	def crop(MultipartFile image, int topX, int topY, int bottomX, int bottomY, int scrWidth, int scrHeight){
 		log.info " got image of type $image.contentType, $image.originalFilename"
-		return crop(image.inputStream, image.contentType, image.originalFilename, topX, topY, bottomX, bottomY, scrWidth, scrHeight)
+		return crop(image.inputStream, image.contentType, System.currentTimeMillis()+image.originalFilename, topX, topY, bottomX, bottomY, scrWidth, scrHeight)
 	}
 	
 	def crop(String webUrl, int topX, int topY, int bottomX, int bottomY, int scrWidth, int scrHeight){
@@ -28,7 +28,7 @@ class PictureService {
 		 // response handler for a success response code:
 		 response.success = { resp ->
 		   HttpEntity entity = resp.entity
-		   return crop(entity.content,  entity.contentType.value, "web-img", topX, topY, bottomX, bottomY, scrWidth, scrHeight)
+		   return crop(entity.content,  entity.contentType.value, ""+System.currentTimeMillis(), topX, topY, bottomX, bottomY, scrWidth, scrHeight)
 		 }
 		
 		 // handler for any failure status code:
@@ -39,35 +39,29 @@ class PictureService {
 	}
 	
 	
-	Picture crop(InputStream fileStream, String type, String fileName, int topX, int topY, int bottomX, int bottomY, int scrWidth, int scrHeight){
-		def fos= new FileOutputStream(tempDir+"/"+fileName)
-		fos.write(fileStream.getBytes())
-		fos.flush()
-		fos.close()
-		log.info("file saved at location"+ tempDir+"/"+fileName )
-
-			
-		BufferedImage bi = ImageIO.read(new File(tempDir+"/"+fileName));
+	Picture crop(InputStream fileStream, String type, String fileName, int topX, int topY, int cropWidth, int cropHeight, int scrWidth, int scrHeight){
+		BufferedImage bi = ImageIO.read(fileStream);
 		Integer width = bi.getWidth();
 		Integer height = bi.getHeight();
+		
 		double xScaling = width/scrWidth
 		double yScaling = height/scrHeight
 		topX = topX*xScaling
-		bottomX = bottomX*xScaling - topX
+		cropWidth = cropWidth*xScaling - topX
 		topY = topY*yScaling
-		bottomY = bottomY*yScaling - topY
-		
-	
-		log.info("crop cordinates ($topX, $topY) ($bottomX, $bottomY) scale ratio ($xScaling, $yScaling), "
-						+"screen ($scrWidth, $scrHeight) image width height ($width, $height)")
-		burningImageService.doWith(tempDir+"/"+fileName, tempDir).execute(){
-			it.crop(topX, topY, bottomX, bottomY)
-		}
-		File croppedFile = new File(tempDir+File.separator+fileName)
-		byte [] croppedContent = croppedFile.readBytes()
+		cropHeight = cropHeight*yScaling - topY
+
+		log.info("crop cordinates ($topX, $topY) ($cropWidth, $cropHeight) scale ratio ($xScaling, $yScaling), "
+			+"screen ($scrWidth, $scrHeight) image width height ($width, $height)")
+		File imFile = new File(tempDir+File.separator+fileName)
+		BufferedImage cropped = bi.getSubimage(topX, topY, cropWidth, cropHeight)
+		log.info("cropped size is $cropped.width  $cropped.height")
+		ImageIO.write(cropped, "jpeg", imFile)
+		byte [] croppedContent =  imFile.readBytes()
 		Picture img = new Picture(type:type, filename:fileName, content:croppedContent)
-		croppedFile.delete()
+		imFile.delete()
 		return img
+		
 	}
 
 
