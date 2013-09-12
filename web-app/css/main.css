@@ -513,6 +513,37 @@ color:#FFFFFF;
 			margin-right:3px;
 		}
 				
+				
+ 	#photoBar{
+ 	display:none;
+ 	}
+ 	
+ 	#photoBar.active {
+ 	display:block;
+ 	position: static;
+ 	height: 45px;
+ 	}
+    
+	#file-preview {
+        background:#ccc;
+        border:5px solid #fff;
+        box-shadow:0 0 4px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow:0 0 4px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow:0 0 4px rgba(0, 0, 0, 0.5);
+        display:inline-block;
+        float:left;
+        margin-right:1em;
+        width:30px;
+        height:30px;
+        text-align:center;
+    }
+ 
+    form div.row label {
+        font-weight:bold;
+        display:block;
+        margin-bottom:0.25em;
+    }
+
 		
 		
 		

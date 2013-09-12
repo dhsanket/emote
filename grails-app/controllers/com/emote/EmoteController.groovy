@@ -105,11 +105,16 @@ class EmoteController {
 	}
 	
 	
-	def getTitle(){
+	def getTitle(String titleId){
+		if(titleId == null)
+		{log.info "No title found"}
+		else if(titleId != null){
 		User user = session.user
+		def emote = titleService.getSingleTitle(titleId)
 		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
 		flash.titles = posts
-		render view:"feed"
+		render(view:"titlePage" , model:[titles: posts, title:emote.title])
+		}
 	}
 	
 	private int getPageIndex(){
