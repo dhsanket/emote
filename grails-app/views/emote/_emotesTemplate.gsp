@@ -3,7 +3,7 @@
 <g:each status="i" in="${titles}" var="title"> 
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
-		<h3>${title.title}</h3>
+		<a href="/zen/${title.title}"><h3>${title.title}</h3></a> 
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}')">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>

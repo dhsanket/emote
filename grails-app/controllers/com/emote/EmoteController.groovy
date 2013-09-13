@@ -98,11 +98,12 @@ class EmoteController {
 		render view:'feed'
 	}
 	
-	
-	def getTitle(){
+	def singleTitle(){
 		User user = session.user
-		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
-		flash.titles = posts
+		def emotes = titleService.getSingleTitle(params.id);
+		if(emotes!= null && emotes.size() >0){
+			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
+		}
 		render view:"feed"
 	}
 	
