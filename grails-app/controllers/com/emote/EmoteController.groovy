@@ -43,10 +43,16 @@ class EmoteController {
 		}
 		Picture pic = null; 
 		if(emote.photo != null && emote.photo.bytes.size() >0){
-			log.info "got a picture of size $emote.photo.bytes.size()"
+			//log.info "got a picture of size $emote.photo.bytes.size()"
 			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
 				emote.scaledImgWidth, emote.scaledImgHeight)
+		}else if(emote.webSearchImageURL != null && emote.webSearchImageURL.size() > 0){
+			log.info "got a web picture  $emote.webSearchImageURL"
+			pic = pictureService.crop(emote.webSearchImageURL, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
+				emote.scaledImgWidth, emote.scaledImgHeight)
+	
 		}
+		
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 			session.user.followingUsers , session.user.id)
@@ -104,8 +110,15 @@ class EmoteController {
 		if(emotes!= null && emotes.size() >0){
 			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
 		}
-		render view:"feed"
-	}
+		render(view:"titlePage" , model:[titles: posts, title:emote.title])
+/*=======
+		def emote = titleService.getSingleTitle(titleId)
+		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
+		flash.titles = posts
+		render(view:"titlePage" , model:[titles: posts, title:emote.title])
+		}
+>>>>>>> refs/remotes/upstream/master
+*/	}
 	
 	private int getPageIndex(){
 		int page = 0;

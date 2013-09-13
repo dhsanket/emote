@@ -36,7 +36,7 @@
 		<%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
 		<%--			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>--%>
                     <a href="#" id="addimage-button" ><i class="icon icon-camera"></i></a>
-					<button type="submit" id="submit-button" value="Save"> <i class="icon icon-check"></i> </button>
+					<button type="submit" id="submit-button" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"> <i class="icon icon-check"></i> </button>
 				</div>
 			</div>
 		</div>

@@ -98,7 +98,9 @@ class EmoteService {
 				GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
 				if(title == null){
 					Title titleObj = Title.findByText(emote.title)
-					String picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
+					String picId = null	
+					if(titleObj != null)	
+						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
 					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers)
 					groupedByTitle.put(emote.title.toUpperCase(), title)
 				}
