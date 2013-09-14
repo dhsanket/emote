@@ -11,7 +11,9 @@
 		</g:if>
 		<g:else>
 			<ul class="errors">
-				<li>An error has occurred</li>
+				<li><g:message code="default.error.message"/></li>
+                <li><g:message code="default.error.back.url.message"
+                               args="${[link(url: (grailsApplication.config.emote.error.retrieve.url)?:"/"){message(code:"default.error.link.message")}]}"/></li>
 			</ul>
 		</g:else>
 	</body>
