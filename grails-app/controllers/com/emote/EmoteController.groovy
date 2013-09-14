@@ -106,19 +106,19 @@ class EmoteController {
 	
 	def singleTitle(){
 		User user = session.user
-		def emotes = titleService.getSingleTitle(params.id);
+		def emotes = titleService.getSingleTitle(params.titleString);
 		if(emotes!= null && emotes.size() >0){
 			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
 		}
-		render(view:"titlePage" , model:[titles: posts, title:emote.title])
+		render view:"feed"
 /*=======
 		def emote = titleService.getSingleTitle(titleId)
 		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
 		flash.titles = posts
 		render(view:"titlePage" , model:[titles: posts, title:emote.title])
 		}
->>>>>>> refs/remotes/upstream/master
-*/	}
+>>>>>>> refs/remotes/upstream/master*/
+	}
 	
 	private int getPageIndex(){
 		int page = 0;
