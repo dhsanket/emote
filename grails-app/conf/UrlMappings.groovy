@@ -10,6 +10,6 @@ class UrlMappings {
 		"/"(controller:"emote", action:"feed")
 		"500"(view:'/error')
 		"/index.gsp"(view:"/index") // <-- added this line for Grails 2.0.0 / WL 10.3.4
-		"/zen/$id/$title?"(controller:"emote",action:"getTitle")
+		"/zen/$titleString"(controller:"emote",action:"singleTitle")
 	}
 }
