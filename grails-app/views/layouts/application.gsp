@@ -2,18 +2,19 @@
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title><g:layoutTitle default="emote\\o/" /></title>
+        <title><g:layoutTitle default="emote-app" /></title>
 	
 		<meta charset="utf-8">
 	    <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="img/shortcut.png" />
         <meta http-equiv="cleartype" content="on">
         
 		<meta property="og:url"             content="http://www.emote-app.com" /> 
 		<meta property="og:title"           content="emote-app - find out what your friends think about..." /> 
-		<meta property="og:image"           content="http://www.emote-app.com/img/emote-defaultLogo.png" />
+		<meta property="og:image"           content="http://www.emote-app.com/img/profile-pic.png" />
 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
@@ -45,6 +46,7 @@
         <g:layoutHead />
     </head>
 	<body onload="${pageProperty(name:'body.onload')}" >
+
     	<div id="fb-root"></div>
 				<script> 
 				window.fbAsyncInit = function() {
@@ -82,11 +84,14 @@
 
 				 
 				</script>
-    
-	    <g:layoutBody />
-		<r:layoutResources/>		
-        <fbg:resources/>
+ 
+    		    	<g:layoutBody />
+    		    	<r:layoutResources/>		
+       				<fbg:resources/>
         
+
+
+	
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
@@ -107,6 +112,7 @@
 		        
 		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
+    		
 
     </body>
 </html>
