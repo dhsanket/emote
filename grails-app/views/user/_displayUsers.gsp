@@ -35,7 +35,10 @@
 	</span>
 	
 	<span class="followButton">
-		<a href="${createLink(controller:'emote', action:'feed')}" onchange="addFriendToInvite(this)" value="${friend.id}"> invite </a>
+	<facebook:sendLink to="${friend.id}" name="Emoting Emote" description="I am using this cool new app for reviews and I think you should try it" link="www.emote-app.com" picture="http://www.emote-app.com/img/emote-defaultLogo.png">
+				invite</facebook:sendLink>
+		<%--<a href="${createLink(controller:'emote', action:'feed')}" onchange="addFriendToInvite(this)" value="${friend.id}"> invite </a>
+	--%>
 	</span>
 	
 
