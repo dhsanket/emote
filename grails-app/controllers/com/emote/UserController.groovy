@@ -89,26 +89,4 @@ class UserController
 		return token;
 	}
 
-    def addFavouriteTitle(){
-        User user = session.user
-        if(!user){
-            redirect controller: 'user', action: 'signin'
-            return
-        }
-        String title = params.title
-        if(title){
-            userService.addFavouriteTitle user, title
-        }
-    }
-    def removeFavouriteTitle(){
-        User user = session.user
-        if(!user){
-            redirect controller: 'user', action: 'signin'
-            return
-        }
-        String title = params.title
-        if(title){
-            userService.removeFavouriteTopic user, title
-        }
-    }
 }
