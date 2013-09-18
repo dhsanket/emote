@@ -9,7 +9,15 @@
 		</div>
         
         <ul class="emote-v2-actions">
-			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
+			<li>
+                <button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button>
+                <g:if test="${!session.user.favouriteTitles || !session.user.favouriteTitles.contains(title.title)}">
+                    <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><i class="icon-flag icon-arrow-down"></i></button>
+                </g:if>
+                <g:else>
+                    <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-flag icon-arrow-up"></i></button>
+                </g:else>
+            </li>
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">

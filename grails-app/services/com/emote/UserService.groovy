@@ -1,7 +1,5 @@
 package com.emote
 
-import grails.plugin.facebooksdk.*
-
 class UserService {
 
     def findByFBId(String facebookId) {
@@ -34,4 +32,19 @@ class UserService {
 		user.save()
 		
 	}
+
+    def addFavouriteTitle(User user, String title){
+        if(!user.favouriteTitles){
+            user.favouriteTitles = new HashSet<String>()
+        }
+        user.favouriteTitles.add title
+        user.save()
+    }
+
+    def removeFavouriteTopic(User user, String title) {
+        if(user.favouriteTitles){
+            user.favouriteTitles.remove title
+            user.save()
+        }
+    }
 }

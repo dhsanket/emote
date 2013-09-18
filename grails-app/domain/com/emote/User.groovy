@@ -14,5 +14,5 @@ class User {
 	boolean publishToFBWall = false
 	String passcode = ""
 	Set<String> followingUsers = new HashSet<String>();
-
+    Set<String> favouriteTitles = new HashSet<String>();
 }
