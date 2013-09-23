@@ -35,7 +35,7 @@ grails.mime.types = [
 //grails.urlmapping.cache.maxsize = 1000
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/img/*']
 
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
@@ -101,10 +101,12 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-//    appenders {
-//        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-//    }
-	
+    appenders {
+        file name:'error', layout:pattern(conversionPattern: '%c{2} %m%n'), maxSize: 1024, file:"error.log",
+                threshold: org.apache.log4j.Level.ERROR
+
+    }
+
 	debug  'com.emote' // emote classes
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -119,6 +121,8 @@ log4j = {
            'net.sf.ehcache.hibernate'
 	   root{
 		    info 'stdout'
+            error 'error'
 	   }
 	   
 }
+emote.error.retrieve.url=""
