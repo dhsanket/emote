@@ -126,3 +126,4 @@ log4j = {
 	   
 }
 emote.error.retrieve.url=""
+emote.desktopBrowser.redirect.url=""

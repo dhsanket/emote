@@ -15,6 +15,16 @@
         <g:layoutHead />
     </head>
     <body onload="${pageProperty(name:'body.onload')}" class="clearfix">
+    <browser:choice>
+        <browser:isMobile></browser:isMobile>
+        <browser:otherwise>
+            <g:if test="${grailsApplication.config.emote.desktopBrowser.redirect.url?.length()}">
+                <g:javascript>
+                    window.location.href = '<g:createLink url="${grailsApplication.config.emote.desktopBrowser.redirect.url}"/>';
+                </g:javascript>
+            </g:if>
+        </browser:otherwise>
+    </browser:choice>
 	                <g:layoutBody />
 	                <r:layoutResources/>
       <fbg:resources/>  

@@ -1,4 +1,4 @@
-<%@ page import="com.emote.UserDoing; com.emote.DoingNow; com.emote.UserFavourite" %>
+<%@ page import="com.emote.UserDoing; com.emote.UserFavourite" %>
 
 <g:if test="${titles != null}">
 <g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
