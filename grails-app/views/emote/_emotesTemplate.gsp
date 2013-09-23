@@ -12,7 +12,7 @@
         
         <ul class="emote-v2-actions">
 			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
-			<li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="Lets emote more about #${title.title}" >
+			<li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" >
     			f</facebook:publishLink></button></li>
 		</ul>
 	</div>
