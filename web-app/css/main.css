@@ -974,8 +974,16 @@ textarea[contenteditable] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 500px) {
     /* Style adjustments for viewports that meet the condition */
+   #apexAppContainer{
+   	max-width: 500px;
+   }
+
+   #apexBody{
+   	background: url(../img/logo.png) no-repeat center center;
+   }
+
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

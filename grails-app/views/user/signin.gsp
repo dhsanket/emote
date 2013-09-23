@@ -1,5 +1,6 @@
 <html>
     <head>
+    <title>emote-app signin</title>
 		<script type="text/javascript">
 			function facebookLogin() {
 				FB.getLoginStatus(function(response) {

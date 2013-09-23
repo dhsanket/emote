@@ -310,3 +310,8 @@ var addFriendToInvite = function(elt){
     });
 
 }
+
+function facebookPublishCallbackFunction(response) {
+    console.log(response);
+    return false;
+}
