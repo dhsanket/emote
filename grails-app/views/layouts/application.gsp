@@ -14,7 +14,7 @@
 
         <!-- For Facebook sharing -->
 		<meta property="og:url"             content="http://www.emote-app.com" /> 
-		<meta property="og:title"           content="emote-app - find out what your friends think about..." /> 
+		<meta property="og:title"           content="emote-app: discover what your friends think about..." /> 
 		<meta property="og:image"           content="http://www.emote-app.com/img/emote-defaultLogo.png" />
 
         <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
@@ -27,6 +27,10 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
 
+		
+        <%--for Google+--%>
+        <link rel="canonical" href="http://www.emote-app.com" />
+		
 
         <!-- Tile icon for Win8 (144x144 + tile color) -->
         <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
@@ -40,8 +44,8 @@
 
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
-
-	
+		<a href="https://plus.google.com/111094199736252097583" rel="publisher" />
+		
 		<r:require modules="core"/>
 		<r:layoutResources/>		
         
@@ -111,10 +115,24 @@
 		  ga('create', 'UA-43715253-1', 'emote-app.com');
 		  ga('send', 'pageview');		
 		</script>
+		
+		<!-- Place this tag after the last +1 button tag. -->
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
 		        
 		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
+<<<<<<< HEAD
+		
+		
+=======
     		
 
+>>>>>>> refs/remotes/upstream/master
     </body>
 </html>

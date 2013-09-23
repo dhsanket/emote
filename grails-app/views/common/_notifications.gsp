@@ -7,4 +7,7 @@
 	
 	<%--http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FEmoteApp&width=180&height=80&colorscheme=dark&layout=standard&action=like&show_faces=true&send=true&appId=407280009364725--%>
 
+	<!-- tag where you want Google +1 button to render. -->
+	<div class="g-plusone" data-size="medium"></div>
+	
 </div>
