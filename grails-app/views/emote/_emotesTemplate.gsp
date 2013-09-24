@@ -12,24 +12,22 @@
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
         
-        <ul class="emote-v2-actions">
-			<li>
+        <ul class="emote-v2-actions">			
             <li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
             <li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" >
                 f</facebook:publishLink></button></li>
-                <g:if test="${favourites && favourites.contains(title.title)}">
-                    <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-flag icon-arrow-up"></i></button>
-                </g:if>
-                <g:else>
-                    <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><i class="icon-flag icon-arrow-down"></i></button>
-                </g:else>
-                <g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
-                    <button id="fav_emote_${i}" class="emote-v2-action-button"><i class="icon-flag icon-arrow-left"></i></button>
-                </g:if>
-                <g:else>
-                    <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-flag icon-arrow-right"></i></button>
-                </g:else>
-            </li>
+            <g:if test="${favourites && favourites.contains(title.title)}">
+            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-star icon-white"></i></button></li>
+            </g:if>
+            <g:else>
+            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><i class="icon-star-empty icon-white"></i></button> </li>
+            </g:else>
+            <g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
+            <li><button id="fav_emote_${i}" class="emote-v2-action-button"><i class="icon-refresh icon-white"></i></button></li>
+            </g:if>
+            <g:else>
+            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-time icon-white"></i></button></li>
+            </g:else>
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">

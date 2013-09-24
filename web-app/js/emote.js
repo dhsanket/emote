@@ -110,7 +110,7 @@ function preserveSizeWithoutMedia() {
 function emoteCreateButton(doNotResetForm) {
 		if($('#emote-creation-container').hasClass('active')) {
 			$('#emote-creation-container').removeClass('active');
-			$('#feed-container').removeClass('active');
+			$('#feed-container').removeClass('emoteCreateActive');
 			$('#createEmote').removeClass('active');
 			$('#user-header').toggleClass('create-emote');
 			$('#photo-feed').toggleClass('create-emote');
@@ -135,7 +135,7 @@ function emoteCreateButton(doNotResetForm) {
 
         }
 		else {		
-				$('#feed-container').addClass('active');
+				$('#feed-container').addClass('emoteCreateActive');
 				$('#emote-creation-container').addClass('active');
 				$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
