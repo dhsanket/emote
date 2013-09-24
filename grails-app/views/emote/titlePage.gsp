@@ -1,5 +1,6 @@
 <html>
     <head>
+     <title>emote-app title detail page</title>
     </head>
     <body>
     	<g:render template="/common/header" />
@@ -12,17 +13,16 @@
         <g:render template="/common/flag_inappropriate" />
         
         
-        <g:if test="${titles != null}">
+
         <div id="titlePage">
         	<div id="title">
-<%--        	<g:each status="i" in="${titles}" var="title"> --%>
-        		<h1> ${title} </h1>
-<%--        	</g:each>--%>
+
+        		<h1> ${emotePost.title} </h1>
+
         	</div>
         
         </div>
         
-        </g:if>
         
         
         

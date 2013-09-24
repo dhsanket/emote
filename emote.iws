@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29a41cec-3313-4fc3-9328-b09fcc6c440e" name="Default" comment="git ignore for intellj related files in project">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iml" afterPath="$PROJECT_DIR$/emote.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.ipr" afterPath="$PROJECT_DIR$/emote.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iws" afterPath="$PROJECT_DIR$/emote.iws" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/img/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/services/com/emote/social/FacebookService.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/com/emote/social/FacebookServiceTests.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grails-app/controllers/com/emote/share/FbController.groovy" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/com/emote/share/FbControllerTests.groovy" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web-app/img/venice.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/emote/Title.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/emote/Title.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp" afterPath="$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/_header.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/_header.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/_notifications.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/_notifications.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/application.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/application.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/displayUsers.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/displayUsers.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/emoteResources.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/emoteResources.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/emote/feed.gsp" afterPath="$PROJECT_DIR$/grails-app/views/emote/feed.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/main.css" afterPath="$PROJECT_DIR$/web-app/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/signin.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/signin.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/emote/titlePage.gsp" afterPath="$PROJECT_DIR$/grails-app/views/emote/titlePage.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/emote/userFeed.gsp" afterPath="$PROJECT_DIR$/grails-app/views/emote/userFeed.gsp" />
     </list>
     <ignored path="emote.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,7 +35,7 @@
     <ignored path="emote.iml" />
     <ignored path="emote.ipr" />
     <ignored mask=".iml" />
-    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377596170822" ignored="false" />
+    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380031869912" ignored="false" />
     <file path="/a.dummy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377593246751" ignored="false" />
     <file path="/emotezen.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377534354975" ignored="false" />
     <file path="/emote.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377469189055" ignored="false" />
@@ -93,7 +115,7 @@
       <file leaf-file-name="_displayUsers.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-5.2040815">
+            <state line="34" column="64" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +124,7 @@
       <file leaf-file-name="emotezen.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/js/emotezen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="304" column="7" selection-start="10552" selection-end="10552" vertical-scroll-proportion="0.0">
+            <state line="304" column="7" selection-start="10630" selection-end="10630" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,7 +133,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="21" selection-start="2405" selection-end="2405" vertical-scroll-proportion="1.0731708">
+            <state line="184" column="16" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-0.6863905">
               <folding />
             </state>
           </provider>
@@ -129,7 +151,7 @@
       <file leaf-file-name="signin.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="-2.6153846">
+            <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,7 +160,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="40" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0">
+            <state line="85" column="40" selection-start="2191" selection-end="2191" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,7 +169,7 @@
       <file leaf-file-name="application.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="24" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-7.8461537">
+            <state line="18" column="24" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -213,10 +235,9 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="-8" />
-    <option name="width" value="1320" />
-    <option name="height" value="784" />
+    <option name="y" value="27" />
+    <option name="width" value="1600" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -268,6 +289,8 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
@@ -305,6 +328,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,8 +350,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -344,12 +367,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Grails.Grails:emote">
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -519,24 +542,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="27" width="1600" height="873" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46730462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4662069" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298887" sideWeight="0.71291864" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -544,12 +566,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298887" sideWeight="0.53269535" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967743" sideWeight="0.5337931" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -662,9 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/_flag_inappropriate.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="58" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="58" selection-start="963" selection-end="963" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/_create_emote.gsp">
@@ -690,28 +711,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="40" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0">
+        <state line="85" column="40" selection-start="2191" selection-end="2191" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-7.8461537">
+        <state line="18" column="24" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/_displayUsers.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="64" selection-start="1041" selection-end="1041" vertical-scroll-proportion="-5.2040815">
+        <state line="34" column="64" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/emotezen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="304" column="7" selection-start="10552" selection-end="10552" vertical-scroll-proportion="0.0">
+        <state line="304" column="7" selection-start="10630" selection-end="10630" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -725,14 +746,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/user/signin.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="-2.6153846">
+        <state line="4" column="87" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="21" selection-start="2405" selection-end="2405" vertical-scroll-proportion="1.0731708">
+        <state line="184" column="16" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-0.6863905">
           <folding />
         </state>
       </provider>
@@ -744,14 +765,14 @@
         <entry key="emote">
           <value>
             <GrailsSettings>
-              <option name="buildConfigCrc" value="-47257616" />
-              <option name="pluginDependenciesCrc" value="1296123059" />
+              <option name="buildConfigCrc" value="-1222181265" />
+              <option name="pluginDependenciesCrc" value="-914399999" />
               <option name="properties">
                 <map>
-                  <entry key="grails.global.plugins.dir" value="C:\Users\Adz\.grails\2.2.1\global-plugins" />
-                  <entry key="grails.project.plugins.dir" value="C:\Users\Adz\.grails\2.2.1\projects\emote\plugins" />
-                  <entry key="grails.project.work.dir" value="C:\Users\Adz\.grails\2.2.1\projects\emote" />
-                  <entry key="grails.work.dir" value="C:\Users\Adz\.grails\2.2.1" />
+                  <entry key="grails.global.plugins.dir" value="$USER_HOME$/.grails/2.2.1/global-plugins" />
+                  <entry key="grails.project.plugins.dir" value="$USER_HOME$/.grails/2.2.1/projects/emote/plugins" />
+                  <entry key="grails.project.work.dir" value="$USER_HOME$/.grails/2.2.1/projects/emote" />
+                  <entry key="grails.work.dir" value="$USER_HOME$/.grails/2.2.1" />
                 </map>
               </option>
             </GrailsSettings>

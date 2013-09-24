@@ -5,12 +5,15 @@
 <g:each status="i" in="${titles}" var="title">
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
-		<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3>
+
+		<a href="/zen/${title.title}"><h3>${title.title}</h3></a>
+				<%--<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
         
         <ul class="emote-v2-actions">
+<<<<<<< HEAD
 			<li>
                 <button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button>
                 <g:if test="${favourites && favourites.contains(title.title)}">
@@ -26,6 +29,11 @@
                     <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-flag icon-arrow-right"></i></button>
                 </g:else>
             </li>
+=======
+			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
+			<li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" >
+    			f</facebook:publishLink></button></li>
+>>>>>>> remotes/upstream/master
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">

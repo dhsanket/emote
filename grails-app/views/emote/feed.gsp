@@ -1,5 +1,6 @@
 <html>
     <head>
+     <title>emote-app home feed page</title>
     </head>
     <body>
     	<g:render template="/common/header" />

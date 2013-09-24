@@ -209,11 +209,11 @@ header {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		padding:6px 4px;
-		-webkit-transition: all 0.5s ease-in-out;
+		/*-webkit-transition: all 0.5s ease-in-out;
 		-moz-transition: all 0.5s ease-in-out;
 		-ms-transition: all 0.5s ease-in-out;
 		-o-transition: all 0.5s ease-in-out;
-		transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;*/
 		opacity:1;
 		position:absolute;
 		top:44px;
@@ -393,11 +393,11 @@ color:#FFFFFF;
 			overflow-y:hidden;
 			position:relative;
 			top:-50px;
-			-webkit-transition: all 0.25s ease-in-out;
+			/*-webkit-transition: all 0.25s ease-in-out;
 			-moz-transition: all 0.25s ease-in-out;
 			-ms-transition: all 0.25s ease-in-out;
 			-o-transition: all 0.25s ease-in-out;
-			transition: all 0.25s ease-in-out;
+			transition: all 0.25s ease-in-out;*/
 			opacity:0;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
@@ -974,8 +974,16 @@ textarea[contenteditable] {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 500px) {
     /* Style adjustments for viewports that meet the condition */
+   #apexAppContainer{
+   	max-width: 500px;
+   }
+
+   #apexBody{
+   	background: url(../img/logo.png) no-repeat center center;
+   }
+
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

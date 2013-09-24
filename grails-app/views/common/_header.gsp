@@ -4,5 +4,8 @@
 			<%--
 			<a href="#" id="createEmote" class="header-icon pull-right"><r:img uri="/img/plus-icon.png" width="100%" /></a>
 			--%>
-			<a href="#" id="createEmote" class="header-icon pull-right"><i class="icon icon-edit icon-white"></i></a>	
+			<a href="#" id="createEmote" class="header-icon pull-right"><i class="icon icon-edit icon-white"></i></a>
+			
+			<facebook:initJS appId="${facebookContext.app.id}" />
+				
 		</header>
