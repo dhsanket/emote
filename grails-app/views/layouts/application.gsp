@@ -38,7 +38,6 @@
 
 
 
-        
 
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
 
@@ -52,7 +51,6 @@
         <g:layoutHead />
     </head>
 	<body onload="${pageProperty(name:'body.onload')}" >
-<<<<<<< HEAD
     <browser:choice>
         <browser:isMobile></browser:isMobile>
         <browser:otherwise>
@@ -63,9 +61,6 @@
             </g:if>
         </browser:otherwise>
     </browser:choice>
-=======
-
->>>>>>> remotes/upstream/master
     	<div id="fb-root"></div>
 				<script> 
 				window.fbAsyncInit = function() {
@@ -103,22 +98,10 @@
 
 				 
 				</script>
-<<<<<<< HEAD
-    
+
 	    <g:layoutBody />
 		<r:layoutResources/>		
         <fbg:resources/>
-
-=======
- 
-    		    	<g:layoutBody />
-    		    	<r:layoutResources/>		
-       				<fbg:resources/>
-        
-
-
-	
->>>>>>> remotes/upstream/master
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
@@ -148,12 +131,5 @@
 		        
 		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
-<<<<<<< HEAD
-		
-		
-=======
-    		
-
->>>>>>> refs/remotes/upstream/master
     </body>
 </html>

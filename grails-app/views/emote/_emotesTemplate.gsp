@@ -13,9 +13,10 @@
 		</div>
         
         <ul class="emote-v2-actions">
-<<<<<<< HEAD
 			<li>
-                <button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button>
+            <li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
+            <li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" >
+                f</facebook:publishLink></button></li>
                 <g:if test="${favourites && favourites.contains(title.title)}">
                     <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-flag icon-arrow-up"></i></button>
                 </g:if>
@@ -29,11 +30,6 @@
                     <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-flag icon-arrow-right"></i></button>
                 </g:else>
             </li>
-=======
-			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
-			<li><button><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" >
-    			f</facebook:publishLink></button></li>
->>>>>>> remotes/upstream/master
 		</ul>
 	</div>
 	<div class="emote-v2-body clearfix">
