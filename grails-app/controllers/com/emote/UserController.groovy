@@ -1,12 +1,9 @@
 package com.emote
 
-import groovy.json.JsonSlurper
 import javax.servlet.http.Cookie
 import grails.plugin.facebooksdk.*
-import com.restfb.exception.FacebookOAuthException
 
-
-class UserController 
+class UserController
 {
 	FacebookGraphClient facebookGraphClient;
 	// this is required in sign in gsp to get URL after facebook login

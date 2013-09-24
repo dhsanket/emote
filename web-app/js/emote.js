@@ -237,7 +237,55 @@ function emoteSubmit() {
 		location.reload();
 	});
 }
+var favouriteSubmit = function (id, title) {
+    var feedContents = $.ajax({
+        type: 'POST',
+        url: 'title/addFavouriteTitle',
+        cache: false,
+        data: {title: title},
+        error: function () {
+            console.log("Error, The request was not sent");
+        },
+        success: function(){
+            //todo maybe Icon should change and be disabled
+        }
 
+    });
+
+};
+var removeFromFavourite = function (id, title) {
+    var feedContents = $.ajax({
+        type: 'POST',
+        url: 'title/removeFavouriteTitle',
+        cache: false,
+        data: {title: title},
+        error: function () {
+            console.log("Error, The request was not sent");
+        },
+        success: function(){
+            //todo maybe Icon should change and be disabled
+        }
+
+    });
+
+};
+
+var doingNow = function (id, title) {
+    var feedContents = $.ajax({
+        type: 'POST',
+        url: 'userDoing/addDoing',
+        cache: false,
+        data: {title: title},
+        error: function () {
+            console.log("Error, The request was not sent");
+        },
+        success: function(){
+            //todo maybe Icon should change and be disabled
+        }
+
+    });
+
+};
 //prepare title placeholder for auto-display; resets tag field
 function emoteCreateReset() {
 	$('#obj-title').val('');
