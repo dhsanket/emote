@@ -36,14 +36,12 @@
         <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#222222">
 
+		<a href="https://www.emote-app.com" rel="publisher" />
+		<%--<a href="https://plus.google.com/111094199736252097583" rel="publisher" /> --%>
 
-
-
-        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
 
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-
-		<a href="https://plus.google.com/111094199736252097583" rel="publisher" />
 		
 		<r:require modules="core"/>
 		<r:layoutResources/>		
@@ -62,7 +60,10 @@
         </browser:otherwise>
     </browser:choice>
     	<div id="fb-root"></div>
-				<script> 
+    	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
+			
+    	
+				<%--<script> 
 				window.fbAsyncInit = function() {
 					//Facebook JS SDK - http://developers.facebook.com/docs/reference/javascript/
 					//https://developers.facebook.com/docs/facebook-login/getting-started-web/
@@ -97,11 +98,12 @@
 				  }
 
 				 
-				</script>
+				</script>--%>
 
-	    <g:layoutBody />
-		<r:layoutResources/>		
-        <fbg:resources/>
+    		    	<g:layoutBody />
+    		    	<r:layoutResources/>		
+       				<fbg:resources/>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
@@ -131,5 +133,6 @@
 		        
 		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
+
     </body>
 </html>
