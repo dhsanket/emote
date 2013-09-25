@@ -14,29 +14,4 @@ class TitleController {
 			}
 		}
 	}
-
-    def addFavouriteTitle(){
-        User user = session.user
-        if(!user){
-            redirect controller: 'user', action: 'signin'
-            return
-        }
-        String title = params.title
-        if(title){
-            titleService.addFavouriteTitle user, title
-        }
-    }
-
-    def removeFavouriteTitle(){
-        User user = session.user
-        if(!user){
-            redirect controller: 'user', action: 'signin'
-            return
-        }
-        String title = params.title
-        if(title){
-            titleService.removeFavouriteTopic user, title
-        }
-    }
-
 }
