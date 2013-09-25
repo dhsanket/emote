@@ -1,4 +1,4 @@
-<%@ page import="com.emote.UserDoing; com.emote.UserFavourite" %>
+<%@ page import="com.emote.UserDoing; com.emote.UserFavourite;" %>
 
 <g:if test="${titles != null}">
 <g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
@@ -71,8 +71,6 @@
 							</ul>
 						</li>
 					</g:each>					
-				
-				
 					<g:each in="${title.users}" var="user">
 						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 							<ul>

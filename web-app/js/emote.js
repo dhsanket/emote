@@ -240,7 +240,7 @@ function emoteSubmit() {
 var favouriteSubmit = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'title/addFavouriteTitle',
+        url: 'userAction/addFavouriteTitle',
         cache: false,
         data: {title: title},
         error: function () {
@@ -256,7 +256,7 @@ var favouriteSubmit = function (id, title) {
 var removeFromFavourite = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'title/removeFavouriteTitle',
+        url: 'userAction/removeFavouriteTitle',
         cache: false,
         data: {title: title},
         error: function () {
@@ -273,7 +273,7 @@ var removeFromFavourite = function (id, title) {
 var doingNow = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'userDoing/addDoing',
+        url: 'userAction/addDoing',
         cache: false,
         data: {title: title},
         error: function () {
