@@ -111,13 +111,6 @@ class EmoteController {
 			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
 		}
 		render view:"feed"
-/*=======
-		def emote = titleService.getSingleTitle(titleId)
-		def posts =  emoteService.groupByTitle(titleService.getSingleTitle(params.id), null, user.id)
-		flash.titles = posts
-		render(view:"titlePage" , model:[titles: posts, title:emote.title])
-		}
->>>>>>> refs/remotes/upstream/master*/
 	}
 	
 	private int getPageIndex(){

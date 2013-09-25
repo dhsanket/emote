@@ -10,7 +10,9 @@ class Emote {
 	}
 	static mapping = {
 		topics index:true
-
+		username index:true
+		title index:true
+		keywords index:true
 	}
 	
 	String id
@@ -20,6 +22,7 @@ class Emote {
 	String username;
 	Set<String> topics = []
 	Set<String> expressions = []
+	Set<String> keywords = []
 	String title
 	Set<String> photos = []
 	// geo-location
