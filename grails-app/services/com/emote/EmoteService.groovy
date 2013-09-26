@@ -23,14 +23,7 @@ class EmoteService {
 		}
 		emote.expressions = nonEmptyExpression
 		
-		Set<String> keywords = []
-		def k = emote.title.toLowerCase()
-		keywords.addAll(k)
-		def u = emote.username.toLowerCase()
-		keywords.addAll(u)
-		emote.topics.each {topicText ->
-			keywords.add(topicText.toLowerCase())
-			}
+		emote.populateKeywords()
 			
 		emote.save(validate: true)
 		
@@ -61,16 +54,18 @@ class EmoteService {
 			}
 		}
 		
+		
 	}
 	
-	Set<Emote> search(String keyword, int pageIndex){
+/*	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
 		Set<Emote> results = []
-		def qresults = Emote.findAllByKeywordsIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[keywords:1]] )
+		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		log.info "found emotes by title ${qresults}"
 		if (qresults != null) {results.addAll(qresults)}
 		return results
 	}
+	*/
 	
 /*	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
@@ -87,25 +82,25 @@ class EmoteService {
 	}*/
 	
 	
-/*	Set<Emote> search(String keyword, int pageIndex){
+	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
+		def lKeyword = keyword.toLowerCase() 
+		log.info "lowercase ofthe keyword: $keyword"
 		Set<Emote> results = []
-		def c = Emote.createCriteria()
-		def qresults = c {
+//		def c = Emote.withCriteria()
+		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
 			or {
-				like("title", "%"+keyword+"%", [ignoreCase: true])
-				like("username", "%"+keyword+"%", [ignoreCase: true])
-				like("topics", "%"+keyword+"%", [ignoreCase: true])
-			}
-			maxResults feedPageSize
-			firstResult feedPageSize*pageIndex
+				eq("title", lKeyword)
+				eq("username", lKeyword)
+				eq("topics", lKeyword)
+			} 
 			order("creationTime", "desc")
-			arguments hint:["title":1]
+			arguments hint:["keywords":1]
 		}
 		if (qresults != null) {results.addAll(qresults)}
 		return results
 		
-	}*/
+	}
 
 	
 	def feed(int pageIndex){

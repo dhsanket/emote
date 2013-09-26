@@ -30,7 +30,18 @@ class Emote {
 	
 	//todo use joda time
 	Date creationTime = new Date()
-
+	
+	public populateKeywords() {
+		def k = title.toLowerCase()
+		keywords.add(k)
+		def u = username.toLowerCase()
+		keywords.add(u)
+		topics.each {topicText ->
+			keywords.add(topicText.toLowerCase())
+			}
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
