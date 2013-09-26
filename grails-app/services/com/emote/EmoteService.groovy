@@ -93,9 +93,9 @@ class EmoteService {
 		def c = Emote.createCriteria()
 		def qresults = c {
 			or {
-				like("title", "%"+keyword+"%")
-				like("username", "%"+keyword+"%")
-				like("topics", "%"+keyword+"%")
+				like("title", "%"+keyword+"%", [ignoreCase: true])
+				like("username", "%"+keyword+"%", [ignoreCase: true])
+				like("topics", "%"+keyword+"%", [ignoreCase: true])
 			}
 			maxResults feedPageSize
 			firstResult feedPageSize*pageIndex
