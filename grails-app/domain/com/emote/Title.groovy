@@ -10,6 +10,12 @@ class Title {
 	Set<String> category = []
 	Date lastUpdateTime = new Date()
 	List<String> pictures = []
+	
+	static mapping = {
+		text index:true
+		category index:true
+	}
+	
     static constraints = {
 		text blank:false
     }

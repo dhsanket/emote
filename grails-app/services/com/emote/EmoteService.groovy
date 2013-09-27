@@ -26,8 +26,9 @@ class EmoteService {
 			}
 		}
 		emote.expressions = nonEmptyExpression
-
 		
+		emote.populateKeywords()
+			
 		emote.save(validate: true)
 		
 		// save title if does not exist else update time
@@ -57,17 +58,54 @@ class EmoteService {
 			}
 		}
 		
+		
 	}
 	
-	Set<Emote> search(String keyword, int pageIndex){
+/*	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
 		Set<Emote> results = []
 		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		log.info "found emotes by title ${qresults}"
-		if(qresults != null)
-			results.addAll(qresults)
+		if (qresults != null) {results.addAll(qresults)}
 		return results
 	}
+	*/
+	
+/*	Set<Emote> search(String keyword, int pageIndex){
+		log.info "searching for $keyword"
+		Set<Emote> results = []
+		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[title:1]] )
+		log.info "found emotes by title ${qresults}"
+		def eresults = Emote.findAllByUsernameIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[username:1]] )
+		log.info "found emotes by title ${eresults}"
+		def dresults = Emote.findAllByTopicsIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[topics:1]] )
+		if (qresults != null) {results.addAll(qresults)}
+		if (qresults != null) {results.addAll(eresults)}
+		if (qresults != null) {results.addAll(dresults)}
+		return results
+	}*/
+	
+	
+	Set<Emote> search(String keyword, int pageIndex){
+		log.info "searching for $keyword"
+		def lKeyword = keyword.toLowerCase() 
+		log.info "lowercase ofthe keyword: $keyword"
+		Set<Emote> results = []
+//		def c = Emote.withCriteria()
+		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
+			or {
+				eq("title", lKeyword)
+				eq("username", lKeyword)
+				eq("topics", lKeyword)
+			} 
+			order("creationTime", "desc")
+			arguments hint:["keywords":1]
+		}
+		if (qresults != null) {results.addAll(qresults)}
+		return results
+		
+	}
+
 	
 	def feed(int pageIndex){
 		def titles = Title.list(max:feedPageSize, sort:"lastUpdateTime", order:"desc" , offset:feedPageSize*pageIndex)
