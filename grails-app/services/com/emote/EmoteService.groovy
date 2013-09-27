@@ -5,13 +5,17 @@ import java.util.Set;
 class EmoteService {
 	
 	private int feedPageSize = 10;
+    def grailsApplication
 
-	def create(EmoteCommand emoteCmd, User user, Picture pic) {
+    def create(EmoteCommand emoteCmd, User user, Picture pic) {
 		def username = user.firstName+" "+user.lastName
-		
+        def parentTitle = null
+        String emoteTitle = emoteCmd.title
+        String connector
+        (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
 		Emote emote = new Emote(
-			userId:user.id, creator:user, username:username, topics:emoteCmd.category, 
-			expressions:emoteCmd.expressions, title:emoteCmd.title, facebookId:user.facebookId 
+			userId:user.id, creator:user, username:username, topics:emoteCmd.category, parentTitle: parentTitle,
+			connector: connector , expressions:emoteCmd.expressions, title:emoteTitle, facebookId:user.facebookId
 			)
 		
 		
@@ -28,9 +32,9 @@ class EmoteService {
 		emote.save(validate: true)
 		
 		// save title if does not exist else update time
-		Title title = Title.findByTextIlike(emote.title)
+		Title title = Title.findByTextIlike(emoteTitle)
 		if(title == null){
-			title = new Title(text:emote.title, category: emote.topics)
+			title = new Title(text:emoteTitle, category: emote.topics)
 			log.info "Saving title ${title}"
 		}else{
 			title.refreshUpdateTime()
@@ -84,10 +88,9 @@ class EmoteService {
 	
 	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
-		def lKeyword = keyword.toLowerCase() 
+		def lKeyword = keyword 
 		log.info "lowercase ofthe keyword: $keyword"
 		Set<Emote> results = []
-//		def c = Emote.withCriteria()
 		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
 			or {
 				eq("title", lKeyword)
@@ -128,20 +131,21 @@ class EmoteService {
 		emotes.each {emote ->
 			boolean canShow = false
 			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||
-				groupedByTitle.containsKey(emote.title.toUpperCase())){
+				groupedByTitle.containsKey(emote.completeTitle.toUpperCase())){
 				canShow = true
 			}
 	
 			if(canShow){
-				GroupByTitle title = groupedByTitle.get(emote.title.toUpperCase())
+				GroupByTitle title = groupedByTitle.get(emote.completeTitle.toUpperCase())
 				if(title == null){
 					Title titleObj = Title.findByText(emote.title)
 					String picId = null	
 					if(titleObj != null)	
 						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
-					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers)
-					groupedByTitle.put(emote.title.toUpperCase(), title)
+					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers, completeTitle:emote.completeTitle)
+					groupedByTitle.put(emote.completeTitle.toUpperCase(), title)
 				}
+                title.completeTitle = emote.completeTitle
 				title.add(emote);
 			}
 			
@@ -158,4 +162,29 @@ class EmoteService {
 		log.info("searching title by $text")
 		return Title.findAllByTextIlike(text+"%")
 	}
+    def getSingleEmote(String title){
+        String mainTitle= title
+        String parentTitle= null
+        String connector
+
+
+        (mainTitle, connector, parentTitle) = extractTitles(title, mainTitle, parentTitle)
+        Emote.findAllByTitleAndConnectorAndParentTitle(mainTitle, connector, parentTitle)
+    }
+
+    def extractTitles(String title, String mainTitle, String parentTitle) {
+        mainTitle = title
+        String connector= null
+        if (grailsApplication.config.emote.title.connectors) {
+            for (String it : grailsApplication.config.emote.title.connectors) {
+                if (title.contains(" ${it} ")) {
+                    parentTitle = title.substring(mainTitle.indexOf(" ${it} ") + " ${it} ".length(), mainTitle.length())
+                    mainTitle = mainTitle.substring(0, mainTitle.indexOf(" ${it} "))
+                    connector = it
+                    return [mainTitle, connector, parentTitle]
+                }
+            }
+        }
+        [mainTitle, connector, parentTitle]
+    }
 }
