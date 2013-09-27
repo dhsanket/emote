@@ -155,9 +155,10 @@ function emoteCreateButton(doNotResetForm) {
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title){
+function quick_emote(title,category){
 		
 		$('#obj-title').val(title);
+		$('#category').val(category);
 		emoteCreateButton(true);
 }
 
@@ -205,9 +206,6 @@ function emoteCreate() {
 		emoteCreateButton(true);
 		emoteSubmit();
 	}
-	
-	emoteCreateButton(true);
-	emoteSubmit();
 }
 
 //ajax submit createEmote form action

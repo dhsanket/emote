@@ -1,5 +1,7 @@
 package com.emote;
 
+import java.util.Set;
+
 public class GroupByTitle implements Comparable  {
 	
 	
@@ -19,9 +21,8 @@ public class GroupByTitle implements Comparable  {
 	
 	List<PopularEmote> popEmotes = []
 	
+	Set<String> categories = []
 	
-	
-
 	@Override
 	public int compareTo(Object o) {
 		if(o == null) return -1;
@@ -46,6 +47,9 @@ public class GroupByTitle implements Comparable  {
 		
 		if(lastEmoteTime == null || lastEmoteTime.getTime()< emote.creationTime.getTime()){
 			lastEmoteTime = emote.creationTime
+		}
+		emote.topics.each {category ->
+			categories.add(category) //line added to get anyone category for the title and display it in quick emote page.
 		}
 		addPopularEntry(emote)
 	}
@@ -84,6 +88,17 @@ public class GroupByTitle implements Comparable  {
 	def getPopularEmotes(){
 		Collections.sort(popEmotes)
 		return popEmotes.take(10);
+	}
+	
+	def getFirstCategory(){
+		String rtnCategory;
+		categories.each { category ->
+			if(category!=null && category.length()>0){
+				rtnCategory=category;
+				return true
+			}
+		}
+		return rtnCategory;
 	}
 
 
