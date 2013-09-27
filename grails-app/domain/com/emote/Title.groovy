@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Set;
 
 class Title {
+	
+	Date dateCreated
 	String id
 	String text
 	Set<String> category = []

@@ -1,5 +1,6 @@
 package com.emote
 
+import java.util.Date;
 import java.util.Set;
 
 
@@ -17,6 +18,8 @@ class Emote {
 		keywords index:true
 	}
 	
+	Date dateCreated
+	Date lastUpdated
 	String id
 	String userId
 	String facebookId
@@ -32,7 +35,7 @@ class Emote {
 	// geo-location
 	String locationName = ""
 
-	//todo use joda time
+	//TODO use joda time
 	Date creationTime = new Date()
 	
 	public populateKeywords() {

@@ -1,7 +1,11 @@
 package com.emote
 
+import java.util.Date;
+
 class Picture {
 	
+	Date dateCreated
+	Date lastUpdated
 	String id
 	String type
 	String filename

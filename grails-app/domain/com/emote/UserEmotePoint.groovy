@@ -1,6 +1,10 @@
 package com.emote
 
+import java.util.Date;
+
 class UserEmotePoint {
+	Date dateCreated
+	Date lastUpdated
     String userId
     String emoteId
     Point point = Point.NONE

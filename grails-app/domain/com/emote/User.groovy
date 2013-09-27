@@ -4,6 +4,8 @@ class User {
 
     static constraints = {
     }
+	Date dateCreated
+	Date lastUpdated
 	String id
 	String firstName
 	String lastName
