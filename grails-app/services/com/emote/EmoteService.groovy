@@ -84,10 +84,9 @@ class EmoteService {
 	
 	Set<Emote> search(String keyword, int pageIndex){
 		log.info "searching for $keyword"
-		def lKeyword = keyword.toLowerCase() 
+		def lKeyword = keyword 
 		log.info "lowercase ofthe keyword: $keyword"
 		Set<Emote> results = []
-//		def c = Emote.withCriteria()
 		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
 			or {
 				eq("title", lKeyword)
