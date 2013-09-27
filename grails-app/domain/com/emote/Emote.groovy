@@ -7,6 +7,8 @@ class Emote {
 
 	static constraints = {
 		title blank:false
+        parentTitle nullable: true
+        connector nullable: true
 	}
 	static mapping = {
 		topics index:true
