@@ -191,7 +191,7 @@ function emoteCreate() {
 	if(!isValid ){
 		return false;
 	}
-	/*
+	
 	//check if category is selected
     var selectBox = document.getElementById('category');
     var a = selectBox.selectedIndex;
@@ -205,7 +205,7 @@ function emoteCreate() {
 		emoteCreateButton(true);
 		emoteSubmit();
 	}
-	*/
+	
 	emoteCreateButton(true);
 	emoteSubmit();
 }
@@ -240,6 +240,11 @@ function emoteSubmit() {
 		location.reload();
 	});
 }
+
+
+
+
+
 var favouriteSubmit = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',
@@ -256,6 +261,7 @@ var favouriteSubmit = function (id, title) {
     });
 
 };
+
 var removeFromFavourite = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',

@@ -92,11 +92,13 @@ class EmoteController {
 	def search(){
 		User user = session.user
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.search(params.keyword, page), null, user.id)
+		String searchTerm = params.keyword.toLowerCase();
+		log.info "lowercase ofthe keyword: $searchTerm"
+		def posts = emoteService.groupByTitle(emoteService.search(searchTerm, page), null, user.id)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
-		if(checkLastPageAndSetPaginationAttributes(page, postCount, "search", [keyword:params.keyword])){
-			posts = emoteService.groupByTitle(emoteService.search(params.keyword, page-1), null, user.id)
+		if(checkLastPageAndSetPaginationAttributes(page, postCount, "search", [keyword:searchTerm])){
+			posts = emoteService.groupByTitle(emoteService.search(searchTerm, page-1), null, user.id)
 		}
 		flash.titles = posts
 		render view:'feed'
