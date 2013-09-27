@@ -6,8 +6,6 @@ class EmoteController {
 	
 	EmoteService emoteService
 	
-	TitleService titleService
-	
 	UserService userService
 	
 	FacebookContext facebookContext;
@@ -106,7 +104,7 @@ class EmoteController {
 	
 	def singleTitle(){
 		User user = session.user
-		def emotes = titleService.getSingleTitle(params.titleString);
+		def emotes = emoteService.getSingleEmote(params.titleString);
 		if(emotes!= null && emotes.size() >0){
 			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
 		}

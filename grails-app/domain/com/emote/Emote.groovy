@@ -19,15 +19,17 @@ class Emote {
 	String userId
 	String facebookId
 	User creator
-	String username;
+	String username
 	Set<String> topics = []
 	Set<String> expressions = []
 	Set<String> keywords = []
 	String title
+    String parentTitle
+    String connector
 	Set<String> photos = []
 	// geo-location
 	String locationName = ""
-	
+
 	//todo use joda time
 	Date creationTime = new Date()
 	
@@ -65,6 +67,7 @@ class Emote {
 		return true;
 	}
 
-	
-
+    String getCompleteTitle() {
+        return title + (connector?" ${connector} ":"") + (parentTitle?:"")
+    }
 }

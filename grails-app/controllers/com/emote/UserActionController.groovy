@@ -14,6 +14,9 @@ class UserActionController {
         String title = params.title
         if(title){
             userActionService.addDoing user.id, title
+            render(contentType: "text/json"){
+                [success:"true"]
+            }
         }
 
     }
@@ -28,7 +31,7 @@ class UserActionController {
         if(title){
             userActionService.addFavouriteTitle user, title
             render(contentType: "text/json"){
-                success:"true"
+                [success:"true"]
             }
         }
     }
@@ -43,7 +46,7 @@ class UserActionController {
         if(title){
             userActionService.removeFavouriteTopic user, title
             render(contentType: "text/json"){
-                success:"true"
+                [success:"true"]
             }
         }
     }
@@ -59,7 +62,7 @@ class UserActionController {
         if(emoteId && point){
             userActionService.changePointToEmote(user, emoteId, UserEmotePoint.Point.valueOf(point))
             render(contentType: "text/json"){
-                success:"true"
+                [success:"true"]
             }
         }
     }
