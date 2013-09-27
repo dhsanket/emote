@@ -191,7 +191,7 @@ function emoteCreate() {
 	if(!isValid ){
 		return false;
 	}
-	
+	/*
 	//check if category is selected
     var selectBox = document.getElementById('category');
     var a = selectBox.selectedIndex;
@@ -205,6 +205,9 @@ function emoteCreate() {
 		emoteCreateButton(true);
 		emoteSubmit();
 	}
+	*/
+	emoteCreateButton(true);
+	emoteSubmit();
 }
 
 //ajax submit createEmote form action
