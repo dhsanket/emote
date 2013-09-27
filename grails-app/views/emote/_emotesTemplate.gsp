@@ -5,16 +5,15 @@
 <g:each status="i" in="${titles}" var="title">
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
-
-		<a href="/zen/${title.title}"><h3>${title.title}</h3></a>
+		<a href="/zen/${title.completeTitle}"><h3>${title.completeTitle}</h3></a>
 				<%--<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
-		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.title}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
+		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
         
         <ul class="emote-v2-actions">			
-			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.title}')"><i class="icon-flag icon-white"></i></button></li>
-			<li><facebook:publishLink name="#${title.title}"  link="www.emote-app.com/zen/${title.title}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.title} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" >
+			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')"><i class="icon-flag icon-white"></i></button></li>
+			<li><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" >
     			<button>f</button></facebook:publishLink></li>
             <g:if test="${favourites && favourites.contains(title.title)}">
             <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-star icon-white"></i></button></li>
@@ -65,7 +64,7 @@
 								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
 									<g:each in="${emote.expressions}" var="exp">
 											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.title}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
+												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
 											</g:if>
 									</g:each>
 								</g:each>
@@ -78,7 +77,7 @@
 								<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
 									<g:each in="${emote.expressions}" var="exp">
 											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.title}', '${exp}' )">${exp}</a></li>
+												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )">${exp}</a></li>
 											</g:if>
 									</g:each>
 								</g:each>
@@ -94,7 +93,7 @@
 				<ul>
 				<g:each in="${title.popularEmotes}" var="emote">
 						<g:if test="${(emote.expression.trim().length()>0)}">
-							<li><a href="javascript:re_emote('${title.title}', '${emote.expression}' )">${emote.expression}</a></li>
+							<li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
 						</g:if>
 				</g:each>					
 				</ul>

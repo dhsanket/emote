@@ -1,4 +1,4 @@
-package emote
+package com.emote
 
 import com.emote.User
 import com.emote.UserDoing
