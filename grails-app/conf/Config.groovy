@@ -101,14 +101,13 @@ environments {
 log4j = {
     // Example of changing the log pattern for the default console appender:
     //
-/*    appenders {
+    appenders {
         file name:'error', layout:pattern(conversionPattern: '%c{2} %m%n'), maxSize: 1024, file:"error.log",
                 threshold: org.apache.log4j.Level.ERROR
         console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
     }
-*/
 
-  debug  'com.emote' // emote classes
+	debug  'com.emote' // emote classes
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
