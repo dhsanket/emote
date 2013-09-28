@@ -104,10 +104,11 @@ log4j = {
 /*    appenders {
         file name:'error', layout:pattern(conversionPattern: '%c{2} %m%n'), maxSize: 1024, file:"error.log",
                 threshold: org.apache.log4j.Level.ERROR
+        console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
+    }
+*/
 
-    }*/
-
-	debug  'com.emote' // emote classes
+  debug  'com.emote' // emote classes
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -119,12 +120,11 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
-	   root{
-		    info 'stdout'
-            error 'error'
-	   }	   
+     root{
+        info 'stdout'
+     }
+     
 }
-
 emote.error.retrieve.url=""
 emote.desktopBrowser.redirect.url=""
 emote.title.connectors = ["in"]

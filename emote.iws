@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29a41cec-3313-4fc3-9328-b09fcc6c440e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/grails-app/services/emote/UserActionService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/com/emote/UserActionService.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/com/emote/GroupByTitle.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/com/emote/GroupByTitle.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/emote/UserActionController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/emote/UserActionController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp" afterPath="$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/emote.iws" afterPath="$PROJECT_DIR$/emote.iws" />
     </list>
     <ignored path="emote.iws" />
@@ -20,7 +12,7 @@
     <ignored path="emote.iml" />
     <ignored path="emote.ipr" />
     <ignored mask=".iml" />
-    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380272119303" ignored="false" />
+    <file path="/Dummy.txt" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380360488217" ignored="false" />
     <file path="/a.dummy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380100726080" ignored="false" />
     <file path="/emotezen.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377534354975" ignored="false" />
     <file path="/emote.js" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1377469189055" ignored="false" />
@@ -36,12 +28,12 @@
     <file path="/UserEmotePoint.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380100308280" ignored="false" />
     <file path="/UserActionController.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380103640699" ignored="false" />
     <file path="/_emotesTemplate.gsp" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380180912665" ignored="false" />
-    <file path="/Emote.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380182884369" ignored="false" />
+    <file path="/Emote.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380275125449" ignored="false" />
     <file path="/EmoteService.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380264244569" ignored="false" />
-    <file path="/Config.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380178571626" ignored="false" />
+    <file path="/Config.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380360919514" ignored="false" />
     <file path="/fragment.java" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380178424266" ignored="false" />
     <file path="/GroupByTitle.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380182221033" ignored="false" />
-    <file path="/Dummy.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380203641315" ignored="false" />
+    <file path="/Dummy.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380275002027" ignored="false" />
     <file path="/TitleService.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380202113753" ignored="false" />
     <file path="/EmoteController.groovy" changelist="29a41cec-3313-4fc3-9328-b09fcc6c440e" time="1380203048751" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +51,37 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" line="138" class="com.emote.EmoteService" package="com.emote">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" line="176" class="com.emote.EmoteService" package="com.emote">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" line="56" class="com.emote.EmoteController" package="com.emote">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" line="28" class="com.emote.EmoteController" package="com.emote">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -90,7 +112,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -127,6 +148,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -139,16 +161,7 @@
       <file leaf-file-name="Emote.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserActionController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/UserActionController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="19" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+            <state line="16" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="-0.65217394">
               <folding />
             </state>
           </provider>
@@ -157,43 +170,52 @@
       <file leaf-file-name="EmoteController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-5.2608695">
+            <state line="56" column="0" selection-start="1600" selection-end="1600" vertical-scroll-proportion="-5.2608695">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TitleService.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TitleController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/TitleController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="33" selection-start="260" selection-end="267" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmoteService.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EmoteService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="61" selection-start="4444" selection-end="4444" vertical-scroll-proportion="0.3324397">
+            <state line="176" column="0" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupByTitle.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/com/emote/GroupByTitle.groovy">
+      <file leaf-file-name="MethodProxy.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/cglib/cglib/jars/cglib-2.2-sources.jar!/net/sf/cglib/proxy/MethodProxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="24" selection-start="157" selection-end="170" vertical-scroll-proportion="0.0">
+            <state line="190" column="0" selection-start="6912" selection-end="6912" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cglib2AopProxy.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-aop/jars/spring-aop-3.1.4.RELEASE-sources.jar!/org/springframework/aop/framework/Cglib2AopProxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="624" column="0" selection-start="21827" selection-end="21827" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectiveMethodInvocation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-aop/jars/spring-aop-3.1.4.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="171" column="0" selection-start="5985" selection-end="5985" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionInterceptor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-tx/jars/spring-tx-3.1.4.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="120" column="0" selection-start="4956" selection-end="4956" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -202,25 +224,16 @@
       <file leaf-file-name="_emotesTemplate.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="-2.2340426">
+            <state line="21" column="39" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-0.31914893">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
+      <file leaf-file-name="Config.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="59" selection-start="6286" selection-end="6286" vertical-scroll-proportion="-7.0416665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UrlMappings.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="66" selection-start="326" selection-end="337" vertical-scroll-proportion="0.0">
+            <state line="115" column="40" selection-start="4714" selection-end="4714" vertical-scroll-proportion="0.54404145">
               <folding />
             </state>
           </provider>
@@ -254,14 +267,14 @@
         <option value="$PROJECT_DIR$/grails-app/domain/com/emote/UserEmotePoint.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/emote/UserActionService.groovy" />
         <option value="$PROJECT_DIR$/web-app/js/emote.js" />
-        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/com/emote/GroupByTitle.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/emote/UserActionController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
       </list>
     </option>
   </component>
@@ -408,90 +421,6 @@
               <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emote" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -537,6 +466,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -547,13 +520,13 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="149" />
     <property name="project.structure.proportion" value="0.0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="149" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="139" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/emote.iws" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="155" />
@@ -570,8 +543,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -579,8 +552,8 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -753,7 +726,15 @@
       <created>1380104301468</created>
       <updated>1380104301468</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixes #44 :&#10;add configuration for adding different connecting word like in, or and etc, in Config.groovy&#10;Add changes about secondary title as a parent title and connecting words in related codes">
+      <created>1380273347740</created>
+      <updated>1380273347740</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fixes #44:&#10;resolve bug for single titles">
+      <created>1380275489952</created>
+      <updated>1380275489952</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -854,7 +835,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some refactoring about domains of UserDoing.groovy,&#10;Create one Service and Controller for handle all of user activity in UserActionController.groovy and UserActionService.groovy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes #44:&#10;resolve bug for single titles" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -876,6 +857,8 @@
     <MESSAGE value="incomplete code for invite facebook friends" />
     <MESSAGE value="Fix #15 : Merge conflicts" />
     <MESSAGE value="Some refactoring about domains of UserDoing.groovy,&#10;Create one Service and Controller for handle all of user activity in UserActionController.groovy and UserActionService.groovy" />
+    <MESSAGE value="Fixes #44 :&#10;add configuration for adding different connecting word like in, or and etc, in Config.groovy&#10;Add changes about secondary title as a parent title and connecting words in related codes" />
+    <MESSAGE value="Fixes #44:&#10;resolve bug for single titles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -885,83 +868,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/emote/Title.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="24" selection-start="141" selection-end="149" vertical-scroll-proportion="-2.142857">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/emote/feed.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="42" selection-start="434" selection-end="434" vertical-scroll-proportion="-3.5106382">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/js/emotezen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="4" selection-start="3571" selection-end="3571" vertical-scroll-proportion="0.3317647" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-7-oracle/src.zip!/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="12" selection-start="6851" selection-end="6851" vertical-scroll-proportion="0.3316062" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/com/emote/PopularEmote.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="35" selection-start="112" selection-end="122" vertical-scroll-proportion="-0.46632123" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/TitleController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="33" selection-start="260" selection-end="267" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/com/emote/GroupByTitle.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="24" selection-start="157" selection-end="170" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="66" selection-start="326" selection-end="337" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/com/emote/TitleService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/UserActionController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="107" column="19" selection-start="7018" selection-end="7018" vertical-scroll-proportion="-4.96" />
@@ -969,28 +875,108 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/application.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="59" selection-start="6286" selection-end="6286" vertical-scroll-proportion="-7.0416665">
+        <state line="108" column="44" selection-start="5189" selection-end="5189" vertical-scroll-proportion="-12.666667">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/picture/show.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/emote/userFeed.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/emote/titlePage.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/emote/feed.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-tx/jars/spring-tx-3.1.4.RELEASE-sources.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="0" selection-start="4956" selection-end="4956" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-aop/jars/spring-aop-3.1.4.RELEASE-sources.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="0" selection-start="5985" selection-end="5985" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/org.springframework/spring-aop/jars/spring-aop-3.1.4.RELEASE-sources.jar!/org/springframework/aop/framework/Cglib2AopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="624" column="0" selection-start="21827" selection-end="21827" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/development/grails-2.2.1/lib/cglib/cglib/jars/cglib-2.2-sources.jar!/net/sf/cglib/proxy/MethodProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="190" column="0" selection-start="6912" selection-end="6912" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/com/emote/Emote.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="10" selection-start="258" selection-end="258" vertical-scroll-proportion="-0.65217394">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/emote/_emotesTemplate.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="-2.2340426">
+        <state line="21" column="39" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-0.31914893">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy">
+    <entry file="file://$USER_HOME$/.grails/2.2.1/projects/emote/plugins/resources-1.1.6/src/groovy/org/grails/plugin/resource/DevModeSanityFilter.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="309" selection-end="309" vertical-scroll-proportion="-5.2608695">
+        <state line="51" column="0" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.4772118">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/com/emote/EmoteService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="61" selection-start="4444" selection-end="4444" vertical-scroll-proportion="0.3324397">
+        <state line="176" column="0" selection-start="5958" selection-end="5958" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/emote/EmoteController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1600" selection-end="1600" vertical-scroll-proportion="-5.2608695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="40" selection-start="4714" selection-end="4714" vertical-scroll-proportion="0.54404145">
           <folding />
         </state>
       </provider>
