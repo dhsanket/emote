@@ -109,6 +109,7 @@ class EmoteController {
 		Emote.findAll().each{emote ->
 			log.info "$emote.title"
 			emote.populateKeywords();
+			log.info "$emote.keywords"
 			emote.save();
 			log.info "refactoring done for emote with title $emote.title"
 		}

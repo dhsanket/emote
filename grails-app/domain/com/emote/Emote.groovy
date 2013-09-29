@@ -40,15 +40,18 @@ class Emote {
 	Date creationTime = new Date()
 	
 	public populateKeywords() {
-		if (keywords==null) {keywords = []}
+		
 		def k = title.toLowerCase()
-		keywords.add(k)
+		k.split().each {token1 -> keywords.add(token1)}
+		
 		if (parentTitle != null) { 
 			def p = parentTitle.toLowerCase()
-			keywords.add(p)
-		}
+			p.split().each {token2 -> keywords.add(token2)}		
+			}
+		
 		def u = username.toLowerCase()
-		u.split().each {name -> keywords.add(u)}
+		u.split().each {token3 -> keywords.add(token3)}
+		
 		topics.each {topicText ->
 			keywords.add(topicText.toLowerCase())
 			}
