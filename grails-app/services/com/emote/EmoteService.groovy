@@ -64,11 +64,8 @@ class EmoteService {
 	Set<Emote> search(String searchTerm, int pageIndex){
 		log.info "searching for $searchTerm"
 		Set<Emote> results = []
-		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
-				eq("keywords", searchTerm)
-			order("creationTime", "desc")
-			arguments hint:["keywords":1]
-		}
+		def qresults = Emote.findAllByKeywords(searchTerm)
+		log.info "search results $qresults"
 		if (qresults != null) {results.addAll(qresults)}
 		return results
 		

@@ -40,6 +40,7 @@ class Emote {
 	Date creationTime = new Date()
 	
 	public populateKeywords() {
+		if (keywords==null) {keywords = []}
 		def k = title.toLowerCase()
 		keywords.add(k)
 		if (parentTitle != null) { 
