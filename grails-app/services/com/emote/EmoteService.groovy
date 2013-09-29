@@ -61,40 +61,11 @@ class EmoteService {
 		
 	}
 	
-/*	Set<Emote> search(String keyword, int pageIndex){
-		log.info "searching for $keyword"
-		Set<Emote> results = []
-		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
-		log.info "found emotes by title ${qresults}"
-		if (qresults != null) {results.addAll(qresults)}
-		return results
-	}
-	*/
-	
-/*	Set<Emote> search(String keyword, int pageIndex){
-		log.info "searching for $keyword"
-		Set<Emote> results = []
-		def qresults = Emote.findAllByTitleIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[title:1]] )
-		log.info "found emotes by title ${qresults}"
-		def eresults = Emote.findAllByUsernameIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[username:1]] )
-		log.info "found emotes by title ${eresults}"
-		def dresults = Emote.findAllByTopicsIlike("%"+keyword+"%", [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex], [hint:[topics:1]] )
-		if (qresults != null) {results.addAll(qresults)}
-		if (qresults != null) {results.addAll(eresults)}
-		if (qresults != null) {results.addAll(dresults)}
-		return results
-	}*/
-	
-	
 	Set<Emote> search(String searchTerm, int pageIndex){
 		log.info "searching for $searchTerm"
 		Set<Emote> results = []
 		def qresults = Emote.withCriteria (max: feedPageSize, offset: feedPageSize*pageIndex) {
-			or {
-				eq("title", searchTerm)
-				eq("username", searchTerm)
-				eq("topics", searchTerm)
-			} 
+				eq("keywords", searchTerm)
 			order("creationTime", "desc")
 			arguments hint:["keywords":1]
 		}
@@ -185,4 +156,7 @@ class EmoteService {
         }
         [mainTitle, connector, parentTitle]
     }
+	
+	
+	
 }

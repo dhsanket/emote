@@ -16,6 +16,7 @@ class Emote {
 		username index:true
 		title index:true
 		keywords index:true
+		compoundIndex topics:1, parentTitle:1, title:1, username:1  
 	}
 	
 	Date dateCreated
@@ -41,8 +42,12 @@ class Emote {
 	public populateKeywords() {
 		def k = title.toLowerCase()
 		keywords.add(k)
+		if (parentTitle != null) { 
+			def p = parentTitle.toLowerCase()
+			keywords.add(p)
+		}
 		def u = username.toLowerCase()
-		keywords.add(u)
+		u.split().each {name -> keywords.add(u)}
 		topics.each {topicText ->
 			keywords.add(topicText.toLowerCase())
 			}
