@@ -100,7 +100,6 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "search", [keyword:searchTerm])){
 			posts = emoteService.groupByTitle(emoteService.search(searchTerm, page-1), null, user.id)
 		}
-
 		flash.titles = posts
 		render view:'feed'
 	}
