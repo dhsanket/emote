@@ -82,12 +82,12 @@
       				<fbg:resources/>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,"script"));
-        </script>
+		<script>
+         var _gaq = [["_setAccount", "UA-43715253-1"], ["_trackPageview"]];
+         (function(d, t){var g = d.createElement(t), s = d.getElementsByTagName(t)[0]; g.async = 1;
+                 g.src = '//www.google-analytics.com/u/ga_debug.js';
+                 s.parentNode.insertBefore(g, s)}(document, "script"));    
+         </script>
         
         <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
