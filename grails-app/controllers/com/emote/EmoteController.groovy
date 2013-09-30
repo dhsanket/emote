@@ -100,23 +100,21 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "search", [keyword:searchTerm])){
 			posts = emoteService.groupByTitle(emoteService.search(searchTerm, page-1), null, user.id)
 		}
-		refactorEmoteEntityToStoreKeywords();
+
 		flash.titles = posts
 		render view:'feed'
 	}
 	
 	def refactorEmoteEntityToStoreKeywords(){
-			Emote.findAll().each{emote ->
-				log.info "$emote.title"
-				emote.populateKeywords();
-				log.info "$emote.keywords"
-				emote.save();
-				log.info "refactoring done for emote with title $emote.title"
-			}
+      Emote.findAll().each {emote ->
+		log.info "$emote.title"
+        emote.populateKeywords();
+        log.info "$emote.keywords"
+        emote.save();
+        log.info "refactoring done for emote with title $emote.title"
+	  	}
 	}
-	
-	
-	
+		
 	def singleTitle(){
 		User user = session.user
 		def emotes = emoteService.getSingleEmote(params.titleString);
