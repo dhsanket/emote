@@ -155,9 +155,10 @@ function emoteCreateButton(doNotResetForm) {
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title){
+function quick_emote(title,category){
 		
 		$('#obj-title').val(title);
+		$('#category').val(category);
 		emoteCreateButton(true);
 }
 
@@ -210,6 +211,7 @@ function emoteCreate() {
 //ajax submit createEmote form action
 function emoteSubmit() {
 
+	displayLoadingOverlay();
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);
@@ -237,6 +239,19 @@ function emoteSubmit() {
 		location.reload();
 	});
 }
+
+function displayLoadingOverlay()
+{
+	$("body").css("overflow","hidden");
+	$("body").css("position","fixed");
+	$("#loadingOverlay").width($(window).width());
+	$("#loadingOverlay").height($(window).height());
+	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)
+	$("#overlayMessage").css("left",($(window).width()/2)-($("#overlayMessage").width()/2))
+	$("#loadingOverlay").show();
+	$("#overlayMessage").show();
+}
+
 var favouriteSubmit = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',
@@ -253,6 +268,7 @@ var favouriteSubmit = function (id, title) {
     });
 
 };
+
 var removeFromFavourite = function (id, title) {
     var feedContents = $.ajax({
         type: 'POST',

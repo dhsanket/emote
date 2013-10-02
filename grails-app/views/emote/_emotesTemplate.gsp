@@ -6,8 +6,8 @@
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
 		<a href="/zen/${title.completeTitle}"><h3>${title.completeTitle}</h3></a>
-				<%--<h3><g:link controller="emote" action=followingUsers"getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
-		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
+				<%--<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
+		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
         

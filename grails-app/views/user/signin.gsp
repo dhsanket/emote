@@ -1,25 +1,16 @@
 <html>
     <head>
     <title>emote-app signin</title>
-    		<a href="https://plus.google.com/111094199736252097583" rel="publisher" />
-		<script type="text/javascript">
-			function facebookLogin() {
-				FB.getLoginStatus(function(response) {
-					if (response.status === 'connected') {
-						// logged in and connected user, redirect to feed
-						window.location ="${createLink(controller:'Emote', action:'feed')}";
-					}else{
-						window.location ="${createLink(controller:'user', action:'signin')}";			
-					}
-				});
-			}
-		</script>    
+  
     </head>
+    
     <body>
 		<div id="splash-container">
 		<div id="splash-logo">
 			<r:img uri="img/splash-logo.png" width="80%" style="text-align: center; margin:0 auto;" />
-			<span class="splash-description">Write a review in as little as one click & discover what interesting stuff your friends are doing!</span>
+			
+			<span class="splash-description"><p>Beta version</p>
+			emote-app is a new platform to express what you think and discover whether others agree with you!</span>
 		</div>
 		
 		<div id="splash-login">

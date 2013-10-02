@@ -119,10 +119,10 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
-	   root{
-		    info 'stdout'
-	   }
-	   
+     root{
+        info 'stdout'
+     }
+     
 }
 emote.error.retrieve.url=""
 emote.desktopBrowser.redirect.url=""

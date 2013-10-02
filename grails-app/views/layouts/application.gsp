@@ -37,17 +37,19 @@
         <meta name="msapplication-TileColor" content="#222222">
 
 		<a href="https://www.emote-app.com" rel="publisher" />
-		<%--<a href="https://plus.google.com/111094199736252097583" rel="publisher" /> --%>
+		<a href="https://plus.google.com/111094199736252097583" rel="publisher" />
 
 		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
 
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 		
 		<r:require modules="core"/>
-		<r:layoutResources/>		
-        
+		<r:layoutResources/>		        
         <g:layoutHead />
+        
     </head>
+    
+    
 	<body onload="${pageProperty(name:'body.onload')}" >
     <browser:choice>
         <browser:isMobile></browser:isMobile>
@@ -105,12 +107,12 @@
        				<fbg:resources/>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,"script"));
-        </script>
+		<script>
+         var _gaq = [["_setAccount", "UA-43715253-1"], ["_trackPageview"]];
+         (function(d, t){var g = d.createElement(t), s = d.getElementsByTagName(t)[0]; g.async = 1;
+                 g.src = '//www.google-analytics.com/u/ga_debug.js';
+                 s.parentNode.insertBefore(g, s)}(document, "script"));    
+         </script>
         
         <script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -133,6 +135,16 @@
 		        
 		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
-
+		
+		    <!-- Place this tag after the last share tag. -->
+    <script type="text/javascript">
+      window.___gcfg = {lang: 'en-GB'};
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+		
     </body>
 </html>

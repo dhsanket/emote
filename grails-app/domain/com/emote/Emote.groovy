@@ -1,20 +1,26 @@
 package com.emote
 
+import java.util.Date;
+import java.util.Set;
+
+
 class Emote {
 
 	static constraints = {
 		title blank:false
         parentTitle nullable: true
         connector nullable: true
-        expressionIdeas nullable:true
 	}
 	static mapping = {
 		topics index:true
 		username index:true
 		title index:true
 		keywords index:true
+		compoundIndex topics:1, parentTitle:1, title:1, username:1  
 	}
 	
+	Date dateCreated
+	Date lastUpdated
 	String id
 	String userId
 	String facebookId
@@ -31,17 +37,34 @@ class Emote {
 	// geo-location
 	String locationName = ""
 
-	//todo use joda time
+	//TODO use joda time
 	Date creationTime = new Date()
 	
 	public populateKeywords() {
-		def k = title.toLowerCase()
-		keywords.add(k)
-		def u = username.toLowerCase()
-		keywords.add(u)
+		keywords = []
+		if (title != null && title.size() > 0) { 
+			def k = title.toLowerCase()
+			keywords.add(k)
+			k.split().each {token1 -> keywords.add(token1)}
+		}
+		
+		if (parentTitle != null && parentTitle.size() > 0) { 
+			def p = parentTitle.toLowerCase()
+			keywords.add(p)
+			p.split().each {token2 -> keywords.add(token2)}		
+			}
+		
+		if (username != null && username.size() > 0) { 
+			def u = username.toLowerCase()
+			keywords.add(u)
+			u.split().each {token3 -> keywords.add(token3)}
+		}
+		
+		if (topics != null && topics.size() > 0) {
 		topics.each {topicText ->
 			keywords.add(topicText.toLowerCase())
 			}
+		}
 	}
 	
 	

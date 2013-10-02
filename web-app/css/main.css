@@ -1493,3 +1493,28 @@ font-weight: bold;
     width:100%;
 
 }*/
+
+/* Styles for loading overlay */
+#loadingOverlay {
+	display:none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #000;
+	opacity: 0.84;
+	z-index: 1000;
+}
+
+#overlayMessage {
+	background: #fff url('../img/loader-maps.gif') no-repeat 20px 10px;
+	padding: 10px;
+	text-align: center;
+	width: 87px;
+	height: 63px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	position: absolute;
+	z-index: 11000;
+	display: none;
+	opacity: 0.9;
+}
