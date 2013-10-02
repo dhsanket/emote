@@ -1,14 +1,12 @@
 package com.emote
 
-import java.util.Set;
-
-
 class Emote {
 
 	static constraints = {
 		title blank:false
         parentTitle nullable: true
         connector nullable: true
+        expressionIdeas nullable:true
 	}
 	static mapping = {
 		topics index:true
@@ -23,12 +21,13 @@ class Emote {
 	User creator
 	String username
 	Set<String> topics = []
-	Set<String> expressions = []
+//	Set<String> expressions = []
 	Set<String> keywords = []
 	String title
     String parentTitle
     String connector
 	Set<String> photos = []
+    Set<ExpressionIdea> expressionIdeas = []
 	// geo-location
 	String locationName = ""
 
@@ -72,4 +71,5 @@ class Emote {
     String getCompleteTitle() {
         return title + (connector?" ${connector} ":"") + (parentTitle?:"")
     }
+    static embedded = ['expressionIdeas']
 }

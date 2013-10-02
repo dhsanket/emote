@@ -69,8 +69,9 @@ public class GroupByTitle implements Comparable  {
 
 	def addPopularEntry(Emote emote){
 		
-		emote.expressions.each { exp ->
-			PopularEmote pe = new PopularEmote(exp)
+		emote.expressionIdeas.each { exp ->
+			PopularEmote pe = new PopularEmote(exp.text)
+            pe.goodOrBad = exp.goodOrBad
 			if(popEmotes.contains(pe)){
 				PopularEmote e = popEmotes.get(popEmotes.indexOf(pe))
 				e.incrementCount();
