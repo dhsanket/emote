@@ -61,12 +61,10 @@
 					<g:each in="${title.followingUsers}" var="user">
 						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 							<ul>
-								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
-									<g:each in="${emote.expressions}" var="exp">
-											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
-											</g:if>
-									</g:each>
+								<g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
+									<g:if test="${(exp.trim().length()>0)}">
+										<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
+									</g:if>
 								</g:each>
 							</ul>
 						</li>
@@ -74,12 +72,10 @@
 					<g:each in="${title.users}" var="user">
 						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 							<ul>
-								<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
-									<g:each in="${emote.expressions}" var="exp">
-											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )">${exp}</a></li>
-											</g:if>
-									</g:each>
+								<g:each in="${title.getUserEmotes(user.uid).expressions}" var="exp">
+									<g:if test="${(exp.trim().length()>0)}">
+										<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )">${exp}</a></li>
+									</g:if>
 								</g:each>
 							</ul>
 						</li>
