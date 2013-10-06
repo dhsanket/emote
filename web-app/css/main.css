@@ -1506,7 +1506,7 @@ font-weight: bold;
 }
 
 #overlayMessage {
-	background: #fff url('../img/loader-maps.gif') no-repeat 20px 10px;
+	background: #fff url('/img/loader-maps.gif') no-repeat 20px 10px;
 	padding: 10px;
 	text-align: center;
 	width: 87px;
@@ -1538,12 +1538,12 @@ font-weight: bold;
 }
 #landingContent {
     height: 400px;
-    background: transparent url("../img/landingPage/circle3.png") -80px -170px no-repeat;
+    background: transparent url("/img/landingPage/circle3.png") -80px -170px no-repeat;
     background-size: 120%;
     margin-bottom: 5px;
 }
 .landingBody {
-	background: transparent url("../img/landingPage/sky_bg-1.jpg") 0 0 no-repeat;
+	background: transparent url("/img/landingPage/sky_bg-1.jpg") 0 0 no-repeat;
 }
 #landingFooter ul {
 	float: left;
