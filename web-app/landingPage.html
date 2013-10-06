@@ -13,6 +13,7 @@
 	    
 		<link href="css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
 		
 		<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 
@@ -47,58 +48,47 @@
 </head>
 
 
-<body>
-    <style>
-    #landingPage{
-        position: absolute;
-        background-image: url('/Users/Sanks/Dropbox/1KeyThemes1/emote/Documents/4]Images/emote marketing Images/emote Marketing content/sky_bg-1.jpg');
-        background-size: 100% 430px;
-        background-repeat:no-repeat;
-        height: 100%;
-        width: 100%;
-        overflow-x: hidden;
-    }
-    #world{
-        position:absolute;
-        background-image: url('/Users/Sanks/Dropbox/1KeyThemes1/emote/Documents/4]Images/emote marketing Images/emote Marketing content/circle3.png');
-        background-size: 800px 800px;
-    background-repeat:no-repeat;
-    top: -100px;
-    left: 170px;
-    height: 530px;
-    width: 5000px;
-    }
-    #Google{
-        height: 300px;
-        width: 300px;
-        
-    }
-    </style>
-    <div id="landingPage">
- 
-              <!-- Place this tag where you want the share button to render. -->
-    <div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
-    <p />
-              <a href="https://plus.google.com/111094199736252097583" rel="publisher">Google+</a>
-    <div id="world">
+<body class="landingBody">
 
-    </div>       
 
-    <div id="Google">
-    <!-- Place this tag where you want the widget to render. -->
-    <div class="g-page" data-width="273" data-href="//plus.google.com/111094199736252097583" data-layout="landscape" data-showcoverphoto="false" data-rel="publisher"></div>
-    </div>
-    </div>
-
-    <!-- Place this tag after the last share tag. -->
-    <script type="text/javascript">
-      window.___gcfg = {lang: 'en-GB'};
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-
+	<div id="landingLogo"><img src="../img/landingPage/landingLogo.jpg"/></div>
+	<div id="landingContainer">
+		<div id="landingContent">
+			
+		</div>
+		<div id="landingFooter">
+			<ul>
+				<li>
+					<div id="fb-root"></div>
+					<script>(function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));</script>				
+					<div class="fb-like" data-href="https://www.emote-app.com" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="true"></div>				
+				</li>
+				<li>
+			        <!-- Place this tag where you want the share button to render. -->
+			    	<div class="g-plus" data-action="share" data-size="small" data-annotation="none"></div>
+			    	<!-- Place this tag after the last share tag. -->
+			    	<script type="text/javascript">
+			      		window.___gcfg = {lang: 'en-GB'};
+			      		(function() {
+			        		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			        		po.src = 'https://apis.google.com/js/plusone.js';
+			        		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			      		})();
+			    	</script>	
+				</li>
+			</ul>
+			<div id="landingLogin">
+				<a href="https://www.facebook.com/dialog/oauth?redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&amp;client_id=498699006889199&amp;scope=email&amp;state=3a0f51b6909195ddf2e6c885898f33e6" onclick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><img src="/static/CnWCagyeEk6A7lvu2LBooHsn0gJ9t5xOP1YJluGUn7W.png"></a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div id="landingDisclaimer">emote-app will not publish any content to your facebook without your explicit permission. By signing in with Facebook, you are agreeing to the <a href="/Terms.html">Terms of Service</a> and <a href="/Privacy.html">Privacy Policy</a></div>		
+	</div>
 </body>
 </html>

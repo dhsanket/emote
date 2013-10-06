@@ -45,8 +45,7 @@
  </div>
  <g:render template="/common/img_selection" />
  </form>
- <div id="loadingOverlay"></div>
- <div id="overlayMessage">&nbsp;</div>
+
 
 
 

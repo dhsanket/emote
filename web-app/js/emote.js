@@ -242,8 +242,6 @@ function emoteSubmit() {
 
 function displayLoadingOverlay()
 {
-	$("body").css("overflow","hidden");
-	$("body").css("position","fixed");
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
 	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)
