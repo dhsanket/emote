@@ -14,7 +14,7 @@
 		</div>
 		
 		<div id="splash-login">
-			<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'emote', action:'feed', absolute:true))}"
+			<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
 			onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><r:img uri= "img/fb-login.png" width="100%" /></a>
 			<span class="splash-disclaimer">
 				emote-app will not publish any content to your facebook without your explicit permission. </br> 
