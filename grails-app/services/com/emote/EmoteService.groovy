@@ -19,7 +19,7 @@ class EmoteService {
 			)
 		
 		
-		def nonEmptyExpression = []
+		LinkedHashSet nonEmptyExpression = new LinkedHashSet()
 		emote.expressions.each{ exp ->
 			if(exp.trim().length()> 0){
 				nonEmptyExpression.add(exp)
@@ -28,7 +28,6 @@ class EmoteService {
 		emote.expressions = nonEmptyExpression
 		
 		emote.populateKeywords()
-			
 		emote.save(validate: true)
 		
 		// save title if does not exist else update time
@@ -92,8 +91,6 @@ class EmoteService {
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
 		}
-		log.info("emotes following usees $followingUsers, + $currentUserId")
-		
 		emotes.each {emote ->
 			boolean canShow = false
 			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||

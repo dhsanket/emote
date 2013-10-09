@@ -50,11 +50,12 @@ class EmoteController {
 				emote.scaledImgWidth, emote.scaledImgHeight)
 	
 		}
-		
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 			session.user.followingUsers , session.user.id)
-		render(template:"emotesTemplate" , model:[titles: titles])
+		flash.titles = titles
+		render view:'feed'
+
 	}
 	
 	def feed(){

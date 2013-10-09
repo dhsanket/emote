@@ -211,6 +211,7 @@ function emoteCreate() {
 //ajax submit createEmote form action
 function emoteSubmit() {
 
+	displayLoadingOverlay();
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);
@@ -239,9 +240,15 @@ function emoteSubmit() {
 	});
 }
 
-
-
-
+function displayLoadingOverlay()
+{
+	$("#loadingOverlay").width($(window).width());
+	$("#loadingOverlay").height($(window).height());
+	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)
+	$("#overlayMessage").css("left",($(window).width()/2)-($("#overlayMessage").width()/2))
+	$("#loadingOverlay").show();
+	$("#overlayMessage").show();
+}
 
 var favouriteSubmit = function (id, title) {
     var feedContents = $.ajax({

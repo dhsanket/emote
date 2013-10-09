@@ -22,7 +22,7 @@ html,
 body {
 	overflow-x: hidden !important;
 	height:100%;
-	background:#181818;
+	background:#424242;
 }
 
 body {
@@ -171,14 +171,21 @@ header {
 	} */
 	
 	.quickEmote {
-				background:#FBB450;
+			
 				border:none;
 				border-radius:2px;
 				display:inline-block;
 				vertical-align: middle;
-				margin-top: 10px;
-				margin-left: 4px;
+				margin-top: 5px;
+				margin-right: 4px;
 				padding: 3px;
+				float: right;
+	}
+	
+	.icon-edit {
+		background: transparent url('/img/re-emote.png') no-repeat;
+		height: 21px;
+		width: 21px;
 	}
 	
 	header h1#logo {
@@ -208,7 +215,7 @@ header {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		padding:6px 4px;
+		padding:9px 9px;
 		/*-webkit-transition: all 0.5s ease-in-out;
 		-moz-transition: all 0.5s ease-in-out;
 		-ms-transition: all 0.5s ease-in-out;
@@ -501,11 +508,11 @@ color:#FFFFFF;
 		button{
 			width: 42px;
 			height: 42px;
-			border-radius: 6px;
+			
 			margin-bottom:2px;
-			background: #333333;
-			border-color: #111111;
-			color: #999999;
+			background: transparent;
+			border: none;
+			
 		}
 		
 		/* add image Styling */
@@ -1070,7 +1077,7 @@ textarea[contenteditable] {
 /* Specify Swiper's Size: */
 .swiper-container, .swiper-slide {
 	width: 100%;
-	height: 200px;
+	height: 165px;
 	text-align:center;
 }
 
@@ -1113,31 +1120,91 @@ textarea[contenteditable] {
 /* Emote V2 Styling */
 .emote-v2 {
 	width:100%;
-	background:#DDDDDD;
+	
 	
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
 	border-radius:8px;
 	overflow:hidden;
 	margin-bottom:16px;
+	
+	-webkit-box-shadow: 0px 0px 16px 0px #000;
+	-moz-box-shadow: 0px 0px 16px 0px #000;
+	box-shadow: 0px 0px 16px 0px #000;	
+	border: 1px solid #181818;
+	
 }
 
 	/* Emote Header */
 	.emote-v2-header {
-		background:#FFFFFF;
-		height:40px;
+		background:#E2E1DF url('/img/top_gradient.gif') repeat-x;
+		height:43px;
 	}
 	
 		.emote-v2-header h3 {
 			float:left;
 			font-size:18px;
 			line-height:40px;
-			margin:0;
-			padding:0;
-			padding-left:20px;
+			margin:-5px 0px 0px 10px;
 		}
 		
-		.emote-v2-header .emote-v2-actions {
+		.emote-v2-header .header-container {
+			float: left;
+			width: 80%;
+		}
+		
+		.emote-v2-header .header-swiper {
+			overflow: hidden;
+		}
+		
+		.emote-v2-header .header-swiper h3 {
+			width: 1200px;
+		}	
+		
+		.swipe-location {
+			display: inline;
+			float: left;
+			border-bottom: 1px solid #fff;
+			width: 100%;
+			margin: 0px 0px 0px 0px !important;
+			padding: 0px !important;
+		}
+		
+		.swipe-location li {
+			float: left;
+			padding: 0px;
+			margin: 0px;
+			height: 2px;
+			width: 33%;
+			background: #A7A29F url('/img/prog_separator.gif') 0 0 no-repeat;
+		}	
+		
+		.swipe-location .screen1 {
+			background: red;
+			width: 34%
+		}
+		
+		.emote-v2-header .header-comments {
+		display: inline;
+		float: left;
+		margin: 0px;
+		padding: 0px;
+		margin-top: -15px;
+		}
+		.emote-v2-header .header-comments li {
+			line-style: none;
+			font-size: 11px;
+			color: #7A7A7A;
+			text-shadow: 0px 1px 0px #ffffff;
+			float: left;
+			margin: 0px 0px 0px 10px;
+		}
+		
+		.emote-v2-footer {
+background: transparent url('/img/bottom_gradient.gif') repeat-x;		
+		}
+		
+		.emote-v2-footer .emote-v2-actions {
 			float:right;
 			list-style:none;
 			
@@ -1146,18 +1213,39 @@ textarea[contenteditable] {
 
 		}
 		
-			.emote-v2-header .emote-v2-actions li {
+		.emote-v2-footer .emote-v2-actions-left {
+			float:left;
+			list-style:none;
+			
+			margin:0;
+			padding:0;
+
+		}		
+		
+		.emote-v2-actions-last {
+			padding: 10px 10px 0px 10px !important;
+			height: 34px;
+		}
+		
+		.emote-v2-actions-first {
+			background: none !important;
+		}		
+		
+			.emote-v2-footer .emote-v2-actions li {
 				float:left;
-				margin:3px;
+				margin:0px;
+				background: transparent url('/img/separator.gif') 0 0 no-repeat;
+				padding: 0px 10px 0px 10px;
 			}
 			
-			.emote-v2-header .emote-v2-actions li button {
-				background:#FBB450;
+			.emote-v2-footer .emote-v2-actions li button {
+				background:transparent;
 				border:none;
-				border-radius: 1 px;
+				
 				padding: 0px; /*3px 6px;*/
-				height: 20px;
+				height: 42px;
 				width: 20px;
+				
 			}
 	
 	.emote-v2-body {
@@ -1493,3 +1581,79 @@ font-weight: bold;
     width:100%;
 
 }*/
+
+/* Styles for loading overlay */
+#loadingOverlay {
+	display:none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #000;
+	opacity: 0.84;
+	z-index: 1000;
+}
+
+#overlayMessage {
+	background: #fff url('/img/loader-maps.gif') no-repeat 20px 10px;
+	padding: 10px;
+	text-align: center;
+	width: 87px;
+	height: 63px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	position: absolute;
+	z-index: 11000;
+	display: none;
+	opacity: 0.9;
+}
+
+/* Landing page styles */
+#landingContainer {
+	margin: auto;
+	width: 600px;
+    height: 400px;	
+ 
+}
+#landingDisclaimer {
+	width: 100%;
+	text-align:center;
+	font-size: 12px;
+	margin-top: 20px;
+}
+#landingDisclaimer a {
+	text-decoration: underline;
+	
+}
+#landingContent {
+    height: 400px;
+    background: transparent url("/img/landingPage/circle3.png") -80px -170px no-repeat;
+    background-size: 120%;
+    margin-bottom: 5px;
+}
+.landingBody {
+	background: transparent url("/img/landingPage/sky_bg-1.jpg") 0 0 no-repeat;
+}
+#landingFooter ul {
+	float: left;
+	margin: 2px 0px 0px 0px;
+}
+#landingFooter ul li{
+	display: inline;
+}
+#landingLogo{
+	border-bottom: 4px solid #8B0001;
+	text-align: center;
+	overflow: hidden;
+	width: 100%;	
+	margin: auto;
+	padding-top: 20px;
+}
+#landingLogo img {
+	width: 85px;
+}
+
+#landingLogin {
+	float: right;
+	width: 140px;
+	
+}
