@@ -5,8 +5,9 @@ class PopularEmote implements Comparable {
 	private int count = 1;
 	
 	private final String expression;
+    String goodOrBad
 	
-	
+
 	public PopularEmote(String exp){
 		expression= exp;
 	}
@@ -48,9 +49,4 @@ class PopularEmote implements Comparable {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-
 }
