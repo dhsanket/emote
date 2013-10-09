@@ -27,12 +27,13 @@ class Emote {
 	User creator
 	String username
 	Set<String> topics = []
-	Set<String> expressions = []
+//	Set<String> expressions = []
 	Set<String> keywords = []
 	String title
     String parentTitle
     String connector
 	Set<String> photos = []
+    Set<ExpressionIdea> expressionIdeas = []
 	// geo-location
 	String locationName = ""
 
@@ -92,4 +93,5 @@ class Emote {
     String getCompleteTitle() {
         return title + (connector?" ${connector} ":"") + (parentTitle?:"")
     }
+    static embedded = ['expressionIdeas']
 }

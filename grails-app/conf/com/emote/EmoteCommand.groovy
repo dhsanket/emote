@@ -14,9 +14,9 @@ class EmoteCommand {
 	
 	String category;
 	String expression;
+    String goodOrBad
 	String title;
 	MultipartFile photo;
-	
 	// crop location
 	int topx
 	int topy
@@ -32,7 +32,22 @@ class EmoteCommand {
 		return expression.split(",")
 	}
 
-	
+    def getGoodOrBads(){
+        def goodOrBad = populateTempGoodOrBads() // todo this line should be removed after we change the UI to send proper data
+        goodOrBad.split(",")
+    }
+
+    // todo this line should be removed after we change the UI to send proper data
+	def populateTempGoodOrBads ={
+        String fake =""
+        expressions.each{
+            fake = fake +"unsure,"
+        }
+        if(fake.length()>0){
+            fake= fake.substring(0, fake.length())
+        }
+        fake
+    }
 	
 
 	String getCategory(){

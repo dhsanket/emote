@@ -13,9 +13,11 @@ class EmoteService {
         String emoteTitle = emoteCmd.title
         String connector
         (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
+        Set<ExpressionIdea> ideas = new HashSet<>()
+        prepareExpressionIdeas(emoteCmd, ideas)
 		Emote emote = new Emote(
 			userId:user.id, creator:user, username:username, topics:emoteCmd.category, parentTitle: parentTitle,
-			connector: connector , expressions:emoteCmd.expressions, title:emoteTitle, facebookId:user.facebookId
+			connector: connector , expressionIdeas: ideas, title:emoteTitle, facebookId:user.facebookId
 			)
 		
 		
@@ -31,21 +33,11 @@ class EmoteService {
 		emote.save(validate: true)
 		
 		// save title if does not exist else update time
-		Title title = Title.findByTextIlike(emoteTitle)
-		if(title == null){
-			title = new Title(text:emoteTitle, category: emote.topics)
-			log.info "Saving title ${title}"
-		}else{
-			title.refreshUpdateTime()
-			title.addCategory(emote.topics)
-		}
-		if(pic != null && pic.content.length > 0){
-			pic.save(flush:true)
-			log.info("saved picture $pic.id for title $title.text of length $pic.content.length")
-			if(pic.id != null)
-				title.addPicture(pic.id)
-		}
-		title.save(validate:true)
+        saveTitle(emoteTitle, emote, pic)
+        if(parentTitle){
+            saveTitle(parentTitle, emote, pic)
+        }
+
 		
 		
 		// save topics
@@ -59,6 +51,34 @@ class EmoteService {
 		
 		
 	}
+
+    def saveTitle(String emoteTitle, Emote emote, Picture pic) {
+        Title title = Title.findByTextIlike(emoteTitle)
+        if (title == null) {
+            title = new Title(text: emoteTitle, category: emote.topics)
+            log.info "Saving title ${title}"
+        } else {
+            title.refreshUpdateTime()
+            title.addCategory(emote.topics)
+        }
+        if (pic != null && pic.content.length > 0) {
+            pic.save(flush: true)
+            log.info("saved picture $pic.id for title $title.text of length $pic.content.length")
+            if (pic.id != null)
+                title.addPicture(pic.id)
+        }
+        title.save(validate: true)
+    }
+
+    def prepareExpressionIdeas(emote, ideas) {
+        def expressions = emote.expressions
+        def goodOrBads = emote.goodOrBads
+        expressions.eachWithIndex{ it, index ->
+            ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
+        }
+        ideas
+    }
+
 	
 	Set<Emote> search(String searchTerm, int pageIndex){
 		log.info "searching for $searchTerm"
