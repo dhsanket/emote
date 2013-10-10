@@ -22,7 +22,7 @@ html,
 body {
 	overflow-x: hidden !important;
 	height:100%;
-	background:#424242;
+	background:#D1D1D1;
 }
 
 body {
@@ -88,14 +88,14 @@ header {
 	left:0;
 	top:0;
 	
-	background: rgb(161,6,30); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(161,6,30,1) 0%, rgba(133,4,24,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,6,30,1)), color-stop(100%,rgba(133,4,24,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(161,6,30,1) 0%,rgba(133,4,24,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1061e', endColorstr='#850418',GradientType=0 ); /* IE6-9 */
+	background: rgb(173,5,33); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(173,5,33,1) 0%, rgba(121,4,22,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(173,5,33,1)), color-stop(100%,rgba(121,4,22,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(173,5,33,1) 0%,rgba(121,4,22,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(173,5,33,1) 0%,rgba(121,4,22,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(173,5,33,1) 0%,rgba(121,4,22,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(173,5,33,1) 0%,rgba(121,4,22,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#AD0521', endColorstr='#790416',GradientType=0 ); /* IE6-9 */
 	
 /*	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
@@ -122,14 +122,14 @@ header {
 		padding:9px;
 		display:block;
 
-		background: rgb(190,16,45); /* Old browsers */
-		background: -moz-linear-gradient(top,  rgba(190,16,45,0.5) 0%, rgba(153,0,21,0.5) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190,16,45,0.5)), color-stop(100%,rgba(153,0,21,0.5))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(190,16,45,0.5) 0%,rgba(153,0,21,0.5) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be102d', endColorstr='#990015',GradientType=0 ); /* IE6-9 */
+		background: rgb(220,20,70); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(226,22,74,0.5) 0%, rgba(168,0,48,0.5) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,22,74,0.5)), color-stop(100%,rgba(168,0,48,0.5))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(226,22,74,0.5) 0%,rgba(168,0,48,0.5) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(226,22,74,0.5) 0%,rgba(168,0,48,0.5) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(226,22,74,0.5) 0%,rgba(168,0,48,0.5) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(226,22,74,0.5) 0%,rgba(168,0,48,0.5) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2164A', endColorstr='#A80030',GradientType=0 ); /* IE6-9 */
 	}
 	
 	header .header-icon img {
@@ -186,6 +186,10 @@ header {
 		background: transparent url('/img/re-emote.png') no-repeat;
 		height: 21px;
 		width: 21px;
+	}
+	
+	.icon-edit-white {
+		background: transparent url('/img/re-emote-white.png') no-repeat;
 	}
 	
 	header h1#logo {
@@ -1122,16 +1126,13 @@ textarea[contenteditable] {
 	width:100%;
 	
 	
-	-webkit-border-radius:8px;
-	-moz-border-radius:8px;
-	border-radius:8px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
 	overflow:hidden;
-	margin-bottom:16px;
+	margin-bottom:9px;
 	
-	-webkit-box-shadow: 0px 0px 16px 0px #000;
-	-moz-box-shadow: 0px 0px 16px 0px #000;
-	box-shadow: 0px 0px 16px 0px #000;	
-	border: 1px solid #181818;
+	border: 1px solid #B6B6B6;
 	
 }
 
@@ -1180,7 +1181,7 @@ textarea[contenteditable] {
 		}	
 		
 		.swipe-location .screen1 {
-			background: red;
+			background: #97041B;
 			width: 34%
 		}
 		
