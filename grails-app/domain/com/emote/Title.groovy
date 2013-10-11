@@ -39,6 +39,9 @@ class Title {
 	}
 	
 	public addPicture(String picId){
+		if(pictures == null)
+			pictures = []
+			
 		pictures.add(picId)
 	}
 	

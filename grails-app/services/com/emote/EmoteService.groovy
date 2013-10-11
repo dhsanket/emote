@@ -13,21 +13,12 @@ class EmoteService {
         String emoteTitle = emoteCmd.title
         String connector
         (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
-        Set<ExpressionIdea> ideas = new HashSet<>()
+        LinkedHashSet<ExpressionIdea> ideas = new LinkedHashSet<>()
         prepareExpressionIdeas(emoteCmd, ideas)
 		Emote emote = new Emote(
 			userId:user.id, creator:user, username:username, topics:emoteCmd.category, parentTitle: parentTitle,
 			connector: connector , expressionIdeas: ideas, title:emoteTitle, facebookId:user.facebookId
 			)
-		
-		
-		LinkedHashSet nonEmptyExpression = new LinkedHashSet()
-		emote.expressions.each{ exp ->
-			if(exp.trim().length()> 0){
-				nonEmptyExpression.add(exp)
-			}
-		}
-		emote.expressions = nonEmptyExpression
 		
 		emote.populateKeywords()
 		emote.save(validate: true)
@@ -37,8 +28,6 @@ class EmoteService {
         if(parentTitle){
             saveTitle(parentTitle, emote, pic)
         }
-
-		
 		
 		// save topics
 		emote.topics.each {topicText ->
@@ -74,9 +63,11 @@ class EmoteService {
         def expressions = emote.expressions
         def goodOrBads = emote.goodOrBads
         expressions.eachWithIndex{ it, index ->
-            ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
+			if(it != null && it.trim().size()> 0){
+				log.info("adding expression"+it)
+				ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
+			}
         }
-        ideas
     }
 
 	

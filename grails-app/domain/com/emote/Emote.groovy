@@ -16,7 +16,6 @@ class Emote {
 		username index:true
 		title index:true
 		keywords index:true
-		compoundIndex topics:1, parentTitle:1, title:1, username:1  
 	}
 	
 	Date dateCreated
@@ -33,7 +32,7 @@ class Emote {
     String parentTitle
     String connector
 	Set<String> photos = []
-    Set<ExpressionIdea> expressionIdeas = []
+    List<ExpressionIdea> expressionIdeas
 	// geo-location
 	String locationName = ""
 
