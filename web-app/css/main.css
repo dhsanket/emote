@@ -399,7 +399,7 @@ color:#FFFFFF;
 		}
 		
 		#emote-creation-container {
-			padding:48px 4px 0 4px;
+			padding:45px 0px 0px 0px;
 			height:0;
 			overflow-y:hidden;
 			position:relative;
@@ -443,40 +443,130 @@ color:#FFFFFF;
 		}
 		
 		#emote-creation-container .emote-create-content {
-			background:#FFFFFF;
+			background:#DEDEDE;
 			width:100%;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-			border-radius: 8px;
 			overflow:hidden;
 		}
 		
 		#emote-creation-container .emote-create-content input {
 			display:block;
-			margin:0;
-			width:100%;
+			margin:8px auto 0px auto;
+			width:100% !important;
 			-webkit-box-sizing: border-box
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
-			height:50px;
+			height:38px;
 			border:none;
 			outline:none;
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
-			box-shadow: none;
-			-webkit-border-radius: 0;
-			-moz-border-radius: 0;
-			border-radius: 0;
-			font-size:16px;
-			padding:20px;
+			box-shadow: inset 0px 0px 6px -3px #000;
+			-webkit-border-radius: 4;
+			-moz-border-radius: 4;
+			border-radius: 4;
+			font-size:14px;
+			padding:16px 16px 16px 40px;
 			font-weight:normal;
+			border: 1px solid #C9C9C9; 
+			background-color: #fff;
 		}
 		
+		#create-emote-field-container {
+			width: 92%;
+			margin: auto;
+		}
+		
+		.button-on {
+			box-shadow: 0px 0px 10px 3px #989898;
+			-webkit-box-shadow: 0px -1px 1px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,0.7);
+			background: -moz-linear-gradient(top, rgba(212,212,212,1) 0%, rgba(228,228,228,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,212,212,1)), color-stop(100%,rgba(228,228,228,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* IE10+ */
+			background: linear-gradient(#d4d4d4, #e4e4e4); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d4d400', endColorstr='#e4e4e400',GradientType=0 ); /* IE6-9 */			
+			font-size: 12px;
+			border-radius: 4px;
+			margin: 10px 0px 5px 0px;
+			border: 1px solid #d3d3d3;
+			border-bottom: 1px solid #afafaf;
+			color: #666;
+			height: 35px;
+		}
+		
+		.button-off {
+			box-shadow: 0px 0px 10px 3px #989898;
+			-webkit-box-shadow: 0px 1px 1px rgba(000,000,000,0.2), inset 0px 0px 1px rgba(255,255,255,0.7);
+			background: -moz-linear-gradient(top, rgba(212,212,212,1) 0%, rgba(228,228,228,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(212,212,212,1)), color-stop(100%,rgba(228,228,228,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(212,212,212,1) 0%,rgba(228,228,228,0) 100%); /* IE10+ */
+			background: linear-gradient(#fff, #ddd); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff00', endColorstr='#dddddd00',GradientType=0 ); /* IE6-9 */			
+			font-size: 12px;
+			border-radius: 4px;
+			margin: 10px 0px 5px 0px;
+			border: 1px solid #d3d3d3;
+			border-bottom: 1px solid #afafaf;
+			color: #666;
+			height: 35px;
+		}
+		
+		#doing-now {
+			width: 80px;
+					
+		}
+		#doing-now span {
+			background: transparent url("/img/hash.png") 0 0 no-repeat;
+			width: 100%;
+		}
+		
+		#pick-a-category {
+			width: 120px;
+		}
+		#pick-a-category span {
+			background: transparent url("/img/hash.png") 0 0 no-repeat;
+		}
+		
+		#post-emote {
+			width: 120px;
+		}
+		#post-emote span {
+			background: transparent url("/img/hash.png") 0 0 no-repeat;
+		}
+		
+		#share-emote {
+			width: 120px;
+		}
+		#share-emote span {
+			background: transparent url("/img/hash.png") 0 0 no-repeat;
+		}
+		
+		#obj-title {
+			background: url('/img/hash.png') 12px 8px no-repeat;
+			margin-top: 20px !important;
+		}
+		
+		#obj-title-location {
+			background: url('/img/location.png') 12px 8px no-repeat;
+		}
+		
+		#tag_tag {
+			background: url('/img/emote-input.png') 10px 8px no-repeat;
+			padding-left: 20px;
+		}
+		
+		#tag_addTag {
+			width: 100%;
+		}
+			
 		#emote-creation-container .emote-create-content input.emote-topic-input {
-			border-bottom:1px solid #EEEEEE;
+			/*border-bottom:1px solid #EEEEEE;*/
 			font-weight:normal;
 		}
 		
@@ -564,14 +654,14 @@ color:#FFFFFF;
 		
 		
 		/* Tagging CSS */
-		div.tagsinput { background: #FFF;  width:350px; height:80px; overflow-y: auto;}
+		div.tagsinput { background: transparent;  overflow-y: auto;}
 		div.tagsinput span.tag {margin-top:7px;margin-left:7px; font-weight:bold; -moz-border-radius:6px; -webkit-border-radius:6px; display: block; float: left; padding: 7px; text-decoration:none; background: #e8c500; color: #FFFFFF;font-family: helvetica;  font-size:15px;}
 		div.tagsinput span.tag a { font-weight: bold; color: #FFFFFF; text-decoration:none; font-size: 16px;  } 
 		div.tagsinput input { width:150px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; background: transparent; color: #CCC; outline:0px; font-weight:normal;border-left:1px solid #CCCCCC }
 		div.tagsinput div { display:block; float: left; } 
 		.tags_clear { clear: both; width: 100%; height: 0px; }
 		.not_valid {  } 
-		#tag_tag { width:600px !important; }
+		
 		
 		#obj-title-suggestion .ui-autocomplete {
 			padding:0 20px; 

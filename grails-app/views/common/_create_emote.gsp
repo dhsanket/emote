@@ -12,9 +12,18 @@
 			<input type="hidden" name="scaledImgWidth" value="800">
 			<input type="hidden" name="scaledImgHeight" value="800">
 			<input type="hidden" name="webSearchImageURL" value="">
-			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
-			<div id="obj-title-suggestion"></div>
-			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
+			<div id="create-emote-field-container">
+				<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
+				<input required type="text" id="obj-title-location" class="emote-topic-input" maxlength="50" placeholder="" name="location" />
+				<div id="obj-title-suggestion"></div>
+				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
+				<button class="button-on" id="doing-now" type="input" value="Doing now"><span>Doing now</span></button>
+				<button class="button-off" id="pick-a-category" type="input" value="Pick a category"><span>Pick a category</span></button>
+				<button class="button-off" id="share-emote" type="input" value="Share"><span>Share</span></button>
+				<button class="button-off" id="post-emote" type="input" value="Post"><span>Post</span></button>
+			</div>
+			
+			
 			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>
 			
 <%--            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >--%>
