@@ -1422,10 +1422,31 @@ border-bottom-left-radius: 8px;
 		transition: 1s ease-in-out;	
 }
 
+
 #signinHeader
 {
 	display: none;
 }
+
+#signinHeader_emote{
+		position: fixed;
+		z-index: 10;
+		top: 44px;
+		height: 30px;
+		width:100%;
+		display:block;
+		padding-top: 20px;
+		text-align:center;
+		font-size:14px;
+		color:#FFFFFF;
+		background:#272727;
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+		-ms-transition: 1s ease-in-out;
+		-o-transition: 1s ease-in-out;
+		transition: 1s ease-in-out;	
+}
+
 
 
 /* prev next feed pagination */

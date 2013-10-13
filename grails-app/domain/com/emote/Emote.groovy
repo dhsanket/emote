@@ -26,7 +26,6 @@ class Emote {
 	User creator
 	String username
 	Set<String> topics = []
-//	Set<String> expressions = []
 	Set<String> keywords = []
 	String title
     String parentTitle

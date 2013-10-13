@@ -15,7 +15,7 @@ class SecurityFilters {
 	def filters = {
 	
 		
-		signinCheck(action:'*', actionExclude: "signin|findUserInDB", controllerExclude : 'picture') {
+		signinCheck(action:'*', actionExclude: "signin|findUserInDB|feed|singleTitle", controllerExclude : 'picture') {
 			before = {
 					if (!loginCookieExist(request, session) ) {
 						redirect(controller:'user', action: 'signin')

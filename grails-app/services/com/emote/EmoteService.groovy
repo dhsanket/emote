@@ -97,7 +97,13 @@ class EmoteService {
 		return userEmotes;
 	}
 	
-	def groupByTitle (def emotes, Set<String> followingUsers, String currentUserId){
+	def groupByTitle (def emotes, User user){
+		def followingUsers
+		String currentUserId
+		if (user != null) {
+			followingUsers = user.followingUsers
+			currentUserId = user.id
+		}
 		def groupedByTitle =  [:] 
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
