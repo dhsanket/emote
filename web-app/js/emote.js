@@ -45,6 +45,7 @@ function navSlider() {
 	$('#nav-menu').toggleClass('active');
 }
 
+var swipeScreen = 1;
 // Emote Slider Functions
 function swipeInit() {
 	var mySwiper = $('.swiper-container').each(function(){
@@ -53,7 +54,14 @@ function swipeInit() {
 			mode:'horizontal',
 			loop: true,
 			speed: 300,
-			resistance: true
+			resistance: true,
+			onTouchEnd: function(){
+				$(".swipe-location li").css("backgroundColor", "#A7A29F");
+				swipeScreen = swipeScreen + 1;
+				if (swipeScreen > 2) { swipeScreen = 1;}
+				$(".screen" + swipeScreen).css("backgroundColor", "#98041A");
+				
+			}
 		});
 	});
 }
@@ -108,6 +116,7 @@ function preserveSizeWithoutMedia() {
 // Emote Creation Functions
 
 function emoteCreateButton(doNotResetForm) {
+
 		if($('#emote-creation-container').hasClass('active')) {
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('emoteCreateActive');
@@ -132,12 +141,18 @@ function emoteCreateButton(doNotResetForm) {
             if($('#img_search_container').hasClass('active')) {
                 $('#img_search_container').toggleClass('active');
             }
+            $("#loadingOverlay").hide();         
 
         }
 		else {		
-				$('#feed-container').addClass('emoteCreateActive');
+			$("#loadingOverlay").width($(window).width());
+			$("#loadingOverlay").height($(window).height());
+			$("#loadingOverlay").css("zIndex",10);
+			$("#loadingOverlay").show();
+			
+			$('#feed-container').addClass('emoteCreateActive');
 				$('#emote-creation-container').addClass('active');
-				$('#createEmote').addClass('active');
+				//$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
 				$('#photo-feed').toggleClass('create-emote');
 				
@@ -150,6 +165,7 @@ function emoteCreateButton(doNotResetForm) {
 	            
 				// Scroll to top functionality
 				scrollToTop(800);
+								
 		}
 	
 }
@@ -194,15 +210,16 @@ function emoteCreate() {
 	}
 	
 	//check if category is selected
-    var selectBox = document.getElementById('category');
-    var a = selectBox.selectedIndex;
+    var selectBox = document.getElementById('category').value;
+    alert(selectBox);
+    var a = (selectBox == "" ? 0 : 1);
 	if (a == 0){	
-		$("#category").css({'border': '2px solid red'});
+		$("#pick-a-category").css({'border': '2px solid red'});
 	}
 	else
 	{
 		//if user selects a category; remove red category border (if he made mistake in first attempt
-		$("#category").css({'border': '1px solid #ccc'});
+		$("#pick-a-category").css({'border': '1px solid #ccc'});
 		emoteCreateButton(true);
 		emoteSubmit();
 	}
@@ -242,6 +259,7 @@ function emoteSubmit() {
 
 function displayLoadingOverlay()
 {
+	$("#loadingOverlay").css("zIndex",1000);
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
 	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)

@@ -13,7 +13,7 @@
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
-		<ul class="swipe-location"><li class="screen1"></li><li class="screen2"></li><li class="screen3"></li></ul>
+		<ul class="swipe-location"><li class="screen1"></li><li class="screen2"></li></ul>
 	</div>
 	
 	<div class="emote-v2-body clearfix">

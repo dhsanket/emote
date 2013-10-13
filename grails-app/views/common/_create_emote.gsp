@@ -14,48 +14,50 @@
 			<input type="hidden" name="webSearchImageURL" value="">
 			<div id="create-emote-field-container">
 				<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
-				<input required type="text" id="obj-title-location" class="emote-topic-input" maxlength="50" placeholder="" name="location" />
+				<input type="text" id="obj-title-location" class="emote-topic-input" maxlength="50" placeholder="" name="location" />
 				<div id="obj-title-suggestion"></div>
 				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
-				<button class="button-on" id="doing-now" type="button" value="Doing now"><span>Doing now</span></button>
+				<button class="button-off" id="doing-now" type="button" value="Doing now"><span class="doing-now-off">Doing now</span></button>
+				<input type="hidden" name="doing-now" id="doing-now-input"/>
 				<div class="clearfix" id="emote-share-bar">
 					<button class="button-off" id="pick-a-category" type="button" value="Pick a category"><span>-- Pick a category --</span></button>
-					
-					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"><span>POST</span></button>
+					<ul id="category-list">
+						<li>-- Pick a category --</li>
+						<li>Event</li>
+						<li>Movie</li>
+						<li>Restaurant</li>
+						<li>Food-item</li>
+						<li>People</li>
+						<li>Place</li>
+						<li>Consumer-Product</li>
+						<li>Other</li>
+					</ul>
+					<input type="hidden" name="category" id="category" required />
+					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').value, 'Add', 1, false]);"><span>POST</span></button>
 					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
 				</div>
 			</div>
 			
-			
+<%--			
 			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>
 			
-<%--            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >--%>
+            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >
 			
 			<div id="emote-bar">
 				<div id="emote-bar-container">
-					<select required id="category" name="category" >
-					  <option value="">--Pick Category--</option>	
-					  <option value="Event">Event</option>			
-					  <option value="Movie">Movie</option>
-					  <option value="Restaurant">Restaurant</option>
-					  <option value="Food-item">Food item</option>
-					  <option value="People">People</option>
-					  <option value="Place">Place</option>
-					  <option value="Consumer-Product">Consumer Product</option>
-					  <option value="Other">Other</option>
-					</select>
+
 					
-		<%--			<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>--%>
-		<%--			<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>--%>
-                    <a href="#" id="addimage-button" ><i class="icon icon-camera"></i></a>
-					<button type="submit" id="submit-button" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"> <i class="icon icon-check"></i> </button>
+					<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>
+					<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>
+		 			<button type="submit" id="submit-button" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"> <i class="icon icon-check"></i> </button> 
 				</div>
 			</div>
+			--%>
 		</div>
   
   </div>
  </div>
- <g:render template="/common/img_selection" />
+ <%-- <g:render template="/common/img_selection" /> --%>
  </form>
 
 

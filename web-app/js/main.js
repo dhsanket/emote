@@ -2,6 +2,66 @@ $(function(){
 	
 	$(window).load(function(){
 	    
+		
+		$('#pick-a-category').click(function(){
+			if ($(this).hasClass("button-on"))
+			{
+				$(this).addClass("button-off");
+				$(this).removeClass("button-on");
+				$('#category-list').hide();				
+			}else{
+				$(this).addClass("button-on");
+				$(this).removeClass("button-off");
+				$('#category-list').show();				
+			}
+
+		});
+		
+		$('#share-emote').click(function(){
+			if ($(this).hasClass("button-on"))
+			{
+				$(this).addClass("button-off");
+				$(this).removeClass("button-on");
+			}else{
+				$(this).addClass("button-on");
+				$(this).removeClass("button-off");
+			}
+
+		});		
+		
+		
+		
+		$('#doing-now').click(function(){
+			if ($(this).hasClass("button-on"))
+			{
+				$('#doing-now').addClass("button-off");
+				$('#doing-now span').addClass("doing-now-off");
+				$('#doing-now').removeClass("button-on");
+				$('#doing-now span').removeClass("doing-now-on");
+				$("#doing-now-input").attr("value","false");
+				
+			}else{
+				$('#doing-now').addClass("button-on");
+				$('#doing-now span').addClass("doing-now-on");
+				$('#doing-now').removeClass("button-off");
+				$('#doing-now span').removeClass("doing-now-off");
+				$("#doing-now-input").attr("value","true");
+			}
+		});
+		
+		$('#category-list li').click(function(){
+			if ($(this).text().indexOf("Pick") > -1)
+			{
+				$("#category").attr("value", "");
+			}else{
+				$("#category").attr("value", $(this).text());
+			}
+			$('#pick-a-category span').text($(this).text());
+			$('#pick-a-category').addClass("button-off");
+			$('#pick-a-category').removeClass("button-on");
+			$('#category-list').hide();
+		});
+		
 		validationMarkers();
 		// Geolocation
 	    $('#geoLocation').click(function(){
@@ -51,7 +111,7 @@ $(function(){
 		});	
 		
 		// Create emote 'SAVE' button
-		$('#submit-button').click(function(){
+		$('#post-emote').click(function(){
 			emoteCreate();
 	 		// prevent default behaviour of button
 	 		return false;
