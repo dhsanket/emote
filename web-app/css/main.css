@@ -399,7 +399,7 @@ color:#FFFFFF;
 		}
 		
 		#emote-creation-container {
-			padding:45px 0px 0px 0px;
+			padding:40px 0px 0px 0px;
 			height:0;
 			overflow-y:hidden;
 			position:relative;
@@ -518,33 +518,60 @@ color:#FFFFFF;
 		}
 		
 		#doing-now {
-			width: 80px;
+			width: 95px;
 					
 		}
 		#doing-now span {
-			background: transparent url("/img/hash.png") 0 0 no-repeat;
-			width: 100%;
+			background: transparent url("/img/doing_now_green.png") 2 0 no-repeat;
+			padding: 0px 0px 0px 14px;
 		}
 		
 		#pick-a-category {
-			width: 120px;
+			width: 138px;
+			float: left;
 		}
 		#pick-a-category span {
-			background: transparent url("/img/hash.png") 0 0 no-repeat;
+			background: transparent url("/img/pick-a-category.png") right center no-repeat;
+			padding-right: 16px;
+		}
+		
+		#emote-share-bar {
+			margin: 5px 0px 15px 0px;
+		}
+		#emote-share-bar button{
+			margin: 0px;
 		}
 		
 		#post-emote {
 			width: 120px;
+			box-shadow: 0px 0px 10px 3px #989898;
+			-webkit-box-shadow: 0px 1px 1px rgba(255,255,255,0.8), inset 0px 0px 1px rgba(000,000,000,0.2);
+			background: -moz-linear-gradient(top, rgba(115,115,115,1) 0%, rgba(88,88,88,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(115,115,115,1)), color-stop(100%,rgba(88,88,88,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(115,115,115,1) 0%,rgba(88,88,88,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(115,115,115,1) 0%,rgba(88,88,88,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(115,115,115,1) 0%,rgba(88,88,88,0) 100%); /* IE10+ */
+			background: linear-gradient(#737373, #585858); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73737300', endColorstr='#58585800',GradientType=0 ); /* IE6-9 */			
+			float: right;	
 		}
 		#post-emote span {
-			background: transparent url("/img/hash.png") 0 0 no-repeat;
+			background: transparent url("/img/post.png") 0 0 no-repeat;
+			padding: 0px 0px 0px 20px;
+			color: #fff;
+			text-shadow: 0px -2px #4A4A4A;
+			
 		}
 		
 		#share-emote {
-			width: 120px;
+			width: 35px;
+			float: right;
+			margin-right: 5px !important;
 		}
 		#share-emote span {
-			background: transparent url("/img/hash.png") 0 0 no-repeat;
+			background: transparent url("/img/emote-create-share1.png") 0 0 no-repeat;
+			padding: 0px 0px 0px 13px;
+			font-size: 16px;
 		}
 		
 		#obj-title {

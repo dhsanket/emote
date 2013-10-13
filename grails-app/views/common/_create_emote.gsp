@@ -17,10 +17,13 @@
 				<input required type="text" id="obj-title-location" class="emote-topic-input" maxlength="50" placeholder="" name="location" />
 				<div id="obj-title-suggestion"></div>
 				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
-				<button class="button-on" id="doing-now" type="input" value="Doing now"><span>Doing now</span></button>
-				<button class="button-off" id="pick-a-category" type="input" value="Pick a category"><span>Pick a category</span></button>
-				<button class="button-off" id="share-emote" type="input" value="Share"><span>Share</span></button>
-				<button class="button-off" id="post-emote" type="input" value="Post"><span>Post</span></button>
+				<button class="button-on" id="doing-now" type="button" value="Doing now"><span>Doing now</span></button>
+				<div class="clearfix" id="emote-share-bar">
+					<button class="button-off" id="pick-a-category" type="button" value="Pick a category"><span>-- Pick a category --</span></button>
+					
+					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"><span>POST</span></button>
+					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
+				</div>
 			</div>
 			
 			
