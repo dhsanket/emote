@@ -1,7 +1,9 @@
 <%@ page import="com.emote.UserDoing; com.emote.UserFavourite;" %>
 
 <g:if test="${titles != null}">
-<g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
+<g:if test="${session.user}">
+	<g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/> 
+</g:if>
 <g:each status="i" in="${titles}" var="title">
 <div data-post-id="${i}"  class="emote-v2">
 	<div class="emote-v2-header clearfix">
@@ -10,7 +12,8 @@
 		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
 		<a href="#"><i class="icon-edit"></i></a>
 		</div>
-        
+ 
+<g:if test="${session.user}">       
         <ul class="emote-v2-actions">			
 			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')"><i class="icon-flag icon-white"></i></button></li>
 			<li><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" >
@@ -27,8 +30,8 @@
             <g:else>
             <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-time icon-white"></i></button></li>
             </g:else>
-
 		</ul>
+</g:if>		
 	</div>
 	<div class="emote-v2-body clearfix">
 		<%-- If media is present --%>
@@ -44,12 +47,14 @@
 			<div class="emote-friends swiper-slide">
 				<h4>Friend's emotes: <a class="user-feed" href="#"><span class="current-user"></span></a></h4>
 				<ul class="friend-container clearfix">
+				<g:if test="${title.followingUsers}">
 				<g:each in="${title.followingUsers}" var="user">
 					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">	
 						<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
 						<span class="emote-user-name">${user.username}</span>
 					</li>
 				</g:each>	
+				</g:if>
 				<g:each in="${title.users}" var="user">
 					<li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">	
 						<img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
@@ -61,12 +66,10 @@
 					<g:each in="${title.followingUsers}" var="user">
 						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 							<ul>
-								<g:each in="${title.getFollowed(user.uid).emotes}" var="emote">
-									<g:each in="${emote.expressions}" var="exp">
-											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp}</a></li>
-											</g:if>
-									</g:each>
+								<g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
+									<g:if test="${(exp.text.trim().length()>0)}">
+										<li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp.text}</a></li>
+									</g:if>
 								</g:each>
 							</ul>
 						</li>
@@ -74,12 +77,10 @@
 					<g:each in="${title.users}" var="user">
 						<li class="friend-emotes clearfix" data-user-id="${user.uid}"  style="display : list-item;">
 							<ul>
-								<g:each in="${title.getUserEmotes(user.uid).emotes}" var="emote">
-									<g:each in="${emote.expressions}" var="exp">
-											<g:if test="${(exp.trim().length()>0)}">
-												<li><a href="javascript:re_emote('${title.completeTitle}', '${exp}' )">${exp}</a></li>
-											</g:if>
-									</g:each>
+								<g:each in="${title.getUserEmotes(user.uid).expressions}" var="exp">
+									<g:if test="${(exp.text.trim().length()>0)}">
+										<li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}' )">${exp.text}</a></li>
+									</g:if>
 								</g:each>
 							</ul>
 						</li>

@@ -1422,10 +1422,31 @@ border-bottom-left-radius: 8px;
 		transition: 1s ease-in-out;	
 }
 
+
 #signinHeader
 {
 	display: none;
 }
+
+#signinHeader_emote{
+		position: fixed;
+		z-index: 10;
+		top: 44px;
+		height: 30px;
+		width:100%;
+		display:block;
+		padding-top: 20px;
+		text-align:center;
+		font-size:14px;
+		color:#FFFFFF;
+		background:#272727;
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+		-ms-transition: 1s ease-in-out;
+		-o-transition: 1s ease-in-out;
+		transition: 1s ease-in-out;	
+}
+
 
 
 /* prev next feed pagination */
@@ -1506,7 +1527,7 @@ font-weight: bold;
 }
 
 #overlayMessage {
-	background: #fff url('../img/loader-maps.gif') no-repeat 20px 10px;
+	background: #fff url('/img/loader-maps.gif') no-repeat 20px 10px;
 	padding: 10px;
 	text-align: center;
 	width: 87px;
@@ -1517,4 +1538,55 @@ font-weight: bold;
 	z-index: 11000;
 	display: none;
 	opacity: 0.9;
+}
+
+/* Landing page styles */
+#landingContainer {
+	margin: auto;
+	width: 600px;
+    height: 400px;	
+ 
+}
+#landingDisclaimer {
+	width: 100%;
+	text-align:center;
+	font-size: 12px;
+	margin-top: 20px;
+}
+#landingDisclaimer a {
+	text-decoration: underline;
+	
+}
+#landingContent {
+    height: 400px;
+    background: transparent url("/img/landingPage/circle3.png") -80px -170px no-repeat;
+    background-size: 120%;
+    margin-bottom: 5px;
+}
+.landingBody {
+	background: transparent url("/img/landingPage/sky_bg-1.jpg") 0 0 no-repeat;
+}
+#landingFooter ul {
+	float: left;
+	margin: 2px 0px 0px 0px;
+}
+#landingFooter ul li{
+	display: inline;
+}
+#landingLogo{
+	border-bottom: 4px solid #8B0001;
+	text-align: center;
+	overflow: hidden;
+	width: 100%;	
+	margin: auto;
+	padding-top: 20px;
+}
+#landingLogo img {
+	width: 85px;
+}
+
+#landingLogin {
+	float: right;
+	width: 140px;
+	
 }

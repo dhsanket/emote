@@ -16,7 +16,6 @@ class Emote {
 		username index:true
 		title index:true
 		keywords index:true
-		compoundIndex topics:1, parentTitle:1, title:1, username:1  
 	}
 	
 	Date dateCreated
@@ -27,13 +26,12 @@ class Emote {
 	User creator
 	String username
 	Set<String> topics = []
-//	Set<String> expressions = []
 	Set<String> keywords = []
 	String title
     String parentTitle
     String connector
 	Set<String> photos = []
-    Set<ExpressionIdea> expressionIdeas = []
+    List<ExpressionIdea> expressionIdeas
 	// geo-location
 	String locationName = ""
 
@@ -41,13 +39,12 @@ class Emote {
 	Date creationTime = new Date()
 	
 	public populateKeywords() {
-		keywords = []
+		if(keywords == null) keywords = []
 		if (title != null && title.size() > 0) { 
 			def k = title.toLowerCase()
 			keywords.add(k)
 			k.split().each {token1 -> keywords.add(token1)}
 		}
-		
 		if (parentTitle != null && parentTitle.size() > 0) { 
 			def p = parentTitle.toLowerCase()
 			keywords.add(p)

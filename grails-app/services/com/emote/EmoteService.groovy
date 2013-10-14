@@ -11,7 +11,7 @@ class EmoteService {
         String emoteTitle = emoteCmd.title
         String connector
         (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
-        Set<ExpressionIdea> ideas = new HashSet<>()
+        LinkedHashSet<ExpressionIdea> ideas = new LinkedHashSet<>()
         prepareExpressionIdeas(emoteCmd, ideas)
         Emote emote = new Emote(
                 userId: user.id, creator: user, username: username, topics: emoteCmd.category, parentTitle: parentTitle,
@@ -93,13 +93,24 @@ class EmoteService {
     def prepareExpressionIdeas(emote, ideas) {
         def expressions = emote.expressions
         def goodOrBads = emote.goodOrBads
-        expressions.eachWithIndex { it, index ->
-            ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
+        expressions.eachWithIndex{ it, index ->
+			if(it != null && it.trim().size()> 0){
+				log.info("adding expression"+it)
+				ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
+			}
         }
         ideas
     }
 
+    Set<Emote> search(String searchTerm, int pageIndex){
+        log.info "searching for $searchTerm"
+        Set<Emote> results = []
+        def qresults = Emote.findAllByKeywords(searchTerm)
+        log.info "search results $qresults"
+        if (qresults != null) {results.addAll(qresults)}
+        return results
 
+    }
 
 	def feed(int pageIndex){
 		def titles = Title.list(max:feedPageSize, sort:"lastUpdateTime", order:"desc" , offset:feedPageSize*pageIndex)
@@ -115,27 +126,33 @@ class EmoteService {
 		def userEmotes = Emote.findAllByUserId(userId, [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		return userEmotes;
 	}
-
-	def groupByTitle (def emotes, Set<String> followingUsers, String currentUserId){
-		def groupedByTitle =  [:]
+	
+	def groupByTitle (def emotes, User user){
+		def followingUsers
+		String currentUserId
+		if (user != null) {
+			followingUsers = user.followingUsers
+			currentUserId = user.id
+		}
+		def groupedByTitle =  [:] 
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
 		}
 		log.info("emotes following usees $followingUsers, + $currentUserId")
-
+		
 		emotes.each {emote ->
 			boolean canShow = false
 			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||
 				groupedByTitle.containsKey(emote.completeTitle.toUpperCase())){
 				canShow = true
 			}
-
+	
 			if(canShow){
 				GroupByTitle title = groupedByTitle.get(emote.completeTitle.toUpperCase())
 				if(title == null){
 					Title titleObj = Title.findByText(emote.title)
-					String picId = null
-					if(titleObj != null)
+					String picId = null	
+					if(titleObj != null)	
 						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
 					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers, completeTitle:emote.completeTitle)
 					groupedByTitle.put(emote.completeTitle.toUpperCase(), title)
@@ -143,16 +160,16 @@ class EmoteService {
                 title.completeTitle = emote.completeTitle
 				title.add(emote);
 			}
-
+			
 		}
 		List<GroupByTitle> sorted = new ArrayList<GroupByTitle>()
-		groupedByTitle.each{key, value ->
+		groupedByTitle.each{key, value -> 
 			sorted.add(value)
 		}
 		 Collections.sort(sorted);
 		 return sorted;
 	}
-
+	
 	def findTitles(String text){
 		log.info("searching title by $text")
 		return Title.findAllByTextIlike(text+"%")
@@ -182,7 +199,7 @@ class EmoteService {
         }
         [mainTitle, connector, parentTitle]
     }
-
-
-
+	
+	
+	
 }

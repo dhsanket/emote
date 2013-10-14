@@ -50,25 +50,27 @@ class EmoteController {
 				emote.scaledImgWidth, emote.scaledImgHeight)
 	
 		}
-		
 		emoteService.create(emote,  user, pic)
 		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 			session.user.followingUsers , session.user.id)
-		render(template:"emotesTemplate" , model:[titles: titles])
+		flash.titles = titles
+		render view:'feed'
+
 	}
 	
 	def feed(){
 		int page = getPageIndex();
 		def posts = emoteService.groupByTitle(emoteService.feed(page), 
-												session.user.followingUsers , session.user.id)
+												session.user)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "feed", [:])){
 			posts = emoteService.groupByTitle(emoteService.feed(page-1), 
-													session.user.followingUsers , session.user.id)
+													session.user)
 		}
 		flash.titles = posts 
 	}
+	
 	
 	def userFeed(){
 		String userId = params.userId
@@ -77,11 +79,11 @@ class EmoteController {
 			userId = session.user.id
 		}
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page), null, userId)
+		def posts = emoteService.groupByTitle(emoteService.userFeed(userId, page), null)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
-			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1), null, userId)
+			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1), null)
 		}
 		flash.user = userService.findById(userId)
 		flash.titles = posts
@@ -94,31 +96,21 @@ class EmoteController {
 		int page = getPageIndex();
 		String searchTerm = params.keyword.toLowerCase();
 		log.info "lowercase ofthe keyword: $searchTerm"
-		def posts = emoteService.groupByTitle(emoteService.search(searchTerm, page), null, user.id)
+		def posts = emoteService.groupByTitle(emoteService.search(searchTerm, page), null)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "search", [keyword:searchTerm])){
-			posts = emoteService.groupByTitle(emoteService.search(searchTerm, page-1), null, user.id)
+			posts = emoteService.groupByTitle(emoteService.search(searchTerm, page-1), null)
 		}
 		flash.titles = posts
 		render view:'feed'
-	}
-	
-	def refactorEmoteEntityToStoreKeywords(){
-      Emote.findAll().each {emote ->
-		log.info "$emote.title"
-        emote.populateKeywords();
-        log.info "$emote.keywords"
-        emote.save();
-        log.info "refactoring done for emote with title $emote.title"
-	  	}
 	}
 		
 	def singleTitle(){
 		User user = session.user
 		def emotes = emoteService.getSingleEmote(params.titleString);
 		if(emotes!= null && emotes.size() >0){
-			flash.titles =  emoteService.groupByTitle(emotes, null, user.id)
+			flash.titles =  emoteService.groupByTitle(emotes, user)
 		}
 		render view:"feed"
 	}

@@ -7,6 +7,7 @@ environments {
 				databaseName = "emote"
 				host = "localhost"
 				port = 27017
+
 			}
 		}
 	}

@@ -104,7 +104,7 @@ log4j = {
     appenders {
         file name:'error', layout:pattern(conversionPattern: '%c{2} %m%n'), maxSize: 1024, file:"error.log",
                 threshold: org.apache.log4j.Level.ERROR
-        console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
+        console name: 'stdout'
     }
 
 	debug  'com.emote' // emote classes

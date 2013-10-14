@@ -34,15 +34,20 @@ function emoteNoMediaFormat(color) {
 
 // Menu Function
 function navSlider() {
-	// Move standard content
-	$('#feed-container').toggleClass('navactive');
-	$('#user-header').toggleClass('navactive');
-	$('header').toggleClass('active'); 
-	$('#photo-feed').toggleClass('navactive');
 	
-	
-	// Move in Nav menu
-	$('#nav-menu').toggleClass('active');
+	if ($('#signinHeader_emote').length == 0) {
+		   
+		// Move standard content
+		$('#feed-container').toggleClass('navactive');
+		$('#user-header').toggleClass('navactive');
+		$('header').toggleClass('active'); 
+		$('#photo-feed').toggleClass('navactive');
+		
+		
+		// Move in Nav menu
+		$('#nav-menu').toggleClass('active');
+		
+	}
 }
 
 // Emote Slider Functions
@@ -242,8 +247,6 @@ function emoteSubmit() {
 
 function displayLoadingOverlay()
 {
-	$("body").css("overflow","hidden");
-	$("body").css("position","fixed");
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
 	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)
