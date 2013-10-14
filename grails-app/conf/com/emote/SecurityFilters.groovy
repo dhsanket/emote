@@ -14,10 +14,18 @@ class SecurityFilters {
 	
 	def filters = {
 	
+		loginCookieCheck(action:'*', controllerExclude : 'picture'){
+			before = {
+				if(session.user == null){
+					putUserInSessionIfCookieExist(request, session)
+					return true;
+				}
+			}
+		}
 		
 		signinCheck(action:'*', actionExclude: "signin|findUserInDB|feed|singleTitle", controllerExclude : 'picture') {
 			before = {
-					if (!loginCookieExist(request, session) ) {
+					if (session.user == null) {
 						redirect(controller:'user', action: 'signin')
 						return false
 					}
@@ -26,7 +34,7 @@ class SecurityFilters {
 		
 		signinSession(controller:'user', action:'signin'){
 			before = {
-				if(loginCookieExist(request, session)){
+				if(session.user){
 					redirect(controller:'emote', action: 'feed')
 				}
 			}
@@ -35,8 +43,8 @@ class SecurityFilters {
 		
 	}
 	
-	private boolean loginCookieExist( def request,  def session){
-		boolean exists = false
+	
+	private void putUserInSessionIfCookieExist( def request,  def session){
 		Cookie [] cookies = request.getCookies()
 		cookies.each{cookie ->
 			if(cookie.getName() == "id"){
@@ -44,15 +52,12 @@ class SecurityFilters {
 				User user = userService.findByFBId(facebookId)
 				if(user != null){
 					session.user = user
-					exists = true
 				}
 			}
 			
 		}
-		return exists
 	
 	}
-	
 
 	
 	
