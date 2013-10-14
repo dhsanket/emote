@@ -1,45 +1,76 @@
 package com.emote
 
-import java.util.Set;
-
 class EmoteService {
-	
-	private int feedPageSize = 10;
+
+    private int feedPageSize = 10;
     def grailsApplication
 
     def create(EmoteCommand emoteCmd, User user, Picture pic) {
-		def username = user.firstName+" "+user.lastName
+        def username = user.firstName + " " + user.lastName
         def parentTitle = null
         String emoteTitle = emoteCmd.title
         String connector
         (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
         LinkedHashSet<ExpressionIdea> ideas = new LinkedHashSet<>()
         prepareExpressionIdeas(emoteCmd, ideas)
-		Emote emote = new Emote(
-			userId:user.id, creator:user, username:username, topics:emoteCmd.category, parentTitle: parentTitle,
-			connector: connector , expressionIdeas: ideas, title:emoteTitle, facebookId:user.facebookId
-			)
-		
-		emote.populateKeywords()
-		emote.save(validate: true)
-		
-		// save title if does not exist else update time
+        Emote emote = new Emote(
+                userId: user.id, creator: user, username: username, topics: emoteCmd.category, parentTitle: parentTitle,
+                connector: connector, expressionIdeas: ideas, title: emoteTitle, facebookId: user.facebookId
+        )
+
+
+        def nonEmptyExpression = []
+        emote.expressions.each { exp ->
+            if (exp.trim().length() > 0) {
+                nonEmptyExpression.add(exp)
+            }
+        }
+        emote.expressions = nonEmptyExpression
+
+        emote.populateKeywords()
+
+        emote.save(validate: true)
+        // save title if does not exist else update time
         saveTitle(emoteTitle, emote, pic)
-        if(parentTitle){
+        if (parentTitle) {
             saveTitle(parentTitle, emote, pic)
         }
-		
-		// save topics
-		emote.topics.each {topicText ->
-			Topic topic = Topic.findByText(topicText.toLowerCase())
-			if(topic == null){
-				topic = new Topic(text:topicText.toLowerCase())
-				topic.save(validate:true)
-			}
-		}
-		
-		
-	}
+        notifyOtherUsers(emoteTitle, parentTitle,"", user)
+
+        // save topics
+        emote.topics.each { topicText ->
+            Topic topic = Topic.findByText(topicText.toLowerCase())
+            if (topic == null) {
+                topic = new Topic(text: topicText.toLowerCase())
+                topic.save(validate: true)
+            }
+        }
+
+
+    }
+
+    def notifyOtherUsers(String title, String parentTitle, String message, User currentUser) {
+        def interestList = []
+        def userFavouriteTitle = []
+        def userFavouriteParentTitle = []
+        interestList += TitleInterest.findAllByTitleAndUserIdNotEqual(title, currentUser.id)
+        if (parentTitle) {
+            interestList += TitleInterest.findAllByTitleAndUserIdNotEqual(parentTitle, currentUser.id)
+        }
+        interestList.each {
+            new NotificationQueue(title: it.title, userId: it.userId, message: message).save()
+        }
+        userFavouriteTitle = UserFavourite.findAll { userId != currentUser.id && inList('favouriteTitles', title) }
+        userFavouriteTitle.each {
+            new NotificationQueue(title: title, userId: it.userId, message: message).save()
+        }
+        if(parentTitle){
+            userFavouriteParentTitle = UserFavourite.findAll { userId != currentUser.id && inList('favouriteTitles', parentTitle) }
+            userFavouriteParentTitle.each {
+                new NotificationQueue(title: parentTitle, userId: it.userId, message: message).save()
+            }
+        }
+    }
 
     def saveTitle(String emoteTitle, Emote emote, Picture pic) {
         Title title = Title.findByTextIlike(emoteTitle)
@@ -68,20 +99,19 @@ class EmoteService {
 				ideas.add(new ExpressionIdea(text: it, goodOrBad: goodOrBads[index]))
 			}
         }
+        ideas
     }
 
-	
-	Set<Emote> search(String searchTerm, int pageIndex){
-		log.info "searching for $searchTerm"
-		Set<Emote> results = []
-		def qresults = Emote.findAllByKeywords(searchTerm)
-		log.info "search results $qresults"
-		if (qresults != null) {results.addAll(qresults)}
-		return results
-		
-	}
+    Set<Emote> search(String searchTerm, int pageIndex){
+        log.info "searching for $searchTerm"
+        Set<Emote> results = []
+        def qresults = Emote.findAllByKeywords(searchTerm)
+        log.info "search results $qresults"
+        if (qresults != null) {results.addAll(qresults)}
+        return results
 
-	
+    }
+
 	def feed(int pageIndex){
 		def titles = Title.list(max:feedPageSize, sort:"lastUpdateTime", order:"desc" , offset:feedPageSize*pageIndex)
 		def titleTexts  = []
@@ -91,7 +121,7 @@ class EmoteService {
 		def emotes = Emote.findAllByTitleInList(titleTexts, [sort:"creationTime", order:"desc"])
 		return emotes;
 	}
-	
+
 	def userFeed(String userId, int pageIndex){
 		def userEmotes = Emote.findAllByUserId(userId, [max:feedPageSize, sort:"creationTime", order:"desc" , offset:feedPageSize*pageIndex])
 		return userEmotes;
@@ -108,6 +138,8 @@ class EmoteService {
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
 		}
+		log.info("emotes following usees $followingUsers, + $currentUserId")
+		
 		emotes.each {emote ->
 			boolean canShow = false
 			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||

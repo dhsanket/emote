@@ -5,6 +5,19 @@ class UserActionController {
 
     def userActionService
 
+    def notification(){
+        User user = session.user
+        if(!user){
+            return
+        }
+        def notifications = NotificationQueue.findAllByUserIdAndNotified(user.id,false)
+        notifications.each {it.notified = true}
+        NotificationQueue.saveAll(notifications)
+        render(contentType: "text/json"){
+            [notifications:notifications]
+        }
+    }
+
     def addDoing(){
         User user = session.user
         if(!user){
