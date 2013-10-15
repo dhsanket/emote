@@ -3,15 +3,15 @@
 <g:if test="${titles != null}">
 <g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
 <g:each status="i" in="${titles}" var="title">
-<div data-post-id="${i}"  class="emote-v2">
+<div data-post-id="${i}"  class="emote-v2" id="emote-v2-${i}">
 	<div class="emote-v2-header clearfix">
 		<div class="header-container">
 		<div class="header-swiper"><a class="clearfix" href="/zen/${title.completeTitle}"><h3>${title.completeTitle}</h3></a></div>
-		<ul class="header-comments" styl="float:left;"><li>Consumer product</li><li>&#183;&nbsp;&nbsp;201 comments</li></ul>
+		<ul class="header-comments" styl="float:left;"><li>${title.firstCategory}</li><li>&#183;&nbsp;&nbsp;201 comments</li></ul>
 		</div>
 				<%--<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
-		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
-		<a href="#"><i class="icon-edit"></i></a>
+		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
+		<a href="#" class="editEmoteLink"><i class="icon-edit"></i></a>
 		</div>
 		<ul class="swipe-location"><li class="screen1"></li><li class="screen2"></li></ul>
 	</div>

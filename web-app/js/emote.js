@@ -117,6 +117,10 @@ function preserveSizeWithoutMedia() {
 
 function emoteCreateButton(doNotResetForm) {
 
+	if ($("#emote-creation-container").hasClass("edit-emote")){
+		$("#emote-creation-container").removeClass("edit-emote");
+	}
+	
 		if($('#emote-creation-container').hasClass('active')) {
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('emoteCreateActive');
@@ -171,11 +175,32 @@ function emoteCreateButton(doNotResetForm) {
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title,category){
+function quick_emote(title,category,id){
 		
+	$("#loadingOverlay").width($(window).width());
+	$("#loadingOverlay").height($(window).height());
+	$("#loadingOverlay").css("zIndex",10);
+	$("#loadingOverlay").show();	
+	
 		$('#obj-title').val(title);
+		$('.edit-emote-header h3').text(title);
+		$('.edit-emote-header p').text(category);
 		$('#category').val(category);
-		emoteCreateButton(true);
+		$('#pick-a-category span').text(category);
+		//alert($(document).scrollTop());
+		var posTop = ($(document).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(document).scrollTop()));
+		
+		//alert($(document).scrollTop() + "\n" + $("#"+id).position().top);
+		$('#emote-creation-container').css("top", posTop);
+		$('#emote-creation-container').css("left", $("#"+id).position().left);
+		var contWidth = $("#"+id).width();
+		$('#emote-creation-container').css("width", contWidth + 2);
+		$('#emote-creation-container').addClass("edit-emote");
+		$('#emote-creation-container').addClass('active');
+		//$('#createEmote').addClass('active');
+		$('#user-header').toggleClass('create-emote');
+		$('#photo-feed').toggleClass('create-emote');		
+		//emoteCreateButton(true);
 }
 
 // user can easily click another users emote and submit as his own 
@@ -187,42 +212,41 @@ function re_emote(title, tag){
 
 function emoteCreate() {
 	//Submit-button click event has occured
-	
+	var invalidFieldArr = new Array();
 	var isValid = true;
 	if ($('#tag').val().length <1 ){
 		$("#tag_tag").css({'border': '2px solid red'});
-		isValid = false;
+		invalidFieldArr.push("#tag_tag");
 	}else{
 		$("#tag_tag").css({'border': ''});
-		isValid = true;
 	}
 	
 	if ( $('#obj-title').val().length< 1 ){
 		$("#obj-title").css({'border': '2px solid red'});
-		isValid = false;
+		invalidFieldArr.push("#obj-title");
 	}else{
 		$("#obj-title").css({'border': ''});
-		isValid = true;
-	}
-	
-	if(!isValid ){
-		return false;
 	}
 	
 	//check if category is selected
     var selectBox = document.getElementById('category').value;
-    alert(selectBox);
     var a = (selectBox == "" ? 0 : 1);
 	if (a == 0){	
 		$("#pick-a-category").css({'border': '2px solid red'});
+		invalidFieldArr.push("#pick-a-category");
 	}
 	else
 	{
 		//if user selects a category; remove red category border (if he made mistake in first attempt
 		$("#pick-a-category").css({'border': '1px solid #ccc'});
-		emoteCreateButton(true);
-		emoteSubmit();
 	}
+
+	if(invalidFieldArr.length > 0 ){
+		return false;
+	}	
+	
+	emoteCreateButton(true);
+	emoteSubmit();	
 }
 
 //ajax submit createEmote form action

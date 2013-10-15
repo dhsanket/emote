@@ -628,6 +628,63 @@ color:#FFFFFF;
 			padding-top: 0px;	
 		}
 		
+		.edit-emote #pick-a-category, .edit-emote #obj-title {
+			display: none;
+		}
+		.edit-emote #doing-now {
+			float: left;
+		}
+		
+		.edit-emote #emote-share-bar {
+			float: right;
+			width: 60%;
+			margin-top: 5px;
+		}
+		
+		.edit-emote-header {
+			display: none
+		}
+		
+		.edit-emote .edit-emote-header {
+			display: block !important;
+			background:#E2E1DF url('/img/top_gradient.gif') repeat-x;
+			height:43px;
+			border-radius: 4px 4px 0px 0px;
+			overflow: hidden;
+		}
+		
+		.edit-emote .edit-emote-header h3 {
+			font-size: 18px;
+			line-height: 18px;
+			margin: 0px 0px 0px 10px;
+			padding: 6px 0px 0px 3px;
+		}
+		
+		.edit-emote .edit-emote-header p {
+			font-size: 11px;
+			color: #7A7A7A;
+			text-shadow: 0px 1px 0px #ffffff;
+			margin: 0px 0px 0px 14px;
+		}		
+		
+		.edit-emote .edit-emote-header div {
+			box-shadow: 0px -4px 6px 2px #999;
+			border-radius: 5px 5px 0px 0px;
+			float: right;
+			background: transparent url('/img/re-emote.png') center center no-repeat;
+			height: 43px;
+			width: 40px;
+			background-color: #DEDEDE;
+		}
+		
+		.edit-emote .emote-create-content {
+			box-shadow: 0px -3px 6px -1px #999;
+		}
+		
+		.edit-emote .data-set {
+			overflow: hidden;
+		}
+		
 		select{
 		  display: inline-block;
 		  width: 150px;

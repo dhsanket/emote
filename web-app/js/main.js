@@ -22,9 +22,11 @@ $(function(){
 			{
 				$(this).addClass("button-off");
 				$(this).removeClass("button-on");
+				$("#share-input").attr("value","false");
 			}else{
 				$(this).addClass("button-on");
 				$(this).removeClass("button-off");
+				$("#share-input").attr("value","true");
 			}
 
 		});		
@@ -95,6 +97,10 @@ $(function(){
 
         initImageEventHandlers();
 
+        $(".editEmoteLink").click(function(event){
+        	event.preventDefault();
+        });
+        
 		// Create emote button toggle
 		$('#createEmote').click(function(){
 			emoteCreateButton();

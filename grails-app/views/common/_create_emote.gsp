@@ -1,9 +1,13 @@
 <!-- HTML -->
  <form method="post" id="emoteSave" method="post" enctype="multipart/form-data">
  <div id="emote-creation-container">
-  
+
   <div class="data-set clearfix">
-      
+   <div class="edit-emote-header">
+  <div></div>
+  <h3></h3>
+  <p></p>
+  </div>     
 		<div class="emote-create-content">
 			<input type="hidden" name="topx" value="451">
 			<input type="hidden" name="topy" value="445">
@@ -18,7 +22,7 @@
 				<div id="obj-title-suggestion"></div>
 				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
 				<button class="button-off" id="doing-now" type="button" value="Doing now"><span class="doing-now-off">Doing now</span></button>
-				<input type="hidden" name="doing-now" id="doing-now-input"/>
+				<input type="hidden" name="doingNow" id="doing-now-input" value="false"/>
 				<div class="clearfix" id="emote-share-bar">
 					<button class="button-off" id="pick-a-category" type="button" value="Pick a category"><span>-- Pick a category --</span></button>
 					<ul id="category-list">
@@ -35,6 +39,7 @@
 					<input type="hidden" name="category" id="category" required />
 					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').value, 'Add', 1, false]);"><span>POST</span></button>
 					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
+					<input type="hidden" name="share" id="share-input" value="false"/>
 				</div>
 			</div>
 			
