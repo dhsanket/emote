@@ -17,8 +17,8 @@
 			<input type="hidden" name="scaledImgHeight" value="800">
 			<input type="hidden" name="webSearchImageURL" value="">
 			<div id="create-emote-field-container">
-				<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
-				<input type="text" id="obj-title-location" class="emote-topic-input" maxlength="50" placeholder="" name="location" />
+				<input required type="text" id="obj-title" class="emote-topic-input input-field" maxlength="50" placeholder="" name="title" />
+				<input type="text" id="obj-title-location" class="emote-topic-input input-field" maxlength="50" placeholder="" name="location" />
 				<div id="obj-title-suggestion"></div>
 				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
 				<button class="button-off" id="doing-now" type="button" value="Doing now"><span class="doing-now-off">Doing now</span></button>

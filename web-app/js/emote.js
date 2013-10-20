@@ -119,6 +119,11 @@ function emoteCreateButton(doNotResetForm) {
 
 	if ($("#emote-creation-container").hasClass("edit-emote")){
 		$("#emote-creation-container").removeClass("edit-emote");
+		$('#emote-creation-container').css("top", "0px");
+		$('#emote-creation-container').css("left", "0px");
+		$('#emote-creation-container').css("width", "100%");
+		$('#category').val("");
+		$('#pick-a-category span').text("-- Pick a category --");
 	}
 	
 		if($('#emote-creation-container').hasClass('active')) {
@@ -215,10 +220,10 @@ function emoteCreate() {
 	var invalidFieldArr = new Array();
 	var isValid = true;
 	if ($('#tag').val().length <1 ){
-		$("#tag_tag").css({'border': '2px solid red'});
-		invalidFieldArr.push("#tag_tag");
+		$("#tag_tagsinput").css({'border': '2px solid red'});
+		invalidFieldArr.push("#tag_tagsinput");
 	}else{
-		$("#tag_tag").css({'border': ''});
+		$("#tag_tagsinput").css({'border': ''});
 	}
 	
 	if ( $('#obj-title').val().length< 1 ){

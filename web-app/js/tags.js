@@ -105,7 +105,7 @@
                         }).click(function () {
                             return $('#' + id).removeTag(escape(value));
                         })
-                    ).insertBefore('#' + id + '_addTag');
+                    ).insertAfter('#' + id + '_addTag');
 
 					tagslist.push(value);
 				
@@ -224,7 +224,7 @@
 				markup = markup + '<input id="'+id+'_tag" value="" data-default="'+settings.defaultText+'" />';
 			}
 			
-			markup = markup + '</div><div class="tags_clear"></div></div>';
+			markup = markup + '</div><div class="tags_clear"></div><div style="float:none;clear: left;"></div></div>';
 			
 			$(markup).insertAfter(this);
 
@@ -320,7 +320,7 @@
 				//Removes the not_valid class when user changes the value of the fake input
 				if(data.unique) {
 				    $(data.fake_input).keydown(function(event){
-				        if(event.keyCode == 8 || String.fromCharCode(event.which).match(/\w+|[Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ±Ã‘,/]+/)) {
+				        if(event.keyCode == 8 || String.fromCharCode(event.which).match(/\w+|[ÃƒÂ¡ÃƒÂ©ÃƒÂ­ÃƒÂ³ÃƒÂºÃƒÂ�Ãƒâ€°ÃƒÂ�Ãƒâ€œÃƒÅ¡ÃƒÂ±Ãƒâ€˜,/]+/)) {
 				            $(this).removeClass('not_valid');
 				        }
 				    });
