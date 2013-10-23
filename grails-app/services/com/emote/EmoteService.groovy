@@ -4,6 +4,8 @@ class EmoteService {
 
     private int feedPageSize = 10;
     def grailsApplication
+	
+	NotificationService notificationService
 
     def create(EmoteCommand emoteCmd, User user, Picture pic) {
         def username = user.firstName + " " + user.lastName
@@ -18,25 +20,13 @@ class EmoteService {
                 connector: connector, expressionIdeas: ideas, title: emoteTitle, facebookId: user.facebookId
         )
 
-
-        def nonEmptyExpression = []
-        emote.expressions.each { exp ->
-            if (exp.trim().length() > 0) {
-                nonEmptyExpression.add(exp)
-            }
-        }
-        emote.expressions = nonEmptyExpression
-
         emote.populateKeywords()
-
         emote.save(validate: true)
         // save title if does not exist else update time
-        saveTitle(emoteTitle, emote, pic)
+        Title title = saveTitle(emoteTitle, emote, pic, user)
         if (parentTitle) {
-            saveTitle(parentTitle, emote, pic)
+            parentTitle = saveTitle(parentTitle, emote, pic, user)
         }
-        notifyOtherUsers(emoteTitle, parentTitle,"", user)
-
         // save topics
         emote.topics.each { topicText ->
             Topic topic = Topic.findByText(topicText.toLowerCase())
@@ -45,37 +35,16 @@ class EmoteService {
                 topic.save(validate: true)
             }
         }
-
-
+		notificationService.notifyTitleUpdate(title, parentTitle, user)
     }
 
-    def notifyOtherUsers(String title, String parentTitle, String message, User currentUser) {
-        def interestList = []
-        def userFavouriteTitle = []
-        def userFavouriteParentTitle = []
-        interestList += TitleInterest.findAllByTitleAndUserIdNotEqual(title, currentUser.id)
-        if (parentTitle) {
-            interestList += TitleInterest.findAllByTitleAndUserIdNotEqual(parentTitle, currentUser.id)
-        }
-        interestList.each {
-            new NotificationQueue(title: it.title, userId: it.userId, message: message).save()
-        }
-        userFavouriteTitle = UserFavourite.findAll { userId != currentUser.id && inList('favouriteTitles', title) }
-        userFavouriteTitle.each {
-            new NotificationQueue(title: title, userId: it.userId, message: message).save()
-        }
-        if(parentTitle){
-            userFavouriteParentTitle = UserFavourite.findAll { userId != currentUser.id && inList('favouriteTitles', parentTitle) }
-            userFavouriteParentTitle.each {
-                new NotificationQueue(title: parentTitle, userId: it.userId, message: message).save()
-            }
-        }
-    }
 
-    def saveTitle(String emoteTitle, Emote emote, Picture pic) {
+    def saveTitle(String emoteTitle, Emote emote, Picture pic, User user) {
         Title title = Title.findByTextIlike(emoteTitle)
+		boolean created = false;
         if (title == null) {
             title = new Title(text: emoteTitle, category: emote.topics)
+			created = true
             log.info "Saving title ${title}"
         } else {
             title.refreshUpdateTime()
@@ -87,7 +56,12 @@ class EmoteService {
             if (pic.id != null)
                 title.addPicture(pic.id)
         }
-        title.save(validate: true)
+        title.save(validate: true, flush: true)
+		if(created){
+			//log.info "Registering author interest for title ${title}"
+			notificationService.registerInterest(emoteTitle, user, TitleInterest.Type.AUTHOR)
+		}
+		return title
     }
 
     def prepareExpressionIdeas(emote, ideas) {
@@ -138,7 +112,7 @@ class EmoteService {
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
 		}
-		log.info("emotes following usees $followingUsers, + $currentUserId")
+		//log.info("emotes following usees $followingUsers, + $currentUserId")
 		
 		emotes.each {emote ->
 			boolean canShow = false

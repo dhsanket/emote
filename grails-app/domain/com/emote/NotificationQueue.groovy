@@ -4,9 +4,9 @@ class NotificationQueue {
     String userId
     String title
     String message
-    Boolean userNotified = false
-    Boolean userRead = false
+    Boolean notified = false
     Boolean mailed = false
+	Date creationTime
     static constraints = {
         message nullable: true
     }

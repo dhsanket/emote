@@ -16,4 +16,5 @@ class User {
 	boolean publishToFBWall = false
 	String passcode = ""
 	Set<String> followingUsers = new HashSet<String>();
+	Date lastAccessTime
 }

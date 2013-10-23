@@ -10,6 +10,8 @@ import javax.servlet.http.Cookie
 class SecurityFilters {
 	UserService userService
 	
+	NotificationService notificationService
+	
 	FacebookContext facebookContextProxy
 	
 	def filters = {
@@ -18,6 +20,7 @@ class SecurityFilters {
 			before = {
 				if(session.user == null){
 					putUserInSessionIfCookieExist(request, session)
+					fetchNotifications(session)
 					return true;
 				}
 			}
@@ -52,11 +55,18 @@ class SecurityFilters {
 				User user = userService.findByFBId(facebookId)
 				if(user != null){
 					session.user = user
+					user.lastAccessTime = new Date()
+					user.save(flush:true)
 				}
 			}
 			
 		}
 	
+	}
+	
+	private void fetchNotifications(def session){
+		def notifications = notificationService.getNotifications(session.user)
+		session.notifications = notifications
 	}
 
 	
