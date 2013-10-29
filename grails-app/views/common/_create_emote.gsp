@@ -18,6 +18,7 @@
 			<input type="hidden" name="webSearchImageURL" value="">
 			<div id="create-emote-field-container">
 				<input required type="text" id="obj-title" class="emote-topic-input input-field" maxlength="50" placeholder="" name="title" />
+				<div id="in-input-field"><span>&nbsp;</span></div>
 				<input type="text" id="obj-title-location" class="emote-topic-input input-field" maxlength="50" placeholder="" name="location" />
 				<div id="obj-title-suggestion"></div>
 				<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />

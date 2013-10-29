@@ -97,6 +97,11 @@ $(function(){
 
         initImageEventHandlers();
 
+        $("#in-input-field").click(function(){
+        	$("#obj-title-location").show();
+        	
+        });
+        
         $(".editEmoteLink").click(function(event){
         	event.preventDefault();
         });

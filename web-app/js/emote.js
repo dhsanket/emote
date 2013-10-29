@@ -181,7 +181,7 @@ function emoteCreateButton(doNotResetForm) {
 
 //automatically adds title to the createEmote form
 function quick_emote(title,category,id){
-		
+	$("#obj-title-location").hide();
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
 	$("#loadingOverlay").css("zIndex",10);

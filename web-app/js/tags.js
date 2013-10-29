@@ -70,7 +70,14 @@
     input.data('minwidth', minWidth);
     input.data('maxwidth', maxWidth);
     input.data('tester_id', testerId);
-    input.css('width', minWidth);
+    inputWidth = minWidth;
+    if ((input.width()-60) < 150)
+    {
+    	inputWidth = $("#tag_addTag").width() - 20;
+    }else{
+    	inputWidth = input.width()-60;
+    }
+    input.css('width', inputWidth);
   };
   
 	$.fn.addTag = function(value,options) {
@@ -105,7 +112,7 @@
                         }).click(function () {
                             return $('#' + id).removeTag(escape(value));
                         })
-                    ).insertAfter('#' + id + '_addTag');
+                    ).insertBefore('#' + id + '_addTag');
 
 					tagslist.push(value);
 				
@@ -116,17 +123,17 @@
 						$('#'+id+'_tag').blur();
 					}
 					
-					$.fn.tagsInput.updateTagsField(this,tagslist);
+					//$.fn.tagsInput.updateTagsField(this,tagslist);
 					
 					if (options.callback && tags_callbacks[id] && tags_callbacks[id]['onAddTag']) {
 						var f = tags_callbacks[id]['onAddTag'];
-						f.call(this, value);
+						//f.call(this, value);
 					}
 					if(tags_callbacks[id] && tags_callbacks[id]['onChange'])
 					{
 						var i = tagslist.length;
 						var f = tags_callbacks[id]['onChange'];
-						f.call(this, $(this), tagslist[i-1]);
+						//f.call(this, $(this), tagslist[i-1]);
 					}					
 				}
 		
