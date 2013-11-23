@@ -216,7 +216,7 @@ function emoteCreate() {
 //ajax submit createEmote form action
 function emoteSubmit() {
 
-	displayLoadingOverlay();
+//	displayLoadingOverlay();
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
 	// console.log(data.tags);
 	// console.log(data.emoteTitle);

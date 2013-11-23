@@ -17,8 +17,7 @@
 		<meta property="og:title"           content="emote-app: discover what your friends think about..." /> 
 		<meta property="og:image"           content="http://www.emote-app.com/img/emote-defaultLogo.png" />
 
-        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-        
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->       
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="apple-mobile-web-app-title" content="">
@@ -27,6 +26,8 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
 
+        <!-- For Android -->		
+		<meta name="mobile-web-app-capable" content="yes">
 		
         <%--for Google+--%>
         <link rel="canonical" href="http://www.emote-app.com" />

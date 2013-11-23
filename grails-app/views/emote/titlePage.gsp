@@ -1,6 +1,6 @@
 <html>
     <head>
-     <title>emote-app title detail page</title>
+     <title>emote-app: ${emotePost.title}</title>
     </head>
     <body>
     	<g:render template="/common/header" />

@@ -1,6 +1,6 @@
 <html>
     <head>
-     <title>emote-app home feed page</title>
+     <title>www.emote-app.com</title>
 		<script type="text/javascript">
 		var fb_param = {};
 		fb_param.pixel_id = '6010473097304';

@@ -9,6 +9,7 @@ modules ={
 		resource url:'/css/other.css'
 		resource url:'/css/animate/animate.css'
 //		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
+		resource url:'/css/add2home.css'
 
 		resource url: '/img/splash-logo.png'
 		resource url: '/img/favicon.ico'
@@ -55,6 +56,7 @@ modules ={
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
 		resource url: '/js/jquery.scrolldepth.min.js'
+		resource url: '/js/add2home.js'
 
 
 	}
