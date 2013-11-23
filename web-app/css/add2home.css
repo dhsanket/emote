@@ -28,14 +28,14 @@
 
 #addToHomeScreen.addToHomeIOS7 {
 	background:#f2f2f2 !important;
-	-webkit-border-radius:1px !important;
+	-webkit-border-radius:3px !important;
 	border:1px solid #ccc;
 	-webkit-box-shadow:0 0 4px rgba(0,0,0,0.2);
 }
 
 #addToHomeScreen.addToHomeIpad {
 	width:268px;
-	font-size:18px;
+	font-size:16px;
 	padding:14px;
 }
 
@@ -50,7 +50,7 @@
 
 #addToHomeScreen.addToHomeIpad.addToHomeWide {
 	width:320px;
-	font-size:18px;
+	font-size:16px;
 	padding:14px;
 }
 
@@ -164,7 +164,7 @@
 	display:block;
 	float:left;
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	border-radius:10px;
 	-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5),
 		inset 0 0 2px rgba(255,255,255,0.9);
 	box-shadow:0 1px 3px rgba(0,0,0,0.5),
@@ -174,7 +174,7 @@
 	-webkit-background-size:57px 57px;
 	background-size:57px 57px;
 	margin:0 12px 0 0;
-	border:1px solid #333;
+	/* border:1px solid #333; */
 	-webkit-background-clip:padding-box;
 	background-clip:padding-box;
 }
