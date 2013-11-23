@@ -20,7 +20,7 @@ class SecurityFilters {
 			before = {
 				if(session.user == null){
 					putUserInSessionIfCookieExist(request, session)
-					fetchNotifications(session)
+//					fetchNotifications(session)
 					return true;
 				}
 			}

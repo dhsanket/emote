@@ -28,7 +28,7 @@ class UserActionService {
         }
         favorite.favouriteTitles.add title
         favorite.save()
-		notificationService.registerInterest(title, user, TitleInterest.Type.FAVOURITE)
+//		notificationService.registerInterest(title, user, TitleInterest.Type.FAVOURITE)
     }
 
     def removeFavouriteTopic(User user, String title) {

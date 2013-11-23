@@ -35,7 +35,7 @@ class EmoteService {
                 topic.save(validate: true)
             }
         }
-		notificationService.notifyTitleUpdate(title, parentTitle, user)
+//		notificationService.notifyTitleUpdate(title, parentTitle, user)
     }
 
 
@@ -59,7 +59,7 @@ class EmoteService {
         title.save(validate: true, flush: true)
 		if(created){
 			//log.info "Registering author interest for title ${title}"
-			notificationService.registerInterest(emoteTitle, user, TitleInterest.Type.AUTHOR)
+//			notificationService.registerInterest(emoteTitle, user, TitleInterest.Type.AUTHOR)
 		}
 		return title
     }
