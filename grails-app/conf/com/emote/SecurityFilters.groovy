@@ -26,7 +26,7 @@ class SecurityFilters {
 			}
 		}
 		
-		signinCheck(action:'*', actionExclude: "signin|findUserInDB|feed|singleTitle", controllerExclude : 'picture') {
+		signinCheck(action:'*', actionExclude: "signin|findUserInDB|feed|singleTitle|index", controllerExclude : 'picture') {
 			before = {
 					if (session.user == null) {
 						redirect(controller:'user', action: 'signin')
