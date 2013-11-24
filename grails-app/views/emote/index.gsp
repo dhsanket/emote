@@ -27,7 +27,7 @@
 	        <browser:otherwise>
 	            <g:if test="${grailsApplication.config.emote.desktopBrowser.redirect.url?.length()}">
 	                <g:javascript>
-	                    window.location.href = '<g:createLink url="${grailsApplication.config.emote.desktopBrowser.redirect.url}"/>';
+	                    window.location.href = '<g:createLink url="${createLink(controller:'user',action:'landingPage', absolute:true)}"/>';
 	                </g:javascript>
 	            </g:if>
 	        </browser:otherwise>

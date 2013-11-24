@@ -14,6 +14,10 @@ class UserController
 	{
 	}
 	
+	def landingPage()
+	{
+	}
+	
 	def findUserInDB(){
 		log.info "looking for user in emote DB"
 		def me
