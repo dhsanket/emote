@@ -1,9 +1,10 @@
 <div id="img_search_container" class="popupzen" style="position:static;">
     <div id="image-search-container">
         <div id="image-search-bar">
-            <input type="text" value=" type search term here..." id="img_search_query_text" />
-            <input type="button" value="Search!" id="img_search_submit_button" onClick="_gaq.push(['_trackEvent', 'Search', 'Image Upload', 'Image Post', 1, false]);"/>
-            <input type="button" value="Back" id="img_search_back_button" />
+        
+            <input type="text" id="img_search_query_text"  />
+            <input type="button" id="img_search_submit_button" value="Search!"  onClick="_gaq.push(['_trackEvent', 'Search', 'Image Upload', 'Image Post', 1, false]);"/>
+            <input type="button" id="img_search_back_button" value="Back"  />
         </div>
         <div id="img_search_results" style="border: 1px solid black;">
         </div>

@@ -65,7 +65,15 @@ function initImageEventHandlers(){
 
     $('#img_search_button').click(function(){
         $('#img_search_container').toggleClass('active');
+
+		//Bing image auto search
+        var webImageSearchTerm = $('#obj-title').val();
+		$('#img_search_query_text').attr('value', webImageSearchTerm);
+		$('#img_search_submit_button').click();
+        
         $("#img_search_results").html("");
+        
+		
         return false;
     });
 

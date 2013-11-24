@@ -12,7 +12,7 @@
 			<input type="hidden" name="scaledImgWidth" value="800">
 			<input type="hidden" name="scaledImgHeight" value="800">
 			<input type="hidden" name="webSearchImageURL" value="">
-			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" placeholder="" name="title" />
+			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" value="" placeholder="" name="title" />
 			<div id="obj-title-suggestion"></div>
 			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
             <input type="hidden" id="goodOrBad" name="goodOrBad"/>
