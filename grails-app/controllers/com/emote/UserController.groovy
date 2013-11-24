@@ -72,7 +72,7 @@ class UserController
 			return
 		}
 		log.info " did not find facebook Context"
-		redirect(controller:'user' , action:'signin')
+		redirect(controller:'emote' , action:'index')
 		return ;
 	}
 	
