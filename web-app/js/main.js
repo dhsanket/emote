@@ -40,6 +40,12 @@ $(function(){
 			emoteCreateButton();
 		});
 		
+		// feed page search header-icon action
+		$('#searchIcon').click(function(){
+			navSlider();			
+			$('#searchField').focus();
+		});
+		
 		// Autocompletion on Emote create
 		$('#obj-title').autocomplete({
 			appendTo : '#obj-title-suggestion',

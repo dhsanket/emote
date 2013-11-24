@@ -87,8 +87,9 @@
 			</ul>
 			<div id="landingLogin">
 				<!-- <a href="https://www.facebook.com/dialog/oauth?redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&amp;client_id=498699006889199&amp;scope=email&amp;state=3a0f51b6909195ddf2e6c885898f33e6" onclick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><img src="/static/CnWCagyeEk6A7lvu2LBooHsn0gJ9t5xOP1YJluGUn7W.png"></a> -->
-				<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
-			onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><r:img uri= "img/fb-login.png" width="100%" /></a>
+				<!-- <a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
+			onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><r:img uri= "img/fb-login.png" width="100%" /></a> -->
+				<a href="/emote/feed.html" onclick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><img src="/static/CnWCagyeEk6A7lvu2LBooHsn0gJ9t5xOP1YJluGUn7W.png"></a>
 			</div>
 		</div>
 		<div class="clearfix"></div>
