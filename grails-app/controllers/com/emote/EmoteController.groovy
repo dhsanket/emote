@@ -18,6 +18,11 @@ class EmoteController {
 		
 	}
 	
+    def index(){
+		
+	} 
+	
+	
 	def save(EmoteCommand emote){
 		User user = session.user
 		if(user == null){

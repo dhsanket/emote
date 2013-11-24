@@ -126,4 +126,5 @@ log4j = {
 }
 emote.error.retrieve.url=""
 emote.desktopBrowser.redirect.url="landingPage.html"
+//emote.desktopBrowser.redirect.url=""
 emote.title.connectors = ["in"]

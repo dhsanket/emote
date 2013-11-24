@@ -52,16 +52,6 @@
     
     
 	<body onload="${pageProperty(name:'body.onload')}" >
-    <browser:choice>
-        <browser:isMobile></browser:isMobile>
-        <browser:otherwise>
-            <g:if test="${grailsApplication.config.emote.desktopBrowser.redirect.url?.length()}">
-                <g:javascript>
-                    window.location.href = '<g:createLink url="${grailsApplication.config.emote.desktopBrowser.redirect.url}"/>';
-                </g:javascript>
-            </g:if>
-        </browser:otherwise>
-    </browser:choice>
     	<div id="fb-root"></div>
     	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
 			
