@@ -4,6 +4,7 @@ modules ={
 		resource url:'/css/bootstrap.css'
 // 		resource url:'/css/bootstrap-override.css'
 		resource url:'/css/main.css'
+		resource url:'/css/desktop.css'
         resource url:'/css/jquery.Jcrop.min.css'
         resource url:'/css/mainzen.css'
 		resource url:'/css/other.css'

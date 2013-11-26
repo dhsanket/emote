@@ -52,6 +52,7 @@
     
     
 	<body onload="${pageProperty(name:'body.onload')}" >
+	
     	<div id="fb-root"></div>
     	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
 			
@@ -136,6 +137,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
     </script>
-		
+	
+	
     </body>
 </html>
