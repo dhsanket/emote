@@ -18,9 +18,11 @@
 
     </head>
     <body>
+<%--
+<<<<<<< HEAD
 		<div id="appContainer">
 				    	<g:render template="/common/header" />
-				    	<%--<g:render template="/common/signin_header_fb"></g:render>--%>   	    	
+				    	<g:render template="/common/signin_header_fb"></g:render>   	    	
 				    	    	<g:if test="${session.user == null}">
 				    	    	<g:render template="/common/signin_header_emote"></g:render>
 				    	    	</g:if>
@@ -38,6 +40,26 @@
 				         <div id="loadingOverlay"></div>
 				 <div id="overlayMessage">&nbsp;</div>
 	    </div>
+=======
+--%>
+    	<g:render template="/common/header" />
+    	    	<g:render template="/common/signin_header"></g:render>
+    	<g:render template="/common/create_emote" />
+    	<g:render template="/common/menu_bar" />
+    	<div id="feed-container" class="feed-container">
+	    	<g:render template="/common/pagination_prev"/>
+    		<g:render template="emotesTemplate" model="[titles: flash.titles]" />
+	    	<g:render template="/common/pagination_next"/>
+    	</div>
+        <g:render template="/common/picture_crop" />
+        <g:render template="/common/imageupload/web_search" />
+        <g:render template="/common/flag_inappropriate" />
+        
+         <div id="loadingOverlay"></div>
+ <div id="overlayMessage">&nbsp;</div>
+ <%--
+>>>>>>> 72bb9ec0b90d92df21794c0a20d50b6335daa409
+--%>
     </body>
     
 </html>

@@ -13,6 +13,7 @@ class EmoteService {
         String emoteTitle = emoteCmd.title
         String connector
         (emoteTitle, connector, parentTitle) = extractTitles(emoteCmd.title, emoteTitle, parentTitle)
+//<<<<<<< HEAD
         LinkedHashSet<ExpressionIdea> ideas = new LinkedHashSet<>()
         prepareExpressionIdeas(emoteCmd, ideas)
         Emote emote = new Emote(
@@ -60,6 +61,39 @@ class EmoteService {
 		if(created){
 			//log.info "Registering author interest for title ${title}"
 //			notificationService.registerInterest(emoteTitle, user, TitleInterest.Type.AUTHOR)
+//=======
+//		Emote emote = new Emote(
+//			userId:user.id, creator:user, username:username, topics:emoteCmd.category, parentTitle: parentTitle,
+//			connector: connector , expressions:emoteCmd.expressions, title:emoteTitle, facebookId:user.facebookId
+//			)
+//		
+//		
+//		LinkedHashSet nonEmptyExpression = new LinkedHashSet()
+//		emote.expressions.each{ exp ->
+//			if(exp.trim().length()> 0){
+//				nonEmptyExpression.add(exp)
+//			}
+//		}
+//		emote.expressions = nonEmptyExpression
+//		
+//		emote.populateKeywords()
+//		emote.save(validate: true)
+//		
+//		// save title if does not exist else update time
+//		Title title = Title.findByTextIlike(emoteTitle)
+//		if(title == null){
+//			title = new Title(text:emoteTitle, category: emote.topics)
+//			log.info "Saving title ${title}"
+//		}else{
+//			title.refreshUpdateTime()
+//			title.addCategory(emote.topics)
+//		}
+//		if(pic != null && pic.content.length > 0){
+//			pic.save(flush:true)
+//			log.info("saved picture $pic.id for title $title.text of length $pic.content.length")
+//			if(pic.id != null)
+//				title.addPicture(pic.id)
+//>>>>>>> 72bb9ec0b90d92df21794c0a20d50b6335daa409
 		}
 		return title
     }
@@ -112,8 +146,11 @@ class EmoteService {
 		if(followingUsers != null && followingUsers.size()> 0){
 			followingUsers = followingUsers + currentUserId
 		}
+//<<<<<<< HEAD
 		//log.info("emotes following usees $followingUsers, + $currentUserId")
 		
+//=======
+//>>>>>>> 72bb9ec0b90d92df21794c0a20d50b6335daa409
 		emotes.each {emote ->
 			boolean canShow = false
 			if(followingUsers == null || followingUsers.size() == 0 || followingUsers.contains(emote.userId) ||

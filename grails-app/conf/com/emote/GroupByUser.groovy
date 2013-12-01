@@ -11,11 +11,19 @@ class GroupByUser  implements Comparable {
 	
 	Date lastEmoteTime;
 	
+//<<<<<< hhh
 	private LinkedHashSet<ExpressionIdea> expressions = []
 	
 	
 	void add(Emote emote){
 		emote.expressionIdeas.each {expression -> 
+//=======
+//	private LinkedHashSet<String> expressions = []
+//	
+//	
+//	void add(Emote emote){
+//		emote.expressions.each {expression -> 
+//>>>>>>> 
 			expressions.add(expression)
 		}
 	}

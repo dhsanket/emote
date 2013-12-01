@@ -50,6 +50,7 @@ function navSlider() {
 	}
 }
 
+var swipeScreen = 1;
 // Emote Slider Functions
 function swipeInit() {
 	var mySwiper = $('.swiper-container').each(function(){
@@ -58,7 +59,14 @@ function swipeInit() {
 			mode:'horizontal',
 			loop: true,
 			speed: 300,
-			resistance: true
+			resistance: true,
+			onTouchEnd: function(){
+				$(".swipe-location li").css("backgroundColor", "#A7A29F");
+				swipeScreen = swipeScreen + 1;
+				if (swipeScreen > 2) { swipeScreen = 1;}
+				$(".screen" + swipeScreen).css("backgroundColor", "#98041A");
+				
+			}
 		});
 	});
 }
@@ -113,6 +121,16 @@ function preserveSizeWithoutMedia() {
 // Emote Creation Functions
 
 function emoteCreateButton(doNotResetForm) {
+
+	if ($("#emote-creation-container").hasClass("edit-emote")){
+		$("#emote-creation-container").removeClass("edit-emote");
+		$('#emote-creation-container').css("top", "0px");
+		$('#emote-creation-container').css("left", "0px");
+		$('#emote-creation-container').css("width", "100%");
+		$('#category').val("");
+		$('#pick-a-category span').text("-- Pick a category --");
+	}
+	
 		if($('#emote-creation-container').hasClass('active')) {
 			$('#emote-creation-container').removeClass('active');
 			$('#feed-container').removeClass('emoteCreateActive');
@@ -137,12 +155,18 @@ function emoteCreateButton(doNotResetForm) {
             if($('#img_search_container').hasClass('active')) {
                 $('#img_search_container').toggleClass('active');
             }
+            $("#loadingOverlay").hide();         
 
         }
 		else {		
-				$('#feed-container').addClass('emoteCreateActive');
+			$("#loadingOverlay").width($(window).width());
+			$("#loadingOverlay").height($(window).height());
+			$("#loadingOverlay").css("zIndex",10);
+			$("#loadingOverlay").show();
+			
+			$('#feed-container').addClass('emoteCreateActive');
 				$('#emote-creation-container').addClass('active');
-				$('#createEmote').addClass('active');
+				//$('#createEmote').addClass('active');
 				$('#user-header').toggleClass('create-emote');
 				$('#photo-feed').toggleClass('create-emote');
 				
@@ -155,16 +179,38 @@ function emoteCreateButton(doNotResetForm) {
 	            
 				// Scroll to top functionality
 				scrollToTop(800);
+								
 		}
 	
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title,category){
-		
+function quick_emote(title,category,id){
+	$("#obj-title-location").hide();
+	$("#loadingOverlay").width($(window).width());
+	$("#loadingOverlay").height($(window).height());
+	$("#loadingOverlay").css("zIndex",10);
+	$("#loadingOverlay").show();	
+	
 		$('#obj-title').val(title);
+		$('.edit-emote-header h3').text(title);
+		$('.edit-emote-header p').text(category);
 		$('#category').val(category);
-		emoteCreateButton(true);
+		$('#pick-a-category span').text(category);
+		//alert($(document).scrollTop());
+		var posTop = ($(document).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(document).scrollTop()));
+		
+		//alert($(document).scrollTop() + "\n" + $("#"+id).position().top);
+		$('#emote-creation-container').css("top", posTop);
+		$('#emote-creation-container').css("left", $("#"+id).position().left);
+		var contWidth = $("#"+id).width();
+		$('#emote-creation-container').css("width", contWidth + 2);
+		$('#emote-creation-container').addClass("edit-emote");
+		$('#emote-creation-container').addClass('active');
+		//$('#createEmote').addClass('active');
+		$('#user-header').toggleClass('create-emote');
+		$('#photo-feed').toggleClass('create-emote');		
+		//emoteCreateButton(true);
 }
 
 // user can easily click another users emote and submit as his own 
@@ -176,45 +222,46 @@ function re_emote(title, tag){
 
 function emoteCreate() {
 	//Submit-button click event has occured
-	
+	var invalidFieldArr = new Array();
 	var isValid = true;
 	if ($('#tag').val().length <1 ){
-		$("#tag_tag").css({'border': '2px solid red'});
-		isValid = false;
+		$("#tag_tagsinput").css({'border': '2px solid red'});
+		invalidFieldArr.push("#tag_tagsinput");
 	}else{
-		$("#tag_tag").css({'border': ''});
-		isValid = true;
+		$("#tag_tagsinput").css({'border': ''});
 	}
 	
 	if ( $('#obj-title').val().length< 1 ){
 		$("#obj-title").css({'border': '2px solid red'});
-		isValid = false;
+		invalidFieldArr.push("#obj-title");
 	}else{
 		$("#obj-title").css({'border': ''});
-		isValid = true;
-	}
-	
-	if(!isValid ){
-		return false;
 	}
 	
 	//check if category is selected
-    var selectBox = document.getElementById('category');
-    var a = selectBox.selectedIndex;
+    var selectBox = document.getElementById('category').value;
+    var a = (selectBox == "" ? 0 : 1);
 	if (a == 0){	
-		$("#category").css({'border': '2px solid red'});
+		$("#pick-a-category").css({'border': '2px solid red'});
+		invalidFieldArr.push("#pick-a-category");
 	}
 	else
 	{
 		//if user selects a category; remove red category border (if he made mistake in first attempt
-		$("#category").css({'border': '1px solid #ccc'});
-		emoteCreateButton(true);
-		emoteSubmit();
+		$("#pick-a-category").css({'border': '1px solid #ccc'});
 	}
+
+	if(invalidFieldArr.length > 0 ){
+		return false;
+	}	
+	
+	emoteCreateButton(true);
+	emoteSubmit();	
 }
 
 //ajax submit createEmote form action
 function emoteSubmit() {
+
 
 //	displayLoadingOverlay();
 	// Test values came through correctly (disable comments on lines below to test fields are outputting properly, into console.)
@@ -247,6 +294,9 @@ function emoteSubmit() {
 
 function displayLoadingOverlay()
 {
+
+	$("#loadingOverlay").css("zIndex",1000);
+
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
 	$("#overlayMessage").css("top",($(window).height()/2)-($("#overlayMessage").height()/2)-50)
