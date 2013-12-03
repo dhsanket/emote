@@ -224,6 +224,7 @@ function emoteCreate() {
 	//Submit-button click event has occured
 	var invalidFieldArr = new Array();
 	var isValid = true;
+	console.log($('#tag').val());
 	if ($('#tag').val().length <1 ){
 		$("#tag_tagsinput").css({'border': '2px solid red'});
 		invalidFieldArr.push("#tag_tagsinput");

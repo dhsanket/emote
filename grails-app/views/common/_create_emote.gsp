@@ -50,10 +50,8 @@
 					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
 					<input type="hidden" name="share" id="share-input" value="false"/>
 				</div>
-			</div>
+			</div><%--
 			
-<%--			
->>>>>>> 72bb9ec0b90d92df21794c0a20d50b6335daa409
 			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>
 			
             <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >
@@ -67,8 +65,7 @@
 		 			<button type="submit" id="submit-button" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"> <i class="icon icon-check"></i> </button> 
 				</div>
 			</div>
---%>
-		</div>
+		--%></div>
   
   </div>
  </div>
