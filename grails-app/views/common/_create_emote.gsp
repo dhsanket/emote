@@ -16,14 +16,6 @@
 			<input type="hidden" name="scaledImgWidth" value="800">
 			<input type="hidden" name="scaledImgHeight" value="800">
 			<input type="hidden" name="webSearchImageURL" value="">
-<%--
-<<<<<<< HEAD
-			<input required type="text" id="obj-title" class="emote-topic-input" maxlength="50" value="" placeholder="" name="title" />
-			<div id="obj-title-suggestion"></div>
-			<input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
-            <input type="hidden" id="goodOrBad" name="goodOrBad"/>
-=======
---%>
 			<div id="create-emote-field-container">
 				<input required type="text" id="obj-title" class="emote-topic-input input-field" maxlength="50" placeholder="" name="title" />
 				<div id="in-input-field"><span>&nbsp;</span></div>
@@ -49,7 +41,7 @@
 					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').value, 'Add', 1, false]);"><span>POST</span></button>
 					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
 					<input type="hidden" name="share" id="share-input" value="false"/>
-				</div>
+				</div>--%>
 			</div><%--
 			
 			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>

@@ -123,7 +123,7 @@
 						$('#'+id+'_tag').blur();
 					}
 					
-					//$.fn.tagsInput.updateTagsField(this,tagslist);
+					$.fn.tagsInput.updateTagsField(this,tagslist);
 					
 					if (options.callback && tags_callbacks[id] && tags_callbacks[id]['onAddTag']) {
 						var f = tags_callbacks[id]['onAddTag'];
