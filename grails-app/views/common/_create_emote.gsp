@@ -41,27 +41,23 @@
 					<button class="button-off" id="post-emote" type="submit" value="Post" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').value, 'Add', 1, false]);"><span>POST</span></button>
 					<button class="button-off" id="share-emote" type="button" value="Share"><span>&nbsp;</span></button>
 					<input type="hidden" name="share" id="share-input" value="false"/>
-				</div>--%>
-			</div><%--
-			
-			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>
-			
-            <input type="file" id="pic" name="photo" title="Upload photo" onchange="fileSelectHandler()" >
-			
-			<div id="emote-bar">
-				<div id="emote-bar-container">
-
-					
-					<a href="#" id="geoLocation" class="header-icon"><i class="icon icon-screenshot"></i></a>
-					<a href="#" id="cameraInit" class="header-icon"><i class="icon icon-camera"></i></a>
-		 			<button type="submit" id="submit-button" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"> <i class="icon icon-check"></i> </button> 
 				</div>
 			</div>
-		--%></div>
+			
+			<div id="photoBar"> <img id="file-preview" src="#" alt="your image" /> </div>
+ 			
+			<div id="emote-bar" class="emote-v2-footer clearfix">
+				<ul class="emote-v2-actions-left">
+					<li>
+						<button id="addimage-button"  ><img src="/img/add_photo.png"/></button>
+					</li>
+				</ul>				
+			</div>
+		</div>
   
   </div>
  </div>
- <%-- <g:render template="/common/img_selection" /> --%>
+ <g:render template="/common/img_selection" /> 
  </form>
 
 
