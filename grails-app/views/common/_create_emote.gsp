@@ -49,7 +49,7 @@
 			<div id="emote-bar" class="emote-v2-footer clearfix">
 				<ul class="emote-v2-actions-left">
 					<li>
-						<button id="addimage-button"  ><img src="/img/add_photo.png"/></button>
+						<button class="button-off" type="button" value="image-add" id="addimage-button"  ><img src="/img/add_photo.png"/></button>
 					</li>
 				</ul>				
 			</div>

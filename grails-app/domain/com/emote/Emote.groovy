@@ -31,7 +31,7 @@ class Emote {
     String parentTitle
     String connector
 	Set<String> photos = []
-    List<ExpressionIdea> expressionIdeas
+    List<ExpressionIdea> expressionIdeas = []
 	// geo-location
 	String locationName = ""
 
