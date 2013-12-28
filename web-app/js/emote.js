@@ -186,6 +186,7 @@ function emoteCreateButton(doNotResetForm) {
 
 //automatically adds title to the createEmote form
 function quick_emote(title,category,id){
+	console.log("quick emote called with "+title);
 	$("#obj-title-location").hide();
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
@@ -201,10 +202,10 @@ function quick_emote(title,category,id){
 		var posTop = ($(document).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(document).scrollTop()));
 		
 		//alert($(document).scrollTop() + "\n" + $("#"+id).position().top);
-		$('#emote-creation-container').css("top", posTop);
-		$('#emote-creation-container').css("left", $("#"+id).position().left);
-		var contWidth = $("#"+id).width();
-		$('#emote-creation-container').css("width", contWidth + 2);
+//		$('#emote-creation-container').css("top", posTop);
+//		$('#emote-creation-container').css("left", $("#"+id).position().left);
+//		var contWidth = $("#"+id).width();
+//		$('#emote-creation-container').css("width", contWidth + 2);
 		$('#emote-creation-container').addClass("edit-emote");
 		$('#emote-creation-container').addClass('active');
 		//$('#createEmote').addClass('active');

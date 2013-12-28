@@ -12,33 +12,12 @@
 		<ul class="header-comments" styl="float:left;"><li>${title.firstCategory}</li><li>&#183;&nbsp;&nbsp;201 comments</li></ul>
 		</div>
 				<%--<h3><g:link controller="emote" action="getTitle" params="[titleId: title.id]"> ${title.title} </g:link></h3> 		--%>
-		<div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
-		<a href="#" class="editEmoteLink"><i class="icon-edit"></i></a>
+				<%--
+					quick emote on top left doesn't work				
+		<div id="qemote_${i}" class="quickEmote emote-v2-actions" >
+			<button id="qemote_${i}" class="icon-edit emote-v2-action-button" onclick="javascript:javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"></button>
 		</div>
-<%--
-<<<<<<< HEAD
- 
-<g:if test="${session.user}">       
-        <ul class="emote-v2-actions">			
-			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')"><i class="icon-flag icon-white"></i></button></li>
-			<li><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" >
-    			<button>f</button></facebook:publishLink></li>
-            <g:if test="${favourites && favourites.contains(title.title)}">
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><i class="icon-star icon-white"></i></button></li>
-            </g:if>
-            <g:else>
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><i class="icon-star-empty icon-white"></i></button> </li>
-            </g:else>
-            <g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button"><i class="icon-refresh icon-white"></i></button></li>
-            </g:if>
-            <g:else>
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><i class="icon-time icon-white"></i></button></li>
-            </g:else>
-		</ul>
-</g:if>		
-=======
---%>
+		--%>
 		<ul class="swipe-location"><li class="screen1"></li><li class="screen2"></li></ul>
 	</div>
 	
@@ -118,29 +97,33 @@
 	<div class="emote-v2-footer clearfix">
 		<ul class="emote-v2-actions-left">
 			<li>
-				<button id="qemote_camera_${i}" class="emote-v2-action-button" onclick="javascript:"><img src="/img/add_photo.png"/></button>
+				<button id="emote_camera_${i}" class="emote-v2-action-button" onclick="javascript:"><img src="/img/add_photo.png"/></button>
 			</li>
 		</ul>
 		<ul class="emote-v2-actions">
+			 <li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
+			 		<img src="/img/re-emote.png"/>
+			 	</button>
+			 </li>
+			 
 			<g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
-            <li class="emote-v2-actions-first"><button id="fav_emote_${i}" class="emote-v2-action-button"><img src="/img/doing_now_green.png"/></button></li>
+            	<li><button id="fav_emote_${i}" class="emote-v2-action-button"><img src="/img/doing_now_green.png"/></button></li>
             </g:if>
             <g:else>
-            <li class="emote-v2-actions-first"><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><img src="/img/doing_now_grey.png"/></button></li>
+            	<li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.title}')"><img src="/img/doing_now_grey.png"/></button></li>
             </g:else>	
             
 			<li><button id="fav_emote_${i}" class="emote-v2-action-button"><img src="/img/shortlist.png"/></button></li>
-			<li><button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')"><img src="/img/report.png"/></button></li>
+			<li><button id="remote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')"><img src="/img/report.png"/></button></li>
+			
             <g:if test="${favourites && favourites.contains(title.title)}">
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><img src="/img/favourite_icon_on.png"/></button></li>
+            	<li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:removeFromFavourite(this.id,'${title.title}')"><img src="/img/favourite_icon_on.png"/></button></li>
             </g:if>
             <g:else>
-            <li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><img src="/img/favourite.png"/></button> </li>
+            	<li><button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.title}')"><img src="/img/favourite.png"/></button> </li>
             </g:else>
 			<li class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></li>		
 			
-
-            
 		</ul>
 		
 	</div>
