@@ -63,11 +63,11 @@ environments {
     development {
         grails.logging.jul.usebridge = true
 		//FACEBOOK http://localhost:8080  Database Heroku emote-test
-		grails.plugin.facebooksdk.app.id = 498699006889199
+		grails.plugin.facebooksdk.app.id = 182362751927817
 		grails.plugin.facebooksdk.app.permissions = ['email']
-		grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
+		grails.plugin.facebooksdk.app.secret = '1b7e0e9e7708f746c0cce9b394ba9196'
 		
-		def FacebookAppId = 498699006889199
+		def FacebookAppId = 182362751927817
     }
 	
 	test {
