@@ -41,13 +41,13 @@ modules ={
 		resource url: '/img/startup/startup-tablet-portrait.png'
 		resource url: '/img/startup/startup.png'
 
-        resource url: '/images/emote-app.jpg'
-        resource url: '/images/fb_icon.jpg'
-        resource url: '/images/fb_like.png'
-        resource url: '/images/fb_login.png'
-        resource url: '/images/g_plus.png'
-        resource url: '/images/header_back.jpg'
-        resource url: '/images/landingLogo.png'
+        resource url: '/images/landingPage/emote-app.jpg'
+        resource url: '/images/landingPage/fb_icon.jpg'
+        resource url: '/images/landingPage/fb_like.png'
+        resource url: '/images/landingPage/fb_login.png'
+        resource url: '/images/landingPage/g_plus.png'
+        resource url: '/images/landingPage/header_back.jpg'
+        resource url: '/images/landingPage/landingLogo.png'
 
 
 		resource url: '/js/vendor/modernizr-2.6.2.min.js'
