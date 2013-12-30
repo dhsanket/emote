@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+/*---------- CSS Reset Start --------------------------*/
+html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+    body {
+    line-height: 1;
+    }
+    ol, ul {
+    list-style: none;
+    }
+    blockquote, q {
+    quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+    content: '';
+    content: none;
+    }
+    table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+    
+    html, body, section,nav, ul, li, div,h1,h2,h3,p, img{
+	display: block;
+	padding: 0px;
+	margin: 0px auto;
+    }
+    a{
+        text-decoration: none;
+    }
+/*========== CSS Reset End ----------------------------*/
+
+
+.landingBody{
+	background:#e7e7e7;
+	height:auto;
+	font-family:"Times New Roman", serif;
+		
+}
+.landingBody a:link, .landingBody a:visited{
+	color: #9a1332;
+	text-decoration: underline;
+}
+#heade_wrapper{
+	background:url(../images/header_back.jpg);
+	height:140px;
+}
+#header{
+	position:relative;
+	height:140px;
+	width:1024px;
+}
+#header img{
+	float:left;
+	width:110px;
+	margin-top: 26px;
+	margin-left: 60px;
+}
+#header h1{
+	font-size: 40px;
+	color:#FFF;
+	float:left;
+	width:700px;
+	margin-top: 26px;
+	margin-left: 60px;
+}
+#header h2{
+	font-size: 20px;
+	color:#FFF;
+	float:left;
+	width:680px;
+	margin-top: 14px;
+	margin-left: 60px;
+	line-height: 22px;
+}
+#header a:link,#header a:visited{
+	color:#FFF;
+	text-decoration:underline;
+}
+#landingContent{
+	position:relative;
+	background:#e9faff;
+	border-bottom: solid 2px #a71536;
+}
+a.fb_follow{
+	display:block;
+	position:absolute;
+}
+#landingContent a img {
+	border:none;
+}
+#landingFooter{
+	background: #e7e7e7;
+	width:1024px;
+	height:auto;
+	font-family:"Times New Roman", serif;
+	
+	
+}
+
+#social_icons{
+	width:230px;
+	height:120px;
+	float:left;
+	margin-top: 10px;
+}
+#social_icons li{
+    float: none;
+    margin:  2px 15px;
+    padding: 3px;
+}
+#social_icons img{
+    float: left;
+    margin: 6px auto;
+}
+#landingLogin a img{
+    width: 230px;
+    height: 40px;
+}
+#landingDisclaimer{
+	background:#fff;
+	width:630px;
+	height:auto;
+	float:left;
+	padding: 6px 20px;
+	margin-top: 35px;
+	border: solid 1px #c4c0c0;
+	
+	-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+}
+
+p{
+    width:100%;
+    text-align:center;
+    font: 15px;
+    color: #636363;
+}
+.clear{
+	clear:both;
+}

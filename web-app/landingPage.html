@@ -11,9 +11,7 @@
 		<meta charset="utf-8">
 	    <meta name="description" content="">
 	    
-		<link href="css/normalize.css" rel="stylesheet" type="text/css">
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/landing.css" rel="stylesheet" type="text/css">
 		
 		<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 
@@ -28,67 +26,57 @@
         <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
         
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
 
-        <link rel="canonical" href="http://www.emote-app.com" />
-		
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <meta name="msapplication-TileColor" content="#222222">
 
-        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
 </head>
 
 
 <body class="landingBody">
  
-
-	<div id="landingLogo"><img src="../img/landingPage/landingLogo.jpg"/></div>
-	<div id="landingContainer">
-		<div id="landingContent">
-
-    </div>
-		<div id="landingFooter">
-			<ul>
-				<li>
-					<div id="fb-root"></div>
-					<script>(function(d, s, id) {
-					  var js, fjs = d.getElementsByTagName(s)[0];
-					  if (d.getElementById(id)) return;
-					  js = d.createElement(s); js.id = id;
-					  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-					  fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));</script>				
-					<div class="fb-like" data-href="https://www.emote-app.com" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="true"></div>				
-				</li>
-				<li>
-			        <!-- Place this tag where you want the share button to render. -->
-			    	<div class="g-plus" data-action="share" data-size="small" data-annotation="none"></div>
-    <!-- Place this tag after the last share tag. -->
-    <script type="text/javascript">
-      window.___gcfg = {lang: 'en-GB'};
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-				</li>
-			</ul>
-			<div id="landingLogin">
-				<a href="https://www.facebook.com/dialog/oauth?redirect_uri=http%3A%2F%2Flocalhost%3A8080%2F&amp;client_id=498699006889199&amp;scope=email&amp;state=3a0f51b6909195ddf2e6c885898f33e6" onclick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);"><img src="/static/CnWCagyeEk6A7lvu2LBooHsn0gJ9t5xOP1YJluGUn7W.png"></a>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-		<div id="landingDisclaimer">emote-app will not publish any content to your facebook without your explicit permission. By signing in with Facebook, you are agreeing to the <a href="/Terms.html">Terms of Service</a> and <a href="/Privacy.html">Privacy Policy</a></div>		
+	<!-- ../img/landingPage/landingLogo.jpg -->
+    <div id="heade_wrapper">
+	<div id="header">
+		<img src="images/landingLogo.png"/>
+		<h1>The first micro-review mobile app</h1>
+		<h2><a href="http://www.emote-app.com/">www.emote-app.com</a> will allow you to spend less time trawling through page long
+reviews while still giving you a better understanding than a rating system!</h2>
 	</div>
+	<div id="landingContainer">
+		<div id="landingContent"><br><br><div id="landingLogin">
+		    <a href=""><img src="images/fb_login.png" /></a>
+			</div>
+       		<a href="https://plus.google.com/111094199736252097583">
+            	<img src="images/emote-app.jpg" />
+            </a>
+		</div>
+		<div id="landingFooter">
+		    <ul id="social_icons">
+			<li>
+			<!-- Place this tag where you want the share button to render. -->
+			<div class="g-plus" data-action="share" data-size="small" data-annotation="none">
+			    <a href=""><img src="images/g_plus.png" /></a>
+			</div>
+<!-- Place this tag after the last share tag. -->
+
+			</li>
+			<li>		
+				<div class="fb-like" ><img src="images/fb_like.png" /></div>				
+			</li>
+				
+                <li>
+                	
+                </li>
+			</ul>
+			
+            <div id="landingDisclaimer">emote-app will not publish any content to your facebook without your explicit permission. By signing in with Facebook, you are agreeing to the <a href="/Terms.html">Terms of Service</a> and <a href="/Privacy.html">Privacy Policy</a>
+	    </div>
+          
+		</div>
+	
+				 
+	</div>
+    </div>
+    <p class="clear">&copy; Copyright  <a href="http://www.emote-app.com/">emote.com </a>. All rights reserved. </p>
 </body>
 </html>
