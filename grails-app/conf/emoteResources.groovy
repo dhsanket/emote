@@ -11,6 +11,7 @@ modules ={
 		resource url:'/css/animate/animate.css'
 //		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
 		resource url:'/css/add2home.css'
+        resource url:'/css/landing.css'
 
 		resource url: '/img/splash-logo.png'
 		resource url: '/img/favicon.ico'
@@ -39,6 +40,15 @@ modules ={
 		resource url: '/img/startup/startup-tablet-portrait-retina.png'
 		resource url: '/img/startup/startup-tablet-portrait.png'
 		resource url: '/img/startup/startup.png'
+
+        resource url: '/images/emote-app.jpg'
+        resource url: '/images/fb_icon.jpg'
+        resource url: '/images/fb_like.png'
+        resource url: '/images/fb_login.png'
+        resource url: '/images/g_plus.png'
+        resource url: '/images/header_back.jpg'
+        resource url: '/images/landingLogo.png'
+
 
 		resource url: '/js/vendor/modernizr-2.6.2.min.js'
 		resource url: '/js/vendor/jquery-2.0.0.min.js'

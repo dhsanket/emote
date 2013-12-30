@@ -53,17 +53,26 @@
     </div>
     <div id="landingContainer">
         <div id="landingContent"><br><br><div id="landingLogin">
-            <a href=""><img src="images/fb_login.png" /></a>
-        </div>
-            <a href="https://plus.google.com/111094199736252097583">
-                <img src="images/emote-app.jpg" />
+
+            <a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
+               onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">
+
+                <img src="images/fb_login.png" />
+
             </a>
+
+
+        </div>
+
+                <img src="images/emote-app.jpg" />
+
         </div>
         <div id="landingFooter">
             <ul id="social_icons">
                 <li>
                     <!-- Place this tag where you want the share button to render. -->
                     <!-- tag where you want Google +1 button to render. -->
+                    %{--<a href="https://plus.google.com/111094199736252097583">  </a>--}%
                     <div class="g-plusone" data-size="medium"></div>
                     <div class="g-plus" data-action="share" data-size="small" data-annotation="none"></div>
                     <!-- Place this tag after the last share tag. -->
