@@ -46,7 +46,7 @@
 <!-- ../img/landingPage/landingLogo.jpg -->
 <div id="heade_wrapper">
     <div id="header">
-        <img src="images/landingPage/landingLogo.png"/>
+        <img src="img/landingPage/landingLogo.png"/>
         <h1>The first micro-review mobile app</h1>
         <h2><a href="http://www.emote-app.com/">www.emote-app.com</a> will allow you to spend less time trawling through page long
         reviews while still giving you a better understanding than a rating system!</h2>
@@ -57,14 +57,14 @@
             <a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
                onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">
 
-                <img src="images/landingPage/fb_login.png" />
+                <img src="img/landingPage/fb_login.png" />
 
             </a>
 
 
         </div>
 
-                <img src="images/landingPage/emote-app.jpg" />
+                <img src="img/landingPage/emote-app.jpg" />
 
         </div>
         <div id="landingFooter">
