@@ -1,15 +1,16 @@
 modules ={
 	core {
-		resource url:'/css/normalize.css'
-		resource url:'/css/bootstrap.css'
-// 		resource url:'/css/bootstrap-override.css'
+//		resource url:'/css/normalize.css'
+//		resource url:'/css/bootstrap.css'
+        resource url:'/css/bootstrap-scss.css'
 		resource url:'/css/main.css'
 		resource url:'/css/desktop.css'
         resource url:'/css/jquery.Jcrop.min.css'
-        resource url:'/css/mainzen.css'
-		resource url:'/css/other.css'
+//        resource url:'/css/mainzen.css'
+//		resource url:'/css/other.css'
 		resource url:'/css/animate/animate.css'
 //		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
+// 		resource url:'/css/bootstrap-override.css'
 		resource url:'/css/add2home.css'
         resource url:'/css/landing.css'
 
@@ -43,9 +44,7 @@ modules ={
 
         resource url: '/img/landingPage/emote-app.jpg'
         resource url: '/img/landingPage/fb_icon.jpg'
-        resource url: '/img/landingPage/fb_like.png'
         resource url: '/img/landingPage/fb_login.png'
-        resource url: '/img/landingPage/g_plus.png'
         resource url: '/img/landingPage/header_back.jpg'
         resource url: '/img/landingPage/landingLogo.png'
 
