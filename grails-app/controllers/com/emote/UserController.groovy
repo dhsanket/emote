@@ -16,6 +16,7 @@ class UserController
 	
 	def landingPage()
 	{
+        render (view:'/landingPage')
 	}
 	
 	def findUserInDB(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
@@ -37,15 +37,25 @@
         <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
         <meta name="msapplication-TileColor" content="#222222">
 
+        <!-- other necessities -->
 		<a href="https://www.emote-app.com" rel="publisher" />
 		<a href="https://plus.google.com/111094199736252097583" rel="publisher" />
+        <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 
 		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 		
-		<r:require modules="core"/>
-		<r:layoutResources/>		        
+		<r:require modules="mobileAndDesktop"/>
+        <browser:choice>
+            <browser:isMobile>
+                <r:require modules="mobileTablet"/>
+            </browser:isMobile>
+            <browser:otherwise>
+                <r:require modules="desktop"/>
+            </browser:otherwise>
+        </browser:choice>
+
+        <r:layoutResources/>
         <g:layoutHead />
         
     </head>
