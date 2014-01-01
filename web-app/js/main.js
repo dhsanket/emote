@@ -128,7 +128,7 @@ $(function(){
 		});	
 		
 		// Create emote 'SAVE' button
-		$('#post-emote').click(function(){
+		$('#submit-button').click(function(){
 			emoteCreate();
 	 		// prevent default behaviour of button
 	 		return false;

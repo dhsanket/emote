@@ -98,15 +98,16 @@
         <ul class="clearfix pull-left">
             <li id="remote_${i}" class="feeds-sprite feeds-report-icon" onclick="javascript:flag_emote('${title.completeTitle}')"></li>
             <li id="emote_camera_${i}" class="feeds-sprite feeds-camera-icon" onclick="javascript:"></li>
-            <li class="feeds-sprite feeds-share-icon last"> <emoteapp:facebookpost popularEmotesList="${title.popularEmotes}" />
+            <li class="feeds-sprite feeds-share-icon last"> <emoteapp:facebookpost popularEmotesList="${title.popularEmotes}" /> </li>
 
-            %{--<button class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></button>--}%
-            %{--<li class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></li>--}%
-
-            </li>
+            <%--
+            <button class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></button>
+            <li class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></li>
+            --%>
         </ul>
+        
         <g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
-        <span id="fav_emote_${i}" class="feeds-sprite feeds-knob-icon:hover"></span>
+        <span id="fav_emote_${i}" class="feeds-sprite feeds-knob-icon"></span>
         </g:if> <g:else>
         <span id="fav_emote_${i}" class="feeds-sprite feeds-knob-icon" onclick="javascript:doingNow(this.id,'${title.title}')" ></span>
         </g:else>

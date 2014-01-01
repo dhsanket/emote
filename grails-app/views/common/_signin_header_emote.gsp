@@ -11,7 +11,11 @@
 
   Learn more about options for the login button plugin:
   /docs/reference/plugins/login/ -->
-<a href="${createLink(controller:'user',action:'signin', absolute:true)}"> Login to emote to create content </a>
+  
+<div class="login-bar">
+     <span class="button icon-button long button-maroon"><a href="${createLink(controller:'user',action:'signin', absolute:true)}"> <span class="lock-icon"></span> </a><strong>Login</strong></span> to emote to create content
+</div>
+
 
 </div>
 </body>
