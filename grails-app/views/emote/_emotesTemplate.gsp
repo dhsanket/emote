@@ -57,6 +57,12 @@
 							<ul>
 								<g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
 									<g:if test="${(exp.text.trim().length()>0)}">
+									
+									<%--
+									if negative emote then use   ----> <li class="sad"><a href="javascript:re_emote('Cafe Vergnano 1882', 'Best coffee ever' )">Best coffee ever</a></li>	
+										--%>
+										
+										
 										<li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}' )" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp.text}</a></li>
 									</g:if>
 								</g:each>
@@ -98,12 +104,14 @@
         <ul class="clearfix pull-left">
             <li id="remote_${i}" class="feeds-sprite feeds-report-icon" onclick="javascript:flag_emote('${title.completeTitle}')"></li>
             <li id="emote_camera_${i}" class="feeds-sprite feeds-camera-icon" onclick="javascript:"></li>
-            <li class="feeds-sprite feeds-share-icon last"> <emoteapp:facebookpost popularEmotesList="${title.popularEmotes}" /> </li>
-
+            
+            <li class="feeds-sprite feeds-share-icon last">             
+            <button class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></button>            
             <%--
-            <button class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></button>
+            <emoteapp:facebookpost popularEmotesList="${title.popularEmotes}" />             
             <li class="emote-v2-actions-last"><facebook:publishLink name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" display="touch" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction" ><img src="/img/share_small.png"/></facebook:publishLink></li>
             --%>
+            </li>
         </ul>
         
         <g:if test="${UserDoing.isDoing(session.user.id,title.title)}">
