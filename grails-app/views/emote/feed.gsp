@@ -32,7 +32,8 @@
         <g:render template="/common/picture_crop" />
         <g:render template="/common/imageupload/web_search" />
         <g:render template="/common/flag_inappropriate" />
-        
+        <g:render template="/common/popup_tutorial" />
+
          <div id="loadingOverlay"></div>
 		 <div id="overlayMessage">&nbsp;</div>
     </body>

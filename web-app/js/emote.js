@@ -456,24 +456,30 @@ function validationMarkers(){
 	});
 }
 
-var canvas = document.getElementById("spotlight_canvas");
-var ctx = canvas.getContext("2d");
-ctx.canvas.width  = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+var canvas;
+var ctx;
+
+$(function(){
+    canvas = document.getElementById("spotlight_canvas");
+    ctx = canvas.getContext("2d");
+    ctx.canvas.width  = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+});
 
 function createCanvasOverlay() {
     ctx.globalCompositeOperation = "source-over";
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.fillStyle = "rgba(0,0,0,0.8)";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    $('.divShowClick').each(function(){
+        if($(this).hasClass('active')) {
+            canvas.width = canvas.width;
+            createCanvasOverlay();
+        }
+    });
 }
 
-$('.divShowClick').each(function(){
-	if($(this).hasClass('active')) {
-		canvas.width = canvas.width;
-		createCanvasOverlay();
-	}
-});
 function resizeStuff() {
     canvas.width = canvas.width;
     ctx.canvas.width  = window.innerWidth;
