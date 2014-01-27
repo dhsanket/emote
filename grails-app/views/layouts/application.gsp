@@ -3,7 +3,7 @@
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <title><g:layoutTitle default="emote-app" /></title>
-	
+
 		<meta charset="utf-8">
 	    <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
@@ -51,7 +51,7 @@
     </head>
     
     
-	<body onload="${pageProperty(name:'body.onload')}" >
+	<body onload="${pageProperty(name:'body.onload')}" class="${pageProperty(name: 'body.class')}">
 	
     	<div id="fb-root"></div>
     	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
@@ -125,7 +125,6 @@
 		  })();
 		</script>
 		        
-		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
 		
 		    <!-- Place this tag after the last share tag. -->
