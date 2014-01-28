@@ -475,12 +475,14 @@ function createCanvasOverlay() {
         ctx.fillStyle = "rgba(0,0,0,0.8)";
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-        $('.divShowClick').each(function(){
-            if($(this).hasClass('active')) {
-                canvas.width = canvas.width;
-                createCanvasOverlay();
-            }
-        });
+        // Not sure why we have to call this function multiple times, but this led to max stack JS error
+
+//        $('.divShowClick').each(function(){
+//            if($(this).hasClass('active')) {
+//                canvas.width = canvas.width;
+//                createCanvasOverlay();
+//            }
+//        });
     }
 }
 
@@ -574,3 +576,11 @@ $('.divShowClick').click(function(e){
     $('#'+divId).addClass('active');
     resizeStuff();
 });
+
+function showTutorialPopup() {
+    navSlider();
+    setTimeout(function() {
+        $('.popup-tutorial-container').show();
+        resizeStuff();
+    }, 200);
+}
