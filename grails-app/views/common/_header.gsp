@@ -6,9 +6,7 @@
         <a href="#" id="createEmote" class="header-icon pull-right"><r:img uri="img/create-emote.png" alt="Create Emote"/></a>
         <a href="#" id="searchIcon" class="header-icon pull-right"><i class="icon icon-search icon-white"></i></a>
     </div>
-    <div class="login-bar">
-        <span class="button icon-button long button-maroon">
-            <span class="lock-icon"></span><strong>Login</strong>
-        </span> to emote to create content
-    </div>
+    <g:if test="${session.user == null}">
+        <g:render template="/common/signin_header_emote"></g:render>
+    </g:if>
 </header>

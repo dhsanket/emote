@@ -20,9 +20,6 @@
     <body>
         <div id="appContainer">
             <g:render template="/common/header" />
-            <g:if test="${session.user == null}">
-                <g:render template="/common/signin_header_emote"></g:render>
-            </g:if>
             <g:render template="/common/create_emote" />
         </div> <!-- #appContainer -->
     	<g:render template="/common/menu_bar" />
