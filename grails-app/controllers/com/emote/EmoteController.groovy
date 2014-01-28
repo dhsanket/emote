@@ -118,6 +118,7 @@ class EmoteController {
 		def emotes = emoteService.getSingleEmote(params.titleString);
 		if(emotes!= null && emotes.size() >0){
 			flash.titles =  emoteService.groupByTitle(emotes, user)
+            flash.showComments = true
 		}
 		render view:"feed"
 	}
