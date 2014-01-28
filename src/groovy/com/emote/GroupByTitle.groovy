@@ -1,6 +1,4 @@
-package com.emote;
-
-import java.util.Set;
+package com.emote
 
 public class GroupByTitle implements Comparable  {
 	

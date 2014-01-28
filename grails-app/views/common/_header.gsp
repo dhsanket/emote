@@ -1,5 +1,14 @@
 <header>
-    <g:link controller="emote" action="feed" ><h1 id="logo" class="pull-left"></h1></g:link>
-    <a href="#" id="toggleMenu" class="header-icon pull-left"><r:img uri="/img/menu-icon.png" width="100%" /></a>
-    <a href="#" id="createEmote" class="header-icon pull-right"><i class="icon icon-edit icon-white icon-edit-white"></i></a>
+    <div class="clearfix">
+        <g:link controller="emote" action="feed" ><h1 id="logo" class="pull-left"></h1></g:link>
+        <a href="#" id="toggleMenu" class="header-icon pull-left"><r:img uri="img/menu-icon.png" alt="menu"/></a>
+
+        <a href="#" id="createEmote" class="header-icon pull-right"><r:img uri="img/create-emote.png" alt="Create Emote"/></a>
+        <a href="#" id="searchIcon" class="header-icon pull-right"><i class="icon icon-search icon-white"></i></a>
+    </div>
+    <div class="login-bar">
+        <span class="button icon-button long button-maroon">
+            <span class="lock-icon"></span><strong>Login</strong>
+        </span> to emote to create content
+    </div>
 </header>

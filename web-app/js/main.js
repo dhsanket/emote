@@ -13,7 +13,7 @@ $(function(){
 			}
 		});
 
-		$('#share-emote').click(function(){
+		$('#feeds-share-icon-link').click(function(){
 			if ($(this).hasClass("button-on"))
 			{
 				$(this).addClass("button-off");

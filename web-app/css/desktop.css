@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.
@@ -7,91 +6,85 @@
 
 /* example media query for standard devices http://css-tricks.com/snippets/css/media-queries-for-standard-devices/  */
 
-
 /* Desktops and laptops ----------- */
+
 @media only screen
 and (min-width : 768px) {
-/* Styles */
-	#appContainer {
-		width: 100%;
-	}
+  /* Styles */
 
-/* Hide menu toggle button and Search button */
+  #appContainer {
+    width: 100%;
+  }
 
-#toggleMenu,
-#searchIcon {
-	visibility: hidden;
-}
+  /* Hide menu toggle button and Search button */
 
-/* Feed Styles */
+  #toggleMenu,
+  #searchIcon {
+    visibility: hidden;
+  }
 
+  /* Feed Styles */
 
-	#feed-container {
-		width: 768px;
-		position: relative;
-		left: 300px;
-		top: 44px;
-	}
+  #feed-container {
+    width: 768px;
+    position: relative;
+    left: 300px;
+    top: 44px;
+  }
 
-	header.active {
-		left: 0px;
-	}
+  header.active {
+    left: 0px;
+  }
 
-	#feed-container.navactive,
-	#user-header.navactive {
-		opacity:0.2;
-		left: 300px;
-	}
+  #feed-container.navactive,
+  #user-header.navactive {
+    opacity: 0.2;
+    left: 300px;
+  }
 
-	/* Nav Menu */
-	#nav-menu {
-		width: 300px;
-		z-index:100;
-		top: 44px;
-		left: 0px;
-		overflow-y: hidden;
-		position: fixed;
-	}
+  /* Nav Menu */
 
-	#nav-menu.active {
-
-	}
-
-	/* Emote Creation */
-
-	#emote-creation-container {
-		width: 768px;
-		left: 300px;
-		height:auto;
-		overflow:auto;
-		top:0;
-		opacity:0;
-		/*z-index:13;*/
-		position:fixed;
-
-	}
-
-	/* Emote Creation Slideout classes */
-
-	#emote-creation-container.active {
-		width: 768px;
-		left: 300px;
-	}
-
-	#feed-container.emoteCreateActive {
-
-	}
-
-	#feed-container.userActive {
-		top:95px;
-	}
+  #nav-menu {
+    width: 300px;
+    z-index: 100;
+    top: 44px;
+    left: 0px;
+    overflow-y: hidden;
+    position: fixed;
+  }
 
 
 
+  /* Emote Creation */
+
+  #emote-creation-container {
+    width: 768px;
+    left: 300px;
+    height: auto;
+    overflow: auto;
+    top: 0;
+    opacity: 0;
+    /*z-index:13;*/
+    position: fixed;
+  }
+
+  /* Emote Creation Slideout classes */
+
+  #emote-creation-container.active {
+    width: 768px;
+    left: 300px;
+  }
+
+
+
+  #feed-container.userActive {
+    top: 95px;
+  }
 }
 
 /* Large screens ----------- */
+
 @media only screen
 and (min-width : 1824px) {
-/* Styles */
+  /* Styles */
 }
