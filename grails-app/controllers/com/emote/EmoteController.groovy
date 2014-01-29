@@ -1,6 +1,7 @@
 package com.emote
 
-import grails.plugin.facebooksdk.*;
+import grails.plugin.facebooksdk.FacebookContext
+import grails.plugin.facebooksdk.FacebookGraphClient;
 
 class EmoteController {
 	
@@ -44,18 +45,8 @@ class EmoteController {
 			render(errors.toString())
 			return
 		}
-		Picture pic = null; 
-		if(emote.photo != null && emote.photo.bytes.size() >0){
-			//log.info "got a picture of size $emote.photo.bytes.size()"
-			pic = pictureService.crop(emote.photo, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
-				emote.scaledImgWidth, emote.scaledImgHeight)
-		}else if(emote.webSearchImageURL != null && emote.webSearchImageURL.size() > 0){
-			log.info "got a web picture  $emote.webSearchImageURL"
-			pic = pictureService.crop(emote.webSearchImageURL, emote.topx, emote.topy, emote.bottomx, emote.bottomy,
-				emote.scaledImgWidth, emote.scaledImgHeight)
-	
-		}
-		emoteService.create(emote,  user, pic)
+
+		emoteService.create(emote,  user)
 //<<<<<<< HEAD
 		def titles = emoteService.groupByTitle(emoteService.feed(0), session.user)
 //=======
@@ -66,6 +57,24 @@ class EmoteController {
 		render view:'feed'
 
 	}
+
+    def savePhoto(PhotoCommand photoCommand) {
+        Picture pic = null;
+
+        if(photoCommand.photo != null && photoCommand.photo.bytes.size() >0){
+            //log.info "got a picture of size $emote.photo.bytes.size()"
+            pic = pictureService.crop(photoCommand.photo, photoCommand.topxInt, photoCommand.topyInt, photoCommand.bottomxInt,
+                    photoCommand.bottomyInt, photoCommand.scaledImgWidthInt, photoCommand.scaledImgHeightInt)
+        }else if(photoCommand.webSearchImageURL != null && photoCommand.webSearchImageURL.size() > 0){
+            log.info "got a web picture  $photoCommand.webSearchImageURL"
+            pic = pictureService.crop(photoCommand.webSearchImageURL, photoCommand.topxInt, photoCommand.topyInt,
+                    photoCommand.bottomxInt, photoCommand.bottomyInt, photoCommand.scaledImgWidthInt, photoCommand.scaledImgHeightInt) as Picture
+        }
+
+        emoteService.addPicture(photoCommand.title, pic)
+
+        redirect(action: 'feed')
+    }
 	
 	def feed(){
 		int page = getPageIndex();

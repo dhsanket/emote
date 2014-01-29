@@ -54,6 +54,9 @@ function initImageEventHandlers(){
         $('#file-preview').attr('src',imgObj.attr('src') );
         $('#photoBar').addClass('active');
 
+        // Submit form
+        $('#photoSaveForm').submit();
+
         // stop default behaviour of button
         return false;
     });

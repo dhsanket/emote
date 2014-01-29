@@ -53,6 +53,8 @@ $(function(){
 			$(this).toggleClass('active');
 		});
 		$('.feeds-camera-icon').click(function(){
+            var title = $(this).attr('data-emote-title');
+            $('input[name=title]').val(title);
 			$('#imgchooserpopup').toggleClass('active');
 		});
 

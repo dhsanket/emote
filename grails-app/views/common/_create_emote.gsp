@@ -3,14 +3,6 @@
     <div id="emote-creation-container">
         <div class="data-set clearfix">
             <div class="emote-create-content">
-                <input type="hidden" name="topx" value="451">
-                <input type="hidden" name="topy" value="445">
-                <input type="hidden" name="bottomx" value="1080">
-                <input type="hidden" name="bottomy" value="800">
-                <input type="hidden" name="scaledImgWidth" value="800">
-                <input type="hidden" name="scaledImgHeight" value="800">
-                <input type="hidden" name="webSearchImageURL" value="">
-
                 <input required type="text" id="obj-title" class="emote-topic-input hash" maxlength="50" value="" placeholder="" name="title" />
                 <div id="obj-title-suggestion"></div>
                 <input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
@@ -41,5 +33,5 @@
             </div> <!-- /.emote-create-content -->
         </div> <!-- /.data-set -->
     </div> <!-- /#emote-creation-container -->
-    <g:render template="/common/img_selection" />
  </form>
+<g:render template="/common/img_selection" />

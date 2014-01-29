@@ -130,7 +130,7 @@
             <div class="emote-v2-footer silver-gradient gradient clearfix">
                 <ul class="clearfix pull-left">
                     <li class="feeds-sprite feeds-report-icon"></li>
-                    <li class="feeds-sprite feeds-camera-icon"></li>
+                    <li class="feeds-sprite feeds-camera-icon" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-share-icon last"></li>
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon"></span>
