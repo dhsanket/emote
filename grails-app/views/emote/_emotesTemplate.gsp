@@ -1,5 +1,7 @@
 <%@ page import="com.emote.UserDoing; com.emote.UserFavourite;" %>
 
+<g:set var="loggedInClass" value="${session.user ? 'active' : ''}"/>
+
 <g:if test="${titles != null}">
     <g:if test="${session.user}">
         <g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
@@ -130,8 +132,8 @@
             <div class="emote-v2-footer silver-gradient gradient clearfix">
                 <ul class="clearfix pull-left">
                     <li class="feeds-sprite feeds-report-icon"></li>
-                    <li class="feeds-sprite feeds-camera-icon" data-emote-title="${title.completeTitle}"></li>
-                    <li class="feeds-sprite feeds-share-icon last"></li>
+                    <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
+                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}" <emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>></li>
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon"></span>
                 <ul class="clearfix pull-right">

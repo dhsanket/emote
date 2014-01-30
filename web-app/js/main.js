@@ -52,10 +52,15 @@ $(function(){
 		$('.feeds-list-icon').click(function(){
 			$(this).toggleClass('active');
 		});
-		$('.feeds-camera-icon').click(function(){
+
+		$('.feeds-camera-icon.active').click(function(){
             var title = $(this).attr('data-emote-title');
             $('input[name=title]').val(title);
 			$('#imgchooserpopup').toggleClass('active');
+		});
+
+        $('.feeds-share-icon.active').click(function(){
+            postToFacebook($(this));
 		});
 
 		$('#category-list li').click(function(){

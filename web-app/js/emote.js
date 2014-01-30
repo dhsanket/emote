@@ -584,3 +584,31 @@ function showTutorialPopup() {
         resizeStuff();
     }, 200);
 }
+
+/**
+ * Function to post to Facebook. Base from publish-link.js from facebook-sdk plugin
+ *
+ * @param link DOM element from which read attributes
+ * @returns {boolean}
+ */
+function postToFacebook(link) {
+    var options = {
+        method: 'feed'
+    };
+    if (link.data('caption') != undefined) options['caption'] = link.data('caption');
+    if (link.data('display') != undefined) options['display'] = link.data('display');
+    if (link.data('description') != undefined) options['description'] = link.data('description');
+    if (link.data('link') != undefined) options['link'] = link.data('link');
+    if (link.data('name') != undefined) options['name'] = link.data('name');
+    if (link.data('picture') != undefined) options['picture'] = link.data('picture');
+    if (link.data('source') != undefined) options['source'] = link.data('source');
+    FB.ui(options, function(response) {
+        if (link.data('callback') != undefined) {
+            var callback = window[link.data('callback')];
+            if (typeof callback === 'function') {
+                callback(response);
+            }
+        }
+    });
+    return false;
+};
