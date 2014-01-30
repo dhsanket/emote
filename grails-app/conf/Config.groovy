@@ -89,11 +89,18 @@ environments {
         // TODO: grails.serverURL = "http://www.changeme.com"
 		
 		//FACEBOOK http://emote-app.herokuapp.com  Database:Heroku emote-app
-		grails.plugin.facebooksdk.app.id = 407280009364725
-		grails.plugin.facebooksdk.app.permissions = ['email']
-		grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
-		
-		def FacebookAppId = 407280009364725
+//		grails.plugin.facebooksdk.app.id = 407280009364725
+//		grails.plugin.facebooksdk.app.permissions = ['email']
+//		grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
+//
+//		def FacebookAppId = 407280009364725
+
+        //FACEBOOK http://emote-test.herokuapp.com  Database:Heroku emote-test
+        grails.plugin.facebooksdk.app.id = 145688522291575
+        grails.plugin.facebooksdk.app.permissions = ['email']
+        grails.plugin.facebooksdk.app.secret = '5f07c996c6d822970b98ee25f9a5d687'
+
+        def FacebookAppId = 145688522291575
     }
 }
 
