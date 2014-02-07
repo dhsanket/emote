@@ -26619,6 +26619,7 @@ OTHER.CSS
   margin-left: 45px;
   padding-top: 27px;
   margin-bottom: 16px !important;
+  line-height: 15px !important;
 }
 
 @media -sass-debug-info {
@@ -26648,7 +26649,7 @@ OTHER.CSS
 .else-emote-click {
   background: url(/img/arrow-rtr-leftcurve.png) left top no-repeat;
   padding-left: 26px;
-  padding-top: 40px;
+  padding-top: 26px;
   margin-bottom: 20px !important;
 }
 
@@ -26664,7 +26665,7 @@ OTHER.CSS
 }
 
   .else-emote-click {
-    margin-bottom: 2% !important;
+    margin-bottom: 8% !important;
   }
 }
 
