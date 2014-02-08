@@ -612,8 +612,8 @@ function postToFacebook(link) {
             }
         }
     }).id;
-    _fixShareDialogAttempts = 0;
-    $('iframe#' + FACEBOOK_DIALOG_ID)[0].onload = fixShareDialogSize;
+//    _fixShareDialogAttempts = 0;
+//    $('iframe#' + FACEBOOK_DIALOG_ID)[0].onload = fixShareDialogSize;
     return false;
 };
 
