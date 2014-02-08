@@ -1,4 +1,6 @@
 var IMAGE_CONTAINER_HEIGHT_EXCLUSION=140; //140 is the size occupied by app header, title of cropping window, bottom buttons
+var FACEBOOK_DIALOG_ID;
+
 function mapFunction() {
 	var lt = $(this).attr('data-lat');
 	var lg = $(this).attr('data-long');
@@ -602,13 +604,33 @@ function postToFacebook(link) {
     if (link.data('name') != undefined) options['name'] = link.data('name');
     if (link.data('picture') != undefined) options['picture'] = link.data('picture');
     if (link.data('source') != undefined) options['source'] = link.data('source');
-    FB.ui(options, function(response) {
+    FACEBOOK_DIALOG_ID = FB.ui(options, function(response) {
         if (link.data('callback') != undefined) {
             var callback = window[link.data('callback')];
             if (typeof callback === 'function') {
                 callback(response);
             }
         }
-    });
+    }).id;
+    _fixShareDialogAttempts = 0;
+    $('iframe#' + FACEBOOK_DIALOG_ID)[0].onload = fixShareDialogSize;
     return false;
+};
+
+/**
+ * Function to fix the width and position of Facebook share dialog for mobile resolution
+ */
+function fixShareDialogSize() {
+    var iframe = $('iframe#' + FACEBOOK_DIALOG_ID);
+
+    // Just process if dialog width doesn't fit inside the window
+    if($(window).width() < 640) {
+        iframe.css('width', $(window).width() - 47);
+    }
+
+    // If display mode 'touch' is used for Facebook window, move the dialog to the top of the window
+    // to cover all the screen.
+    if(parseInt(iframe.parents('div.fb_dialog.fb_dialog_advanced').css('top')) > 0) {
+        iframe.parents('div.fb_dialog.fb_dialog_advanced').css('top', 0);
+    }
 };
