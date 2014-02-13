@@ -119,6 +119,7 @@ $(function(){
 
 		// Create emote button toggle
 		$('#createEmote').click(function(){
+            hideCommentDialog();
 			emoteCreateButton();
 		});
 

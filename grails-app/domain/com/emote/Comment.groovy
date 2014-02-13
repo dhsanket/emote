@@ -4,24 +4,29 @@ class Comment {
 
     String id
     String userId
-    String parentEmoteId
+    String facebookUserId
+    String titleId
     Date dateCreated
     String comment
     String parentCommentId
+    Integer votesCount = 0
+
     /**
      * Child comments indicator
      */
-    Boolean hasChild = false
+    Boolean hasChildren = false
 
     static constraints = {
         userId blank: false
+        facebookUserId blank: false
         comment blank: false
-        hasChild nullable: false
+        hasChildren nullable: false
     }
     static mapping = {
         dateCreated index: true
-        parentEmoteId index: true
+        titleId index: true
         parentCommentId index: true
         userId index: true
+        votesCount index: true
     }
 }

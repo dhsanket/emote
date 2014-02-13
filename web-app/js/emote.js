@@ -634,3 +634,38 @@ function fixShareDialogSize() {
         iframe.parents('div.fb_dialog.fb_dialog_advanced').css('top', 0);
     }
 };
+
+function toggleCommentDialog() {
+    var commentForm = $('form#commentSave');
+
+    if(commentForm.hasClass('hidden')) {
+        $("#loadingOverlay")
+            .width($(window).width())
+            .height($(window).height())
+            .css("zIndex",10)
+            .show();
+        $(".quick-create-overlay").addClass('active');
+        commentForm.removeClass('hidden').addClass('active');
+        commentForm.find('#commentMsg').get(0).focus();
+    } else {
+        hideCommentDialog();
+    }
+};
+
+function hideCommentDialog() {
+    $("#loadingOverlay").hide();
+    $(".quick-create-overlay").removeClass('active');
+    $('form#commentSave').removeClass('active').addClass('hidden');
+};
+
+/**
+ * Shows up the comment dialog
+ * @param parentId Id of comment or title to add the comment to
+ * @param mode Indicate if the parent of this comment is an 'emote' or a 'comment'
+ */
+function showCommentDialog(parentId, mode) {
+    $('form#commentSave #commentMsg').val('');
+    $('form#commentSave input#parentId').val(parentId);
+    $('form#commentSave input#mode').val(mode);
+    toggleCommentDialog();
+};

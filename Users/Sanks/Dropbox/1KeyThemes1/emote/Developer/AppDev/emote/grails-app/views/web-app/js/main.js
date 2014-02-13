@@ -29,6 +29,8 @@ $(function(){
 		
 		// Create emote
 		$('#createEmote').click(function(){
+            toggleCommentDialog();
+            toggleCommentDialog();
 			$('#feed-container').toggleClass('active');
 			$('#emote-creation-container').toggleClass('active');
 			$('#createEmote').toggleClass('active');

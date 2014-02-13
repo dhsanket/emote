@@ -1,7 +1,6 @@
 package com.emote
 
 import com.emote.util.PagedResult
-import org.hibernate.criterion.Order
 
 class CommentService {
 
@@ -11,14 +10,14 @@ class CommentService {
     static final int PAGE_SIZE = 10
 
     /**
-     * Saves a comment as a root comment for an {@linkplain Emote}
+     * Saves a comment as a root comment for a {@linkplain Title}
      * @param user Owner of the comment
      * @param comment Message
-     * @param emoteId {@linkplain Emote} to which attach the comment
+     * @param parentId {@linkplain Title} to which attach the comment
      * @return The created {@linkplain Comment}
      */
-    Comment saveRootComment(User user, String comment, String emoteId) {
-        new Comment(userId: user.id, parentEmoteId: emoteId, comment: comment, hasChild: false).save(flush: true)
+    Comment saveRootComment(User user, String comment, String parentId) {
+        new Comment(userId: user.id, titleId: parentId, comment: comment, hasChildren: false).save(flush: true)
     }
 
     /**
@@ -31,7 +30,7 @@ class CommentService {
     Comment saveNestedComment(User user, String comment, String parentCommentId) {
         new Comment(userId: user.id, parentCommentId: parentCommentId, comment: comment).save(flush: true)
         Comment parent = Comment.get(parentCommentId)
-        parent.hasChild = true
+        parent.hasChildren = true
         parent.save(flush: true)
     }
 
@@ -42,7 +41,7 @@ class CommentService {
 
             setFirstResult(page * PAGE_SIZE)
             setMaxResults(PAGE_SIZE + 1)
-            addOrder(Order.desc('dateCreated'))
+            order('dateCreated', 'desc')
         }
 
         def hasMoreResults = list.size() > PAGE_SIZE
@@ -55,14 +54,14 @@ class CommentService {
     }
 
     /**
-     * Gets paged root comments for an {@linkplain Emote}
+     * Gets paged root comments for a {@linkplain Title}
      * @param page Number of page to retrieve. It's zero based.
-     * @param emoteId Parent emote id to retrieve root comments from
+     * @param titleId Title id to retrieve root comments from
      * @return Paged root comments for the emote
      */
-    PagedResult<Comment> getRootComments(int page, String emoteId) {
+    PagedResult<Comment> getRootComments(int page, String titleId) {
         getPagedComments({
-            eq('parentEmoteId', emoteId)
+            eq('titleId', titleId)
         }, page)
     }
 

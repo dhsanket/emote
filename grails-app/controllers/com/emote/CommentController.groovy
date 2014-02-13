@@ -26,11 +26,11 @@ class CommentController {
 
     /**
      * Saves a new comment
-     * @param msg Message for the comment
-     * @param id Id of the {@linkplain Emote} or {@linkplain Comment} that this comment will be added to
-     * @param mode "emote" or "comment" that the id identifies
+     * @param commentMsg Message for the comment
+     * @param id Id of the {@linkplain Title} or {@linkplain Comment} that this comment will be added to
+     * @param mode "title" or "comment" that the id identifies
      */
-    def save(String msg, String id, String mode) {
+    def save(String commentMsg, String id, String mode) {
 
     }
 }

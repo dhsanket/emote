@@ -9,7 +9,7 @@ modules ={
 		resource url:'/css/bootstrap-override.css'
         resource url:'/css/bootstrap-responsive.css'
 //        resource url:'/css/mainzen.css'
-//        resource url:'/css/other.css'
+        resource url:'/css/other.css'
 //        resource url:'/css/animate/animate.css'
 //		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
 

@@ -186,3 +186,33 @@ margin-right:25px;
     font-size:13px;
 }
 
+/* Begin styles for comments */
+
+div#comment-creation-container img.comment-author-pic {
+    float: left;
+    height: 34px;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #979797;
+    margin-right: 10px;
+}
+
+div#comment-creation-container div.comment-dialog-body {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+div#comment-creation-container textarea#commentMsg {
+    width: 100%;
+    resize: none;
+    height: 10em;
+}
+
+form#commentSave.active {
+    position: absolute;
+    top: 20px;
+    z-index: 100;
+    width: 100%;
+    padding-right: 20px;;
+}
+
+/* End styles for comments */
