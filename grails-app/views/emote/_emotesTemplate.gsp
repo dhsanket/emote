@@ -144,7 +144,7 @@
         </div> <!-- /.emote-v2 -->
 
         <g:if test="${showComments}">
-            <g:render template="/common/comment/commentsList" model="[title: titles.empty ? null : titles.first()]"/>
+            <g:render template="/common/comment/commentsList" model="[title: titles.empty ? null : titles.first(), comments: comments]"/>
         </g:if>
     </g:each>
 </g:if>	

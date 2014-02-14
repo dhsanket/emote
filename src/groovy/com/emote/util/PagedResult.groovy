@@ -8,15 +8,15 @@ class PagedResult<T> {
     /**
      * Actual paged results
      */
-    List<T> list
+    List<T> list = []
 
     /**
      * True if more results are available
      */
-    boolean moreResults
+    boolean moreResults = false
 
     /**
      * Retrieved page number
      */
-    Integer page
+    Integer page = 0
 }

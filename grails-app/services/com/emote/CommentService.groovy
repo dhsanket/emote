@@ -4,6 +4,8 @@ import com.emote.util.PagedResult
 
 class CommentService {
 
+    static transactional = 'mongo'
+
     /**
      * Pagination size
      */
@@ -17,7 +19,8 @@ class CommentService {
      * @return The created {@linkplain Comment}
      */
     Comment saveRootComment(User user, String comment, String parentId) {
-        new Comment(userId: user.id, titleId: parentId, comment: comment, hasChildren: false).save(flush: true)
+        new Comment(userId: user.id, facebookUserId: user.facebookId, username: "$user.firstName $user.lastName",
+                titleId: parentId, comment: comment, hasChildren: false).save()
     }
 
     /**
@@ -28,19 +31,18 @@ class CommentService {
      * @return The created {@linkplain Comment}
      */
     Comment saveNestedComment(User user, String comment, String parentCommentId) {
-        new Comment(userId: user.id, parentCommentId: parentCommentId, comment: comment).save(flush: true)
         Comment parent = Comment.get(parentCommentId)
         parent.hasChildren = true
-        parent.save(flush: true)
+        parent.save()
+        new Comment(userId: user.id, facebookUserId: user.facebookId, username: "$user.firstName $user.lastName",
+                titleId: parent.titleId,parentCommentId: parentCommentId, comment: comment).save()
     }
 
     private PagedResult<Comment> getPagedComments(Closure criteria, int page) {
-        List<Comment> list = Comment.withCriteria {
-            criteria.delegate = this
+        List<Comment> list = Comment.withCriteria(offset: page * PAGE_SIZE, max: PAGE_SIZE + 1) {
+            criteria.delegate = delegate
             criteria()
 
-            setFirstResult(page * PAGE_SIZE)
-            setMaxResults(PAGE_SIZE + 1)
             order('dateCreated', 'desc')
         }
 

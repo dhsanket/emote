@@ -1,5 +1,6 @@
 package com.emote
 
+import com.emote.util.PagedResult
 import grails.plugin.facebooksdk.FacebookContext
 import grails.plugin.facebooksdk.FacebookGraphClient;
 
@@ -13,6 +14,7 @@ class EmoteController {
 	FacebookGraphClient facebookGraphClient;
 	
 	PictureService pictureService;
+    CommentService commentService
 	
 
     def create() {
@@ -126,8 +128,13 @@ class EmoteController {
 		User user = session.user
 		def emotes = emoteService.getSingleEmote(params.titleString);
 		if(emotes!= null && emotes.size() >0){
-			flash.titles =  emoteService.groupByTitle(emotes, user)
+            List<GroupByTitle> titles = emoteService.groupByTitle(emotes, user)
+			flash.titles = titles
             flash.showComments = true
+
+            if(titles.size() > 0) {
+                flash.comments = commentService.getRootComments(0, titles.first().id)
+            }
 		}
 		render view:"feed"
 	}

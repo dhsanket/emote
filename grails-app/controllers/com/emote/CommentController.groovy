@@ -7,15 +7,15 @@ class CommentController {
     CommentService commentService
 
     /**
-     * Load comments for an {@linkplain Emote} or a {@linkplain Comment}
+     * Load comments for a {@linkplain Title} or a {@linkplain Comment}
      * @param page Page number to get paged results
-     * @param id Id of {@linkplain Emote} or {@linkplain Comment} to retrieve comments from
-     * @param mode "emote" or "comment", where to load comments from
+     * @param id Id of {@linkplain Title} or {@linkplain Comment} to retrieve comments from
+     * @param mode "title" or "comment", where to load comments from
      */
     def get(int page, String id, String mode) {
         PagedResult<Comment> comments
 
-        if("emote".equalsIgnoreCase(mode)) {
+        if("title".equalsIgnoreCase(mode)) {
             comments = commentService.getRootComments(page, id)
         } else {
             comments = commentService.getNestedComments(page, id)
@@ -27,10 +27,19 @@ class CommentController {
     /**
      * Saves a new comment
      * @param commentMsg Message for the comment
-     * @param id Id of the {@linkplain Title} or {@linkplain Comment} that this comment will be added to
+     * @param parentId Id of the {@linkplain Title} or {@linkplain Comment} that this comment will be added to
      * @param mode "title" or "comment" that the id identifies
      */
-    def save(String commentMsg, String id, String mode) {
+    def save(String commentMsg, String parentId, String mode) {
+        User user = session.user
+        Comment comment
 
+        if("title".equalsIgnoreCase(mode)) {
+            comment = commentService.saveRootComment(user, commentMsg, parentId)
+        } else {
+            comment = commentService.saveNestedComment(user, commentMsg, parentId)
+        }
+
+        [comment: comment, pagedChildren: new PagedResult<Comment>()]
     }
 }

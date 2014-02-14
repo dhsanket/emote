@@ -5,6 +5,7 @@ class Comment {
     String id
     String userId
     String facebookUserId
+    String username
     String titleId
     Date dateCreated
     String comment
@@ -17,10 +18,13 @@ class Comment {
     Boolean hasChildren = false
 
     static constraints = {
+        parentCommentId nullable: true
         userId blank: false
         facebookUserId blank: false
         comment blank: false
         hasChildren nullable: false
+        titleId blank: false
+        username blank: false
     }
     static mapping = {
         dateCreated index: true

@@ -635,6 +635,8 @@ function fixShareDialogSize() {
     }
 };
 
+/* BEGIN: FUNCTIONS FOR COMMENTING */
+
 function toggleCommentDialog() {
     var commentForm = $('form#commentSave');
 
@@ -644,9 +646,9 @@ function toggleCommentDialog() {
             .height($(window).height())
             .css("zIndex",10)
             .show();
-        $(".quick-create-overlay").addClass('active');
         commentForm.removeClass('hidden').addClass('active');
         commentForm.find('#commentMsg').get(0).focus();
+        scrollToTop(800);
     } else {
         hideCommentDialog();
     }
@@ -654,7 +656,6 @@ function toggleCommentDialog() {
 
 function hideCommentDialog() {
     $("#loadingOverlay").hide();
-    $(".quick-create-overlay").removeClass('active');
     $('form#commentSave').removeClass('active').addClass('hidden');
 };
 
@@ -669,3 +670,16 @@ function showCommentDialog(parentId, mode) {
     $('form#commentSave input#mode').val(mode);
     toggleCommentDialog();
 };
+
+function saveComment(ev) {
+    ev.preventDefault();
+
+    var form = $('form#commentSave');
+    var targetUrl = form.attr('action');
+
+    $.post(targetUrl, form.serialize(), function(data) {
+        alert('Server response: ' + data);
+    });
+};
+
+/* END: FUNCTIONS FOR COMMENTING */
