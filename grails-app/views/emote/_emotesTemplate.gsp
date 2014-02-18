@@ -32,13 +32,14 @@
             <div class="emote-v2-body clearfix">
 
                 <%-- If media is present --%>
-                <div class="emote-v2-media" data-media-type="image" >
-                    <g:if test="${title.pictureId!= null}">
-                        <div class="emote-v2-media" data-media-type="image" >
-                            <r:img uri="/picture/index/${title.pictureId}" />
-                        </div> <!-- /.emote-v2-media -->
-                    </g:if>
-                </div>
+                <g:if test="${title.pictureId!= null}">
+                    <div class="emote-v2-media" data-media-type="image" >
+                        <r:img uri="/picture/index/${title.pictureId}" />
+                    </div> <!-- /.emote-v2-media -->
+                </g:if>
+                <g:else>
+                    <div class="emote-v2-media no-media" data-media-type="image" ></div>
+                </g:else>
                 <%--// If media is present --%>
 
                 <div class="emote-v2-content">
