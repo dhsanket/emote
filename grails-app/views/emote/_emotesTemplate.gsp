@@ -1,5 +1,14 @@
 <%@ page import="com.emote.GroupByTitle; com.emote.UserDoing; com.emote.UserFavourite;" %>
 
+<r:script>
+    $(function(){
+        $('span.feeds-edit-icon').click(function(){
+            quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'));
+            _gaq.push(['_trackEvent', 'Quick Emotes', $('#category').val(), 'Add', 1, false]);
+        });
+    });
+</r:script>
+
 <g:set var="loggedInClass" value="${session.user ? 'active' : ''}"/>
 
 <g:if test="${titles != null}">
@@ -13,12 +22,11 @@
             <div class="emote-v2-header silver-gradient gradient clearfix">
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
                 <h3><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
-                <span class="feeds-sprite feeds-edit-icon"></span>
+                <span class="feeds-sprite feeds-edit-icon"
+                    data-complete-title="${title.completeTitle}"
+                    data-first-category="${title.firstCategory}"
+                    data-emote-id="emote-v2-${i}"></span>
                 <span class="type">${title.firstCategory}</span><span class="comments-count">201 Comments</span>
-
-                <div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
-                    <a href="#"><i class="icon-edit"></i></a>
-                </div> <!-- /#qemote_0 -->
             </div> <!-- /.emote-v2-header -->
 
             <div class="emote-v2-body clearfix">
