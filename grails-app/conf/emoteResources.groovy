@@ -7,7 +7,7 @@ modules ={
 		resource url:'/css/main.css'
         resource url:'/css/jquery.Jcrop.min.css'
 //      resource url:'/css/mainzen.css'
-//		resource url:'/css/other.css'
+		resource url:'/css/other.css'
 //		resource url:'/css/animate/animate.css'
 //		resource url:'/css/Magnific-Popup/dist/magnific-popup.css'
 
