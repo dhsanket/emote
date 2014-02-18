@@ -18,21 +18,21 @@
 
     </head>
     <body>
-    	<g:render template="/common/header" />
-    	    					<g:if test="${session.user == null}">
-				    	    	<g:render template="/common/signin_header_emote"></g:render>
-				    	    	</g:if>
-    	<g:render template="/common/create_emote" />
+        <div id="appContainer">
+            <g:render template="/common/header" />
+            <g:render template="/common/create_emote" />
+        </div> <!-- #appContainer -->
     	<g:render template="/common/menu_bar" />
     	<div id="feed-container" class="feed-container">
 	    	<g:render template="/common/pagination_prev"/>
-    		<g:render template="emotesTemplate" model="[titles: flash.titles]" />
+    		<g:render template="emotesTemplate" model="[titles: flash.titles, showComments: flash.showComments, comments: flash.comments]" />
 	    	<g:render template="/common/pagination_next"/>
-    	</div>
+        </div><!-- /#feed-container -->
         <g:render template="/common/picture_crop" />
         <g:render template="/common/imageupload/web_search" />
         <g:render template="/common/flag_inappropriate" />
-        
+        <g:render template="/common/popup_tutorial" />
+
          <div id="loadingOverlay"></div>
 		 <div id="overlayMessage">&nbsp;</div>
     </body>

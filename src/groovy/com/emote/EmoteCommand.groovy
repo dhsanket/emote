@@ -1,8 +1,5 @@
 package com.emote
 
-import java.util.Set;
-import org.springframework.web.multipart.MultipartFile
-
 @grails.validation.Validateable
 class EmoteCommand {
 	
@@ -16,18 +13,7 @@ class EmoteCommand {
 	String expression;
     String goodOrBad
 	String title;
-	MultipartFile photo;
-	// crop location
-	int topx
-	int topy
-	int bottomx
-	int bottomy
-	int scaledImgHeight
-	int scaledImgWidth
-	
-	String webSearchImageURL
 
-	
 	def getExpressions(){
 		return expression.split(",")
 	}
@@ -53,20 +39,5 @@ class EmoteCommand {
 	String getCategory(){
 		return category; 
 	}
-	
-	
-	// todo remove
-	def getPicture(){
-		if(photo == null)
-		log.info "no pic attached in domain object"
-			return null
-			
-		def img = new Picture(type:photo.contentType, filename:photo.originalFilename, content:photo.bytes)
-		log.info "Pic is attached in domain object"
-		return img;
-
-	}
-	
-
 
 }

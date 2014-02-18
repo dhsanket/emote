@@ -1,4 +1,4 @@
-<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
 <!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
@@ -61,9 +61,18 @@
     </head>
     
     
-	<body onload="${pageProperty(name:'body.onload')}" >
+	<body onload="${pageProperty(name:'body.onload')}" class="${pageProperty(name: 'body.class')}">
+
+        <!--[if lt IE 10]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+        <noscript>
+            <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6010473097304&amp;value=0&amp;currency=GBP" />
+        </noscript>
 	
     	<div id="fb-root"></div>
+        <div class="quick-create-overlay"></div>
+
     	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
 			
     	
@@ -104,9 +113,9 @@
 				 
 				</script>--%>
 
-    		    	<g:layoutBody />
-    		    	<r:layoutResources/>		
-       				<fbg:resources/>
+                <g:layoutBody />
+                <r:layoutResources/>
+                <fbg:resources/>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
@@ -135,7 +144,6 @@
 		  })();
 		</script>
 		        
-		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
 		
 		    <!-- Place this tag after the last share tag. -->
