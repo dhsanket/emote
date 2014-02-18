@@ -19,30 +19,6 @@
                 <div id="qemote_${i}" class="quickEmote emote-v2-action-button" onclick="javascript:quick_emote('${title.completeTitle}','${title.firstCategory}', 'emote-v2-${i}');_gaq.push(['_trackEvent', 'Quick Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);">
                     <a href="#"><i class="icon-edit"></i></a>
                 </div> <!-- /#qemote_0 -->
-
-                <ul class="emote-v2-actions">
-                    <li>
-                        <button id="qemote_${i}" class="emote-v2-action-button" onclick="javascript:flag_emote('${title.completeTitle}')">
-                            <i class="icon-flag icon-white"></i>
-                        </button>
-                    </li>
-
-                    <li>
-                        <emoteapp:facebookpost popularEmotesList="${title.popularEmotes}" />
-                    </li>
-
-                    <li>
-                        <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:favouriteSubmit(this.id,'${title.completeTitle}')">
-                            <i class="icon-star-empty icon-white"></i>
-                        </button>
-                    </li>
-
-                    <li>
-                        <button id="fav_emote_${i}" class="emote-v2-action-button" onclick="javascript:doingNow(this.id,'${title.completeTitle}')">
-                            <i class="icon-time icon-white"></i>
-                        </button>
-                    </li>
-                </ul> <!-- /.emote-v2-actions -->
             </div> <!-- /.emote-v2-header -->
 
             <div class="emote-v2-body clearfix">

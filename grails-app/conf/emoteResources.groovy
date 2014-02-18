@@ -1,9 +1,9 @@
 modules ={
 	mobileAndDesktop {
-//		resource url:'/css/normalize.css'
+		resource url:'/css/normalize.css'
 // 		resource url:'/css/bootstrap-override.css'
 //		resource url:'/css/bootstrap.css'
-        resource url:'/css/bootstrap-scss.css'
+        resource url:'/css/bootstrap.css'
 		resource url:'/css/main.css'
         resource url:'/css/jquery.Jcrop.min.css'
 //      resource url:'/css/mainzen.css'
