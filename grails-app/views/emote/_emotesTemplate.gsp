@@ -46,6 +46,22 @@
                     <div class="swiper-container">
                         <div class="slide-indicator clearfix"></div>
                         <div class="swiper-wrapper">
+
+                            <div class="emote-friends swiper-slide">
+                                <h4>Popular emotes: </h4>
+                                <ul class="friend-emotes-container" >
+                                    <div class="friend-emotes clearfix">
+                                        <ul>
+                                            <g:each in="${title.popularEmotes}" var="emote">
+                                                <g:if test="${(emote.expression.trim().length()>0)}">
+                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
+                                                </g:if>
+                                            </g:each>
+                                        </ul>
+                                    </div> <!-- /.friend-emotes -->
+                                </ul>
+                            </div> <!-- /.emote-friends swiper-slide -->
+
                             <div class="emote-friends swiper-slide">
 
                                 <h4>Friend's emotes:
@@ -95,20 +111,6 @@
                                 </ul>
                             </div> <!-- /.emote-friends swiper-slide -->
 
-                            <div class="emote-friends swiper-slide">
-                                <h4>Popular emotes: </h4>
-                                <ul class="friend-emotes-container" >
-                                    <div class="friend-emotes clearfix">
-                                        <ul>
-                                            <g:each in="${title.popularEmotes}" var="emote">
-                                                <g:if test="${(emote.expression.trim().length()>0)}">
-                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
-                                                </g:if>
-                                            </g:each>
-                                        </ul>
-                                    </div> <!-- /.friend-emotes -->
-                                </ul>
-                            </div> <!-- /.emote-friends swiper-slide -->
                         </div> <!-- /.swiper-wrapper -->
                     </div> <!-- /.swiper-container -->
                 </div> <!-- /.emote-v2-content -->
