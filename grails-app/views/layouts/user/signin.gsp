@@ -41,8 +41,16 @@
 		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
 
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-		
-		<r:require modules="core"/>
+
+        <r:require modules="mobileAndDesktop"/>
+        <browser:choice>
+            <browser:isMobile>
+                <r:require modules="mobileTablet"/>
+            </browser:isMobile>
+            <browser:otherwise>
+                <r:require modules="desktop"/>
+            </browser:otherwise>
+        </browser:choice>
 		<r:layoutResources/>		        
         <g:layoutHead />
         
@@ -108,7 +116,6 @@
 		  })();
 		</script>
 		        
-		<script src="/ScriptLibrary/jquery.scrolldepth.js"></script>
 		<script> $(function() { $.scrollDepth();}); </script>
       	
       	

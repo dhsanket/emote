@@ -7,7 +7,7 @@ class EmoteService {
 	
 	NotificationService notificationService
 
-    def create(EmoteCommand emoteCmd, User user, Picture pic) {
+    def create(EmoteCommand emoteCmd, User user, Picture pic = null) {
         def username = user.firstName + " " + user.lastName
         def parentTitle = null
         String emoteTitle = emoteCmd.title
@@ -23,9 +23,9 @@ class EmoteService {
         emote.populateKeywords()
        emote.save(validate: true)
         // save title if does not exist else update time
-        Title title = saveTitle(emoteTitle, emote, pic, user)
+        Title title = saveTitle(emoteTitle, emote, user, pic)
         if (parentTitle) {
-            parentTitle = saveTitle(parentTitle, emote, pic, user)
+            parentTitle = saveTitle(parentTitle, emote, user, pic)
         }
         // save topics
         emote.topics.each { topicText ->
@@ -39,7 +39,7 @@ class EmoteService {
     }
 
 
-    def saveTitle(String emoteTitle, Emote emote, Picture pic, User user) {
+    def saveTitle(String emoteTitle, Emote emote, User user, Picture pic = null) {
         Title title = Title.findByTextIlike(emoteTitle)
 		boolean created = false;
         if (title == null) {
@@ -62,6 +62,13 @@ class EmoteService {
 //			notificationService.registerInterest(emoteTitle, user, TitleInterest.Type.AUTHOR)
 		}
 		return title
+    }
+
+    def addPicture(String emoteTitle, Picture pic) {
+        def title = Title.findByTextIlike(emoteTitle)
+        pic.save(flush: true)
+        title.addPicture(pic.id)
+        title.save(flush: true)
     }
 
     def getExpressionIdeas(emote) {
@@ -128,7 +135,7 @@ class EmoteService {
 					String picId = null	
 					if(titleObj != null)	
 						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
-					title = new GroupByTitle(title:emote.title, pictureId:picId, followingUsers:followingUsers, completeTitle:emote.completeTitle)
+					title = new GroupByTitle(id: titleObj.id, title:emote.title, pictureId:picId, followingUsers:followingUsers, completeTitle:emote.completeTitle)
 					groupedByTitle.put(emote.completeTitle.toUpperCase(), title)
 				}
                 title.completeTitle = emote.completeTitle

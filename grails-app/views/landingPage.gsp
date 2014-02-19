@@ -3,7 +3,7 @@
     <r:require modules="landing"/>
 </head>
 
-<body class="landingBody">
+<body>
 
 <!-- ../img/landingPage/landingLogo.jpg -->
 <div id="heade_wrapper">
@@ -49,7 +49,6 @@
 
                 </li>
                 <li>
-                    <div id="fb-root"></div>
                     <script>(function(d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (d.getElementById(id)) return;

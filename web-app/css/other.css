@@ -1,188 +1,30 @@
+/* Begin styles for comments */
 
-#titlePage #title h1{
-    font: 18px;
-    background-color: white;
+div#comment-creation-container img.comment-author-pic {
+    float: left;
+    height: 34px;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #979797;
+    margin-right: 10px;
 }
 
-    /* Splash Styles */
-#splash-container {
-    width:100%;
-    height:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    background: rgb(169,3,41); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+div#comment-creation-container div.comment-dialog-body {
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
-#splash-logo {
-    width:60%;
-    position:absolute;
-    left:50%;
-    margin-left:-30%;
-    height:170px;
-    text-align:center;
-    top:50%;
-    margin-top:-85px;
+div#comment-creation-container textarea#commentMsg {
+    width: 100%;
+    resize: none;
+    height: 10em;
 }
 
-.splash-description {
-    width:100%;
-    color:#FFFFFF;
-    font-size:13px;
-    text-align:center;
-    display:block;
-    margin-top:20px;
+form#commentSave.active {
+    position: absolute;
+    top: 20px;
+    z-index: 100;
+    width: 100%;
+    padding-right: 20px;;
 }
 
-#splash-login {
-    position:absolute;
-    width:80%;
-    left:50%;
-    margin-left:-40%;
-    bottom:20px;
-}
-
-.splash-disclaimer {
-    width:100%;
-    display:block;
-    text-align:center;
-    font-size:8px;
-    color:#FFFFFF;
-    margin-top:10px;
-}
-
-.splash-disclaimer a {
-    color:#FFFFFF;
-    text-decoration:underline;
-}
-
-
-
-
-/* Follow users */
-#followUsers{ 
-margin-left:25px;
-margin-right:25px;
-}
-
-#followUsers .user-section{
-    display: block;
-    height: 60px;
-    position: static;
-    border-bottom: solid;
-    padding-top: 10px;
-    padding-bottom: 0px;
-}
-#followUsers .user-section .user-image {
-            float:left;
-            display:inline-block;
-        }
-        
-#followUsers .user-section .user-image img {
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 6px;
-        }
-
-#followUsers .user-section .user-name {
-            float:left;
-            display:inline-block;
-            width: 100px;
-            font-size:15px;
-            font-weight: normal;
-            color: #999;
-            margin-left: 5px;
-        }
-
-
-#followUsers .user-section .followButton{
-            padding-top:5px;
-            float:right;
-            display:inline-block;
-            position: relative;
-}
-#followUsers .user-section .followButton a{
-            color: #666666;
-            font: 3px;
-            text-align:center;
-            text-decoration:none;
-            height:30px;
-            width: 50px;
-            padding-top: 5px;
-            display:inline-block;
-            vertical-align: text-top;
-            
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            
-            background: rgb(255,255,255); /* Old browsers */
-            background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
-            background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */ 
-            
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 6px;
-}
-
-
-#followUsers .user-section .followButton a:visited {
-            background: rgb(255,255,255); /* Old browsers */
-            background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
-            background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
-            background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-}
-
-#followUsers .user-section .followButton a:hover {
-    color: inherit; /* #06e */
-    text-decoration:none;
-}
-
-
-/* Documentation */
-
-#privacy, #terms{
-    margin: 25px;
-}
-
-
-#privacy h1, #terms h1 {
-    color:#FFFFFF;
-    text-decoration:underline;
-        display:block;
-    text-align:center;
-    font-size:18px;
-}
-
-#terms h2 {
-    color:#FFFFFF;
-    text-decoration:underline;
-        display:block;
-    text-align:center;
-    font-size:15px;
-}
-
-#privacy p , #terms p{
-        color:#FFFFFF;
-
-        display:block;
-    text-align:left;
-    font-size:13px;
-}
-
+/* End styles for comments */
