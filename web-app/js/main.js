@@ -59,6 +59,11 @@ $(function(){
 			$('#imgchooserpopup').toggleClass('active');
 		});
 
+        $('.feeds-report-icon.active').click(function(){
+            var title = $(this).attr('data-emote-title');
+            flag_emote(title);
+		});
+
         $('.feeds-share-icon.active').click(function(){
             postToFacebook($(this));
 		});
