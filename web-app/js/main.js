@@ -26,8 +26,16 @@ $(function(){
 			}
 		});
 
-		$('.feeds-fav-icon').click(function(){
+		$('.feeds-fav-icon.logged').click(function(){
+            var title = $(this).attr('data-emote-title');
+
+			if($(this).hasClass('active')) {
+                removeFromFavourite(title)
+            } else {
+                favouriteSubmit(title);
+            }
 			$(this).toggleClass('active');
+
 		});
 
 		$('.feeds-knob-icon.logged').click(function(){

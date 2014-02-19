@@ -33,13 +33,13 @@ class UserActionController {
 
     }
 
-    def addFavouriteTitle(){
+    def addFavouriteTitle(String title){
         User user = session.user
         if(!user){
             redirect controller: 'user', action: 'signin'
             return
         }
-        String title = params.title
+
         if(title){
             userActionService.addFavouriteTitle user, title
             render(contentType: "text/json"){
@@ -48,13 +48,13 @@ class UserActionController {
         }
     }
 
-    def removeFavouriteTitle(){
+    def removeFavouriteTitle(String title){
         User user = session.user
         if(!user){
             redirect controller: 'user', action: 'signin'
             return
         }
-        String title = params.title
+
         if(title){
             userActionService.removeFavouriteTopic user, title
             render(contentType: "text/json"){

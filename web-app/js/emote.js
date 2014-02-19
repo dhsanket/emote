@@ -316,10 +316,10 @@ function displayLoadingOverlay()
 	$("#overlayMessage").show();
 }
 
-var favouriteSubmit = function (id, title) {
+var favouriteSubmit = function (title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'userAction/addFavouriteTitle',
+        url: addToFavouriteUrl,
         cache: false,
         data: {title: title},
         error: function () {
@@ -333,10 +333,10 @@ var favouriteSubmit = function (id, title) {
 
 };
 
-var removeFromFavourite = function (id, title) {
+var removeFromFavourite = function (title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'userAction/removeFavouriteTitle',
+        url: removeFavouriteUrl,
         cache: false,
         data: {title: title},
         error: function () {

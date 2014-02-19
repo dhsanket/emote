@@ -9,14 +9,14 @@
     });
 
     var doingNowUrl = '${createLink(controller: 'userAction', action: 'addDoing')}';
+    var addToFavouriteUrl = '${createLink(controller: 'userAction', action: 'addFavouriteTitle')}';
+    var removeFavouriteUrl = '${createLink(controller: 'userAction', action: 'removeFavouriteTitle')}';
 </r:script>
 
 <g:set var="loggedInClass" value="${session.user ? 'logged' : ''}"/>
 
 <g:if test="${titles != null}">
-    <g:if test="${session.user}">
-        <g:set var="favourites" value="${UserFavourite.findByUserId(session.user.id)?.favouriteTitles}"/>
-    </g:if>
+    <g:set var="favourites" value="${session.user ? UserFavourite.findByUserId(session.user.id)?.favouriteTitles : []}"/>
 
     <g:each status="i" in="${titles}" var="title">
 
@@ -127,7 +127,7 @@
                 <span class="feeds-sprite feeds-knob-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">
                     <li class="feeds-sprite feeds-list-icon"></li>
-                    <li class="feeds-sprite feeds-fav-icon last"></li>
+                    <li class="feeds-sprite feeds-fav-icon last ${loggedInClass} ${favourites.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></li>
                 </ul>
             </div> <!-- /emote-v2-footer -->
         </div> <!-- /.emote-v2 -->
