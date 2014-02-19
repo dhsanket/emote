@@ -18,13 +18,12 @@ class UserActionController {
         }
     }
 
-    def addDoing(){
+    def addDoing(String title){
         User user = session.user
         if(!user){
             redirect controller: 'user', action: 'signin'
             return
         }
-        String title = params.title
         if(title){
             userActionService.addDoing user.id, title
             render(contentType: "text/json"){

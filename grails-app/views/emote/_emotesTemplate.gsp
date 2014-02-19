@@ -7,9 +7,11 @@
             _gaq.push(['_trackEvent', 'Quick Emotes', $('#category').val(), 'Add', 1, false]);
         });
     });
+
+    var doingNowUrl = '${createLink(controller: 'userAction', action: 'addDoing')}';
 </r:script>
 
-<g:set var="loggedInClass" value="${session.user ? 'active' : ''}"/>
+<g:set var="loggedInClass" value="${session.user ? 'logged' : ''}"/>
 
 <g:if test="${titles != null}">
     <g:if test="${session.user}">
@@ -122,7 +124,7 @@
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-share-icon last ${loggedInClass}" <emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>></li>
                 </ul>
-                <span class="feeds-sprite feeds-knob-icon"></span>
+                <span class="feeds-sprite feeds-knob-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">
                     <li class="feeds-sprite feeds-list-icon"></li>
                     <li class="feeds-sprite feeds-fav-icon last"></li>

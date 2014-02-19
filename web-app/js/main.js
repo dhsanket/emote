@@ -26,45 +26,31 @@ $(function(){
 			}
 		});
 
-		$('#doing-now').click(function(){
-			if ($(this).hasClass("button-on"))
-			{
-				$('#doing-now').addClass("button-off");
-				$('#doing-now span').removeClass("active");
-				$('#doing-now').removeClass("button-on");
-				$('#doing-now span').removeClass("doing-now-on");
-				$("#doing-now-input").attr("value","false");
-
-			}else{
-				$('#doing-now').addClass("button-on");
-				$('#doing-now span').addClass("active");
-				$('#doing-now').removeClass("button-off");
-				$('#doing-now span').removeClass("doing-now-off");
-				$("#doing-now-input").attr("value","true");
-			}
-		});
 		$('.feeds-fav-icon').click(function(){
 			$(this).toggleClass('active');
 		});
-		$('.feeds-knob-icon').click(function(){
+
+		$('.feeds-knob-icon.logged').click(function(){
 			$(this).toggleClass('active');
+            doingNow($(this).attr('data-emote-title'));
 		});
+
 		$('.feeds-list-icon').click(function(){
 			$(this).toggleClass('active');
 		});
 
-		$('.feeds-camera-icon.active').click(function(){
+		$('.feeds-camera-icon.logged').click(function(){
             var title = $(this).attr('data-emote-title');
             $('input[name=title]').val(title);
 			$('#imgchooserpopup').toggleClass('active');
 		});
 
-        $('.feeds-report-icon.active').click(function(){
+        $('.feeds-report-icon.logged').click(function(){
             var title = $(this).attr('data-emote-title');
             flag_emote(title);
 		});
 
-        $('.feeds-share-icon.active').click(function(){
+        $('.feeds-share-icon.logged').click(function(){
             postToFacebook($(this));
 		});
 

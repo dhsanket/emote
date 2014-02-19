@@ -350,10 +350,10 @@ var removeFromFavourite = function (id, title) {
 
 };
 
-var doingNow = function (id, title) {
+var doingNow = function (title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: 'userAction/addDoing',
+        url: doingNowUrl,
         cache: false,
         data: {title: title},
         error: function () {
