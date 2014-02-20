@@ -25,7 +25,8 @@
     	<g:render template="/common/menu_bar" />
     	<div id="feed-container" class="feed-container">
 	    	<g:render template="/common/pagination_prev"/>
-    		<g:render template="emotesTemplate" model="[titles: flash.titles, showComments: flash.showComments, comments: flash.comments]" />
+    		<g:render template="emotesTemplate"
+                      model="[titles: flash.titles, showComments: flash.showComments, comments: flash.comments, favourites: flash.favourites, doingNow: flash.doingNow]" />
 	    	<g:render template="/common/pagination_next"/>
         </div><!-- /#feed-container -->
         <g:render template="/common/picture_crop" />

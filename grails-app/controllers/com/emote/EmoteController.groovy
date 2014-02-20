@@ -1,20 +1,19 @@
 package com.emote
 
-import com.emote.util.PagedResult
 import grails.plugin.facebooksdk.FacebookContext
-import grails.plugin.facebooksdk.FacebookGraphClient;
+import grails.plugin.facebooksdk.FacebookGraphClient
 
 class EmoteController {
 	
 	EmoteService emoteService
-	
 	UserService userService
-	
+
 	FacebookContext facebookContext;
 	FacebookGraphClient facebookGraphClient;
-	
+
 	PictureService pictureService;
     CommentService commentService
+    TitleService titleService
 	
 
     def create() {
@@ -50,7 +49,7 @@ class EmoteController {
 
 		emoteService.create(emote,  user)
 //<<<<<<< HEAD
-		def titles = emoteService.groupByTitle(emoteService.feed(0), session.user)
+		def titles = emoteService.groupByTitle(emoteService.feed(0), session.user as User)
 //=======
 //		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 //			session.user.followingUsers , session.user.id)
@@ -77,15 +76,32 @@ class EmoteController {
 
         redirect(action: 'feed')
     }
+
+    private fillUserStatusVars(Collection<String> titles, String userId) {
+        Set<String> favourites = []
+
+        if(userId) {
+            def userFav = UserFavourite.findByUserId(userId)
+
+            if(userFav) {
+                favourites = userFav.favouriteTitles
+            }
+        }
+
+        flash.favourites = favourites
+        flash.doingNow = titleService.filterDoingNow(titles, userId)
+    }
 	
 	def feed(){
 		int page = getPageIndex();
-		def posts = emoteService.groupByTitle(emoteService.feed(page),session.user)
+		def posts = emoteService.groupByTitle(emoteService.feed(page),session.user as User)
 		int postCount = posts!=null ? posts.size():0
 		 // not the best way to handle end of pages but we can live with it for now
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "feed", [:])){
-			posts = emoteService.groupByTitle(emoteService.feed(page-1),session.user)
+			posts = emoteService.groupByTitle(emoteService.feed(page-1),session.user as User)
 		}
+
+        fillUserStatusVars(posts.collect {it.completeTitle}, session.user?.id as String)
 		flash.titles = posts 
 	}
 	
@@ -103,14 +119,15 @@ class EmoteController {
 		if(checkLastPageAndSetPaginationAttributes(page, postCount, "userFeed", [userId:params.userId])){
 			posts = emoteService.groupByTitle(emoteService.userFeed(userId, page-1), null)
 		}
-		flash.user = userService.findById(userId)
-		flash.titles = posts
+
+        fillUserStatusVars(posts.collect {it.completeTitle}, userId)
+        flash.user = userService.findById(userId)
+        flash.titles = posts
 	}
 	
 	
 	
 	def search(){
-		User user = session.user
 		int page = getPageIndex();
 		String searchTerm = params.keyword.toLowerCase();
 		log.info "lowercase ofthe keyword: $searchTerm"
@@ -126,11 +143,12 @@ class EmoteController {
 		
 	def singleTitle(){
 		User user = session.user
-		def emotes = emoteService.getSingleEmote(params.titleString);
+		def emotes = emoteService.getSingleEmote(params.titleString as String);
 		if(emotes!= null && emotes.size() >0){
             List<GroupByTitle> titles = emoteService.groupByTitle(emotes, user)
 			flash.titles = titles
             flash.showComments = true
+            fillUserStatusVars(titles.collect {it.completeTitle}, user?.id)
 
             if(titles.size() > 0) {
                 flash.comments = commentService.getRootComments(0, titles.first().id)
@@ -141,9 +159,8 @@ class EmoteController {
 	
 	private int getPageIndex(){
 		int page = 0;
-		boolean morePages = true
 		if(params.page){
-			page = Integer.parseInt(params.page)
+			page = Integer.parseInt(params.page as String)
 		}
 		return page
 	}

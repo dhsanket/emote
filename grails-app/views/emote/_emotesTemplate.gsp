@@ -16,8 +16,6 @@
 <g:set var="loggedInClass" value="${session.user ? 'logged' : ''}"/>
 
 <g:if test="${titles != null}">
-    <g:set var="favourites" value="${session.user ? UserFavourite.findByUserId(session.user.id)?.favouriteTitles : []}"/>
-
     <g:each status="i" in="${titles}" var="title">
 
         <div data-post-id="${i}"  class="emote-v2" id="emote-v2-${i}">
@@ -124,7 +122,7 @@
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-share-icon last ${loggedInClass}" <emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>></li>
                 </ul>
-                <span class="feeds-sprite feeds-knob-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></span>
+                <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">
                     <li class="feeds-sprite feeds-list-icon"></li>
                     <li class="feeds-sprite feeds-fav-icon last ${loggedInClass} ${favourites.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></li>

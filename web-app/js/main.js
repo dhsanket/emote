@@ -39,8 +39,10 @@ $(function(){
 		});
 
 		$('.feeds-knob-icon.logged').click(function(){
-			$(this).toggleClass('active');
-            doingNow($(this).attr('data-emote-title'));
+            if(!$(this).hasClass('active')) {
+                doingNow($(this).attr('data-emote-title'));
+                $(this).addClass('active');
+            }
 		});
 
 		$('.feeds-list-icon').click(function(){
