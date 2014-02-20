@@ -53,8 +53,10 @@ function navSlider() {
 }
 
 var swipeScreen = 1;
+
 // Emote Slider Functions
 function swipeInit() {
+    var swipers = [];
 	var mySwiper = $('.swiper-container').each(function(){
 		var that = this;
 		var slider = $(this).swiper({
@@ -76,7 +78,17 @@ function swipeInit() {
 				$(that).find('.swiper-pagination-switch').toggleClass('swiper-visible-switch swiper-active-switch');
 			}
 		});
+        swipers.push(slider);
 	});
+    $('.popup-tutorial-container').on('show', function(ev) {
+        swipers.forEach(function(slider) {
+            slider.swipeTo(0);
+        });
+    });
+
+    swipers.forEach(function(slider) {
+        slider.swipeTo(1);
+    });
 }
 
 function friendRender() {
@@ -583,6 +595,7 @@ function showTutorialPopup() {
     navSlider();
     setTimeout(function() {
         $('.popup-tutorial-container').show();
+        $('.popup-tutorial-container').trigger('show');
         resizeStuff();
     }, 200);
 }
