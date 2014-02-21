@@ -22,6 +22,12 @@
             <div class="emote-v2-header silver-gradient gradient clearfix">
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
                 <h3><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
+                <g:if test="${title.pictureId!= null}">
+                    <span class="view-picture-icon"
+                          data-title="${title.completeTitle}"
+                          data-first-category="${title.firstCategory}"
+                          data-comments-count="201 Comments"></span>
+                </g:if>
                 <span class="feeds-sprite feeds-edit-icon"
                     data-complete-title="${title.completeTitle}"
                     data-first-category="${title.firstCategory}"

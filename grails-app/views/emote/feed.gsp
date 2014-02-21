@@ -33,6 +33,7 @@
         <g:render template="/common/imageupload/web_search" />
         <g:render template="/common/flag_inappropriate" />
         <g:render template="/common/popup_tutorial" />
+        <g:render template="/emote/picturesDialog"/>
 
          <div id="loadingOverlay"></div>
 		 <div id="overlayMessage">&nbsp;</div>

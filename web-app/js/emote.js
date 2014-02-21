@@ -654,11 +654,7 @@ function toggleCommentDialog() {
     var commentForm = $('form#commentSave');
 
     if(commentForm.hasClass('hidden')) {
-        $("#loadingOverlay")
-            .width($(window).width())
-            .height($(window).height())
-            .css("zIndex",10)
-            .show();
+        showOverlay();
         commentForm.removeClass('hidden').addClass('active');
         commentForm.find('#commentMsg').get(0).focus();
         scrollToTop(800);
@@ -667,8 +663,20 @@ function toggleCommentDialog() {
     }
 };
 
-function hideCommentDialog() {
+function showOverlay() {
+    $("#loadingOverlay")
+        .width($(window).width())
+        .height($(window).height())
+        .css("zIndex",10)
+        .show();
+};
+
+function hideOverlay() {
     $("#loadingOverlay").hide();
+};
+
+function hideCommentDialog() {
+    hideOverlay();
     $('form#commentSave').removeClass('active').addClass('hidden');
 };
 
@@ -694,5 +702,34 @@ function saveComment(ev) {
         alert('Server response: ' + data);
     });
 };
+
+$('span.view-picture-icon').click(function() {
+    var viewPicturesDialog = $('div#picturesDialog');
+
+    if(viewPicturesDialog.hasClass('hidden')) {
+        viewPicturesDialog.find('h3[data-title]:first').html($(this).attr('data-title'));
+        viewPicturesDialog.find('span.type:first').html($(this).attr('data-first-category'));
+        viewPicturesDialog.find('span.comments-count:first').html($(this).attr('data-comments-count'));
+
+        showOverlay();
+        viewPicturesDialog.removeClass('hidden').addClass('active');
+
+        var topPos = viewPicturesDialog.offset().top;
+
+        if(topPos < 0) {
+            topPos = topPos * (-1);
+        }
+
+        topPos += 40;
+
+        viewPicturesDialog.css('top', topPos + 'px');
+
+        $("#loadingOverlay").click(function() {
+            viewPicturesDialog.removeClass('active').addClass('hidden');
+            hideOverlay();
+            $(this).unbind('click');
+        });
+    }
+});
 
 /* END: FUNCTIONS FOR COMMENTING */
