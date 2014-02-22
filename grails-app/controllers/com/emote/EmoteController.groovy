@@ -54,6 +54,7 @@ class EmoteController {
 //		def titles = emoteService.groupByTitle(emoteService.feed(0), 
 //			session.user.followingUsers , session.user.id)
 //>>>>>>> 72bb9ec0b90d92df21794c0a20d50b6335daa409
+        fillUserStatusVars(titles.collect {it.completeTitle}, session.user?.id as String)
 		flash.titles = titles
 		render view:'feed'
 

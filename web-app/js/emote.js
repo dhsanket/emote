@@ -59,25 +59,26 @@ function swipeInit() {
     var swipers = [];
 	var mySwiper = $('.swiper-container').each(function(){
 		var that = this;
-		var slider = $(this).swiper({
-			// Options
-			mode:'horizontal',
-			loop: true,
-			speed: 300,
-			resistance: true,
-			createPagination: true,
-			pagination: '.slide-indicator',
-			paginationAsRange: true,
-			onTouchEnd: function(){
-				$('.swipe-location li').css('backgroundColor', '#A7A29F');
-				swipeScreen = swipeScreen + 1;
-				if (swipeScreen > 2) { swipeScreen = 1;}
-				$('.screen' + swipeScreen).css('backgroundColor', '#98041A');
-			},
-			onSlideChangeEnd: function(){
-				$(that).find('.swiper-pagination-switch').toggleClass('swiper-visible-switch swiper-active-switch');
-			}
-		});
+        var swiperParams = {
+            // Options
+            mode:'horizontal',
+            loop: true,
+            speed: 300,
+            resistance: true,
+            createPagination: true,
+            pagination: $('div.slide-indicator[data-emote-id=' + $(this).attr('data-emote-id') + ']').get(0),
+            paginationAsRange: true,
+            onTouchEnd: function(){
+                $('.swipe-location li').css('backgroundColor', '#A7A29F');
+                swipeScreen = swipeScreen + 1;
+                if (swipeScreen > 2) { swipeScreen = 1;}
+                $('.screen' + swipeScreen).css('backgroundColor', '#98041A');
+            },
+            onSlideChangeEnd: function(){
+                $(that).find('.swiper-pagination-switch').toggleClass('swiper-visible-switch swiper-active-switch');
+            }
+        };
+		var slider = $(this).swiper(swiperParams);
         swipers.push(slider);
 	});
     $('.popup-tutorial-container').on('show', function(ev) {
@@ -208,7 +209,7 @@ function emoteCreateButton(doNotResetForm) {
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title,category,id){
+function quick_emote(title,category,id, source){
 	$("#obj-title-location").hide();
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
@@ -221,10 +222,10 @@ function quick_emote(title,category,id){
 		$('#category').val(category);
 		$('#pick-a-category span').text(category);
 		//alert($(document).scrollTop());
-		var posTop = ($(document).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(document).scrollTop()));
+//		var posTop = ($(window).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(window).scrollTop()));
 
 		//alert($(document).scrollTop() + "\n" + $("#"+id).position().top);
-		$('#emote-creation-container').css("top", posTop);
+//		$('#emote-creation-container').css("top", posTop);
 		$('#emote-creation-container').css("left", $("#"+id).position().left);
 		var contWidth = $("#"+id).width();
 		$('#emote-creation-container').css("width", contWidth + 2);
