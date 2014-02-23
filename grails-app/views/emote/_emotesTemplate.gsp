@@ -2,8 +2,8 @@
 
 <r:script>
     $(function(){
-        $('span.feeds-edit-icon').click(function(){
-            quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'));
+        $('div[data-edit-feed]').click(function(){
+            quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'), $(this));
             _gaq.push(['_trackEvent', 'Quick Emotes', $('#category').val(), 'Add', 1, false]);
         });
     });
@@ -16,18 +16,26 @@
 <g:set var="loggedInClass" value="${session.user ? 'logged' : ''}"/>
 
 <g:if test="${titles != null}">
-    <g:set var="favourites" value="${session.user ? UserFavourite.findByUserId(session.user.id)?.favouriteTitles : []}"/>
-
     <g:each status="i" in="${titles}" var="title">
 
         <div data-post-id="${i}"  class="emote-v2" id="emote-v2-${i}">
             <div class="emote-v2-header silver-gradient gradient clearfix">
+                <div class="slide-indicator clearfix" data-emote-id="${title.id}"></div>
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
-                <h3><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
-                <span class="feeds-sprite feeds-edit-icon"
-                    data-complete-title="${title.completeTitle}"
-                    data-first-category="${title.firstCategory}"
-                    data-emote-id="emote-v2-${i}"></span>
+                <h3 class=""><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
+                <g:if test="${title.pictureId!= null}">
+                    <span class="view-picture-icon"
+                          data-title="${title.completeTitle}"
+                          data-first-category="${title.firstCategory}"
+                          data-comments-count="201 Comments"></span>
+                </g:if>
+                <div class="feeds-contain silver-gradient gradient"
+                     data-edit-feed
+                     data-complete-title="${title.completeTitle}"
+                     data-first-category="${title.firstCategory}"
+                     data-emote-id="emote-v2-${i}">
+                    <span class="feeds-sprite feeds-edit-icon"></span>
+                </div>
                 <span class="type">${title.firstCategory}</span><span class="comments-count">201 Comments</span>
             </div> <!-- /.emote-v2-header -->
 
@@ -45,24 +53,9 @@
                 <%--// If media is present --%>
 
                 <div class="emote-v2-content">
-                    <div class="swiper-container">
+                    <div class="swiper-container" data-emote-id="${title.id}">
                         <div class="slide-indicator clearfix"></div>
                         <div class="swiper-wrapper">
-
-                            <div class="emote-friends swiper-slide">
-                                <h4>Popular emotes: </h4>
-                                <ul class="friend-emotes-container" >
-                                    <div class="friend-emotes clearfix">
-                                        <ul>
-                                            <g:each in="${title.popularEmotes}" var="emote">
-                                                <g:if test="${(emote.expression.trim().length()>0)}">
-                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
-                                                </g:if>
-                                            </g:each>
-                                        </ul>
-                                    </div> <!-- /.friend-emotes -->
-                                </ul>
-                            </div> <!-- /.emote-friends swiper-slide -->
 
                             <div class="emote-friends swiper-slide">
 
@@ -113,6 +106,21 @@
                                 </ul>
                             </div> <!-- /.emote-friends swiper-slide -->
 
+                            <div class="emote-friends swiper-slide">
+                                <h4>Popular emotes: </h4>
+                                <ul class="friend-emotes-container" >
+                                    <div class="friend-emotes clearfix">
+                                        <ul>
+                                            <g:each in="${title.popularEmotes}" var="emote">
+                                                <g:if test="${(emote.expression.trim().length()>0)}">
+                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
+                                                </g:if>
+                                            </g:each>
+                                        </ul>
+                                    </div> <!-- /.friend-emotes -->
+                                </ul>
+                            </div> <!-- /.emote-friends swiper-slide -->
+
                         </div> <!-- /.swiper-wrapper -->
                     </div> <!-- /.swiper-container -->
                 </div> <!-- /.emote-v2-content -->
@@ -124,7 +132,7 @@
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-share-icon last ${loggedInClass}" <emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>></li>
                 </ul>
-                <span class="feeds-sprite feeds-knob-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></span>
+                <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">
                     <li class="feeds-sprite feeds-list-icon"></li>
                     <li class="feeds-sprite feeds-fav-icon last ${loggedInClass} ${favourites.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></li>
