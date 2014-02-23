@@ -1,6 +1,6 @@
 package com.emote
 
-import java.util.Set;
+import groovy.time.TimeCategory
 
 class TitleService {
 
@@ -12,4 +12,27 @@ class TitleService {
 		return Emote.findAllByTitle(title); 
 
     }
+
+    /**
+     * Filter "doing now" titles
+     *
+     * @param titles
+     * @param userId
+     * @return A new set with just those {@linkplain Title} marked as "Doing now"
+     */
+    Collection<String> filterDoingNow(Collection<String> titles, String userId) {
+        Collection<String> result = []
+        if(userId) {
+            result = UserDoing.withCriteria {
+                projections {
+                    property('title')
+                }
+                eq('userId', userId)
+                inList('title', titles)
+                gt('lastUpdated', use(TimeCategory){new Date() - 1.hours})
+            } as Collection<String>
+        }
+        result
+    }
+
 }
