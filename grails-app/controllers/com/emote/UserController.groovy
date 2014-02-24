@@ -1,7 +1,12 @@
 package com.emote
 
+import com.restfb.Connection
+import com.restfb.Parameter
+import grails.converters.JSON
+import grails.plugin.facebooksdk.FacebookContext
+import grails.plugin.facebooksdk.FacebookGraphClient
+
 import javax.servlet.http.Cookie
-import grails.plugin.facebooksdk.*
 
 class UserController
 {
@@ -78,35 +83,56 @@ class UserController
 	}
 	
 	def displayUsers(){
-		User user = session.user
+        // To read updated user state
+		User user = User.findById(session.user.id as String)
 		String token = getFbToken() 			// For private data
 		facebookGraphClient = new FacebookGraphClient(token)
 		log.info "user.token ${token}"
-		List followFriends = []
-		List userFriends = []
 
-		userFriends = facebookGraphClient.fetchConnection("${user.facebookId}/friends", [limit:200])
-		List inviteFriends = []
-		userFriends.each{friend ->
-			User emoteUser = userService.findByFBId(friend.id)
-			if(emoteUser != null){
-				if(user.followingUsers == null ||  !user.followingUsers.contains(emoteUser.id)){
-					followFriends.add(emoteUser)
-				}
-			}else{
-				inviteFriends.add(friend)
-			}
-		}
-		render (view:'displayUsers', model: [userFriends: inviteFriends, emoteUsersList: followFriends])
+		List<com.restfb.types.User> facebookFriends = []
+        Map actions = [:]
+
+        Connection<com.restfb.types.User> usersConnection = facebookGraphClient.fetchConnection(
+            "${user.facebookId}/friends",
+            com.restfb.types.User,
+            Parameter.with('limit', 5000)
+        )
+
+        facebookFriends.addAll(usersConnection.data)
+
+        Map<String, String> registeredUsers = userService.filterRegisteredFbIds(facebookFriends.collect {it.id})
+
+        facebookFriends.each {
+            def isRegistered = registeredUsers.containsKey(it.id)
+            String status = 'invite'
+
+            if(isRegistered) {
+                if(!user.followingUsers.contains(it.id)) {
+                    status = 'follow'
+                } else {
+                    status = 'following'
+                }
+            }
+
+            actions.put(it.id, [
+                status: status,
+                userId: registeredUsers[it.id]
+            ])
+        }
+
+        facebookFriends.sort {it.name}
+
+		render (view:'displayUsers', model: [userFriends: facebookFriends, actions: actions])
 
 	}
 	
-	def follow(){
+	def follow(String friendId){
 		User user = session.user
-		if(user != null && params.friendId != null){
-			userService.addFollowingUser(user, params.friendId)
+		if(user != null && friendId != null){
+			userService.addFollowingUser(user, friendId)
 		}
-		render ("success")
+
+		render([success: true] as JSON)
 	}
 
 	def settings(){}

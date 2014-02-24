@@ -7,7 +7,7 @@
                 <div id="obj-title-suggestion"></div>
                 <input required type="text" id="tag" class="emote-tags-input" maxlength="25" placeholder="" name="expression" />
                 <input type="hidden" id="goodOrBad" name="goodOrBad"/>
-                <div id="photoBar"><img id="file-preview" src="#" alt="your image" /></div>
+                <div id="photoBar"><img id="file-preview" alt="your image" /></div>
                 <a href="#" id="doing-now" class="gradient silver-gradient button big icon-button"><span class="indicator"></span>Doing now</a>
 
                 <div id="emote-bar">
