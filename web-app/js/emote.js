@@ -445,19 +445,14 @@ function showPosition(position) {
 //ajax submit follow user action
 function followUser(userId) {
 	console.log(userId);
-	$.ajax({
-		type: 'POST',
-		url: '/user/follow',
-		data: {friendId:userId},
-		error: function(){
-			// Error function goes here
-			console.log("Error, your request was not sent");
-			$('#'+userId).css({'font':'red'});
-		},
-	}).done(function(){
-		// disalbe button
-		$('#'+userId).css({'font':'green'});
-	});
+    $.post('/user/follow', {friendId:userId}, function() {
+        // disalbe button
+        $('#'+userId).css('color', 'green');
+    }).fail(function() {
+        // Error function goes here
+        console.log("Error, your request was not sent");
+        $('#'+userId).css('color', 'red');
+    });
 }
 
 function validationMarkers(){

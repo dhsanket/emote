@@ -70,7 +70,6 @@
             <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6010473097304&amp;value=0&amp;currency=GBP" />
         </noscript>
 	
-    	<div id="fb-root"></div>
         <div class="quick-create-overlay"></div>
 
     	<facebook:initJS appId="${facebookContext.app.id}" xfbml="${true}" />
