@@ -19,19 +19,17 @@
 
                         <span class="user-name">${friend.name}</span>
 
-                        <g:set var="statusMap" value="${actions[friend.id]}"/>
+                        <g:set var="status" value="${actions[friend.id].status}"/>
 
-                        <span class="followButton">
-                        <g:if test="${statusMap.status == 'invite'}">
-                            <facebook:sendLink to="${friend.id}" name="Emoting Emote" description="I am using this cool new app for reviews and I think you should try it" link="www.emote-app.com" picture="http://www.emote-app.com/img/emote-defaultLogo.png">
-                                invite</facebook:sendLink>
-                        </g:if>
-                        <g:elseif test="${statusMap.status == 'follow'}">
-                            <a href="javascript:followUser('${friend.id}')"> follow </a>
-                        </g:elseif>
-                        <g:else>
-                            <span class="label label-info">following</span>
-                        </g:else>
+                        <span class="followButton" data-user-fb-id="${friend.id}">
+                            <facebook:sendLink to="${friend.id}" name="Emoting Emote"
+                                               description="I am using this cool new app for reviews and I think you should try it"
+                                               link="www.emote-app.com" elementClass="${status == 'invite' ? '' : 'hidden'} invite-link"
+                                               picture="http://www.emote-app.com/img/emote-defaultLogo.png">invite</facebook:sendLink>
+
+                            <a href="javascript:followUser('${friend.id}')" data-follow-btn class="${status == 'follow' ? '' : 'hidden'}">follow</a>
+
+                            <span class="label label-info ${status == 'following' ? '' : 'hidden'}" data-following-label>following</span>
                         </span>
                     </div>
                 </g:each>

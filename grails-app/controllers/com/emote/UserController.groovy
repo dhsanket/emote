@@ -126,10 +126,10 @@ class UserController
 
 	}
 	
-	def follow(){
+	def follow(String friendId){
 		User user = session.user
-		if(user != null && params.friendId != null){
-			userService.addFollowingUser(user, params.friendId)
+		if(user != null && friendId != null){
+			userService.addFollowingUser(user, friendId)
 		}
 
 		render([success: true] as JSON)

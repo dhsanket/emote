@@ -445,13 +445,14 @@ function showPosition(position) {
 //ajax submit follow user action
 function followUser(userId) {
 	console.log(userId);
-    $.post('/user/follow', {friendId:userId}, function() {
-        // disalbe button
-        $('#'+userId).css('color', 'green');
+    $.post('/user/follow', {friendId:userId}, function(resp) {
+        // Update buttons
+        var actionContainer = $("span[data-user-fb-id='" + userId + "']");
+        actionContainer.find('a[data-follow-btn]').addClass('hidden');
+        actionContainer.find('span[data-following-label]').removeClass('hidden');
     }).fail(function() {
         // Error function goes here
         console.log("Error, your request was not sent");
-        $('#'+userId).css('color', 'red');
     });
 }
 
