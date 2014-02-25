@@ -1,6 +1,7 @@
 package com.emote
 
 import com.emote.util.PagedResult
+import grails.converters.JSON
 
 class CommentController {
 
@@ -21,7 +22,22 @@ class CommentController {
             comments = commentService.getNestedComments(page, id)
         }
 
-        [result: comments]
+        def result = [
+            hasMoreResults: comments.moreResults,
+            comments: comments.list.collect {
+                [
+                    id: it.id,
+                    comment: it.comment,
+                    children: [],
+                    username: it.username,
+                    facebookUserId: it.facebookUserId,
+                    dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
+                    votesCount: it.votesCount
+                ]
+            }
+        ]
+
+        render(result as JSON)
     }
 
     /**
@@ -34,12 +50,27 @@ class CommentController {
         User user = session.user
         Comment comment
 
-        if("title".equalsIgnoreCase(mode)) {
+        if('title'.equalsIgnoreCase(mode)) {
             comment = commentService.saveRootComment(user, commentMsg, parentId)
         } else {
             comment = commentService.saveNestedComment(user, commentMsg, parentId)
         }
 
-        [comment: comment, pagedChildren: new PagedResult<Comment>()]
+        def result = [
+            comment: [
+                id: comment.id,
+                comment: comment.comment,
+                children: [],
+                username: comment.username,
+                facebookUserId: comment.facebookUserId,
+                dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
+                votesCount: comment.votesCount,
+                parentCommentId: comment.parentCommentId
+            ],
+            commentsCount: Title.findById(comment.titleId).commentsCount + ' Comments',
+            isReply: null != comment.parentCommentId
+        ]
+
+        render(result as JSON)
     }
 }

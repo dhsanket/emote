@@ -33,4 +33,25 @@ class Comment {
         userId index: true
         votesCount index: true
     }
+
+    def afterInsert() {
+        updateCommentsCount()
+    }
+
+    def afterDelete() {
+        updateCommentsCount()
+    }
+
+    private void updateCommentsCount() {
+        withNewSession {
+            def count = withCriteria {
+                projections { count() }
+                eq('titleId', titleId)
+            }.get(0)
+
+            def title = Title.findById(titleId)
+            title.commentsCount = count + 1
+            title.save(flush: true)
+        }
+    }
 }

@@ -151,9 +151,9 @@ class EmoteController {
             flash.showComments = true
             fillUserStatusVars(titles.collect {it.completeTitle}, user?.id)
 
-            if(titles.size() > 0) {
-                flash.comments = commentService.getRootComments(0, titles.first().id)
-            }
+//            if(titles.size() > 0) {
+//                flash.comments = commentService.getRootComments(0, titles.first().id)
+//            }
 		}
 		render view:"feed"
 	}

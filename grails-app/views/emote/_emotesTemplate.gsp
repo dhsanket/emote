@@ -27,7 +27,7 @@
                     <span class="view-picture-icon"
                           data-title="${title.completeTitle}"
                           data-first-category="${title.firstCategory}"
-                          data-comments-count="201 Comments"></span>
+                          data-comments-count="${title.titleObj.commentsCount} Comments"></span>
                 </g:if>
                 <div class="feeds-contain silver-gradient gradient"
                      data-edit-feed
@@ -36,7 +36,7 @@
                      data-emote-id="emote-v2-${i}">
                     <span class="feeds-sprite feeds-edit-icon"></span>
                 </div>
-                <span class="type">${title.firstCategory}</span><span class="comments-count">201 Comments</span>
+                <span class="type">${title.firstCategory}</span><span class="comments-count">${title.titleObj.commentsCount} Comments</span>
             </div> <!-- /.emote-v2-header -->
 
             <div class="emote-v2-body clearfix">

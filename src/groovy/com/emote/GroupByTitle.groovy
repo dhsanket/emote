@@ -20,6 +20,8 @@ public class GroupByTitle implements Comparable  {
 	List<PopularEmote> popEmotes = []
 	
 	Set<String> categories = []
+
+    Title titleObj
 	
 	@Override
 	public int compareTo(Object o) {

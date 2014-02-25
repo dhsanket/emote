@@ -62,15 +62,6 @@ class EmoteTagLib {
             periodVal = period.minutes
         }
 
-        out << render(
-            template: '/tags/friendlyTime',
-            model:
-            [
-                attrs: attrs,
-                periodVal: periodVal,
-                timestamp: timestamp,
-                formatterKey: "friendly.time.${periodType}.formatter.label"
-            ]
-        )
+        out << message(code: "friendly.time.${periodType}.formatter.label", args: [periodVal])
     }
 }

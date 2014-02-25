@@ -135,7 +135,8 @@ class EmoteService {
 					String picId = null	
 					if(titleObj != null)	
 						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
-					title = new GroupByTitle(id: titleObj.id, title:emote.title, pictureId:picId, followingUsers:followingUsers, completeTitle:emote.completeTitle)
+					title = new GroupByTitle(id: titleObj.id, title:emote.title, pictureId:picId,
+                            followingUsers:followingUsers, completeTitle:emote.completeTitle, titleObj: titleObj)
 					groupedByTitle.put(emote.completeTitle.toUpperCase(), title)
 				}
                 title.completeTitle = emote.completeTitle

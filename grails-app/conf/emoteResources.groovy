@@ -39,6 +39,7 @@ modules ={
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
 		resource url: '/js/jquery.scrolldepth.min.js'
+		resource url: '/js/jquery.tmpl.js'
 	}
 
     desktop {

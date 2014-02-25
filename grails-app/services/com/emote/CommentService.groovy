@@ -64,6 +64,7 @@ class CommentService {
     PagedResult<Comment> getRootComments(int page, String titleId) {
         getPagedComments({
             eq('titleId', titleId)
+            isNull('parentCommentId')
         }, page)
     }
 

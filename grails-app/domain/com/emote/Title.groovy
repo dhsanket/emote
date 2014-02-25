@@ -12,6 +12,7 @@ class Title {
 	Set<String> category = []
 	Date lastUpdateTime = new Date()
 	List<String> pictures = []
+    Integer commentsCount = 0
 	
 	static mapping = {
 		text index:true
