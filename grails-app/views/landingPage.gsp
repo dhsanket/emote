@@ -16,12 +16,12 @@
     <div id="landingContainer">
         <div id="landingContent"><br><br><div id="landingLogin">
 
-            <a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
-               onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">
+            %{--<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"--}%
+               %{--onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">--}%
 
-                <r:img uri="img/landingPage/fb_login.png" />
+                %{--<r:img uri="img/landingPage/fb_login.png" />--}%
 
-            </a>
+            %{--</a>--}%
 
 
         </div>
