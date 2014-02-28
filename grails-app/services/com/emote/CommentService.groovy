@@ -39,11 +39,9 @@ class CommentService {
     }
 
     private PagedResult<Comment> getPagedComments(Closure criteria, int page) {
-        List<Comment> list = Comment.withCriteria(offset: page * PAGE_SIZE, max: PAGE_SIZE + 1) {
+        List<Comment> list = Comment.createCriteria().list(offset: page * PAGE_SIZE, max: PAGE_SIZE, sort: 'dateCreated', order: 'desc') {
             criteria.delegate = delegate
             criteria()
-
-            order('dateCreated', 'desc')
         }
 
         def hasMoreResults = list.size() > PAGE_SIZE
