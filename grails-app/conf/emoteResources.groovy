@@ -39,7 +39,7 @@ modules ={
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
 		resource url: '/js/jquery.scrolldepth.min.js'
-		resource url: '/js/jquery.tmpl.js'
+		resource url: '/js/knockout-3.0.0.js'
 	}
 
     desktop {
@@ -53,6 +53,8 @@ modules ={
     }
 
     mobileTablet {
+        dependsOn 'mobileAndDesktop'
+
         resource url:'/css/add2home.css'
 
         resource url: '/js/vendor/jquery.mobile-1.3.1min.js'
@@ -85,5 +87,9 @@ modules ={
             dependsOn 'mobileAndDesktop'
             resource url: [plugin: 'facebook-sdk', dir: 'js', file: 'send-link.js']
         }
+    }
+
+    commentsPage {
+        resource url: '/js/app/commentsPage.js'
     }
 }

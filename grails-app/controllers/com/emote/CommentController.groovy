@@ -27,6 +27,7 @@ class CommentController {
             comments: comments.list.collect {
                 [
                     id: it.id,
+                    parentCommentId: it.parentCommentId,
                     comment: it.comment,
                     children: [],
                     username: it.username,
