@@ -23,17 +23,31 @@ class CommentController {
         }
 
         def result = [
-            hasMoreResults: comments.moreResults,
+            pagingData: [
+                hasMoreResults: comments.moreResults,
+                pageNbr: comments.page
+            ],
             comments: comments.list.collect {
+                PagedResult<Comment> childrenResult = commentService.getNestedComments(0, it.id)
+
                 [
                     id: it.id,
                     parentCommentId: it.parentCommentId,
                     comment: it.comment,
-                    children: [],
+                    children: childrenResult.list.collect {Comment child -> [
+                        id: child.id,
+                        parentCommentId: child.parentCommentId,
+                        comment: child.comment,
+                        username: child.username,
+                        facebookUserId: child.facebookUserId,
+                        dateCreated: emoteapp.friendlyTime(timestamp: child.dateCreated),
+                        votesCount: child.votesCount
+                    ]},
                     username: it.username,
                     facebookUserId: it.facebookUserId,
                     dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
-                    votesCount: it.votesCount
+                    votesCount: it.votesCount,
+                    hasMoreReplies: childrenResult.moreResults
                 ]
             }
         ]
@@ -58,18 +72,15 @@ class CommentController {
         }
 
         def result = [
-            comment: [
-                id: comment.id,
-                comment: comment.comment,
-                children: [],
-                username: comment.username,
-                facebookUserId: comment.facebookUserId,
-                dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
-                votesCount: comment.votesCount,
-                parentCommentId: comment.parentCommentId
-            ],
-            commentsCount: Title.findById(comment.titleId).commentsCount + ' Comments',
-            isReply: null != comment.parentCommentId
+            id: comment.id,
+            parentCommentId: comment.parentCommentId,
+            comment: comment.comment,
+            children: [],
+            username: comment.username,
+            facebookUserId: comment.facebookUserId,
+            dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
+            votesCount: comment.votesCount,
+            hasMoreReplies: false
         ]
 
         render(result as JSON)

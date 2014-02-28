@@ -689,30 +689,6 @@ function showCommentDialog(parentId, mode) {
     toggleCommentDialog();
 };
 
-function saveComment(ev) {
-    ev.preventDefault();
-
-    var form = $('form#commentSave');
-    var targetUrl = form.attr('action');
-
-    $.post(targetUrl, form.serialize(), function(data) {
-        var results = {
-            comments: [data.comment]
-        };
-
-        if(data.isReply) {
-            $('#replyCommentTmpl').tmpl( results ).prependTo('ul[data-nested-for=\'' + data.comment.parentCommentId + '\']');
-            $('li[data-comment-id=\'' + data.comment.parentCommentId + '\']').addClass('has-reply');
-        } else {
-            $('#rootCommentTmpl').tmpl( results ).prependTo('ul.comments');
-            $('span[data-comments-count]').attr('data-comments-count', data.commentsCount);
-            $('span.comments-count').html(data.commentsCount);
-        }
-
-        hideCommentDialog();
-    });
-};
-
 $('span.view-picture-icon').click(function() {
     var viewPicturesDialog = $('div#picturesDialog');
 

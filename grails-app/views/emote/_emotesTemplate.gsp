@@ -145,8 +145,4 @@
             <g:render template="/common/comment/commentsList" model="[title: titles.empty ? null : titles.first(), comments: comments]"/>
         </g:if>
     </g:each>
-</g:if>	
-
-<g:if test="${params.action == 'singleTitle' && session.user}">
-    <g:render template="/common/comment/commentDialog"/>
 </g:if>
