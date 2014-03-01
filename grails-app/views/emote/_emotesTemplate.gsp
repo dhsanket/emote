@@ -130,7 +130,8 @@
                 <ul class="clearfix pull-left">
                     <li class="feeds-sprite feeds-report-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
-                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}" <emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>></li>
+                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}"> <facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink>  </li>
+                    %{--<emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>--}%
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">

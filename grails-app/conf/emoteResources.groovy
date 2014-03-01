@@ -39,9 +39,6 @@ modules ={
         resource url: '/js/emotezen.js'
 		resource url: '/js/other.js'
 		resource url: '/js/jquery.scrolldepth.min.js'
-
-
-
 	}
 
     desktop {
@@ -79,5 +76,13 @@ modules ={
 
     landing {
         resource url:'/css/landing.css'
+    }
+
+    overrides {
+        'fb-sdk-send-link' {
+            defaultBundle 'facebook-sdk'
+            dependsOn 'mobileAndDesktop'
+            resource url: [plugin: 'facebook-sdk', dir: 'js', file: 'send-link.js']
+        }
     }
 }
