@@ -36,7 +36,13 @@
                      data-emote-id="emote-v2-${i}">
                     <span class="feeds-sprite feeds-edit-icon"></span>
                 </div>
-                <span class="type">${title.firstCategory}</span><span class="comments-count">${title.titleObj.commentsCount} Comments</span>
+                <span class="type">${title.firstCategory}</span>
+                <g:if test="${showComments}">
+                    <span class="comments-count" data-bind="text: commentsCountMsg"></span>
+                </g:if>
+                <g:else>
+                    <span class="comments-count">${title.titleObj.commentsCount} Comments</span>
+                </g:else>
             </div> <!-- /.emote-v2-header -->
 
             <div class="emote-v2-body clearfix">

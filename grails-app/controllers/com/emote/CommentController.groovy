@@ -47,7 +47,10 @@ class CommentController {
                     facebookUserId: it.facebookUserId,
                     dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
                     votesCount: it.votesCount,
-                    hasMoreReplies: childrenResult.moreResults
+                    pagingData: [
+                        hasMoreResults: childrenResult.moreResults,
+                        pageNbr: childrenResult.page
+                    ]
                 ]
             }
         ]
@@ -80,7 +83,10 @@ class CommentController {
             facebookUserId: comment.facebookUserId,
             dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
             votesCount: comment.votesCount,
-            hasMoreReplies: false
+            pagingData: [
+                hasMoreResults: false,
+                pageNbr: -1
+            ]
         ]
 
         render(result as JSON)

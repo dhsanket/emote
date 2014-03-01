@@ -1,33 +1,48 @@
-function CommentsPage(getCommentsUrl, titleId) {
-    this.getCommentsUrl = getCommentsUrl;
-    this.titleId = titleId;
-    this.comments = ko.observableArray();
-    this.pagingData = ko.observable({hasMoreResults: true, pageNbr: -1});
+function CommentsPage(getCommentsUrl, titleId, commentsCount) {
+    var self = this;
+    self.getCommentsUrl = getCommentsUrl;
+    self.commentsCount = ko.observable(commentsCount);
+    self.titleId = titleId;
+    self.comments = ko.observableArray();
+    self.pagingData = ko.observable({hasMoreResults: true, pageNbr: -1});
 
-    this.profilePicture = function(comment) {
+    self.commentsCountMsg = ko.computed(function() {
+        return self.commentsCount() + " Comments";
+    });
+
+    self.profilePicture = function(comment) {
         return "http://graph.facebook.com/" + comment.facebookUserId + "/picture?";
     };
 
-    this.showCommentDialog = function(comment) {
+    self.showCommentDialog = function(comment) {
         showCommentDialog(comment.id, 'reply');
     };
 
-    this.loadRootComments = function() {
-        $.get(this.getCommentsUrl, {page: this.pagingData().pageNbr + 1, id: this.titleId, mode: 'title'}, function(result){
-            controller.pagingData(result.pagingData);
+    self.loadRootComments = function() {
+        $.get(self.getCommentsUrl, {page: self.pagingData().pageNbr + 1, id: self.titleId, mode: 'title'}, function(result){
+            self.pagingData(result.pagingData);
 
             $.each(result.comments, function(i, val) {
-                var originalChildrens = val.children;
-                val.children = ko.observableArray();
-                $.each(originalChildrens, function(j, child) {
-                    val.children().push(child);
-                });
-                controller.comments.push(val);
+                val.children = ko.observableArray(val.children);
+                val.pagingData = ko.observable(val.pagingData);
+
+                self.comments.push(val);
             });
         });
     };
 
-    this.saveComment = function () {
+    self.loadNestedComments = function() {
+        var comment = this;
+
+        $.get(self.getCommentsUrl, {page: self.pagingData().pageNbr + 1, id: comment.id, mode: 'reply'}, function(result){
+            comment.pagingData(result.pagingData);
+            $.each(result.comments, function(index, reply) {
+                comment.children.push(reply);
+            });
+        });
+    };
+
+    self.saveComment = function () {
         var form = $('form#commentSave');
         var targetUrl = form.attr('action');
 
@@ -35,19 +50,22 @@ function CommentsPage(getCommentsUrl, titleId) {
             if(!comment.parentCommentId) {
                 // It is a root comment
                 comment.children = ko.observableArray();
-                controller.comments().unshift(comment);
+                comment.pagingData = ko.observable(comment.pagingData);
+                self.comments.unshift(comment);
             } else {
                 // It is a reply
-                $.each(controller.comments(), function(index, rootComment) {
+                $.each(self.comments(), function(index, rootComment) {
                     if(rootComment.id == comment.parentCommentId) {
-                        rootComment.children().unshift(comment);
+                        rootComment.children.unshift(comment);
                     }
                 });
             }
+
+            self.commentsCount(self.commentsCount() + 1);
 
             hideCommentDialog();
         });
     };
 
-    this.loadRootComments();
+    self.loadRootComments();
 }

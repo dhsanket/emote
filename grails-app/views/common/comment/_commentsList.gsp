@@ -22,9 +22,9 @@
                 </div>
                 <p data-bind="text: comment"></p>
                 <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
-                    <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
-                    <li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>
-                    <li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>
+                    %{--<li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>--}%
+                    %{--<li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
+                    %{--<li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
                     <li class="pull-right"><a href="#" class="reply-button" data-bind="click: controller.showCommentDialog">Reply</a></li>
                 </ul>
             </div>
@@ -35,14 +35,20 @@
                     <div class="comment-body clearfix">
                         <r:img class="commment-arrow" uri="/img/comment-arrow.png"/>
                         <p data-bind="text: comment"></p>
-                        <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
-                            <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
-                            <li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>
-                            <li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>
-                        </ul>
+                        %{--<ul class="comment-toolbar pull-left clearfix silver-gradient gradient">--}%
+                            %{--<li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>--}%
+                            %{--<li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
+                            %{--<li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
+                        %{--</ul>--}%
                     </div>
                 </li>
             </ul>
+
+            <div data-bind="if: $data.pagingData().hasMoreResults" style="margin-bottom: 10px; margin-left: 44px;">
+                <button class="button grey-gradient gradient long" style="width: 100%" data-bind="click: controller.loadNestedComments">
+                    <strong>Load more replies</strong>
+                </button>
+            </div>
         </li>
     </ul>
     <div data-bind="if: pagingData().hasMoreResults">
@@ -73,7 +79,7 @@
 
     $(function() {
         // Activates knockout.js
-        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>', '${title.id}');
+        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>', '${title.id}', ${title.titleObj.commentsCount});
         ko.applyBindings(controller);
     });
 </r:script>
