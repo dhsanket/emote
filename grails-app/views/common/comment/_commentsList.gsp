@@ -79,7 +79,7 @@
 
     $(function() {
         // Activates knockout.js
-        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>', '${title.id}', ${title.titleObj.commentsCount});
+        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>', '${title.id}', ${title.titleObj.commentsCount ?: 0});
         ko.applyBindings(controller);
     });
 </r:script>

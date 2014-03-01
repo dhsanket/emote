@@ -41,7 +41,7 @@
                     <span class="comments-count" data-bind="text: commentsCountMsg"></span>
                 </g:if>
                 <g:else>
-                    <span class="comments-count">${title.titleObj.commentsCount} Comments</span>
+                    <span class="comments-count">${title.titleObj.commentsCount ?: 0} Comments</span>
                 </g:else>
             </div> <!-- /.emote-v2-header -->
 
