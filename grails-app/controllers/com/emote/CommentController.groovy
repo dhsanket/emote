@@ -14,6 +14,7 @@ class CommentController {
      * @param mode "title" or "comment", where to load comments from
      */
     def get(int page, String id, String mode) {
+        User user = session.user
         PagedResult<Comment> comments
 
         if("title".equalsIgnoreCase(mode)) {
@@ -22,13 +23,41 @@ class CommentController {
             comments = commentService.getNestedComments(page, id)
         }
 
+        Map<String, PagedResult<Comment>> rootCommentsMap = [:]
+
+        comments.list.each {
+            rootCommentsMap << [comment: it, children: commentService.getNestedComments(0, it.id)]
+        }
+
+        List<String> commentIds = []
+
+        rootCommentsMap.keySet().each { String commentId ->
+            commentIds << commentId
+
+            rootCommentsMap.get(commentId).list.each { Comment childComment ->
+                commentId << childComment.id
+            }
+        }
+
+        Set<String> alreadyVotedCommentIds = new HashSet<String>()
+
+        UserCommentVote.withTransaction {
+            alreadyVotedCommentIds.addAll(UserCommentVote.createCriteria().list {
+                projections {
+                    property('commentId')
+                }
+                eq('userId', user.id)
+                inList('commentId', commentIds)
+            })
+        }
+
         def result = [
             pagingData: [
                 hasMoreResults: comments.moreResults,
                 pageNbr: comments.page
             ],
             comments: comments.list.collect {
-                PagedResult<Comment> childrenResult = commentService.getNestedComments(0, it.id)
+                PagedResult<Comment> childrenResult = rootCommentsMap.get(it.id)
 
                 [
                     id: it.id,
@@ -41,12 +70,14 @@ class CommentController {
                         username: child.username,
                         facebookUserId: child.facebookUserId,
                         dateCreated: emoteapp.friendlyTime(timestamp: child.dateCreated),
-                        votesCount: child.votesCount
+                        votesCount: child.votesCount,
+                        canVote: alreadyVotedCommentIds.contains(child.id)
                     ]},
                     username: it.username,
                     facebookUserId: it.facebookUserId,
                     dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
                     votesCount: it.votesCount,
+                    canVote: alreadyVotedCommentIds.contains(it.id),
                     pagingData: [
                         hasMoreResults: childrenResult.moreResults,
                         pageNbr: childrenResult.page
@@ -87,6 +118,36 @@ class CommentController {
                 hasMoreResults: false,
                 pageNbr: -1
             ]
+        ]
+
+        render(result as JSON)
+    }
+
+    /**
+     * Method to vote on a comment
+     * @param commentId Id of a {@linkplain Comment} to vote on
+     * @param mode Should be one of 'upVote' or 'downVote'
+     */
+    def vote(String commentId, String mode) {
+        User user = session.user as User
+        Comment comment = Comment.get(commentId)
+        UserCommentVote vote = UserCommentVote.findByUserIdAndCommentId(user.id, comment.id)
+        String errorMsg = null
+
+        if(vote) {
+            errorMsg = message(code: 'emote.comment.vote.error.already.voted')
+        } else {
+            UserCommentVote.withTransaction {
+                vote = new UserCommentVote(userId: user.id, commentId: comment.id, upVote: 'upVote'.equalsIgnoreCase(mode)).save()
+                comment.votesCount += (vote.upVote ? 1 : -1)
+                comment.save()
+            }
+        }
+
+        def result = [
+            status: errorMsg ? 'error' : 'success',
+            msg: errorMsg ?: null,
+            votesCount: comment.votesCount
         ]
 
         render(result as JSON)
