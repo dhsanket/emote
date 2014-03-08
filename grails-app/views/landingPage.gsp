@@ -1,5 +1,6 @@
 <html>
 <head>
+    <r:require modules="mobileAndDesktop"/>
     <r:require modules="landing"/>
 </head>
 
@@ -16,15 +17,16 @@
     <div id="landingContainer">
         <div id="landingContent"><br><br><div id="landingLogin">
 
-            <a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"
-               onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">
+            %{--<a href="${facebookContext.getLoginURL(redirect_uri:createLink(controller:'user', action:'findUserInDB', absolute:true))}"--}%
+               %{--onClick="_gaq.push(['_trackEvent', 'Facebook Registration', 'Facebook Signin', 'Emote App', 1, false]);">--}%
 
-                <r:img uri="img/landingPage/fb_login.png" />
+                %{--<r:img uri="img/landingPage/fb_login.png" />--}%
 
-            </a>
-
+            %{--</a>--}%
 
         </div>
+
+            <span class="badge" style="font-size: 20px; display: block; max-width: 200px; margin: 0px auto;"><g:message code="emote.landing.page.only.mobile.allowed"/></span>
 
             <r:img uri="img/landingPage/emote-app.jpg" />
 
