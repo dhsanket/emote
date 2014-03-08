@@ -62,12 +62,12 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     development {
         grails.logging.jul.usebridge = true
-		//FACEBOOK http://localhost:8080  Database Heroku emote-test
-		grails.plugin.facebooksdk.app.id = 498699006889199
+        //FACEBOOK http://emote-app.herokuapp.com  Database:Heroku emote-app
+		grails.plugin.facebooksdk.app.id = 407280009364725
 		grails.plugin.facebooksdk.app.permissions = ['email']
-		grails.plugin.facebooksdk.app.secret = '03ce9aa10c83dcbcb0bdb5dc1aa4fb4b'
-		
-		def FacebookAppId = 498699006889199
+		grails.plugin.facebooksdk.app.secret = '63da47e8de8c5f5516d113e2036c50a2'
+
+		def FacebookAppId = 407280009364725
     }
 	
 	test {
