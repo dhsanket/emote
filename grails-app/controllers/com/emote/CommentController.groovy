@@ -26,7 +26,7 @@ class CommentController {
         Map<String, PagedResult<Comment>> rootCommentsMap = [:]
 
         comments.list.each {
-            rootCommentsMap << [comment: it, children: commentService.getNestedComments(0, it.id)]
+            rootCommentsMap.put(it.id, commentService.getNestedComments(0, it.id))
         }
 
         List<String> commentIds = []
@@ -35,20 +35,34 @@ class CommentController {
             commentIds << commentId
 
             rootCommentsMap.get(commentId).list.each { Comment childComment ->
-                commentId << childComment.id
+                commentIds << childComment.id
             }
         }
 
-        Set<String> alreadyVotedCommentIds = new HashSet<String>()
+        Map<String, UserCommentVote> votesCommentIdsMap = [:]
 
-        UserCommentVote.withTransaction {
-            alreadyVotedCommentIds.addAll(UserCommentVote.createCriteria().list {
-                projections {
-                    property('commentId')
+        if(user) {
+            UserCommentVote.withTransaction {
+                List<UserCommentVote> votes = UserCommentVote.createCriteria().list {
+                    eq('userId', user.id)
+                    inList('commentId', commentIds)
                 }
-                eq('userId', user.id)
-                inList('commentId', commentIds)
-            })
+                votes.each {
+                    votesCommentIdsMap.put(it.commentId, it)
+                }
+            }
+        }
+
+        def getVote = { String commentId ->
+            if(votesCommentIdsMap.containsKey(commentId)) {
+                UserCommentVote vote = votesCommentIdsMap.get(commentId)
+
+                [
+                    type: vote.upVote ? 'upVote' : 'downVote'
+                ]
+            } else {
+                null
+            }
         }
 
         def result = [
@@ -71,13 +85,13 @@ class CommentController {
                         facebookUserId: child.facebookUserId,
                         dateCreated: emoteapp.friendlyTime(timestamp: child.dateCreated),
                         votesCount: child.votesCount,
-                        canVote: alreadyVotedCommentIds.contains(child.id)
+                        vote: getVote(child.id)
                     ]},
                     username: it.username,
                     facebookUserId: it.facebookUserId,
                     dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
                     votesCount: it.votesCount,
-                    canVote: alreadyVotedCommentIds.contains(it.id),
+                    vote: getVote(it.id),
                     pagingData: [
                         hasMoreResults: childrenResult.moreResults,
                         pageNbr: childrenResult.page
@@ -114,6 +128,7 @@ class CommentController {
             facebookUserId: comment.facebookUserId,
             dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
             votesCount: comment.votesCount,
+            vote: null,
             pagingData: [
                 hasMoreResults: false,
                 pageNbr: -1
@@ -147,7 +162,8 @@ class CommentController {
         def result = [
             status: errorMsg ? 'error' : 'success',
             msg: errorMsg ?: null,
-            votesCount: comment.votesCount
+            votesCount: comment.votesCount,
+            vote: [type: mode]
         ]
 
         render(result as JSON)

@@ -22,10 +22,16 @@
                 </div>
                 <p data-bind="text: comment"></p>
                 <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
-                    %{--<li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>--}%
-                    %{--<li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
-                    %{--<li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
-                    <li class="pull-right"><a href="#" class="reply-button" data-bind="click: controller.showCommentDialog">Reply</a></li>
+                    <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
+                    <li class="comment-up-vote ir" data-bind="if: controller.canVote($data)">
+                        <a class="feeds-sprite" href="#/" data-bind="click: controller.upVote"></a>
+                    </li>
+                    <li class="comment-down-vote ir" data-bind="if: controller.canVote($data)">
+                        <a class="feeds-sprite" href="#/" data-bind="click: controller.downVote"></a>
+                    </li>
+                    <li class="pull-right" data-bind="if: controller.loggedIn">
+                        <a href="#" class="reply-button" data-bind="click: controller.showCommentDialog">Reply</a>
+                    </li>
                 </ul>
             </div>
             <ul class="replies" data-bind="foreach: children">
@@ -35,11 +41,15 @@
                     <div class="comment-body clearfix">
                         <r:img class="commment-arrow" uri="/img/comment-arrow.png"/>
                         <p data-bind="text: comment"></p>
-                        %{--<ul class="comment-toolbar pull-left clearfix silver-gradient gradient">--}%
-                            %{--<li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>--}%
-                            %{--<li class="comment-up-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
-                            %{--<li class="comment-down-vote ir"><a class="feeds-sprite" href="#/"></a></li>--}%
-                        %{--</ul>--}%
+                        <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
+                            <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
+                            <li class="comment-up-vote ir" data-bind="if: controller.canVote($data)">
+                                <a class="feeds-sprite" href="#/" data-bind="click: controller.upVote"></a>
+                            </li>
+                            <li class="comment-down-vote ir" data-bind="if: controller.canVote($data)">
+                                <a class="feeds-sprite" href="#/" data-bind="click: controller.downVote"></a>
+                            </li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -64,12 +74,14 @@
     <input type="hidden" id="mode" name="mode">
     <div id="comment-creation-container">
         <div class="data-set clearfix">
+            <g:if test="${session.user}">
             <img class="comment-author-pic" src="http://graph.facebook.com/${session.user.facebookId}/picture?">
             <div class="comment-dialog-body">
                 <textarea id="commentMsg" name="commentMsg" placeholder="${message(code: 'emote.comment.msg.placeholder')}"></textarea>
             </div>
             <button type="submit" id="post-emote" class="button icon-button grey-gradient big gradient pull-right" value="Save"><span class="edit-button"></span>${message(code: 'emote.comment.post.btn.label')}</button>
             <button type="button" class="button grey-gradient big gradient pull-right" value="Cancel" onclick="hideCommentDialog();">${message(code: 'emote.comment.cancel.btn.label')}</button>
+            </g:if>
         </div> <!-- /.data-set -->
     </div> <!-- /#comment-creation-container -->
 </g:form>
@@ -79,7 +91,9 @@
 
     $(function() {
         // Activates knockout.js
-        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>', '${title.id}', ${title.titleObj.commentsCount ?: 0});
+        controller = new CommentsPage('<g:createLink controller="comment" action="get"/>',
+            '<g:createLink controller="comment" action="vote"/>', '${title.id}',
+            ${title.titleObj.commentsCount ?: 0}, ${session.user ? true : false});
         ko.applyBindings(controller);
     });
 </r:script>
