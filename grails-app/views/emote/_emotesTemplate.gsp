@@ -19,10 +19,14 @@
     <g:each status="i" in="${titles}" var="title">
 
         <div data-post-id="${i}"  class="emote-v2" id="emote-v2-${i}">
-            <div class="emote-v2-header silver-gradient gradient clearfix">
+            <div class="emote-v2-header swiper-container silver-gradient gradient clearfix">
                 <div class="slide-indicator clearfix" data-emote-id="${title.id}"></div>
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
-                <h3 class=""><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h3 class=""><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
+                    </div>
+                </div>
                 <g:if test="${title.pictureId!= null}">
                     <span class="view-picture-icon"
                           data-title="${title.completeTitle}"
