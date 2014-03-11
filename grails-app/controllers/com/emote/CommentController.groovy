@@ -84,13 +84,15 @@ class CommentController {
                         username: child.username,
                         facebookUserId: child.facebookUserId,
                         dateCreated: emoteapp.friendlyTime(timestamp: child.dateCreated),
-                        votesCount: child.votesCount,
+                        upVotesCount: child.upVotesCount ?: 0,
+                        downVotesCount: child.downVotesCount ?: 0,
                         vote: getVote(child.id)
                     ]},
                     username: it.username,
                     facebookUserId: it.facebookUserId,
                     dateCreated: emoteapp.friendlyTime(timestamp: it.dateCreated),
-                    votesCount: it.votesCount,
+                    upVotesCount: it.upVotesCount ?: 0,
+                    downVotesCount: it.downVotesCount ?: 0,
                     vote: getVote(it.id),
                     pagingData: [
                         hasMoreResults: childrenResult.moreResults,
@@ -127,7 +129,8 @@ class CommentController {
             username: comment.username,
             facebookUserId: comment.facebookUserId,
             dateCreated: emoteapp.friendlyTime(timestamp: comment.dateCreated),
-            votesCount: comment.votesCount,
+            upVotesCount: comment.upVotesCount ?: 0,
+            downVotesCount: comment.downVotesCount ?: 0,
             vote: null,
             pagingData: [
                 hasMoreResults: false,
@@ -154,7 +157,11 @@ class CommentController {
         } else {
             UserCommentVote.withTransaction {
                 vote = new UserCommentVote(userId: user.id, commentId: comment.id, upVote: 'upVote'.equalsIgnoreCase(mode)).save()
-                comment.votesCount += (vote.upVote ? 1 : -1)
+                if(vote.upVote) {
+                    comment.upVotesCount = comment.upVotesCount ?: 0 + 1
+                } else {
+                    comment.downVotesCount = comment.downVotesCount ?: 0 - 1
+                }
                 comment.save()
             }
         }
@@ -162,7 +169,8 @@ class CommentController {
         def result = [
             status: errorMsg ? 'error' : 'success',
             msg: errorMsg ?: null,
-            votesCount: comment.votesCount,
+            upVotesCount: comment.upVotesCount ?: 0,
+            downVotesCount: comment.downVotesCount ?: 0,
             vote: [type: mode]
         ]
 

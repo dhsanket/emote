@@ -22,10 +22,11 @@
                 </div>
                 <p data-bind="text: comment"></p>
                 <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
-                    <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
+                    <li class="comment-vote-count"><a href="#/" data-bind="text: upVotesCount"></a></li>
                     <li class="comment-up-vote ir" data-bind="if: controller.canVote($data)">
                         <a class="feeds-sprite" href="#/" data-bind="click: controller.upVote"></a>
                     </li>
+                    <li class="comment-vote-count"><a href="#/" data-bind="text: downVotesCount"></a></li>
                     <li class="comment-down-vote ir" data-bind="if: controller.canVote($data)">
                         <a class="feeds-sprite" href="#/" data-bind="click: controller.downVote"></a>
                     </li>
@@ -42,10 +43,11 @@
                         <r:img class="commment-arrow" uri="/img/comment-arrow.png"/>
                         <p data-bind="text: comment"></p>
                         <ul class="comment-toolbar pull-left clearfix silver-gradient gradient">
-                            <li class="comment-vote-count"><a href="#/" data-bind="text: votesCount"></a></li>
+                            <li class="comment-vote-count"><a href="#/" data-bind="text: upVotesCount"></a></li>
                             <li class="comment-up-vote ir" data-bind="if: controller.canVote($data)">
                                 <a class="feeds-sprite" href="#/" data-bind="click: controller.upVote"></a>
                             </li>
+                            <li class="comment-vote-count"><a href="#/" data-bind="text: downVotesCount"></a></li>
                             <li class="comment-down-vote ir" data-bind="if: controller.canVote($data)">
                                 <a class="feeds-sprite" href="#/" data-bind="click: controller.downVote"></a>
                             </li>

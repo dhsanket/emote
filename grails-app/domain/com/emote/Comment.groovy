@@ -10,7 +10,8 @@ class Comment {
     Date dateCreated
     String comment
     String parentCommentId
-    Integer votesCount = 0
+    Integer upVotesCount = 0
+    Integer downVotesCount = 0
 
     /**
      * Child comments indicator
@@ -31,7 +32,8 @@ class Comment {
         titleId index: true
         parentCommentId index: true
         userId index: true
-        votesCount index: true
+        upVotesCount index: true
+        downVotesCount index: true
     }
 
     def afterInsert() {

@@ -26,13 +26,15 @@ function CommentsPage(getCommentsUrl, voteUrl, titleId, commentsCount, loggedIn)
         if(comment.children) {
             var wrappedChildren = ko.observableArray();
             $.each(comment.children, function(j, child) {
-                child.votesCount = ko.observable(child.votesCount);
+                child.upVotesCount = ko.observable(child.upVotesCount);
+                child.downVotesCount = ko.observable(child.downVotesCount);
                 child.vote = ko.observable(child.vote);
                 wrappedChildren.push(ko.observable(child));
             });
             comment.children = wrappedChildren;
         }
-        comment.votesCount = ko.observable(comment.votesCount);
+        comment.upVotesCount = ko.observable(comment.upVotesCount);
+        comment.downVotesCount = ko.observable(comment.downVotesCount);
         comment.vote = ko.observable(comment.vote);
         comment.pagingData = ko.observable(comment.pagingData);
         return ko.observable(comment);
@@ -94,7 +96,8 @@ function CommentsPage(getCommentsUrl, voteUrl, titleId, commentsCount, loggedIn)
         $.each(self.comments(), function(i, rc) {
             var rootComment = rc();
             if(rootComment.id == commentId) {
-                rootComment.votesCount(data.votesCount);
+                rootComment.upVotesCount(data.upVotesCount);
+                rootComment.downVotesCount(data.downVotesCount);
                 rootComment.vote(data.vote);
                 return;
             }
@@ -102,7 +105,8 @@ function CommentsPage(getCommentsUrl, voteUrl, titleId, commentsCount, loggedIn)
             $.each(rootComment.children(), function(j, cc) {
                 var childComment = cc();
                 if(childComment.id == commentId) {
-                    childComment.votesCount(data.votesCount);
+                    childComment.upVotesCount(data.upVotesCount);
+                    childComment.downVotesCount(data.downVotesCount);
                     childComment.vote(data.vote);
                     return;
                 }
