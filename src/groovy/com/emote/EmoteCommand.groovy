@@ -5,6 +5,7 @@ class EmoteCommand {
 	
 	static constraints = {
 		title blank:false
+        doingNow nullable: true
 //		expression blank:false	Does NOT have front end User notification
 //		category blank:false     has front end error checking && User notification
 	}
@@ -13,6 +14,7 @@ class EmoteCommand {
 	String expression;
     String goodOrBad
 	String title;
+    Boolean doingNow
 
 	def getExpressions(){
 		return expression.split(",")

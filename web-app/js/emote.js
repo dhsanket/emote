@@ -209,7 +209,7 @@ function emoteCreateButton(doNotResetForm) {
 }
 
 //automatically adds title to the createEmote form
-function quick_emote(title,category,id, source){
+function quick_emote(title, category, id, source){
 	$("#obj-title-location").hide();
 	$("#loadingOverlay").width($(window).width());
 	$("#loadingOverlay").height($(window).height());
@@ -221,6 +221,8 @@ function quick_emote(title,category,id, source){
 		$('.edit-emote-header p').text(category);
 		$('#category').val(category);
 		$('#pick-a-category span').text(category);
+		$('form#emoteSave span.indicator').removeClass('active');
+		$('input#doingNowField').val(false);
 		//alert($(document).scrollTop());
 //		var posTop = ($(window).scrollTop() == 0 ? $("#"+id).position().top : ($("#"+id).position().top - $(window).scrollTop()));
 
@@ -377,8 +379,21 @@ var doingNow = function (title) {
         }
 
     });
-
 };
+
+$('form#emoteSave a#doing-now').click(function() {
+    var indicator = $(this).find('span.indicator');
+    var indicatorField = $('form#emoteSave input#doingNowField');
+
+    if(indicator.hasClass('active')) {
+        indicator.removeClass('active');
+        indicatorField.val(false);
+    } else {
+        indicator.addClass('active');
+        indicatorField.val(true);
+    }
+});
+
 //prepare title placeholder for auto-display; resets tag field
 function emoteCreateReset() {
 	$('#obj-title').val('');

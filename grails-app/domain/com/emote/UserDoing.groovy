@@ -10,7 +10,7 @@ class UserDoing {
     Integer count
     Boolean notified = false
 
-    static boolean isDoing(userId, title) {
+    static boolean isDoing(String userId, String title) {
         findByUserIdAndTitleAndLastUpdatedGreaterThan(userId,title, use(TimeCategory){new Date() - 1.hours})!=null
     }
     static constraints = {
