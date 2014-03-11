@@ -35,6 +35,10 @@ class EmoteService {
                 topic.save(validate: true)
             }
         }
+        // Save doing now indicator
+        if(emoteCmd.doingNow && !UserDoing.isDoing(user.id, emoteTitle)) {
+            new UserDoing(userId: user.id, title: emoteTitle, count: 1).save()
+        }
 //		notificationService.notifyTitleUpdate(title, parentTitle, user)
     }
 

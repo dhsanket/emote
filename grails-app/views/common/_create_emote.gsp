@@ -9,6 +9,7 @@
                 <input type="hidden" id="goodOrBad" name="goodOrBad"/>
                 <div id="photoBar"><img id="file-preview" alt="your image" /></div>
                 <a href="#" id="doing-now" class="gradient silver-gradient button big icon-button"><span class="indicator"></span>Doing now</a>
+                <input type="hidden" id="doingNowField" name="doingNow"/>
 
                 <div id="emote-bar">
                     <div id="emote-bar-container">
