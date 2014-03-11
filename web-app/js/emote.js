@@ -365,6 +365,40 @@ var removeFromFavourite = function (title) {
 
 };
 
+var toDoSubmit = function (title) {
+    var feedContents = $.ajax({
+        type: 'POST',
+        url: '/title/addInToDoList',
+        cache: false,
+        data: {title: title},
+        error: function () {
+            console.log("Error, The request was not sent");
+        },
+        success: function(){
+            //todo maybe Icon should change and be disabled
+        }
+
+    });
+
+};
+
+var removeFromToDo = function (title) {
+    var feedContents = $.ajax({
+        type: 'POST',
+        url: '/title/removeFromToDoList',
+        cache: false,
+        data: {title: title},
+        error: function () {
+            console.log("Error, The request was not sent");
+        },
+        success: function(){
+            //todo maybe Icon should change and be disabled
+        }
+
+    });
+
+};
+
 var doingNow = function (title) {
     var feedContents = $.ajax({
         type: 'POST',

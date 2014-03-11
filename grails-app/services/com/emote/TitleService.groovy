@@ -18,7 +18,7 @@ class TitleService {
      *
      * @param titles
      * @param userId
-     * @return A new set with just those {@linkplain Title} marked as "Doing now"
+     * @return A new set with just those {@linkplain Title} ids marked as "Doing now"
      */
     Collection<String> filterDoingNow(Collection<String> titles, String userId) {
         Collection<String> result = []
@@ -30,6 +30,27 @@ class TitleService {
                 eq('userId', userId)
                 inList('title', titles)
                 gt('lastUpdated', use(TimeCategory){new Date() - 1.hours})
+            } as Collection<String>
+        }
+        result
+    }
+
+    /**
+     * Filter "in to do list" titles
+     *
+     * @param titles
+     * @param userId
+     * @return A new set with just those {@linkplain Title} ids already in the user TO DO list
+     */
+    Collection<String> filterInToDoList(Collection<String> titles, String userId) {
+        Collection<String> result = []
+        if(userId) {
+            result = UserToDo.withCriteria {
+                projections {
+                    property('title')
+                }
+                eq('userId', userId)
+                inList('title', titles)
             } as Collection<String>
         }
         result

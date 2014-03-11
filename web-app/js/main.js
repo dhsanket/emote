@@ -38,15 +38,23 @@ $(function(){
 
 		});
 
+        $('.feeds-list-icon.logged').click(function(){
+            var title = $(this).attr('data-emote-title');
+
+			if($(this).hasClass('active')) {
+                removeFromToDo(title)
+            } else {
+                toDoSubmit(title);
+            }
+			$(this).toggleClass('active');
+
+		});
+
 		$('.feeds-knob-icon.logged').click(function(){
             if(!$(this).hasClass('active')) {
                 doingNow($(this).attr('data-emote-title'));
                 $(this).addClass('active');
             }
-		});
-
-		$('.feeds-list-icon').click(function(){
-			$(this).toggleClass('active');
 		});
 
 		$('.feeds-camera-icon.logged').click(function(){

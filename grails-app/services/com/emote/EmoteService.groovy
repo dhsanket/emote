@@ -186,6 +186,27 @@ class EmoteService {
         [mainTitle, connector, parentTitle]
     }
 	
-	
+	def addTitleInToDoList(String title, User user) {
+        if(!UserToDo.findByUserIdAndTitle(user.id, title)) {
+            new UserToDo(userId: user.id, title: title).save()
+        }
+    }
+
+    def removeFromToDoList(String title, User user) {
+        UserToDo.findByUserIdAndTitle(user.id, title)?.delete()
+    }
+
+    def toDoFeed(int pageIndex){
+        List<UserToDo> toDosList = UserToDo.list(max: feedPageSize, sort: 'dateCreated', order: 'desc', offset: feedPageSize * pageIndex)
+        def titles = Title.withCriteria {
+            inList('text', toDosList.collect {it.title})
+        }
+        def titleTexts  = []
+        titles.each{t ->
+            titleTexts.add(t.text)
+        }
+        def emotes = Emote.findAllByTitleInList(titleTexts, [sort:"creationTime", order:"desc"])
+        return emotes;
+    }
 	
 }

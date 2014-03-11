@@ -149,7 +149,7 @@
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
                 <ul class="clearfix pull-right">
-                    <li class="feeds-sprite feeds-list-icon"></li>
+                    <li class="feeds-sprite feeds-list-icon ${loggedInClass} ${inToDoList.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-fav-icon last ${loggedInClass} ${favourites.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></li>
                 </ul>
             </div> <!-- /emote-v2-footer -->

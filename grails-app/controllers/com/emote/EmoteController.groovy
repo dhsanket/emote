@@ -86,6 +86,7 @@ class EmoteController {
 
         flash.favourites = favourites
         flash.doingNow = titleService.filterDoingNow(titles, userId)
+        flash.inToDoList = titleService.filterInToDoList(titles, userId)
     }
 	
 	def feed(){
@@ -100,8 +101,7 @@ class EmoteController {
         fillUserStatusVars(posts.collect {it.completeTitle}, session.user?.id as String)
 		flash.titles = posts 
 	}
-	
-	
+
 	def userFeed(){
 		String userId = params.userId
 		if(userId == null || userId.trim().length()== 0)
@@ -120,8 +120,21 @@ class EmoteController {
         flash.user = userService.findById(userId)
         flash.titles = posts
 	}
-	
-	
+
+    def showToDoList(){
+        int page = getPageIndex();
+        def posts = emoteService.groupByTitle(emoteService.toDoFeed(page), session.user as User)
+        int postCount = posts!=null ? posts.size():0
+        // not the best way to handle end of pages but we can live with it for now
+        if(checkLastPageAndSetPaginationAttributes(page, postCount, "showToDoList", [:])){
+            posts = emoteService.groupByTitle(emoteService.toDoFeed(page-1),session.user as User)
+        }
+
+        fillUserStatusVars(posts.collect {it.completeTitle}, session.user?.id as String)
+        flash.titles = posts
+
+        render(view: 'feed')
+    }
 	
 	def search(){
 		int page = getPageIndex();
