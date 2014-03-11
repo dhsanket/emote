@@ -29,7 +29,12 @@
 			<li><a href="${createLink(controller:'emote',action:'feed', absolute:true)}"><i class="icon-home icon-white"></i> Home</a></li>
 			<li><a href="${createLink(controller:'user',action:'displayUsers', absolute:true)}"><i class="icon-user"></i> Follow emote users</a></li>
 			<li><a href="javascript:showTutorialPopup();"><i class="icon-question-sign"></i> Help </a></li>
-			<li><a href="${createLink(controller:'user',action:'signout', absolute:true)}"><i class="icon-cog"></i> Signout </a></li>
+            <g:if test="${session.user}">
+                <li><a href="${createLink(controller:'user',action:'signout', absolute:true)}"><i class="icon-cog"></i> Signout </a></li>
+            </g:if>
+            <g:else>
+                <li><a href="${createLink(controller:'user',action:'signin', absolute:true)}"><i class="icon-cog"></i> Login </a></li>
+            </g:else>
 		</ul>
     </section> <!-- /#menu-section -->
 	<span class="list-sub-title">Notifications</span>
