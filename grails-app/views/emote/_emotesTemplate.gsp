@@ -47,7 +47,9 @@
                     <span class="comments-count" data-bind="text: commentsCountMsg"></span>
                 </g:if>
                 <g:else>
-                    <span class="comments-count">${title.titleObj.commentsCount ?: 0} Comments</span>
+                    <g:if test="${(title.titleObj.commentsCount ?: 0) > 0}">
+                        <span class="comments-count">${title.titleObj.commentsCount ?: 0} Comments</span>
+                    </g:if>
                 </g:else>
             </div> <!-- /.emote-v2-header -->
 

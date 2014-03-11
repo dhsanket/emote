@@ -66,9 +66,7 @@ function CommentsPage(getCommentsUrl, voteUrl, titleId, commentsCount, loggedIn)
         $.post(targetUrl, form.serialize(), function(comment) {
             if(!comment.parentCommentId) {
                 // It is a root comment
-                comment.children = ko.observableArray();
-                comment.pagingData = ko.observable(comment.pagingData);
-                self.comments.unshift(ko.observable(comment));
+                self.comments.unshift(bindComment(comment));
             } else {
                 // It is a reply
                 $.each(self.comments(), function(index, rootComment) {
