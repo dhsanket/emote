@@ -11218,3 +11218,8 @@ OTHER.CSS
 #img_search_query_text {
   margin-bottom: 10px;
 }
+
+/* line 3043, ../../grunt/main.scss */
+.glyphicon.glyphicon-link {
+  background: none !important;
+}

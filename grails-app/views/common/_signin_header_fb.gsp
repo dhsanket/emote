@@ -37,7 +37,7 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
     // In this case, the person is not logged into Facebook, so we call the login() 
     // function to prompt them to do so. Note that at this stage there is no indication
     // of whether they are logged into the app. If they aren't then they'll see the Login
-    // dialog right after they log in to Facebook. 
+    // dialog right after they log in to Facebook.
     // The same caveats as above apply to the FB.login() call here.
 		 FB.login(function(response) {
 			   if (response.authResponse) {
@@ -52,7 +52,6 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
 });
 
 </script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 <div id="signinHeader">
 <!--
