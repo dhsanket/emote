@@ -11223,3 +11223,25 @@ OTHER.CSS
 .glyphicon.glyphicon-link {
   background: none !important;
 }
+
+/* line 3046, ../../grunt/main.scss */
+.gallery-contain .glyphicon-fullscreen {
+  font-size: 20px;
+  color: #727272;
+}
+
+/* line 3050, ../../grunt/main.scss */
+.gallery-contain.silver-gradient.gradient {
+  width: 39px;
+  height: 34px;
+  padding: 7px 10px;
+  position: absolute;
+  top: 2px;
+  right: 28px;
+}
+
+/* line 3058, ../../grunt/main.scss */
+.follow-user {
+  text-decoration: none;
+  font-weight: normal;
+}

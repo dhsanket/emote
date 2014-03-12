@@ -34,6 +34,9 @@
                           data-comments-count="${title.titleObj.commentsCount} Comments"></span>
                 </g:if>
                 <g:if test="${session.user}">
+                    <div class="gallery-contain silver-gradient gradient">
+                         <a class="gallery-open" href="#"><i class="glyphicon glyphicon-fullscreen"></i></a>
+                    </div>
                     <div class="feeds-contain silver-gradient gradient"
                          data-edit-feed
                          data-complete-title="${title.completeTitle}"
@@ -74,7 +77,7 @@
                             <div class="emote-friends swiper-slide">
 
                                 <h4>Friend's emotes:
-                                    <a class="user-feed" href="#"><span class="current-user"></span></a>
+                                    <a class="user-feed" href="#"><span class="current-user"></span></a> <a class="user-follow" href="#">Follow User <i class="glyphicon glyphicon-link"></i></a>
                                 </h4>
 
                                 <ul class="friend-container clearfix">
@@ -144,7 +147,10 @@
                 <ul class="clearfix pull-left">
                     <li class="feeds-sprite feeds-report-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
-                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}"> <facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink>  </li>
+                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}"> 
+
+                    <div class=""><a href="#/" class="shareToFb"><facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink></a>
+                    <a href="#/" class="shareToTw"></a></div>  </li>
                     %{--<emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>--}%
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
