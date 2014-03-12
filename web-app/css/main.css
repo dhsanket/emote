@@ -7723,6 +7723,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   padding: 8px;
   text-align: center;
   font-size: 16px;
+  display: none;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -8052,7 +8053,7 @@ header.active {
 /* line 377, ../../grunt/main.scss */
 .slide-indicator {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
 }
@@ -8555,6 +8556,11 @@ header.active {
 /* line 830, ../../grunt/main.scss */
 .edit-emote #pick-a-category, .edit-emote #obj-title {
   display: none;
+}
+
+/* line 833, ../../grunt/main.scss */
+.edit-emote #doing-now {
+  float: left;
 }
 
 /* line 837, ../../grunt/main.scss */
@@ -9061,7 +9067,7 @@ div.tagsinput div {
   position: absolute;
   left: -100%;
   top: 0;
-  z-index: 20;
+  z-index: 2000;
   background: #272727;
   /*    -webkit-transition: 0.3s ease-in-out;
       -moz-transition: 0.3s ease-in-out;
@@ -9900,7 +9906,7 @@ textarea[contenteditable] {
 /* line 1949, ../../grunt/main.scss */
 .emote-v2-content h4 a {
   color: #FFFFFF;
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: bold;
 }
 
@@ -10397,9 +10403,9 @@ MAINZEN.CSS
 #popup-container {
   overflow: hidden;
   position: fixed;
-  z-index: 19;
+  z-index: 990;
   background-color: black;
-  height: 60%;
+  height: 160;
   width: 60%;
   top: 20%;
   left: 20%;
@@ -10418,7 +10424,7 @@ MAINZEN.CSS
   overflow: scroll;
   position: fixed;
   left: 0px;
-  z-index: 19;
+  z-index: 991;
   background-color: black;
 }
 
