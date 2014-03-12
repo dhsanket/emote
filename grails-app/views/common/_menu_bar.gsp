@@ -28,7 +28,7 @@
 		<ul>
 			<li><a href="${createLink(controller:'emote',action:'feed', absolute:true)}"><i class="icon-home icon-white"></i> Home</a></li>
             <g:if test="${session.user}">
-                <li><a href="${createLink(controller:'user',action:'displayUsers', absolute:true)}"><i class="icon-link"></i> Follow emote users</a></li>
+                <li><a href="${createLink(controller:'user',action:'displayUsers', absolute:true)}"><i class="glyphicon-link"></i> Follow emote users</a></li>
                 <li><a href="${createLink(controller:'emote',action:'showToDoList', absolute:true)}"><i class="icon-user"></i> To Do list</a></li>
             </g:if>
 			<li><a href="javascript:showTutorialPopup();"><i class="icon-question-sign"></i> Help </a></li>

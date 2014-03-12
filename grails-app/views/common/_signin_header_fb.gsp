@@ -52,6 +52,7 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
 });
 
 </script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 <div id="signinHeader">
 <!--
