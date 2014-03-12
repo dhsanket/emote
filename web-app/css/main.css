@@ -11226,7 +11226,7 @@ OTHER.CSS
 
 /* line 3046, ../../grunt/main.scss */
 .gallery-contain .glyphicon-fullscreen {
-  font-size: 20px;
+  font-size: 18px;
   color: #727272;
 }
 
@@ -11241,7 +11241,14 @@ OTHER.CSS
 }
 
 /* line 3058, ../../grunt/main.scss */
-.follow-user {
+.emote-v2-content h4 .user-follow {
   text-decoration: none;
   font-weight: normal;
+  font-size: 12px;
+}
+
+/* line 3063, ../../grunt/main.scss */
+#flag_container {
+  position: relative;
+  z-index: 999;
 }
