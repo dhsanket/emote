@@ -7723,7 +7723,6 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   padding: 8px;
   text-align: center;
   font-size: 16px;
-  display: none;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -8053,7 +8052,7 @@ header.active {
 /* line 377, ../../grunt/main.scss */
 .slide-indicator {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
 }
@@ -9067,7 +9066,7 @@ div.tagsinput div {
   position: absolute;
   left: -100%;
   top: 0;
-  z-index: 2000;
+  z-index: 20;
   background: #272727;
   /*    -webkit-transition: 0.3s ease-in-out;
       -moz-transition: 0.3s ease-in-out;
@@ -10403,9 +10402,9 @@ MAINZEN.CSS
 #popup-container {
   overflow: hidden;
   position: fixed;
-  z-index: 990;
+  z-index: 19;
   background-color: black;
-  height: 160;
+  height: 60%;
   width: 60%;
   top: 20%;
   left: 20%;
@@ -10424,7 +10423,7 @@ MAINZEN.CSS
   overflow: scroll;
   position: fixed;
   left: 0px;
-  z-index: 991;
+  z-index: 19;
   background-color: black;
 }
 
