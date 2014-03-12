@@ -86,6 +86,7 @@
                                             <li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">
                                                 <img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
                                                 <span class="emote-user-name">${user.username}</span>
+                                                <span class="user-active"></span>
                                             </li>
                                         </g:each>
                                     </g:if>
@@ -93,6 +94,7 @@
                                         <li class="user-thumb clearfix" data-post-id="${i}" data-user-id="${user.uid}">
                                             <img style="height: 30px;" src="http://graph.facebook.com/${user.facebookId}/picture?">
                                             <span class="emote-user-name">${user.username}</span>
+                                            <span class="user-active"></span>
                                         </li>
                                     </g:each>
                                 </ul>

@@ -11252,3 +11252,21 @@ OTHER.CSS
   position: relative;
   z-index: 999;
 }
+
+/* line 3067, ../../grunt/main.scss */
+.user-thumb .user-active {
+  display: none;
+}
+
+/* line 3070, ../../grunt/main.scss */
+.user-thumb.active .user-active {
+  display: block;
+  position: absolute;
+  top: 48px;
+  left: 24px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: #0E8639;
+  width: 7px;
+  height: 7px;
+}
