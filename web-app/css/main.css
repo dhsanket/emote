@@ -10041,31 +10041,32 @@ textarea[contenteditable] {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  position: relative;
 }
 
-/* line 2078, ../../grunt/main.scss */
+/* line 2079, ../../grunt/main.scss */
 .user-thumb img {
   float: left;
   border-radius: 3px;
 }
 
-/* line 2083, ../../grunt/main.scss */
+/* line 2084, ../../grunt/main.scss */
 .user-thumb.active {
   background: #DDDDDD;
   padding: 2px;
 }
 
-/* line 2088, ../../grunt/main.scss */
+/* line 2089, ../../grunt/main.scss */
 .user-thumb:first-child {
   margin: 0 6px 0 2px;
 }
 
-/* line 2092, ../../grunt/main.scss */
+/* line 2093, ../../grunt/main.scss */
 .user-thumb.active:first-child {
   margin: 0 6px 0 2px;
 }
 
-/* line 2096, ../../grunt/main.scss */
+/* line 2097, ../../grunt/main.scss */
 .user-thumb .emote-user-name {
   display: none;
   float: left;
@@ -10074,7 +10075,7 @@ textarea[contenteditable] {
   font-size: 14px;
 }
 
-/* line 2104, ../../grunt/main.scss */
+/* line 2105, ../../grunt/main.scss */
 .user-thumb.active .emote-user-name {
   opacity: 1;
   padding: 5px 2px 0 5px;
@@ -10087,18 +10088,18 @@ textarea[contenteditable] {
 .emote:not(.map) .swiper-slide h1 {
   bottom:18px;
 }*/
-/* line 2118, ../../grunt/main.scss */
+/* line 2119, ../../grunt/main.scss */
 .swiper-slide h1:before {
   content: "\"";
 }
 
-/* line 2122, ../../grunt/main.scss */
+/* line 2123, ../../grunt/main.scss */
 .swiper-slide h1:after {
   content: "\"";
 }
 
 /* Emote User Formatting */
-/* line 2127, ../../grunt/main.scss */
+/* line 2128, ../../grunt/main.scss */
 .emote-specific-profiles-container {
   position: absolute;
   bottom: 0;
@@ -10107,7 +10108,7 @@ textarea[contenteditable] {
   width: 100%;
 }
 
-/* line 2135, ../../grunt/main.scss */
+/* line 2136, ../../grunt/main.scss */
 .emote-specific-profiles-container ul {
   list-style: none;
   width: 100%;
@@ -10126,13 +10127,13 @@ textarea[contenteditable] {
   height: 39px;
 }
 
-/* line 2153, ../../grunt/main.scss */
+/* line 2154, ../../grunt/main.scss */
 .emote-specific-profiles-container ul li.emote-specific-user-image {
   display: inline-block;
   margin: 0 1px;
 }
 
-/* line 2158, ../../grunt/main.scss */
+/* line 2159, ../../grunt/main.scss */
 .emote-specific-profiles-container ul li img {
   display: block;
   -webkit-border-radius: 6px;
@@ -10149,7 +10150,7 @@ textarea[contenteditable] {
  * COME BACK TO ME LATER!!!!!
  */
 /* Sign-in Styles */
-/* line 2178, ../../grunt/main.scss */
+/* line 2179, ../../grunt/main.scss */
 #signinHeader.active {
   position: fixed;
   z-index: 10;
@@ -10169,12 +10170,12 @@ textarea[contenteditable] {
   transition: 1s ease-in-out;
 }
 
-/* line 2199, ../../grunt/main.scss */
+/* line 2200, ../../grunt/main.scss */
 #signinHeader {
   display: none;
 }
 
-/* line 2203, ../../grunt/main.scss */
+/* line 2204, ../../grunt/main.scss */
 #signinHeader_emote {
   position: fixed;
   z-index: 10;
@@ -10195,7 +10196,7 @@ textarea[contenteditable] {
 }
 
 /* prev next feed pagination */
-/* line 2225, ../../grunt/main.scss */
+/* line 2226, ../../grunt/main.scss */
 .feedPagination {
   background: #4E9CAF;
   border-radius: 5px;
@@ -10207,14 +10208,14 @@ textarea[contenteditable] {
   text-align: center;
 }
 
-/* line 2236, ../../grunt/main.scss */
+/* line 2237, ../../grunt/main.scss */
 .feedPagination a {
   font-family: inherit;
   font-weight: bold;
   color: #333333;
 }
 
-/* line 2243, ../../grunt/main.scss */
+/* line 2244, ../../grunt/main.scss */
 .feedPagination a.buttonPrev {
   display: block;
   width: 100%;
@@ -10240,7 +10241,7 @@ textarea[contenteditable] {
   font-weight: bold;
 }
 
-/* line 2261, ../../grunt/main.scss */
+/* line 2262, ../../grunt/main.scss */
 .feedPagination a.buttonNext {
   display: block;
   width: 100%;
@@ -10278,7 +10279,7 @@ textarea[contenteditable] {
 
 }*/
 /* Styles for loading overlay */
-/* line 2291, ../../grunt/main.scss */
+/* line 2292, ../../grunt/main.scss */
 #loadingOverlay {
   display: none;
   position: fixed;
@@ -10289,7 +10290,7 @@ textarea[contenteditable] {
   z-index: 1000;
 }
 
-/* line 2301, ../../grunt/main.scss */
+/* line 2302, ../../grunt/main.scss */
 #overlayMessage {
   background: white url("/img/loader-maps.gif") no-repeat 20px 10px;
   padding: 10px;
@@ -10305,14 +10306,14 @@ textarea[contenteditable] {
 }
 
 /* Landing page styles */
-/* line 2316, ../../grunt/main.scss */
+/* line 2317, ../../grunt/main.scss */
 #landingContainer {
   /*margin: auto;
   width: 600px;
     height: 400px;*/
 }
 
-/* line 2322, ../../grunt/main.scss */
+/* line 2323, ../../grunt/main.scss */
 #landingDisclaimer {
   width: 100%;
   /*text-align:center;
@@ -10320,12 +10321,12 @@ textarea[contenteditable] {
   margin-top: 20px;
 }
 
-/* line 2328, ../../grunt/main.scss */
+/* line 2329, ../../grunt/main.scss */
 #landingDisclaimer a {
   text-decoration: underline;
 }
 
-/* line 2332, ../../grunt/main.scss */
+/* line 2333, ../../grunt/main.scss */
 #landingContent {
   /*height: 400px;*/
   background: transparent url("/img/landingPage/circle3.png") -80px -170px no-repeat;
@@ -10333,23 +10334,23 @@ textarea[contenteditable] {
   /*margin-bottom: 5px;*/
 }
 
-/* line 2338, ../../grunt/main.scss */
+/* line 2339, ../../grunt/main.scss */
 .landingBody {
   background: transparent url("/img/landingPage/sky_bg-1.jpg") 0 0 no-repeat;
 }
 
-/* line 2341, ../../grunt/main.scss */
+/* line 2342, ../../grunt/main.scss */
 #landingFooter ul {
   float: left;
   margin: 2px 0px 0px 0px;
 }
 
-/* line 2345, ../../grunt/main.scss */
+/* line 2346, ../../grunt/main.scss */
 #landingFooter ul li {
   display: inline;
 }
 
-/* line 2348, ../../grunt/main.scss */
+/* line 2349, ../../grunt/main.scss */
 #landingLogo {
   border-bottom: 4px solid #8B0001;
   text-align: center;
@@ -10359,12 +10360,12 @@ textarea[contenteditable] {
   padding-top: 20px;
 }
 
-/* line 2356, ../../grunt/main.scss */
+/* line 2357, ../../grunt/main.scss */
 #landingLogo img {
   width: 85px;
 }
 
-/* line 2360, ../../grunt/main.scss */
+/* line 2361, ../../grunt/main.scss */
 #landingLogin {
   /*float: right;
   width: 140px;*/
@@ -10379,27 +10380,27 @@ MAINZEN.CSS
 *
 *
 */
-/* line 2377, ../../grunt/main.scss */
+/* line 2378, ../../grunt/main.scss */
 #picture_crop_container, .error {
   display: none;
 }
 
-/* line 2381, ../../grunt/main.scss */
+/* line 2382, ../../grunt/main.scss */
 #picture_crop_container.active {
   display: block;
 }
 
-/* line 2385, ../../grunt/main.scss */
+/* line 2386, ../../grunt/main.scss */
 .popupzen {
   display: none;
 }
 
-/* line 2389, ../../grunt/main.scss */
+/* line 2390, ../../grunt/main.scss */
 .popupzen.active {
   display: block;
 }
 
-/* line 2393, ../../grunt/main.scss */
+/* line 2394, ../../grunt/main.scss */
 #popup-container {
   overflow: hidden;
   position: fixed;
@@ -10411,12 +10412,12 @@ MAINZEN.CSS
   left: 20%;
 }
 
-/* line 2404, ../../grunt/main.scss */
+/* line 2405, ../../grunt/main.scss */
 #popup-container input[type=file] {
   margin: 0 0 4px 3px;
 }
 
-/* line 2408, ../../grunt/main.scss */
+/* line 2409, ../../grunt/main.scss */
 #image-search-container {
   width: 100%;
   height: 100%;
@@ -10428,30 +10429,30 @@ MAINZEN.CSS
   background-color: black;
 }
 
-/* line 2420, ../../grunt/main.scss */
+/* line 2421, ../../grunt/main.scss */
 #image-search-bar input {
   width: 100%;
   height: 45px;
 }
 
-/* line 2426, ../../grunt/main.scss */
+/* line 2427, ../../grunt/main.scss */
 .img_search_result_div {
   width: 30%;
   float: left;
 }
 
-/* line 2430, ../../grunt/main.scss */
+/* line 2431, ../../grunt/main.scss */
 .img_search_result_image {
   height: 100%;
   width: 100%;
 }
 
-/* line 2435, ../../grunt/main.scss */
+/* line 2436, ../../grunt/main.scss */
 #fullscreen-dialog {
   margin: 20px;
 }
 
-/* line 2439, ../../grunt/main.scss */
+/* line 2440, ../../grunt/main.scss */
 #fullscreen-dialog button, input[type="submit"] {
   width: 100%;
   height: 42px;
@@ -10463,7 +10464,7 @@ MAINZEN.CSS
 }
 
 /*<-- Title Submenu start */
-/* line 2451, ../../grunt/main.scss */
+/* line 2452, ../../grunt/main.scss */
 .navigation {
   float: left;
   font-size: 0.75em;
@@ -10473,30 +10474,30 @@ MAINZEN.CSS
   z-index: 4;
 }
 
-/* line 2459, ../../grunt/main.scss */
+/* line 2460, ../../grunt/main.scss */
 .navigation ul {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 2463, ../../grunt/main.scss */
+/* line 2464, ../../grunt/main.scss */
 ul.top-level {
   background: #FBB450;
 }
 
-/* line 2465, ../../grunt/main.scss */
+/* line 2466, ../../grunt/main.scss */
 .navigation li {
   list-style: none;
 }
 
-/* line 2466, ../../grunt/main.scss */
+/* line 2467, ../../grunt/main.scss */
 ul.top-level li {
   border-bottom: #fff solid;
   border-top: #fff solid;
   border-width: 1px;
 }
 
-/* line 2471, ../../grunt/main.scss */
+/* line 2472, ../../grunt/main.scss */
 .navigation a {
   color: #fff;
   cursor: pointer;
@@ -10508,23 +10509,23 @@ ul.top-level li {
   width: 100%;
 }
 
-/* line 2481, ../../grunt/main.scss */
+/* line 2482, ../../grunt/main.scss */
 .navigation a:hover {
   text-decoration: underline;
 }
 
-/* line 2482, ../../grunt/main.scss */
+/* line 2483, ../../grunt/main.scss */
 .navigation li:hover {
   background: #f90;
   position: relative;
 }
 
-/* line 2486, ../../grunt/main.scss */
+/* line 2487, ../../grunt/main.scss */
 ul.sub-level {
   display: none;
 }
 
-/* line 2487, ../../grunt/main.scss */
+/* line 2488, ../../grunt/main.scss */
 li:hover .sub-level {
   background: #999;
   border: #fff solid;
@@ -10535,14 +10536,14 @@ li:hover .sub-level {
   top: 5px;
 }
 
-/* line 2496, ../../grunt/main.scss */
+/* line 2497, ../../grunt/main.scss */
 ul.sub-level li {
   border: none;
   float: left;
   width: 150px;
 }
 
-/* line 2501, ../../grunt/main.scss */
+/* line 2502, ../../grunt/main.scss */
 .navigation .sub-level {
   background: #999;
 }
@@ -10557,14 +10558,14 @@ OTHER.CSS
 *
 *
 */
-/* line 2514, ../../grunt/main.scss */
+/* line 2515, ../../grunt/main.scss */
 #titlePage #title h1 {
   font: 18px;
   background-color: white;
 }
 
 /* Splash Styles */
-/* line 2520, ../../grunt/main.scss */
+/* line 2521, ../../grunt/main.scss */
 #splash-container {
   width: 100%;
   height: 100%;
@@ -10589,7 +10590,7 @@ OTHER.CSS
   /* IE6-9 fallback on horizontal gradient */
 }
 
-/* line 2536, ../../grunt/main.scss */
+/* line 2537, ../../grunt/main.scss */
 #splash-logo {
   width: 60%;
   position: absolute;
@@ -10601,7 +10602,7 @@ OTHER.CSS
   margin-top: -85px;
 }
 
-/* line 2547, ../../grunt/main.scss */
+/* line 2548, ../../grunt/main.scss */
 .splash-description {
   width: 100%;
   color: #FFFFFF;
@@ -10611,7 +10612,7 @@ OTHER.CSS
   margin-top: 20px;
 }
 
-/* line 2556, ../../grunt/main.scss */
+/* line 2557, ../../grunt/main.scss */
 #splash-login {
   position: absolute;
   width: 80%;
@@ -10620,7 +10621,7 @@ OTHER.CSS
   bottom: 20px;
 }
 
-/* line 2564, ../../grunt/main.scss */
+/* line 2565, ../../grunt/main.scss */
 .splash-disclaimer {
   width: 100%;
   display: block;
@@ -10630,20 +10631,20 @@ OTHER.CSS
   margin-top: 10px;
 }
 
-/* line 2573, ../../grunt/main.scss */
+/* line 2574, ../../grunt/main.scss */
 .splash-disclaimer a {
   color: #FFFFFF;
   text-decoration: underline;
 }
 
 /* Follow users */
-/* line 2582, ../../grunt/main.scss */
+/* line 2583, ../../grunt/main.scss */
 #followUsers {
   margin-left: 25px;
   margin-right: 25px;
 }
 
-/* line 2587, ../../grunt/main.scss */
+/* line 2588, ../../grunt/main.scss */
 #followUsers .user-section {
   display: block;
   height: 64px;
@@ -10653,20 +10654,20 @@ OTHER.CSS
   padding-bottom: 0;
 }
 
-/* line 2595, ../../grunt/main.scss */
+/* line 2596, ../../grunt/main.scss */
 #followUsers .user-section .user-image {
   float: left;
   display: inline-block;
 }
 
-/* line 2600, ../../grunt/main.scss */
+/* line 2601, ../../grunt/main.scss */
 #followUsers .user-section .user-image img {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
 
-/* line 2606, ../../grunt/main.scss */
+/* line 2607, ../../grunt/main.scss */
 #followUsers .user-section .user-name {
   float: left;
   display: inline-block;
@@ -10677,14 +10678,14 @@ OTHER.CSS
   margin-left: 5px;
 }
 
-/* line 2617, ../../grunt/main.scss */
+/* line 2618, ../../grunt/main.scss */
 #followUsers .user-section .followButton {
   padding-top: 10px;
   float: right;
   display: inline-block;
   position: relative;
 }
-/* line 2623, ../../grunt/main.scss */
+/* line 2624, ../../grunt/main.scss */
 #followUsers .user-section .followButton a {
   color: #666666;
   text-align: center;
@@ -10711,7 +10712,7 @@ OTHER.CSS
   border-radius: 6px;
   font-weight: bold;
 }
-/* line 2649, ../../grunt/main.scss */
+/* line 2650, ../../grunt/main.scss */
 #followUsers .user-section .followButton a:visited {
   background: white;
   /* Old browsers */
@@ -10730,19 +10731,19 @@ OTHER.CSS
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
   /* IE6-9 */
 }
-/* line 2660, ../../grunt/main.scss */
+/* line 2661, ../../grunt/main.scss */
 #followUsers .user-section .followButton a:hover {
   color: #666666;
   text-decoration: none;
 }
 
 /* Documentation */
-/* line 2669, ../../grunt/main.scss */
+/* line 2670, ../../grunt/main.scss */
 #privacy, #terms {
   margin: 25px;
 }
 
-/* line 2674, ../../grunt/main.scss */
+/* line 2675, ../../grunt/main.scss */
 #privacy h1, #terms h1 {
   color: #FFFFFF;
   text-decoration: underline;
@@ -10751,7 +10752,7 @@ OTHER.CSS
   font-size: 18px;
 }
 
-/* line 2682, ../../grunt/main.scss */
+/* line 2683, ../../grunt/main.scss */
 #terms h2 {
   color: #FFFFFF;
   text-decoration: underline;
@@ -10760,7 +10761,7 @@ OTHER.CSS
   font-size: 15px;
 }
 
-/* line 2690, ../../grunt/main.scss */
+/* line 2691, ../../grunt/main.scss */
 #privacy p, #terms p {
   color: #FFFFFF;
   display: block;
@@ -10768,21 +10769,21 @@ OTHER.CSS
   font-size: 13px;
 }
 
-/* line 2696, ../../grunt/main.scss */
+/* line 2697, ../../grunt/main.scss */
 .comments-header {
   margin: 0 0 12px;
 }
 
-/* line 2699, ../../grunt/main.scss */
+/* line 2700, ../../grunt/main.scss */
 .replies {
   list-style: none;
   padding-left: 45px;
 }
-/* line 2703, ../../grunt/main.scss */
+/* line 2704, ../../grunt/main.scss */
 .replies > li {
   position: relative;
 }
-/* line 2706, ../../grunt/main.scss */
+/* line 2707, ../../grunt/main.scss */
 .replies > li:before {
   content: '';
   border-top: 3px solid #b6b6b6;
@@ -10792,43 +10793,43 @@ OTHER.CSS
   left: -71px;
   top: 13px;
 }
-/* line 2716, ../../grunt/main.scss */
+/* line 2717, ../../grunt/main.scss */
 .replies > li > img {
   left: -44px;
 }
 
-/* line 2721, ../../grunt/main.scss */
+/* line 2722, ../../grunt/main.scss */
 .comment-toolbar {
   padding: 0;
   border-radius: 0 0 4px 4px;
   width: 100%;
   border-top: 1px solid #e8e8e8;
 }
-/* line 2727, ../../grunt/main.scss */
+/* line 2728, ../../grunt/main.scss */
 .comment-toolbar li {
   list-style-type: none;
   float: left;
 }
-/* line 2731, ../../grunt/main.scss */
+/* line 2732, ../../grunt/main.scss */
 .comment-toolbar li.pull-right {
   border-left: 1px solid #e8e8e8;
   border-radius: 0 0 6px;
 }
-/* line 2735, ../../grunt/main.scss */
+/* line 2736, ../../grunt/main.scss */
 .comment-toolbar li.pull-right a {
   border-right: 0 none;
   color: #009cff;
   font-weight: bold;
 }
-/* line 2742, ../../grunt/main.scss */
+/* line 2743, ../../grunt/main.scss */
 .comment-toolbar li:first-child {
   border-radius: 0 0 0 6px;
 }
-/* line 2744, ../../grunt/main.scss */
+/* line 2745, ../../grunt/main.scss */
 .comment-toolbar li:first-child a {
   border-left: 0 none;
 }
-/* line 2749, ../../grunt/main.scss */
+/* line 2750, ../../grunt/main.scss */
 .comment-toolbar li a {
   padding: 8px 10px;
   display: block;
@@ -10837,41 +10838,41 @@ OTHER.CSS
   border-right: 1px solid #e8e8e8;
   border-left: 1px solid #ffffff;
 }
-/* line 2757, ../../grunt/main.scss */
+/* line 2758, ../../grunt/main.scss */
 .comment-toolbar li.comment-up-vote a {
   background-position: 7px -888px;
   height: 30px;
   width: 29px;
   display: block;
 }
-/* line 2764, ../../grunt/main.scss */
+/* line 2765, ../../grunt/main.scss */
 .comment-toolbar li.comment-up-vote:hover a {
   background-position: 7px -915px;
 }
-/* line 2768, ../../grunt/main.scss */
+/* line 2769, ../../grunt/main.scss */
 .comment-toolbar li.comment-down-vote {
   border-right: 1px solid #ffffff;
 }
-/* line 2771, ../../grunt/main.scss */
+/* line 2772, ../../grunt/main.scss */
 .comment-toolbar li.comment-down-vote a {
   background-position: 7px -860px;
   height: 30px;
   width: 29px;
   display: block;
 }
-/* line 2779, ../../grunt/main.scss */
+/* line 2780, ../../grunt/main.scss */
 .comment-toolbar li.comment-down-vote:hover a {
   background-position: 7px -945px;
 }
 
-/* line 2784, ../../grunt/main.scss */
+/* line 2785, ../../grunt/main.scss */
 .commment-arrow {
   position: absolute;
   left: -6px;
   top: 10px;
 }
 
-/* line 2789, ../../grunt/main.scss */
+/* line 2790, ../../grunt/main.scss */
 .comment.has-reply:before {
   content: '';
   border-left: 3px solid #b6b6b6;
@@ -10884,7 +10885,7 @@ OTHER.CSS
   box-shadow: 1px 0 0 #fff;
 }
 
-/* line 2800, ../../grunt/main.scss */
+/* line 2801, ../../grunt/main.scss */
 .user-photo-comment {
   height: 64px;
   float: left;
@@ -10894,12 +10895,12 @@ OTHER.CSS
   width: 5px;
   top: -17px;
 }
-/* line 2809, ../../grunt/main.scss */
+/* line 2810, ../../grunt/main.scss */
 .user-photo-comment .comment-author-photo {
   top: 16px;
 }
 
-/* line 2813, ../../grunt/main.scss */
+/* line 2814, ../../grunt/main.scss */
 .comments-heading {
   font-size: 14px;
   font-weight: bold;
@@ -10907,12 +10908,12 @@ OTHER.CSS
   text-shadow: 0 1px 0 #fff;
 }
 
-/* line 2819, ../../grunt/main.scss */
+/* line 2820, ../../grunt/main.scss */
 .comment-details {
   padding: 0 8px 8px;
 }
 
-/* line 2822, ../../grunt/main.scss */
+/* line 2823, ../../grunt/main.scss */
 .commentee-name {
   font-size: 14px;
   font-weight: bold;
@@ -10920,18 +10921,18 @@ OTHER.CSS
   text-shadow: 0 1px 0 #fff;
 }
 
-/* line 2828, ../../grunt/main.scss */
+/* line 2829, ../../grunt/main.scss */
 .comment-time {
   font-size: 11px;
   color: #7d7d7d;
 }
 
-/* line 2832, ../../grunt/main.scss */
+/* line 2833, ../../grunt/main.scss */
 .color-white {
   color: #fff !important;
 }
 
-/* line 2835, ../../grunt/main.scss */
+/* line 2836, ../../grunt/main.scss */
 .popup-tutorial-container {
   height: 100%;
   position: fixed;
@@ -10940,7 +10941,7 @@ OTHER.CSS
   display: none;
 }
 
-/* line 2842, ../../grunt/main.scss */
+/* line 2843, ../../grunt/main.scss */
 .overlay {
   position: fixed;
   left: 0;
@@ -10951,7 +10952,7 @@ OTHER.CSS
   z-index: 999;
 }
 
-/* line 2851, ../../grunt/main.scss */
+/* line 2852, ../../grunt/main.scss */
 .slides-tut {
   position: absolute;
   z-index: 999;
@@ -10961,22 +10962,22 @@ OTHER.CSS
   color: #b6b6b6;
 }
 
-/* line 2859, ../../grunt/main.scss */
+/* line 2860, ../../grunt/main.scss */
 .slide-tut {
   display: none;
 }
 
-/* line 2862, ../../grunt/main.scss */
+/* line 2863, ../../grunt/main.scss */
 .slide-tut.active {
   display: block;
 }
 
-/* line 2865, ../../grunt/main.scss */
+/* line 2866, ../../grunt/main.scss */
 .slides-tut * {
   font-family: 'segoe_printregular';
 }
 
-/* line 2869, ../../grunt/main.scss */
+/* line 2870, ../../grunt/main.scss */
 .slides-tut .heading {
   font-weight: bold;
   font-size: 48px;
@@ -10985,24 +10986,24 @@ OTHER.CSS
   padding-bottom: 16px;
 }
 
-/* line 2876, ../../grunt/main.scss */
+/* line 2877, ../../grunt/main.scss */
 .slides-tut .heading span {
   font-size: 24px;
 }
 
-/* line 2879, ../../grunt/main.scss */
+/* line 2880, ../../grunt/main.scss */
 .slides-tut p {
   font-size: 18px;
   margin-bottom: 32px;
 }
 
-/* line 2883, ../../grunt/main.scss */
+/* line 2884, ../../grunt/main.scss */
 .slides-tut .label {
   font-size: 18px;
   padding: 0;
 }
 
-/* line 2887, ../../grunt/main.scss */
+/* line 2888, ../../grunt/main.scss */
 .pager-sliding {
   clear: both;
   overflow: hidden;
@@ -11015,43 +11016,71 @@ OTHER.CSS
   left: 0;
   right: 0;
 }
-
-/* line 2899, ../../grunt/main.scss */
-.pager-sliding li:first-child {
-  border: 0 none;
-}
-
-/* line 2902, ../../grunt/main.scss */
+/* line 2900, ../../grunt/main.scss */
 .pager-sliding li {
   float: left;
   width: 20%;
   list-style: none;
   border-left: 1px solid rgba(0, 0, 0, 0.8);
 }
-
-/* line 2908, ../../grunt/main.scss */
+/* line 2906, ../../grunt/main.scss */
+.pager-sliding li:first-child {
+  border: 0 none;
+}
+/* line 2910, ../../grunt/main.scss */
 .pager-sliding li a {
   display: block;
   height: 4px;
   background-color: #ffffff;
 }
-
-/* line 2913, ../../grunt/main.scss */
+/* line 2915, ../../grunt/main.scss */
 .pager-sliding li a.active {
   background-color: #c01616;
 }
 
-/* line 2916, ../../grunt/main.scss */
+/* line 2921, ../../grunt/main.scss */
+.pager-sliding-button {
+  position: fixed;
+  bottom: 43px;
+  margin: 0 auto;
+  z-index: 9999;
+  right: 5%;
+  padding: 0;
+  display: block;
+  width: 50px;
+  height: 27px;
+  text-align: center;
+  font-weight: bold;
+  padding: 3px 0 0 0;
+}
+
+/* line 2936, ../../grunt/main.scss */
+.exit-tutorial {
+  position: fixed;
+  bottom: 43px;
+  margin: 0 auto;
+  z-index: 9999;
+  left: 5%;
+  padding: 0;
+  display: block;
+  width: 50px;
+  height: 27px;
+  text-align: center;
+  font-weight: bold;
+  padding: 3px 0 0 0;
+}
+
+/* line 2951, ../../grunt/main.scss */
 .examples-emote p {
   margin: 0;
 }
 
-/* line 2919, ../../grunt/main.scss */
+/* line 2954, ../../grunt/main.scss */
 .examples-emote {
   margin-bottom: 92px;
 }
 
-/* line 2922, ../../grunt/main.scss */
+/* line 2957, ../../grunt/main.scss */
 .create-btn-click {
   position: relative;
   clear: both;
@@ -11059,21 +11088,21 @@ OTHER.CSS
   margin-top: -2px;
 }
 
-/* line 2928, ../../grunt/main.scss */
+/* line 2963, ../../grunt/main.scss */
 .create-btn-click p {
   background: url(/img/arrow-ltr-downcurve.png) right bottom no-repeat;
   padding-bottom: 16px;
   margin-right: 15px;
 }
 
-/* line 2933, ../../grunt/main.scss */
+/* line 2968, ../../grunt/main.scss */
 .slide-tut-contain {
   position: fixed;
   z-index: 999;
   margin-right: 10px;
 }
 
-/* line 2938, ../../grunt/main.scss */
+/* line 2973, ../../grunt/main.scss */
 #spotlight_canvas {
   position: fixed;
   top: 0;
@@ -11082,7 +11111,7 @@ OTHER.CSS
   height: 100%;
 }
 
-/* line 2945, ../../grunt/main.scss */
+/* line 2980, ../../grunt/main.scss */
 .emote-input-area {
   background: url(/img/arrow-dtr-leftcurve.png) center top no-repeat;
   padding-top: 37px;
@@ -11093,7 +11122,7 @@ OTHER.CSS
   font-size: 14px !important;
 }
 
-/* line 2954, ../../grunt/main.scss */
+/* line 2989, ../../grunt/main.scss */
 .emote-share-desc {
   background: url(/img/arrow-rtt-leftcurve.png) 30px top no-repeat;
   padding-top: 28px;
@@ -11105,20 +11134,20 @@ OTHER.CSS
   font-size: 14px !important;
 }
 
-/* line 2964, ../../grunt/main.scss */
+/* line 2999, ../../grunt/main.scss */
 #slide-3 p, #slide-5 p {
   font-size: 14px !important;
   line-height: 20px;
 }
 @media only screen and (max-width: 380px) {
-  /* line 2964, ../../grunt/main.scss */
+  /* line 2999, ../../grunt/main.scss */
   #slide-3 p, #slide-5 p {
     font-size: 13px !important;
     line-height: 15px;
   }
 }
 
-/* line 2972, ../../grunt/main.scss */
+/* line 3007, ../../grunt/main.scss */
 .user-img-click {
   background: url(/img/arrow-rtl-topcurve.png) left top no-repeat;
   padding-left: 26px;
@@ -11128,12 +11157,12 @@ OTHER.CSS
   line-height: 15px !important;
 }
 
-/* line 2980, ../../grunt/main.scss */
+/* line 3015, ../../grunt/main.scss */
 .post-feed-click {
   margin-bottom: 20px !important;
 }
 
-/* line 2983, ../../grunt/main.scss */
+/* line 3018, ../../grunt/main.scss */
 .else-emote-click {
   background: url(/img/arrow-rtr-leftcurve.png) left top no-repeat;
   padding-left: 26px;
@@ -11141,13 +11170,13 @@ OTHER.CSS
   margin-bottom: 20px !important;
 }
 @media only screen and (max-width: 380px) {
-  /* line 2983, ../../grunt/main.scss */
+  /* line 3018, ../../grunt/main.scss */
   .else-emote-click {
     margin-bottom: 8% !important;
   }
 }
 
-/* line 2992, ../../grunt/main.scss */
+/* line 3027, ../../grunt/main.scss */
 .click-swipe {
   background: url(/img/arrow-ltb-rtcurve.png) right center no-repeat;
   padding-right: 50px;
@@ -11156,7 +11185,7 @@ OTHER.CSS
   min-height: 44px;
 }
 
-/* line 2999, ../../grunt/main.scss */
+/* line 3034, ../../grunt/main.scss */
 .doing-now-click {
   background: url(/img/arrow-rtb-left-curve.png) left 7px no-repeat;
   padding-left: 68px;
@@ -11165,14 +11194,14 @@ OTHER.CSS
   min-height: 70px;
 }
 
-/* line 3006, ../../grunt/main.scss */
+/* line 3041, ../../grunt/main.scss */
 .menu-left-click {
   background: url(/img/arrow-topmenu.png) 30px top no-repeat;
   padding-top: 50px;
   margin-top: -24px;
 }
 
-/* line 3011, ../../grunt/main.scss */
+/* line 3046, ../../grunt/main.scss */
 .profile-photo-click p {
   background: url(/img/arrow-dtl-rightcurve.png) 60px top no-repeat;
   padding-top: 43px;
@@ -11180,20 +11209,20 @@ OTHER.CSS
   margin-bottom: 0;
 }
 
-/* line 3017, ../../grunt/main.scss */
+/* line 3052, ../../grunt/main.scss */
 .profile-photo-click {
   background: url(/img/arrow-ttb.png) center bottom no-repeat;
   padding-bottom: 50px;
   margin-right: 9%;
 }
 @media only screen and (max-width: 380px) {
-  /* line 3017, ../../grunt/main.scss */
+  /* line 3052, ../../grunt/main.scss */
   .profile-photo-click {
     padding-bottom: 32px;
   }
 }
 
-/* line 3025, ../../grunt/main.scss */
+/* line 3060, ../../grunt/main.scss */
 .actions-click {
   background: url(/img/arrow-rtt-leftcurve-left.png) left top no-repeat;
   padding-left: 50px;
@@ -11202,35 +11231,35 @@ OTHER.CSS
   bottom: 20px;
 }
 
-/* line 3032, ../../grunt/main.scss */
+/* line 3067, ../../grunt/main.scss */
 .actions-click p {
   background: url(/img/arrow-ltt-rightcurve-right.png) right top no-repeat;
   padding-right: 40px;
   padding-top: 27px;
 }
 
-/* line 3037, ../../grunt/main.scss */
+/* line 3072, ../../grunt/main.scss */
 #doing-now {
   margin: 0;
 }
 
-/* line 3040, ../../grunt/main.scss */
+/* line 3075, ../../grunt/main.scss */
 #img_search_query_text {
   margin-bottom: 10px;
 }
 
-/* line 3043, ../../grunt/main.scss */
+/* line 3078, ../../grunt/main.scss */
 .glyphicon.glyphicon-link {
   background: none !important;
 }
 
-/* line 3046, ../../grunt/main.scss */
+/* line 3081, ../../grunt/main.scss */
 .gallery-contain .glyphicon-fullscreen {
   font-size: 18px;
   color: #727272;
 }
 
-/* line 3050, ../../grunt/main.scss */
+/* line 3085, ../../grunt/main.scss */
 .gallery-contain.silver-gradient.gradient {
   width: 39px;
   height: 34px;
@@ -11240,33 +11269,55 @@ OTHER.CSS
   right: 28px;
 }
 
-/* line 3058, ../../grunt/main.scss */
+/* line 3093, ../../grunt/main.scss */
 .emote-v2-content h4 .user-follow {
   text-decoration: none;
-  font-weight: normal;
   font-size: 12px;
 }
 
-/* line 3063, ../../grunt/main.scss */
+/* line 3097, ../../grunt/main.scss */
 #flag_container {
   position: relative;
   z-index: 999;
 }
 
-/* line 3067, ../../grunt/main.scss */
+/* line 3101, ../../grunt/main.scss */
 .user-thumb .user-active {
   display: none;
 }
 
-/* line 3070, ../../grunt/main.scss */
+/* line 3104, ../../grunt/main.scss */
 .user-thumb.active .user-active {
   display: block;
   position: absolute;
-  top: 48px;
+  top: 24px;
   left: 24px;
   border: 1px solid transparent;
   border-radius: 50%;
-  background-color: #0E8639;
+  background-color: #318F52;
   width: 7px;
   height: 7px;
+}
+
+/* line 3115, ../../grunt/main.scss */
+.social-share-links a.shareToFb {
+  display: block;
+  width: 224px;
+  height: 53px;
+  background: url(/img/social-share.png) left top no-repeat;
+  margin: 0 auto 10px;
+}
+
+/* line 3123, ../../grunt/main.scss */
+.social-share-links .shareToTw {
+  display: block;
+  width: 224px;
+  height: 53px;
+  background: url(/img/social-share.png) right top no-repeat;
+  margin: 0 auto 10px;
+}
+
+/* line 3131, ../../grunt/main.scss */
+#popup-container.socialsharepopup {
+  height: 210px;
 }

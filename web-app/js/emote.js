@@ -629,6 +629,12 @@ $('.divShowClick').click(function(e){
             $('#createEmote').trigger('click');
         }
     }
+    
+    // if($(this).attr('id') == 'slide-1-button' || $(this).attr('id') == 'slide-3-button' || $(this).attr('id') == 'slide-5-button' ) {
+    //      if($('#emote-creation-container').attr('class') == 'active'){
+    //         $('#createEmote').trigger('click');
+    //     }
+    // }
     var divId = $(this).attr('data-div-id');
     $('.divShowClick.active').removeClass('active');
     $(this).addClass('active');
@@ -636,6 +642,34 @@ $('.divShowClick').click(function(e){
     $('#'+divId).addClass('active');
     resizeStuff();
 });
+
+$('.pager-sliding-button').click(function(e){
+	e.preventDefault();
+	var activeDiv = $('.slide-tut.active').attr('id'),
+		divId = activeDiv.replace(/[^0-9]/g, ''),
+		nextDivId = parseInt(divId) + 1;
+	if(activeDiv == 'slide-1' || activeDiv == 'slide-3' || activeDiv == 'slide-5' ) {
+        if($('#emote-creation-container').attr('class') != 'active'){
+            $('#createEmote').trigger('click');
+        }
+    }
+    if(activeDiv == 'slide-2' || activeDiv == 'slide-4' ) {
+         if($('#emote-creation-container').attr('class') == 'active'){
+            $('#createEmote').trigger('click');
+        }
+    }
+	if(divId == 5) {nextDivId = 1;}
+	$('#slide-' + divId).removeClass('active');
+	$('#slide-' + nextDivId).addClass('active');
+	$('#slide-' + divId + '-click').removeClass('active');
+	$('#slide-' + nextDivId + '-click').addClass('active');	
+    resizeStuff();
+});
+
+$('.exit-tutorial').click(function(){
+	$('.popup-tutorial-container').hide();
+});
+
 
 function showTutorialPopup() {
     navSlider();

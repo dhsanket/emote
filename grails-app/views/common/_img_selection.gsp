@@ -20,4 +20,6 @@
             </div> <!-- /#fullscreen-dialog -->
         </div> <!-- /#popup-container -->
     </div> <!-- /#imgchooserpopup -->
+
+    
 </g:uploadForm>

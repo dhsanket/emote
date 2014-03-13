@@ -77,7 +77,7 @@
                             <div class="emote-friends swiper-slide">
 
                                 <h4>Friend's emotes:
-                                    <a class="user-feed" href="#"><span class="current-user"></span></a> <a class="user-follow" href="#">Follow User <i class="glyphicon glyphicon-link"></i></a>
+                                    <a class="user-feed" href="#"><span class="current-user"></span></a> <a class="gradient silver-gradient button icon-button user-follow" href="#"><i class="glyphicon glyphicon-link"></i> Follow</a>
                                 </h4>
 
                                 <ul class="friend-container clearfix">
@@ -149,10 +149,7 @@
                 <ul class="clearfix pull-left">
                     <li class="feeds-sprite feeds-report-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
                     <li class="feeds-sprite feeds-camera-icon ${loggedInClass}" data-emote-title="${title.completeTitle}"></li>
-                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}"> 
-
-                    <div class=""><a href="#/" class="shareToFb"><facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink></a>
-                    <a href="#/" class="shareToTw"></a></div>  </li>
+                    <li class="feeds-sprite feeds-share-icon last ${loggedInClass}"></li>
                     %{--<emoteapp:facebookpost completeTitle="${title.completeTitle}" popularEmotesList="${title.popularEmotes}"/>--}%
                 </ul>
                 <span class="feeds-sprite feeds-knob-icon ${loggedInClass} ${doingNow.contains(title.completeTitle) ? 'active' : ''}" data-emote-title="${title.completeTitle}"></span>
@@ -162,6 +159,21 @@
                 </ul>
             </div> <!-- /emote-v2-footer -->
         </div> <!-- /.emote-v2 -->
+
+        <div id="socialsharepopup" class="popupzen" style="position:static;">
+            <div id="popup-container" class="socialsharepopup">
+                <div id="fullscreen-dialog">
+                    <div class="social-share-links">
+                        <div class="error"></div>
+                        <a href="#/" class="shareToFb"><facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink></a>
+                        
+                        <a href="https://twitter.com/share" class="twitter-share-button shareToTw" data-lang="en" target="_blank"></a>
+                        %{--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"social-share-linkspt","twitter-wjs");</script>--}%
+                    </div>
+                    <button value="Cancel" class="cancel-button" >Back</button>
+                </div> <!-- /#fullscreen-dialog -->
+            </div> <!-- /#popup-container -->
+        </div> <!-- /#socialsharepopup -->
 
         <g:if test="${showComments}">
             <g:render template="/common/comment/commentsList" model="[title: titles.empty ? null : titles.first(), comments: comments]"/>

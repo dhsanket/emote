@@ -68,9 +68,24 @@ $(function(){
             flag_emote(title);
 		});
 
-        $('.feeds-share-icon.logged').click(function(){
+  //       $('.feeds-share-icon.logged').click(function(){
+  //           postToFacebook($(this));
+		// });
+
+		$('.feeds-share-icon.logged').click(function(){
+            var title = $(this).attr('data-emote-title');
+            //$('input[name=title]').val(title);
+			$('#socialsharepopup').toggleClass('active');
+		});
+
+        $(' .shareToFb').click(function(){
             postToFacebook($(this));
 		});
+
+		$('.feeds-share-icon.logged .shareToTw').click(function(){
+            postToTwitter($(this));
+		});
+
 
 		$('#category-list li').click(function(){
 			if ($(this).text().indexOf("Pick") > -1)
@@ -223,4 +238,9 @@ $('#createEmote').click(function(){
 	}
 });
 
+
+//ZEN to hide the social share popup
+$('#socialsharepopup .cancel-button').click(function(){
+	$('#socialsharepopup').removeClass('active');
+});
 

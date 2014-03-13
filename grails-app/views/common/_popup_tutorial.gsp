@@ -51,4 +51,6 @@
         <li><a class="divShowClick" href="#/" id="slide-4-click" data-div-id="slide-4"></a></li>
         <li><a class="divShowClick" href="#/" id="slide-5-click" data-div-id="slide-5"></a></li>
     </ul>
+    <a class="gradient silver-gradient button icon-button pager-sliding-button" href="#/" id="slide-1-button" data-div-id="slide-1">Next</a>
+    <a class="gradient silver-gradient button icon-button exit-tutorial" href="#/">Exit</a>
 </div>
