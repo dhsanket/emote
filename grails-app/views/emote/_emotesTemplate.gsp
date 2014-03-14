@@ -165,10 +165,18 @@
                 <div id="fullscreen-dialog">
                     <div class="social-share-links">
                         <div class="error"></div>
-                        <a href="#/" class="shareToFb"><facebook:publishLink display="touch" name="#${title.completeTitle}"  link="www.emote-app.com/zen/${title.completeTitle}" picture="http://www.emote-app.com/img/emote-defaultLogo.png" description="emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}" callback="facebookPublishCallbackFunction"> </facebook:publishLink></a>
+                        <a href="#/" class="shareToFb" onclick="FB.ui({method: 'feed', 
+                            name: '#${title.completeTitle}', 
+                            link: 'www.emote-app.com/zen/${title.completeTitle}',
+                            caption: 'Share via Emote', 
+                            picture: 'http://www.emote-app.com/img/emote-defaultLogo.png',              
+                            description: 'emote-app users think #${title.completeTitle} is ${title.popularEmotes.expression}'
+                          }, function(response){ console.log(response);});"></a>
+
+                          <a href="https://twitter.com/share?text=@ www.emote-app.com/zen/${title.completeTitle} via emote" class="twitter-share-button shareToTw" data-url="www.emote-app.com/zen/${title.completeTitle}" data-related="anywhereTheJavascriptAPI" data-lang="en" data-size="large" data-count="none">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
                         
-                        <a href="https://twitter.com/share" class="twitter-share-button shareToTw" data-lang="en" target="_blank"></a>
-                        %{--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"social-share-linkspt","twitter-wjs");</script>--}%
                     </div>
                     <button value="Cancel" class="cancel-button" >Back</button>
                 </div> <!-- /#fullscreen-dialog -->

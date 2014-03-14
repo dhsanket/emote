@@ -668,16 +668,20 @@ $('.pager-sliding-button').click(function(e){
 
 $('.exit-tutorial').click(function(){
 	$('.popup-tutorial-container').hide();
+	$('.quick-create-overlay').hide();
+	$('#loadingOverlay').hide();
+	$('#emote-creation-container').removeClass('active');
+	$('#feed-container.emoteCreateActive').removeClass('emoteCreateActive');
 });
 
 
 function showTutorialPopup() {
-    navSlider();
-    setTimeout(function() {
+    //navSlider();
+    //setTimeout(function() {
         $('.popup-tutorial-container').show();
         $('.popup-tutorial-container').trigger('show');
         resizeStuff();
-    }, 200);
+    //}, 200);
 }
 
 /**
@@ -686,29 +690,29 @@ function showTutorialPopup() {
  * @param link DOM element from which read attributes
  * @returns {boolean}
  */
-function postToFacebook(link) {
-    var options = {
-        method: 'feed'
-    };
-    if (link.data('caption') != undefined) options['caption'] = link.data('caption');
-    if (link.data('display') != undefined) options['display'] = link.data('display');
-    if (link.data('description') != undefined) options['description'] = link.data('description');
-    if (link.data('link') != undefined) options['link'] = link.data('link');
-    if (link.data('name') != undefined) options['name'] = link.data('name');
-    if (link.data('picture') != undefined) options['picture'] = link.data('picture');
-    if (link.data('source') != undefined) options['source'] = link.data('source');
-    FACEBOOK_DIALOG_ID = FB.ui(options, function(response) {
-        if (link.data('callback') != undefined) {
-            var callback = window[link.data('callback')];
-            if (typeof callback === 'function') {
-                callback(response);
-            }
-        }
-    }).id;
-//    _fixShareDialogAttempts = 0;
-//    $('iframe#' + FACEBOOK_DIALOG_ID)[0].onload = fixShareDialogSize;
-    return false;
-};
+// function postToFacebook(link) {
+//     var options = {
+//         method: 'feed'
+//     };
+//     if (link.data('caption') != undefined) options['caption'] = link.data('caption');
+//     if (link.data('display') != undefined) options['display'] = link.data('display');
+//     if (link.data('description') != undefined) options['description'] = link.data('description');
+//     if (link.data('link') != undefined) options['link'] = link.data('link');
+//     if (link.data('name') != undefined) options['name'] = link.data('name');
+//     if (link.data('picture') != undefined) options['picture'] = link.data('picture');
+//     if (link.data('source') != undefined) options['source'] = link.data('source');
+//     FACEBOOK_DIALOG_ID = FB.ui(options, function(response) {
+//         if (link.data('callback') != undefined) {
+//             var callback = window[link.data('callback')];
+//             if (typeof callback === 'function') {
+//                 callback(response);
+//             }
+//         }
+//     }).id;
+// //    _fixShareDialogAttempts = 0;
+// //    $('iframe#' + FACEBOOK_DIALOG_ID)[0].onload = fixShareDialogSize;
+//     return false;
+// };
 
 /**
  * Function to fix the width and position of Facebook share dialog for mobile resolution
