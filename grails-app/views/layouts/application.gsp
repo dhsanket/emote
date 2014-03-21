@@ -55,6 +55,10 @@
             </browser:otherwise>
         </browser:choice>
 
+        <r:script>
+            MBP.hideUrlBarOnLoad();
+        </r:script>
+
         <r:layoutResources/>
         <g:layoutHead />
         
