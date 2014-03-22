@@ -680,6 +680,10 @@ function showTutorialPopup() {
     //setTimeout(function() {
         $('.popup-tutorial-container').show();
         $('.popup-tutorial-container').trigger('show');
+        $('#nav-menu').removeClass('active');
+        $('header').removeClass('active');
+        $('#feed-container').removeClass('navactive');
+        $('#user-header').removeClass('navactive');
         resizeStuff();
     //}, 200);
 }
