@@ -7723,7 +7723,6 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
   padding: 8px;
   text-align: center;
   font-size: 16px;
-  display: none;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -7822,7 +7821,7 @@ textarea {
 /* line 182, ../../grunt/main.scss */
 html,
 body {
-  overflow-x: hidden !important;
+  /*overflow-x: hidden !important;*/
   height: 100%;
   background: #D1D1D1;
 }
