@@ -113,7 +113,7 @@ class EmoteService {
 		return userEmotes;
 	}
 	
-	def groupByTitle (def emotes, User user){
+	def groupByTitle (List<Emote> emotes, User user){
 		def followingUsers
 		String currentUserId
 		if (user != null) {
@@ -135,8 +135,8 @@ class EmoteService {
 			if(canShow){
 				GroupByTitle title = groupedByTitle.get(emote.completeTitle.toUpperCase())
 				if(title == null){
-					Title titleObj = Title.findByText(emote.title)
-					String picId = null	
+					Title titleObj = Title.findByTextIlike(emote.title)
+					String picId = null
 					if(titleObj != null)	
 						picId = titleObj.pictures != null && titleObj.pictures.size() > 0 ? titleObj.pictures[titleObj.pictures.size()-1]:null
 					title = new GroupByTitle(id: titleObj.id, title:emote.title, pictureId:picId,
