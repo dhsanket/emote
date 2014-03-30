@@ -12,6 +12,10 @@ function CommentsPage(getCommentsUrl, voteUrl, titleId, commentsCount, loggedIn)
         return self.commentsCount() + " Comments";
     });
 
+    self.showCommentsCount = ko.computed(function(){
+        return self.commentsCount() > 0;
+    });
+
     self.profilePicture = function(comment) {
         return "http://graph.facebook.com/" + comment.facebookUserId + "/picture?";
     };

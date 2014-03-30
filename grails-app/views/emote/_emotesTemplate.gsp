@@ -47,7 +47,7 @@
                 </g:if>
                 <span class="type">${title.firstCategory}</span>
                 <g:if test="${showComments}">
-                    <span class="comments-count" data-bind="text: commentsCountMsg"></span>
+                    <span class="comments-count" data-bind="{text: commentsCountMsg, visible: showCommentsCount}"></span>
                 </g:if>
                 <g:else>
                     <g:if test="${(title.titleObj.commentsCount ?: 0) > 0}">
