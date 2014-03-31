@@ -33,18 +33,16 @@
                           data-first-category="${title.firstCategory}"
                           data-comments-count="${title.titleObj.commentsCount} Comments"></span>
                 </g:if>
-                <g:if test="${session.user}">
-                    <div class="gallery-contain silver-gradient gradient">
-                         <a class="gallery-open" href="#"><i class="glyphicon glyphicon-fullscreen"></i></a>
-                    </div>
-                    <div class="feeds-contain silver-gradient gradient"
-                         data-edit-feed
-                         data-complete-title="${title.completeTitle}"
-                         data-first-category="${title.firstCategory}"
-                         data-emote-id="emote-v2-${i}">
-                        <span class="feeds-sprite feeds-edit-icon"></span>
-                    </div>
-                </g:if>
+                <div class="gallery-contain silver-gradient gradient">
+                     <a class="gallery-open" href="#"><i class="glyphicon glyphicon-fullscreen"></i></a>
+                </div>
+                <div class="feeds-contain silver-gradient gradient"
+                     ${session.user ? 'data-edit-feed' : ''}
+                     data-complete-title="${title.completeTitle}"
+                     data-first-category="${title.firstCategory}"
+                     data-emote-id="emote-v2-${i}">
+                    <span class="feeds-sprite feeds-edit-icon"></span>
+                </div>
                 <span class="type">${title.firstCategory}</span>
                 <g:if test="${showComments}">
                     <span class="comments-count" data-bind="{text: commentsCountMsg, visible: showCommentsCount}"></span>
