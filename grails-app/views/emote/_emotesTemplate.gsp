@@ -105,7 +105,7 @@
                                             <ul class="clearfix">
                                                 <g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-lable', 1, false]);">${exp.text}</a></li>
+                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);">${exp.text}</a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>
