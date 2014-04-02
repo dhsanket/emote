@@ -12,9 +12,9 @@
         <div id="popup-container">
             <div id="fullscreen-dialog">
                 <div class="error"></div>
-                <input type="file" id="pic" name="photo" title="Device" onClick="emptyImageFileElement();_gaq.push(['_trackEvent', 'Title images', 'Image source select', ' Image from local', 1, false]);" onchange="fileSelectHandler()" >
+                <input type="file" id="pic" name="photo" title="Device" onClick="emptyImageFileElement();_gaq.push(['_trackEvent', 'Title images', 'Image source select', 'Image source: local', 1, false]);" onchange="fileSelectHandler()" >
 
-                <button id="img_search_button" value="Web" onClick="_gaq.push(['_trackEvent', 'Title images', 'Image source select', 'Image from web', 1, false]);"> Image from web</button>
+                <button id="img_search_button" value="Web" onClick="_gaq.push(['_trackEvent', 'Title images', 'Image source select', 'Image source: web', 1, false]);"> Image from web</button>
 
                 <button value="Cancel" class="cancel-button" >Back</button>
             </div> <!-- /#fullscreen-dialog -->
