@@ -4,7 +4,7 @@
     $(function(){
         $('div[data-edit-feed]').click(function(){
             quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'), $(this));
-            _gaq.push(['_trackEvent', 'Quick Emotes', $('#category').val(), 'Add', 1, false]);
+            _gaq.push(['_trackEvent', 'Quick-emote', $('#category').val() + 'quick-emote', 'Quick-emote lable', 1, false]);
         });
     });
 
@@ -105,7 +105,7 @@
                                             <ul class="clearfix">
                                                 <g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re Emotes', 'Edit', 'Successful', 1, false]);">${exp.text}</a></li>
+                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-lable', 1, false]);">${exp.text}</a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>

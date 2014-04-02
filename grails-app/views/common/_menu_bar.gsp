@@ -18,7 +18,7 @@
 	<span class="list-sub-title">Search</span>
 
 	<section id="search-section">
-		<g:form action="search" controller="emote" onsubmit="_gaq.push(['_trackEvent', 'Search', 'Submit', jQuery(this).attr('action')]);">
+		<g:form action="search" controller="emote" onsubmit="_gaq.push(['_trackEvent', 'In-app Search', 'In-app search event', jQuery(this).attr('action')]);">
 			<input id="searchField" name="keyword" type="search" placeholder="Type to search..." />
 		</g:form>
     </section> <!-- /#search-section -->

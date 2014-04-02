@@ -2,7 +2,7 @@
     <div id="image-search-container">
         <div id="image-search-bar">
             <input type="text" id="img_search_query_text"  />
-            <input type="button" id="img_search_submit_button" value="Search!"  onClick="_gaq.push(['_trackEvent', 'Search', 'Image Upload', 'Image Post', 1, false]);"/>
+            <input type="button" id="img_search_submit_button" value="Search!"  onClick="_gaq.push(['_trackEvent', 'Title images', 'Image search', 'Image search executed', 1, false]);"/>
             <input type="button" id="img_search_back_button" value="Back"  />
         </div> <!-- /#image-search-bar -->
 
