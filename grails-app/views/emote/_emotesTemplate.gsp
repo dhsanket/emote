@@ -4,7 +4,7 @@
     $(function(){
         $('div[data-edit-feed]').click(function(){
             quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'), $(this));
-            _gaq.push(['_trackEvent', 'Quick-emote', $('#category').val() + 'quick-emote', 'Quick-emote lable', 1, false]);
+            _gaq.push(['_trackEvent', 'Quick-emote', $('#category').val() + 'Quick-emote', 'Quick-emote label', 1, false]);
         });
     });
 
@@ -24,7 +24,7 @@
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <h3 class=""><a href="/zen/${title.completeTitle}" onClick="_gaq.push(['_trackEvent', 'Feed page', 'Clicks link to title page', 'Link to title page', 1, false]);">${title.completeTitle}</a></h3>
+                        <h3 class=""><a href="/zen/${title.completeTitle}" onClick="_gaq.push(['_trackEvent', 'Feed page', 'Clicks title page link', 'Link to title page: '+${title.completeTitle}, 1, false]);">${title.completeTitle}</a></h3>
                     </div>
                 </div>
                 <g:if test="${title.pictureId!= null}">
@@ -105,7 +105,7 @@
                                             <ul class="clearfix">
                                                 <g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${exp.text} </a></li>
+                                                        <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle}, 'Re-emote-label: from other persons emote', 1, false]);"> ${exp.text} </a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>
@@ -116,7 +116,7 @@
                                             <ul>
                                                 <g:each in="${title.getUserEmotes(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${exp.text} </a></li>
+                                                        <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle}, 'Re-emote-label: from other persons emote', 1, false]);"> ${exp.text} </a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>
@@ -132,7 +132,7 @@
                                         <ul>
                                             <g:each in="${title.popularEmotes}" var="emote">
                                                 <g:if test="${(emote.expression.trim().length()>0)}">
-                                                    <li><a href="" onClick="re_emote('${title.completeTitle}', '${emote.expression}' ); _gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${emote.expression} </a></li>
+                                                    <li><a href="" onClick="re_emote('${title.completeTitle}', '${emote.expression}' ); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle} , 'Re-emote-label: popular emotes', 1, false]);"> ${emote.expression} </a></li>
                                                 </g:if>
                                             </g:each>
                                         </ul>
