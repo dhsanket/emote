@@ -24,7 +24,7 @@
                 <!-- @TODO: Maybe we should URLENCODE URLS -->
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <h3 class=""><a href="/zen/${title.completeTitle}">${title.completeTitle}</a></h3>
+                        <h3 class=""><a href="/zen/${title.completeTitle}" onClick="_gaq.push(['_trackEvent', 'Feed page', 'Clicks link to title page', 'Link to title page', 1, false]);">${title.completeTitle}</a></h3>
                     </div>
                 </div>
                 <g:if test="${title.pictureId!= null}">
@@ -105,7 +105,7 @@
                                             <ul class="clearfix">
                                                 <g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);">${exp.text}</a></li>
+                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${exp.text} </a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>
@@ -116,7 +116,7 @@
                                             <ul>
                                                 <g:each in="${title.getUserEmotes(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
-                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}' )">${exp.text}</a></li>
+                                                        <li><a href="javascript:re_emote('${title.completeTitle}', '${exp.text}')" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${exp.text} </a></li>
                                                     </g:if>
                                                 </g:each>
                                             </ul>
@@ -132,7 +132,7 @@
                                         <ul>
                                             <g:each in="${title.popularEmotes}" var="emote">
                                                 <g:if test="${(emote.expression.trim().length()>0)}">
-                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )">${emote.expression}</a></li>
+                                                    <li><a href="javascript:re_emote('${title.completeTitle}', '${emote.expression}' )" onClick="_gaq.push(['_trackEvent', 'Re-emote', 're-emote action', 're-emote-label', 1, false]);"> ${emote.expression} </a></li>
                                                 </g:if>
                                             </g:each>
                                         </ul>
