@@ -4,7 +4,7 @@
     $(function(){
         $('div[data-edit-feed]').click(function(){
             quick_emote($(this).attr('data-complete-title'),$(this).attr('data-first-category'), $(this).attr('data-emote-id'), $(this));
-            _gaq.push(['_trackEvent', 'Quick-emote', $('#category').val() + 'Quick-emote', 'Quick-emote label', 1, false]);
+            _gaq.push(['_trackEvent', 'Quick-emote', $('#category').val() + ' quick-emote', 'Quick-emote label', 1, false]);
         });
     });
 
