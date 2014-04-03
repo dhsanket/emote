@@ -32,7 +32,7 @@ function bing_img_send_request() {
     var  query = $("#img_search_query_text").val();
     if(query.length<1) return;
 //https://api.datamarket.azure.com/Bing/Search/Composite?Sources=%27Web%2BNews%27&Query=
-    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Image?Query=%27"+query+"%27&$top=20&$format=json&adult=strict&ImageFilters=%27Aspect%3aWide%2bSize%3aMedium%27";
+    var requestStr = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Image?Query=%27"+query+"%27&$top=20&$format=json&ImageFilters=%27Aspect%3aWide%2bSize%3aMedium%27";
 
     $.ajax({
         url: requestStr,
