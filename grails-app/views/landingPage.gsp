@@ -74,7 +74,7 @@
 
     </div>
 </div>
-<p class="clear">&copy; Copyright  <a href="http://www.emote-app.com/">emote.com </a>. All rights reserved. </p>
+<p class="clear">&copy; Copyright  <a href="http://www.emote-app.com/"> www.emote-app.com 2014</a>. All rights reserved. </p>
 
 </body>
 </html>

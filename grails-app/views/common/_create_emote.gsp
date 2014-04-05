@@ -27,7 +27,7 @@
                         <!-- <a href="#" id="addimage-button" ><i class="icon icon-camera"></i></a> -->
                         <div class="pull-right">
                             <a href="#" class="button silver-gradient gradient" id="feeds-share-icon-link"><span class="feeds-sprite feeds-share-icon ir ib">Share</span></a>
-                            <button type="submit" id="post-emote" class="button icon-button big grey-gradient gradient" value="Save" onClick="_gaq.push(['_trackEvent', 'Emotes', document.getElementById('category').options[document.getElementById('category').selectedIndex].value, 'Add', 1, false]);"><span class="edit-button"></span>POST</button>
+                            <button type="submit" id="post-emote" class="button icon-button big grey-gradient gradient" value="Save" onClick="_gaq.push(['_trackEvent', 'Create emote post', document.getElementById('category').options[document.getElementById('category').selectedIndex].value + ' post' , document.getElementById('obj-title').value+' title post' , 1, false]);"><span class="edit-button"></span>POST</button>
                         </div>
                     </div> <!-- /#emote-bar-container -->
                 </div> <!-- /#emote-bar -->
