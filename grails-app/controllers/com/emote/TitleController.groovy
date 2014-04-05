@@ -1,7 +1,5 @@
 package com.emote
 
-import grails.converters.JSON
-
 class TitleController {
 	EmoteService emoteService
     TitleService titleService
@@ -18,19 +16,4 @@ class TitleController {
 		}
 	}
 
-    def addInToDoList(String title) {
-        User user = session.user as User
-
-        emoteService.addTitleInToDoList(title, user)
-
-        render([success: true] as JSON)
-    }
-
-    def removeFromToDoList(String title) {
-        User user = session.user as User
-
-        emoteService.removeFromToDoList(title, user)
-
-        render([success: true] as JSON)
-    }
 }

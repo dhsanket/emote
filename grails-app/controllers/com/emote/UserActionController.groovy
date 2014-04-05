@@ -1,5 +1,7 @@
 package com.emote
 
+import grails.converters.JSON
+
 
 class UserActionController {
 
@@ -77,5 +79,21 @@ class UserActionController {
                 [success:"true"]
             }
         }
+    }
+
+    def addInToDoList(String title) {
+        User user = session.user as User
+
+        userActionService.addTitleInToDoList(title, user)
+
+        render([success: true] as JSON)
+    }
+
+    def removeFromToDoList(String title) {
+        User user = session.user as User
+
+        userActionService.removeFromToDoList(title, user)
+
+        render([success: true] as JSON)
     }
 }

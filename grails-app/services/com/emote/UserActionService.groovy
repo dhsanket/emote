@@ -1,10 +1,5 @@
 package com.emote
 
-import com.emote.User
-import com.emote.UserDoing
-import com.emote.UserEmotePoint
-import com.emote.UserFavourite
-
 class UserActionService {
 	
 	NotificationService notificationService
@@ -45,4 +40,13 @@ class UserActionService {
         pointOfUser.save()
     }
 
+    def addTitleInToDoList(String title, User user) {
+        if(!UserToDo.findByUserIdAndTitle(user.id, title)) {
+            new UserToDo(userId: user.id, title: title).save()
+        }
+    }
+
+    def removeFromToDoList(String title, User user) {
+        UserToDo.findByUserIdAndTitle(user.id, title)?.delete()
+    }
 }

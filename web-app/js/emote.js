@@ -368,7 +368,7 @@ var removeFromFavourite = function (title) {
 var toDoSubmit = function (title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: '/title/addInToDoList',
+        url: '/userAction/addInToDoList',
         cache: false,
         data: {title: title},
         error: function () {
@@ -385,7 +385,7 @@ var toDoSubmit = function (title) {
 var removeFromToDo = function (title) {
     var feedContents = $.ajax({
         type: 'POST',
-        url: '/title/removeFromToDoList',
+        url: '/userAction/removeFromToDoList',
         cache: false,
         data: {title: title},
         error: function () {
