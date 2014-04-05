@@ -113,7 +113,7 @@ class EmoteService {
 		return userEmotes;
 	}
 	
-	def groupByTitle (List<Emote> emotes, User user){
+	def groupByTitle (Collection<Emote> emotes, User user){
 		def followingUsers
 		String currentUserId
 		if (user != null) {
