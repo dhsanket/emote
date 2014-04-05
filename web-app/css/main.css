@@ -8873,15 +8873,28 @@ div.tagsinput div {
 }
 
 /* line 1077, ../../grunt/main.scss */
-#obj-title-suggestion .ui-autocomplete {
-  padding: 0 20px;
+ul.ui-autocomplete {
+  padding: 0px;
   list-style: none;
+  position: absolute;
+    border: 1px solid #aaaaaa;
+    background: #ffffff;
+    color: #222222;
+    z-index: 100;
 }
 
 /* line 1082, ../../grunt/main.scss */
-#obj-title-suggestion .ui-autocomplete li.ui-menu-item a {
-  font-size: 16px;
-  color: #555555;
+ul.ui-autocomplete li.ui-menu-item a {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555555;
+    padding: 5px 20px;
+    display: block;
+}
+
+ul.ui-autocomplete li.ui-menu-item a.ui-state-focus {
+    background-color: #1D91FE;
+    color: #ffffff;
 }
 
 /* User Profile Formatting */
