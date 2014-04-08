@@ -163,6 +163,16 @@ $(function(){
 				}
 		});
 
+        // Autocompletion on Search field
+		$('#searchField').autocomplete({
+			appendTo : '#searchField-suggestion',
+			minLength : 3,
+			source: '/title/autocomplete',
+			messages : {noResults: '',
+				 results: function(){}
+				}
+		});
+
 		// Create emote 'SAVE' button
 		$('#post-emote').click(function(e){
 			// prevent default behaviour of button
