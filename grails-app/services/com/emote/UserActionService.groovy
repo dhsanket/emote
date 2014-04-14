@@ -4,6 +4,16 @@ class UserActionService {
 	
 	NotificationService notificationService
 
+    private void updateTitleUpdateTime(String title) {
+        Title titleObj = Title.findByTextIlike(title)
+
+        if(titleObj) {
+            titleObj.commentsCount = titleObj.commentsCount?:0
+            titleObj.refreshUpdateTime()
+            titleObj.save()
+        }
+    }
+
     def addDoing(String userId, String title) {
         UserDoing userDoing = UserDoing.findByUserIdAndTitle(userId, title)
         if(userDoing){
@@ -14,6 +24,8 @@ class UserActionService {
         else{
             new UserDoing(userId: userId, title: title, count:1).save()
         }
+
+       updateTitleUpdateTime(title)
     }
 
     def addFavouriteTitle(User user, String title){
@@ -24,6 +36,8 @@ class UserActionService {
         favorite.favouriteTitles.add title
         favorite.save()
 //		notificationService.registerInterest(title, user, TitleInterest.Type.FAVOURITE)
+
+        updateTitleUpdateTime(title)
     }
 
     def removeFavouriteTopic(User user, String title) {
@@ -43,6 +57,7 @@ class UserActionService {
     def addTitleInToDoList(String title, User user) {
         if(!UserToDo.findByUserIdAndTitle(user.id, title)) {
             new UserToDo(userId: user.id, title: title).save()
+            updateTitleUpdateTime(title)
         }
     }
 

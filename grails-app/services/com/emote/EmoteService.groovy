@@ -60,6 +60,7 @@ class EmoteService {
             if (pic.id != null)
                 title.addPicture(pic.id)
         }
+        title.commentsCount = title.commentsCount ?: 0
         title.save(validate: true, flush: true)
 		if(created){
 			//log.info "Registering author interest for title ${title}"
@@ -152,8 +153,10 @@ class EmoteService {
 		groupedByTitle.each{key, value -> 
 			sorted.add(value)
 		}
-		 Collections.sort(sorted);
-		 return sorted;
+        sorted.sort {GroupByTitle g1, g2 ->
+            g2.titleObj.lastUpdateTime.compareTo(g1.titleObj.lastUpdateTime)
+        }
+        return sorted;
 	}
 	
 	def findTitles(String text){

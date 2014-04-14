@@ -105,7 +105,7 @@
                                                 <g:each in="${title.getFollowed(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
                                                         <g:if test="${loggedIn}">
-                                                            <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle}, 'Re-emote-label: from other persons emote', 1, false]);"> ${exp.text} </a></li>
+                                                            <li><a href="#" onclick="alert('re-emoting');re_emote('${title.completeTitle}', '${exp.text}');_gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: ${title.completeTitle}', 'Re-emote-label: from other persons emote', 1, false]);return false;"> ${exp.text} </a></li>
                                                         </g:if>
                                                         <g:else>
                                                             <li><a> ${exp.text} </a></li>
@@ -121,7 +121,7 @@
                                                 <g:each in="${title.getUserEmotes(user.uid).expressions}" var="exp">
                                                     <g:if test="${(exp.text.trim().length()>0)}">
                                                         <g:if test="${loggedIn}">
-                                                            <li><a href="" onClick="re_emote('${title.completeTitle}', '${exp.text}'); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle}, 'Re-emote-label: from other persons emote', 1, false]);"> ${exp.text} </a></li>
+                                                            <li><a href="#" onclick="re_emote('${title.completeTitle}', '${exp.text}');_gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: ${title.completeTitle}', 'Re-emote-label: from other persons emote', 1, false]);return false;"> ${exp.text} </a></li>
                                                         </g:if>
                                                         <g:else>
                                                             <li><a> ${exp.text} </a></li>
@@ -142,7 +142,7 @@
                                             <g:each in="${title.popularEmotes}" var="emote">
                                                 <g:if test="${(emote.expression.trim().length()>0)}">
                                                     <g:if test="${loggedIn}">
-                                                        <li><a href="" onClick="re_emote('${title.completeTitle}', '${emote.expression}' ); _gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: '+${title.completeTitle} , 'Re-emote-label: popular emotes', 1, false]);"> ${emote.expression} </a></li>
+                                                        <li><a href="#" onclick="re_emote('${title.completeTitle}', '${emote.expression}' );_gaq.push(['_trackEvent', 'Re-emote', 'Re-emote action: ${title.completeTitle}' , 'Re-emote-label: popular emotes', 1, false]);return false;"> ${emote.expression} </a></li>
                                                     </g:if>
                                                     <g:else>
                                                         <li><a> ${emote.expression} </a></li>

@@ -309,7 +309,7 @@ function emoteSubmit() {
 		error: function(){
 			// Error function goes here
 			console.log("Error, your request was not sent");
-		},
+		}
 	}).done(function(){
 		// Reset the form
 		emoteCreateReset();
@@ -342,6 +342,7 @@ var favouriteSubmit = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
+            location.reload();
         }
 
     });
@@ -376,6 +377,7 @@ var toDoSubmit = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
+            location.reload();
         }
 
     });
@@ -410,6 +412,7 @@ var doingNow = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
+            location.reload();
         }
 
     });
