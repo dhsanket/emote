@@ -314,7 +314,7 @@ function emoteSubmit() {
 		// Reset the form
 		emoteCreateReset();
 		// Reload
-		location.reload();
+            window.location.assign("http://www.emote-app.com/emote/feed");
 	});
 }
 
@@ -342,7 +342,7 @@ var favouriteSubmit = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
-            location.reload();
+            window.location.assign("http://www.emote-app.com/emote/feed");
         }
 
     });
@@ -377,7 +377,7 @@ var toDoSubmit = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
-            location.reload();
+            window.location.assign("http://www.emote-app.com/emote/feed");
         }
 
     });
@@ -412,7 +412,7 @@ var doingNow = function (title) {
         },
         success: function(){
             //todo maybe Icon should change and be disabled
-            location.reload();
+            window.location.assign("http://www.emote-app.com/emote/feed");
         }
 
     });
